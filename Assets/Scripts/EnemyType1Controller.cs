@@ -11,7 +11,7 @@ public class EnemyType1Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = enemyConstants.enemyType1_health;
+        health = enemyConstants.enemyType1Health;
     }
 
     // Update is called once per frame

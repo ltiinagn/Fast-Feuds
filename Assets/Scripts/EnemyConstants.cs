@@ -4,8 +4,8 @@ using UnityEngine;
 public class EnemyConstants : ScriptableObject
 {
 	// EnemyType0
-    public int enemyType0_health = 1;
+    public int enemyType0Health = 1;
 
     // EnemyType1
-    public int enemyType1_health = 10;
+    public int enemyType1Health = 10;
 }

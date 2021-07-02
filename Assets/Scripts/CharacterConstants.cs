@@ -4,5 +4,5 @@ using UnityEngine;
 public class CharacterConstants : ScriptableObject
 {
     // Character
-    public int character_health = 1;
+    public int characterHealth = 2;
 }

@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CharacterController : MonoBehaviour
 {
-    public CharacterConstants characterConstants;
-    private int health;
+    public UnityEvent onCharacterHit;
 
     string[] rowNames = {"Row1", "Row2", "Row3", "Row4"};
     Dictionary <string, Vector3> keyMap = new Dictionary<string, Vector3>();
@@ -15,8 +15,6 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = characterConstants.character_health;
-
         foreach (string rowName in rowNames) {
             foreach (Transform child in GameObject.Find(rowName).transform)
             {
@@ -53,11 +51,16 @@ public class CharacterController : MonoBehaviour
     void OnTriggerEnter(Collider col) {
         Debug.Log("collided");
         if (col.gameObject.CompareTag("EnemyType1")) {
-            Debug.Log("damaged by enemy!");
-            health -= 1;
-            if (health == 0) {
-                Destroy(gameObject);
-            }
+            // Debug.Log("damaged by enemy!");
+            // health -= 1;
+            // if (health == 0) {
+            //     Destroy(gameObject);
+            // }
+            onCharacterHit.Invoke();
         }
+    }
+
+    public void playerDeath() {
+        Destroy(gameObject);
     }
 }
