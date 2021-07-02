@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    public CharacterConstants characterConstants;
+    private int health;
+
     string[] rowNames = {"Row1", "Row2", "Row3", "Row4"};
     Dictionary <string, Vector3> keyMap = new Dictionary<string, Vector3>();
     Vector3 prevPos;
@@ -12,6 +15,8 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        health = characterConstants.character_health;
+
         foreach (string rowName in rowNames) {
             foreach (Transform child in GameObject.Find(rowName).transform)
             {
@@ -41,6 +46,17 @@ public class CharacterController : MonoBehaviour
                     }
                     prevPos = this.transform.position;
                 }
+            }
+        }
+    }
+
+    void OnTriggerEnter(Collider col) {
+        Debug.Log("collided");
+        if (col.gameObject.CompareTag("EnemyType1")) {
+            Debug.Log("damaged by enemy!");
+            health -= 1;
+            if (health == 0) {
+                Destroy(gameObject);
             }
         }
     }
