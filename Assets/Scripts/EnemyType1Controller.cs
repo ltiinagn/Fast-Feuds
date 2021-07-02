@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EnemyController : MonoBehaviour
+public class EnemyType1Controller : MonoBehaviour
 {
-    public UnityEvent onCharacterAttack;
+    public EnemyConstants enemyConstants;
+    private int health;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = enemyConstants.enemyType1_health;
     }
 
     // Update is called once per frame
@@ -20,7 +21,10 @@ public class EnemyController : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider col) {
+        health -= 1;
         Debug.Log("damaged by character!");
-        Destroy(gameObject);
+        if (health == 0) {
+            Destroy(gameObject);
+        }
     }
 }
