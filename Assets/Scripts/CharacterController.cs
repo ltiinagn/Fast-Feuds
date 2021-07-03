@@ -5,17 +5,16 @@ using UnityEngine.Events;
 
 public class CharacterController : MonoBehaviour
 {
+    public GameConstants gameConstants;
     public UnityEvent onCharacterHit;
 
-    string[] rowNames = {"Row1", "Row2", "Row3", "Row4"};
-    Dictionary <string, Vector3> keyMap = new Dictionary<string, Vector3>();
+    Dictionary<string, Vector3> keyMap = new Dictionary<string, Vector3>();
     Vector3 prevPos;
-    float aboveGround = 0.2f;
 
     // Start is called before the first frame update
     void Start()
     {
-        foreach (string rowName in rowNames) {
+        foreach (string rowName in gameConstants.rowNames) {
             foreach (Transform child in GameObject.Find(rowName).transform)
             {
                 keyMap.Add(child.name, child.position);
@@ -32,7 +31,7 @@ public class CharacterController : MonoBehaviour
             foreach (KeyValuePair<string, Vector3> control in keyMap) {
                 if (Input.GetKeyDown(control.Key)) {
                     float step = 1 * Time.deltaTime;
-                    this.transform.position = new Vector3(control.Value.x, aboveGround, control.Value.z);
+                    gameObject.transform.parent.transform.position = control.Value;
                     float dist = Vector3.Distance(prevPos, this.transform.position);
                     Vector3 dir = this.transform.position - prevPos;
 
@@ -62,5 +61,6 @@ public class CharacterController : MonoBehaviour
 
     public void playerDeath() {
         Destroy(gameObject);
+        Destroy(gameObject.transform.parent.gameObject);
     }
 }

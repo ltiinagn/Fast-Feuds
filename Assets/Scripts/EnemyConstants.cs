@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName =  "EnemyConstants", menuName =  "ScriptableObjects/EnemyConstants", order =  1)]
+[CreateAssetMenu(fileName = "EnemyConstants", menuName = "ScriptableObjects/EnemyConstants", order = 3)]
 public class EnemyConstants : ScriptableObject
 {
 	// EnemyType0
@@ -8,4 +8,7 @@ public class EnemyConstants : ScriptableObject
 
     // EnemyType1
     public int enemyType1Health = 10;
+
+    // BossTypeX
+    public int bossTypeXHealth = 15;
 }

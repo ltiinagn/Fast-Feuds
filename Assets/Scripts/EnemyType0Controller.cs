@@ -24,7 +24,7 @@ public class EnemyType0Controller : MonoBehaviour
         health -= 1;
         Debug.Log("damaged by character!");
         if (health == 0) {
-            Destroy(gameObject);
+            Destroy(gameObject.transform.parent.gameObject);
         }
     }
 }
