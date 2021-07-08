@@ -4,16 +4,27 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class LevelSelectionController : MonoBehaviour
+public class LevelUIController : MonoBehaviour
 {
+    void Start() {
+    }
+
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            gameObject.transform.parent.Find("PauseMenu").gameObject.SetActive(true);
+            Time.timeScale = 0.0f;
+        }
+    }
+
     public void OnClicked()
     {
         string name = EventSystem.current.currentSelectedGameObject.name;
-        if (name == "Back_Button") {
-            StartCoroutine(ChangeScene("MainMenu"));
+        if (name == "Resume_Button") {
+            gameObject.transform.parent.Find("PauseMenu").gameObject.SetActive(false);
+            Time.timeScale = 1.0f;
         }
-        else {
-            StartCoroutine(ChangeScene(name.Split('_')[0]));
+        else if (name == "QuitToMenu_Button") {
+            StartCoroutine(ChangeScene("MainMenu"));
         }
     }
 
