@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class EnemyType0Controller : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
+    public UnityEvent onEnemyDeath;
     private int health;
 
     // Start is called before the first frame update
@@ -24,6 +25,7 @@ public class EnemyType0Controller : MonoBehaviour
         health -= 1;
         Debug.Log("damaged by character!");
         if (health == 0) {
+            onEnemyDeath.Invoke();
             Destroy(gameObject.transform.parent.gameObject);
         }
     }

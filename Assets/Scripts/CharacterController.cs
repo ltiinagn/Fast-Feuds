@@ -7,19 +7,16 @@ public class CharacterController : MonoBehaviour
 {
     public GameConstants gameConstants;
     public UnityEvent onCharacterHit;
+    public GameObject keyMapper;
+    Dictionary<string, Vector3> keyMap;
 
-    Dictionary<string, Vector3> keyMap = new Dictionary<string, Vector3>();
     Vector3 prevPos;
 
     // Start is called before the first frame update
     void Start()
     {
-        foreach (string rowName in gameConstants.rowNames) {
-            foreach (Transform child in GameObject.Find(rowName).transform)
-            {
-                keyMap.Add(child.name, child.position);
-            }
-        }
+        keyMapper = GameObject.Find("KeyMapper");
+        keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         prevPos = this.transform.position;
     }
 
@@ -60,7 +57,6 @@ public class CharacterController : MonoBehaviour
     }
 
     public void playerDeath() {
-        Destroy(gameObject);
         Destroy(gameObject.transform.parent.gameObject);
     }
 }

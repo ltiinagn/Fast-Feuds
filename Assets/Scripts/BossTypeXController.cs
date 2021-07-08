@@ -7,9 +7,9 @@ public class BossTypeXController : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
     public GameConstants gameConstants;
-    
-    Dictionary<string, Vector3> keyPosMap = new Dictionary<string, Vector3>();
-    Dictionary<string, string> keyRowMap = new Dictionary<string, string>();
+    public GameObject keyMapper;
+    Dictionary<string, Vector3> keyMap;
+    Dictionary<string, string> keyRowMap;
 
     private int health;
     private bool lastHits = true;
@@ -17,13 +17,9 @@ public class BossTypeXController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach (string rowName in gameConstants.rowNames) {
-            foreach (Transform child in GameObject.Find(rowName).transform)
-            {
-                keyPosMap.Add(child.name, child.position);
-                keyRowMap.Add(child.name, rowName);
-            }
-        }
+        keyMapper = GameObject.Find("KeyMapper");
+        keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
+        keyRowMap = keyMapper.GetComponent<KeyMapping>().keyRowMap;
         health = enemyConstants.bossTypeXHealth;
     }
 
@@ -49,8 +45,6 @@ public class BossTypeXController : MonoBehaviour
             }
         }
         foreach (string[] name in gameConstants.keySequence) {
-            Debug.Log(name[0]);
-            Debug.Log(keyRowMap[name[0]]);
             GameObject.Find(keyRowMap[name[0]]+"/"+name[0]).GetComponent<SpriteRenderer>().enabled = true;
             yield return new WaitForSeconds(1);
             for (int j = 1; j < name.Length; j++) {

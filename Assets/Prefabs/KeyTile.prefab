@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 933688605354166858}
   - component: {fileID: 933688605354166861}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: KeyTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4499734678938864523}
   - component: {fileID: 7692745042450602023}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1803474612712429619}
   - component: {fileID: 7214534983202088575}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BoxCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2516447278171065041}
   - component: {fileID: 1562009962270126182}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Warn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3373124725158486610}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Danger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2282342337590207726}
   - component: {fileID: 8631065294331939482}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
