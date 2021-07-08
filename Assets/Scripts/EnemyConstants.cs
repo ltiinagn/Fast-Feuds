@@ -6,6 +6,7 @@ public class EnemyConstants : ScriptableObject
     // Enemy Prefabs
     public GameObject enemyType0Prefab;
     public GameObject enemyType1Prefab;
+    public GameObject bossTypeXPrefab;
 
     // Level 1-1 Spawn
     public int[] spawnSequence1_1 = {1, 2, 3, 4, 10, 1, 2, 3, 4, 10};

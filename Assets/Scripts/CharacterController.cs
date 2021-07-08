@@ -6,12 +6,14 @@ using UnityEngine.Events;
 public class CharacterController : MonoBehaviour
 {
     public GameConstants gameConstants;
+    public CharacterConstants characterConstants;
     public UnityEvent onCharacterHit;
     public GameObject keyMapper;
     Dictionary<string, Vector3> keyMap;
 
     Vector3 prevPos;
     bool invulnerable;
+    float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,7 @@ public class CharacterController : MonoBehaviour
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         prevPos = this.transform.position;
+        speed = characterConstants.characterSpeed;
     }
 
     // Update is called once per frame
@@ -40,7 +43,6 @@ public class CharacterController : MonoBehaviour
     IEnumerator moveCharacter(Vector3 from, Vector3 to) {
         float startTime = Time.time;
         float distance = Vector3.Distance(from, to);
-        float speed = 100.0f;
         invulnerable = true;
 
         while (true) {
@@ -54,7 +56,9 @@ public class CharacterController : MonoBehaviour
             RaycastHit[] hits;
             hits = Physics.RaycastAll(prevPos, dir, dist);
             foreach (RaycastHit hit in hits) {
-                hit.transform.gameObject.SendMessage("OnTriggerEnter", hit.collider);
+                if (hit.transform.tag != "TileDanger") {
+                    hit.transform.gameObject.SendMessage("OnTriggerEnter", hit.collider);
+                }
             }
             prevPos = this.transform.position;
 
@@ -71,6 +75,14 @@ public class CharacterController : MonoBehaviour
         if (!invulnerable) {
             Debug.Log("collided");
             if (col.gameObject.CompareTag("EnemyType1")) {
+                // Debug.Log("damaged by enemy!");
+                // health -= 1;
+                // if (health == 0) {
+                //     Destroy(gameObject);
+                // }
+                onCharacterHit.Invoke();
+            }
+            else if (col.gameObject.CompareTag("TileDanger")) {
                 // Debug.Log("damaged by enemy!");
                 // health -= 1;
                 // if (health == 0) {

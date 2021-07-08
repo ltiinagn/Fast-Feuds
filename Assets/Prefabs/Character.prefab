@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: d8e3867deee51ae4cb56753d24c16ca0, type: 2}
+  characterConstants: {fileID: 11400000, guid: 799e08f7bb30e3649a46208f5a7766b5, type: 2}
   onCharacterHit:
     m_PersistentCalls:
       m_Calls:

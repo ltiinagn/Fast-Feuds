@@ -38,27 +38,39 @@ public class BossTypeXController : MonoBehaviour
     }
 
     IEnumerator LastHurrah() {
-        foreach (string rowName in gameConstants.rowNames) {
-            foreach (Transform child in GameObject.Find(rowName).transform)
-            {
-                child.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-            }
-        }
         foreach (string[] name in gameConstants.keySequence) {
-            GameObject.Find(keyRowMap[name[0]]+"/"+name[0]).GetComponent<SpriteRenderer>().enabled = true;
-            yield return new WaitForSeconds(1);
-            for (int j = 1; j < name.Length; j++) {
-                GameObject.Find(keyRowMap[name[j-1]]+"/"+name[j-1]).GetComponent<SpriteRenderer>().enabled = false;
-                GameObject.Find(keyRowMap[name[j]]+"/"+name[j]).GetComponent<SpriteRenderer>().enabled = true;
-                yield return new WaitForSeconds(1);
+            for (int j = 0; j < name.Length; j++) {
+                foreach (string rowName in gameConstants.rowNames) {
+                    foreach (Transform child in GameObject.Find(rowName).transform)
+                    {
+                        child.Find("Warn").gameObject.SetActive(true);
+                    }
+                }
+                GameObject.Find(keyRowMap[name[j]]+"/"+name[j]+"/Warn").SetActive(false);
+                yield return new WaitForSeconds(1.0f);
+                foreach (string rowName in gameConstants.rowNames) {
+                    foreach (Transform child in GameObject.Find(rowName).transform)
+                    {
+                        if (child.gameObject.name != name[j]) {
+                            child.Find("Warn").gameObject.SetActive(false);
+                            child.Find("Danger").gameObject.SetActive(true);
+                        }
+                    }
+                }
+                yield return new WaitForSeconds(1.0f);
+                foreach (string rowName in gameConstants.rowNames) {
+                    foreach (Transform child in GameObject.Find(rowName).transform)
+                    {
+                        child.Find("Danger").gameObject.SetActive(false);
+                    }
+                }
+                yield return new WaitForSeconds(1.0f);
             }
             lastHits = true;
 
             while (lastHits) {
                 yield return null;
             }
-
-            GameObject.Find(keyRowMap[name[name.Length-1]]+"/"+name[name.Length-1]).GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 
