@@ -16,5 +16,5 @@ MonoBehaviour:
   enemyType1Prefab: {fileID: 2256729703954811346, guid: 0c1acca57baea8d4fa1278f8764f664b, type: 3}
   spawnSequence1_1: 010000000200000003000000040000000a000000010000000200000003000000040000000a000000
   enemyType0Health: 1
-  enemyType1Health: 10
+  enemyType1Health: 1
   bossTypeXHealth: 15
