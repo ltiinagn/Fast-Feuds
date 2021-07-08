@@ -25,7 +25,7 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (Time.timeScale != 0 && Input.anyKeyDown)
         {
             foreach (KeyValuePair<string, Vector3> control in keyMap) {
                 if (Input.GetKeyDown(control.Key)) {

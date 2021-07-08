@@ -18,6 +18,7 @@ public class EnemySpawner1_1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1.0f;
         character = GameObject.Find("Character");
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
@@ -42,7 +43,6 @@ public class EnemySpawner1_1 : MonoBehaviour
 
     IEnumerator spawnEnemiesWithDelay() {
         for (int count = 0; count < spawnSequence[progress]; count++) {
-            Debug.Log(count);
             spawnEnemy();
             yield return new WaitForSeconds(0.2f);
         }
