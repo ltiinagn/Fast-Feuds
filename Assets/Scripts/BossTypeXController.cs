@@ -12,7 +12,7 @@ public class BossTypeXController : MonoBehaviour
     Dictionary<string, string> keyRowMap;
 
     private int health;
-    private bool lastHits = true;
+    private bool lastHits = false;
 
     // Start is called before the first frame update
     void Start()

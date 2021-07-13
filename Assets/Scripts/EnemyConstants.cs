@@ -6,10 +6,16 @@ public class EnemyConstants : ScriptableObject
     // Enemy Prefabs
     public GameObject enemyType0Prefab;
     public GameObject enemyType1Prefab;
+    public GameObject boss2_BPrefab;
     public GameObject bossTypeXPrefab;
 
     // Level 1-1 Spawn
     public int[] spawnSequence1_1 = {1, 2, 3, 4, 10, 1, 2, 3, 4, 10};
+
+    // Level 2-B
+    public GameObject bulletSpawns2_BPrefab;
+    public int boss2_B_Health = 15;
+    public int lastHurrahDuration2_B = 15;
 
 	// EnemyType0
     public int enemyType0Health = 1;
