@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EnemyType1
   - TileDanger
+  - Bullet1
   layers:
   - Default
   - TransparentFX
@@ -43,6 +44,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: New Layer 1
-    uniqueID: 3493652229
+  - name: Game
+    uniqueID: 1905662745
     locked: 0

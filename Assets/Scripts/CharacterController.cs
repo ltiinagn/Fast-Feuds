@@ -53,13 +53,14 @@ public class CharacterController : MonoBehaviour
             float dist = Vector3.Distance(prevPos, this.transform.position);
             Vector3 dir = this.transform.position - prevPos;
 
-            RaycastHit[] hits;
-            hits = Physics.RaycastAll(prevPos, dir, dist);
-            foreach (RaycastHit hit in hits) {
-                if (hit.transform.tag != "TileDanger") {
-                    hit.transform.gameObject.SendMessage("OnTriggerEnter", hit.collider);
-                }
-            }
+            // RaycastHit[] hits;
+            // hits = Physics.RaycastAll(prevPos, dir, dist);
+            // foreach (RaycastHit hit in hits) {
+            //     if (hit.transform.tag != "TileDanger" && hit.transform.tag != "Bullet1") {
+            //         Debug.Log(hit.transform.tag);
+            //         hit.transform.gameObject.SendMessage("OnTriggerEnter", hit.collider);
+            //     }
+            // }
             prevPos = this.transform.position;
 
             if (fracDist >= 1) {
@@ -75,19 +76,13 @@ public class CharacterController : MonoBehaviour
         if (!invulnerable) {
             Debug.Log("collided");
             if (col.gameObject.CompareTag("EnemyType1")) {
-                // Debug.Log("damaged by enemy!");
-                // health -= 1;
-                // if (health == 0) {
-                //     Destroy(gameObject);
-                // }
                 onCharacterHit.Invoke();
             }
             else if (col.gameObject.CompareTag("TileDanger")) {
-                // Debug.Log("damaged by enemy!");
-                // health -= 1;
-                // if (health == 0) {
-                //     Destroy(gameObject);
-                // }
+                onCharacterHit.Invoke();
+            }
+            else if (col.gameObject.CompareTag("Bullet1")) {
+                col.gameObject.SendMessage("SetInactive");
                 onCharacterHit.Invoke();
             }
         }
