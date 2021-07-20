@@ -58,7 +58,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2924074043206399464}
   m_Layer: 0
-  m_Name: BulletSpawns2-B
+  m_Name: BulletSpawner2-B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

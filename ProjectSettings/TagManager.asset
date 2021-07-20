@@ -7,6 +7,7 @@ TagManager:
   - EnemyType1
   - TileDanger
   - Bullet1
+  - Powerup
   layers:
   - Default
   - TransparentFX

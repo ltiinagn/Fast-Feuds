@@ -15,14 +15,14 @@ public class BulletController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += direction * moveSpeed * Time.deltaTime;
+        gameObject.transform.parent.transform.position += direction * moveSpeed * Time.deltaTime;
     }
 
     void OnBecameInvisible() {
-        gameObject.SetActive(false);
+        gameObject.transform.parent.gameObject.SetActive(false);
     }
 
     void SetInactive() {
-        gameObject.SetActive(false);
+        gameObject.transform.parent.gameObject.SetActive(false);
     }
 }

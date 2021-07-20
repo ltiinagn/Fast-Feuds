@@ -5,11 +5,11 @@ using UnityEngine;
 public class GameConstants : ScriptableObject
 {
     public string[] rowNames = {"Tiles/Row1", "Tiles/Row2", "Tiles/Row3", "Tiles/Row4"};
-    public string[][] keySequence = new string[][] {
-        new string[] {"l", "a", "l", "a"},
-        new string[] {"n", "o", "a", "h"},
-        new string[] {"s", "h", "a", "h", "u", "l"},
-        new string[] {"l", "u", "n", "a"},
-        new string[] {"w", "e", "i", "t", "i", "n", "g"}
-    };
+
+    public int powerupVisibilityDuration = 5;
+    public int powerupDisappearDuration = 3;
+
+    public GameObject powerupInvulnerablePrefab;
+
+    public int invulnerablePowerupDuration = 5;
 }

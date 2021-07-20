@@ -8,17 +8,20 @@ public class CharacterController : MonoBehaviour
     public GameConstants gameConstants;
     public CharacterConstants characterConstants;
     public UnityEvent onCharacterHit;
+    public UnityEvent onCharacterMove;
     public GameObject keyMapper;
     Dictionary<string, Vector3> keyMap;
 
     Vector3 prevPos;
     bool invulnerable;
+    bool invulnerablePowerup;
     float speed;
 
     // Start is called before the first frame update
     void Start()
     {
         invulnerable = false;
+        invulnerablePowerup = false;
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         prevPos = this.transform.position;
@@ -65,6 +68,7 @@ public class CharacterController : MonoBehaviour
 
             if (fracDist >= 1) {
                 invulnerable = false;
+                onCharacterMove.Invoke();
                 yield break;
             }
 
@@ -72,18 +76,32 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+    IEnumerator StartInvulnerablePowerup() {
+        invulnerablePowerup = true;
+        yield return new WaitForSeconds(gameConstants.invulnerablePowerupDuration);
+        invulnerablePowerup = false;
+    }
+
     void OnTriggerEnter(Collider col) {
-        if (!invulnerable) {
-            Debug.Log("collided");
-            if (col.gameObject.CompareTag("EnemyType1")) {
-                onCharacterHit.Invoke();
+        if (col.gameObject.CompareTag("Powerup")) {
+            if (col.gameObject.name == "PowerupInvulnerable") {
+                StartCoroutine(StartInvulnerablePowerup());
             }
-            else if (col.gameObject.CompareTag("TileDanger")) {
-                onCharacterHit.Invoke();
-            }
-            else if (col.gameObject.CompareTag("Bullet1")) {
-                col.gameObject.SendMessage("SetInactive");
-                onCharacterHit.Invoke();
+            col.gameObject.SendMessage("Destroy");
+            // onCharacterHit.Invoke();
+        }
+        else {
+            if (!invulnerable && !invulnerablePowerup) {
+                if (col.gameObject.CompareTag("EnemyType1")) {
+                    onCharacterHit.Invoke();
+                }
+                else if (col.gameObject.CompareTag("TileDanger")) {
+                    onCharacterHit.Invoke();
+                }
+                else if (col.gameObject.CompareTag("Bullet1")) {
+                    col.gameObject.SendMessage("SetInactive");
+                    onCharacterHit.Invoke();
+                }
             }
         }
     }

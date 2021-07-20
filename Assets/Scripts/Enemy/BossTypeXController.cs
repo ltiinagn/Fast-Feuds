@@ -38,7 +38,7 @@ public class BossTypeXController : MonoBehaviour
     }
 
     IEnumerator LastHurrah() {
-        foreach (string[] name in gameConstants.keySequence) {
+        foreach (string[] name in enemyConstants.keySequence3_B) {
             for (int j = 0; j < name.Length; j++) {
                 foreach (string rowName in gameConstants.rowNames) {
                     foreach (Transform child in GameObject.Find(rowName).transform)

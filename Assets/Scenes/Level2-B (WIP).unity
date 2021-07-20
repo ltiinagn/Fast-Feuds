@@ -299,8 +299,8 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: EnemySpawner1_1, Assembly-CSharp
+      - m_Target: {fileID: 873974922}
+        m_TargetAssemblyTypeName: EnemySpawner2_B, Assembly-CSharp
         m_MethodName: enemyDead
         m_Mode: 1
         m_Arguments:
