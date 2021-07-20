@@ -47,10 +47,11 @@ public class CharacterController : MonoBehaviour
         float startTime = Time.time;
         float distance = Vector3.Distance(from, to);
         invulnerable = true;
+        float fracDist = 0;
 
-        while (true) {
+        while (fracDist < 1) {
             float distCovered = (Time.time - startTime) * speed;
-            float fracDist = distCovered / distance;
+            fracDist = distCovered / distance;
             gameObject.transform.parent.gameObject.transform.position = Vector3.Lerp(from, to, fracDist);
 
             float dist = Vector3.Distance(prevPos, this.transform.position);
@@ -66,14 +67,10 @@ public class CharacterController : MonoBehaviour
             // }
             prevPos = this.transform.position;
 
-            if (fracDist >= 1) {
-                invulnerable = false;
-                onCharacterMove.Invoke();
-                yield break;
-            }
-
             yield return null;
         }
+        invulnerable = false;
+        onCharacterMove.Invoke();
     }
 
     IEnumerator StartInvulnerablePowerup() {

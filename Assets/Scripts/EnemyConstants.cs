@@ -14,14 +14,19 @@ public class EnemyConstants : ScriptableObject
     // Level 1-1 Spawn
     public int[] spawnSequence1_1 = {1, 2, 3, 4, 10, 1, 2, 3, 4, 10};
 
+    // Level 1-2 Spawn
+    public int[] spawnSequence1_2 = {10, 10, 10};
+
     // Level 1-B
     public int boss1_B_Health = 10;
     public int[] spawnSequence1_B = {1, 5, 4, 4, 5, 5}; // include boss
     public int[][] spawnMovesAllowed1_B = new int[][] {
-        new int[] {1, 2, 3, 4, 5}
+        new int[] {1, 2, 3, 4, 5},
+        new int[] {1, 2, 3, 4}
     };
     public string[][] spawnKey1_B = new string[][] {
-        new string[] {"w", "a", "t", "e", "r"}
+        new string[] {"w", "a", "t", "e", "r"},
+        new string[] {"w", "i", "n", "e"}
     };
 
     // Level 2-B

@@ -42,9 +42,9 @@ public class EnemyTypeAController : MonoBehaviour
     public void characterMoved() {
         movesLeft -= 1;
         MovesText.GetComponent<TextMesh>().text = movesLeft.ToString();
-        Debug.Log("characterMoved");
         if (movesLeft == 0 && health!= 0) {
             onCharacterHit.Invoke();
+            onEnemyDeath.Invoke();
             Destroy(gameObject.transform.parent.gameObject);
         }
     }
