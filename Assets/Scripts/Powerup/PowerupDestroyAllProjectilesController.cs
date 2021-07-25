@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerupInvulnerableController : MonoBehaviour
+public class PowerupDestroyAllProjectilesController : MonoBehaviour
 {
     public GameConstants gameConstants;
     // public Vector3 direction;
@@ -19,7 +19,7 @@ public class PowerupInvulnerableController : MonoBehaviour
             gameObject.transform.parent.transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled = !gameObject.transform.parent.transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled;
             yield return new WaitForSeconds(0.5f);
         }
-        DestroyPowerup();
+        Destroy(gameObject.transform.parent.gameObject);
     }
 
     // Update is called once per frame
@@ -32,7 +32,12 @@ public class PowerupInvulnerableController : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    void DestroyPowerup() {
+    void UsePowerup() {
+        GameObject[] gameObjects;
+        gameObjects = GameObject.FindGameObjectsWithTag ("Projectiles");
+        foreach (GameObject gameObject in gameObjects) {
+            Destroy(gameObject);
+        }
         Destroy(gameObject.transform.parent.gameObject);
     }
 }

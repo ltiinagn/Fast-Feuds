@@ -10,6 +10,8 @@ public class GameConstants : ScriptableObject
     public int powerupDisappearDuration = 3;
 
     public GameObject powerupInvulnerablePrefab;
+    public GameObject powerupDestroyAllEnemiesPrefab;
+    public GameObject powerupDestroyAllProjectilesPrefab;
 
     public int invulnerablePowerupDuration = 5;
 }

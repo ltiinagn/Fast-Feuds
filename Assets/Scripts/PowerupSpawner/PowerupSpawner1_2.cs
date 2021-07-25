@@ -29,6 +29,7 @@ public class PowerupSpawner1_2 : MonoBehaviour
         keyList = new List<Vector3>(keyMap.Values);
         keyList.Remove(character.transform.position);
         int index = Random.Range(0, keyList.Count);
-        Instantiate(gameConstants.powerupInvulnerablePrefab, keyList[index], Quaternion.identity);
+        // Instantiate(gameConstants.powerupInvulnerablePrefab, keyList[index], Quaternion.identity);
+        Instantiate(gameConstants.powerupDestroyAllEnemiesPrefab, keyList[index], Quaternion.identity);
     }
 }

@@ -8,6 +8,8 @@ TagManager:
   - TileDanger
   - Bullet1
   - Powerup
+  - Enemy
+  - Projectile
   layers:
   - Default
   - TransparentFX

@@ -83,8 +83,11 @@ public class CharacterController : MonoBehaviour
         if (col.gameObject.CompareTag("Powerup")) {
             if (col.gameObject.name == "PowerupInvulnerable") {
                 StartCoroutine(StartInvulnerablePowerup());
+                col.gameObject.SendMessage("DestroyPowerup");
             }
-            col.gameObject.SendMessage("Destroy");
+            else if (col.gameObject.name == "PowerupDestroyAllEnemies") {
+                col.gameObject.SendMessage("UsePowerup");
+            }
             // onCharacterHit.Invoke();
         }
         else {
