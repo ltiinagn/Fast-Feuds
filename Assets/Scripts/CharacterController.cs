@@ -9,6 +9,7 @@ public class CharacterController : MonoBehaviour
     public CharacterConstants characterConstants;
     public UnityEvent onCharacterHit;
     public UnityEvent onCharacterMove;
+    public UnityEvent onCharacterAddHealth;
     public GameObject keyMapper;
     Dictionary<string, Vector3> keyMap;
 
@@ -83,10 +84,14 @@ public class CharacterController : MonoBehaviour
         if (col.gameObject.CompareTag("Powerup")) {
             if (col.gameObject.name == "PowerupInvulnerable") {
                 StartCoroutine(StartInvulnerablePowerup());
-                col.gameObject.SendMessage("DestroyPowerup");
+                col.gameObject.SendMessage("UsePowerup");
             }
             else if (col.gameObject.name == "PowerupDestroyAllEnemies") {
                 col.gameObject.SendMessage("UsePowerup");
+            }
+            else if (col.gameObject.name == "PowerupAddHealth") {
+                col.gameObject.SendMessage("UsePowerup");
+                onCharacterAddHealth.Invoke();
             }
             // onCharacterHit.Invoke();
         }

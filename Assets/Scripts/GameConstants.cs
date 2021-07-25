@@ -9,6 +9,7 @@ public class GameConstants : ScriptableObject
     public int powerupVisibilityDuration = 5;
     public int powerupDisappearDuration = 3;
 
+    public GameObject powerupAddHealthPrefab;
     public GameObject powerupInvulnerablePrefab;
     public GameObject powerupDestroyAllEnemiesPrefab;
     public GameObject powerupDestroyAllProjectilesPrefab;

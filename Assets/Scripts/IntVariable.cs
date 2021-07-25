@@ -27,6 +27,7 @@ public class IntVariable : ScriptableObject
 
     public void ApplyChange(int amount)
     {
+        Debug.Log("zzzzzzzzzz");
         if (_value > 0) {
             _value += amount;
         }
