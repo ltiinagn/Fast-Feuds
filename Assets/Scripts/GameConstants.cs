@@ -15,4 +15,19 @@ public class GameConstants : ScriptableObject
     public GameObject powerupDestroyAllProjectilesPrefab;
 
     public int invulnerablePowerupDuration = 5;
+
+    public string[] dialogue1_1 = {"Hello! Welcome to the tutorial! Press space to continue or K to skip!", "Press the corresponding key to move to the in game tile.", "End of tutorial. Have fun!"};
+    public string[] dialogue1_2 = {};
+    public string[] dialogue1_3 = {};
+    public string[] dialogue1_B = {};
+
+    public string[] dialogue2_1 = {};
+    public string[] dialogue2_2 = {};
+    public string[] dialogue2_3 = {};
+    public string[] dialogue2_B = {};
+
+    public string[] dialogue3_1 = {};
+    public string[] dialogue3_2 = {};
+    public string[] dialogue3_3 = {};
+    public string[] dialogue3_B = {};
 }
