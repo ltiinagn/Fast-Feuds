@@ -10,7 +10,11 @@ public class LevelSelectionController : MonoBehaviour
     private int skill_IncreaseStartingHealth;
 
     void Start() {
-        
+        // if (name == "SkillPoints")
+        // {
+        //     eachChild.gameObject.SetActive(false);
+
+        // }
     }
 
     public void OnClicked()
@@ -19,6 +23,7 @@ public class LevelSelectionController : MonoBehaviour
         if (name == "SkillTree_Button") {
             skillTree.SetActive(!skillTree.activeSelf);
             skill_IncreaseStartingHealth = PlayerPrefs.GetInt("skill_IncreaseStartingHealth");
+            //if skill 1/2/3 selected
         }
         else if (name == "SkillIncreaseStartingHealth_Button") {
             skill_IncreaseStartingHealth += 1;
@@ -30,6 +35,10 @@ public class LevelSelectionController : MonoBehaviour
         else if (name == "ClearSave_Button") {
             PlayerPrefs.DeleteAll();
         }
+        // else if(name == "Skill1Select"){
+
+        // }
+        //skilltree, level selection, clear save, back (for debug prolly)
         else {
             StartCoroutine(ChangeScene(name.Split('_')[0]));
         }
@@ -44,4 +53,6 @@ public class LevelSelectionController : MonoBehaviour
             yield return null;
         }
     }
+
+
 }
