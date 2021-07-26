@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class LevelUIController : MonoBehaviour
 {
     void Start() {
-        string[] buttonPaths = {"GameOverMenu/Restart_Button", "GameOverMenu/QuitToMenu_Button", "PauseMenu/Resume_Button", "PauseMenu/QuitToMenu_Button"};
+        string[] buttonPaths = {"GameOverMenu/Panel/Restart_Button", "GameOverMenu/Panel/QuitToMenu_Button", "PauseMenu/Panel/Resume_Button", "PauseMenu/Panel/QuitToMenu_Button"};
         foreach (string buttonPath in buttonPaths) {
             EventTrigger trigger = gameObject.transform.parent.Find(buttonPath).GetComponent<EventTrigger>();
             EventTrigger.Entry entry = new EventTrigger.Entry();

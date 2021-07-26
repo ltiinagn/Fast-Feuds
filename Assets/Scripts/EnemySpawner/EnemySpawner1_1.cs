@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawner1_1 : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
+    public GameConstants gameConstants;
     public GameObject keyMapper;
     Dictionary<string, Vector3> keyMap;
     List<Vector3> keyList;
@@ -24,7 +26,7 @@ public class EnemySpawner1_1 : MonoBehaviour
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         spawnSequence = enemyConstants.spawnSequence1_1;
         enemyCount = spawnSequence[progress];
-
+        
         StartCoroutine(WaitForNextSpawn());
     }
 
@@ -51,7 +53,7 @@ public class EnemySpawner1_1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     IEnumerator WaitForNextSpawn() {
