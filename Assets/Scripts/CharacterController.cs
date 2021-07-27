@@ -11,6 +11,7 @@ public class CharacterController : MonoBehaviour
     public UnityEvent onCharacterMove;
     public UnityEvent onCharacterAddHealth;
     public GameObject keyMapper;
+    GameObject dialogueBox;
     Dictionary<string, Vector3> keyMap;
 
     HashSet<string> spriteNames = new HashSet<string> {"Body", "LeftLeg", "RightLeg"};
@@ -34,12 +35,13 @@ public class CharacterController : MonoBehaviour
         };
         prevPos = this.transform.position;
         speed = characterConstants.characterSpeed;
+        dialogueBox = GameObject.Find("UI/Dialogue");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale != 0 && Input.anyKeyDown)
+        if (!dialogueBox.active && Input.anyKeyDown)
         {
             foreach (KeyValuePair<string, Vector3> control in keyMap) {
                 if (Input.GetKeyDown(control.Key)) {

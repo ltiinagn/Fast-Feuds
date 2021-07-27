@@ -23,7 +23,7 @@ public class EnemySpawner3_B : MonoBehaviour
         character = GameObject.Find("Character");
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
-        spawnSequence = enemyConstants.spawnSequence1_1;
+        spawnSequence = enemyConstants.spawnSequence3_B;
         enemyCount = spawnSequence[progress];
 
         StartCoroutine(WaitForNextSpawn());

@@ -11,7 +11,6 @@ public class DialogueController : MonoBehaviour
     private Text dialogueText;
     private string[] dialogue;
     private int dialogueProgress;
-    private int[] spawnSequence;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +18,7 @@ public class DialogueController : MonoBehaviour
         Time.timeScale = 0.0f;
         dialogueBox = GameObject.Find("UI/Dialogue");
         dialogueText = dialogueBox.transform.Find("Panel/Dialogue_Text").GetComponent<Text>();
-        dialogue = gameConstants.dialogue1_1;
+        dialogue = gameConstants.dialogue1_2;
         dialogueProgress = 0;
         LoadDialogue();
     }

@@ -16,7 +16,12 @@ public class GameConstants : ScriptableObject
 
     public int invulnerablePowerupDuration = 5;
 
-    public string[] dialogue1_1 = {"Hello! Welcome to the tutorial! Press space to continue or K to skip!", "Press the corresponding key to move to the in game tile.", "End of tutorial. Have fun!"};
+    public string[][] dialogue1_1 = new string[][] {
+        new string[] {"Hello! Welcome to the tutorial! Press space to continue or K to skip!", "Press the corresponding key to move to the in-game tile.", "End of tutorial. Have fun!"},
+        new string[] {"Good job! Next, clear some moving chickens!"},
+        new string[] {"Good job! Next, clear some chickens that throw bones! Avoid getting hit by the bones!"},
+        new string[] {"Well done!"}
+    };
     public string[] dialogue1_2 = {};
     public string[] dialogue1_3 = {};
     public string[] dialogue1_B = {};

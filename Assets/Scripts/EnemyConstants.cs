@@ -13,7 +13,11 @@ public class EnemyConstants : ScriptableObject
     public GameObject bossTypeXPrefab;
 
     // Level 1-1 Spawn
-    public int[] spawnSequence1_1 = {1, 2, 3, 4, 10, 1, 2, 3, 4, 10, 1, 2, 3, 4};
+    public int[][] spawnSequence1_1 = new int[][] {
+        new int[] {1, 2, 3, 4, 10},
+        new int[] {1, 2, 3, 4, 10},
+        new int[] {1, 2, 3, 4}
+    };
 
     // Level 1-2 Spawn
     public int[] spawnSequence1_2 = {10, 10, 10};
@@ -37,6 +41,7 @@ public class EnemyConstants : ScriptableObject
 
     // Level 3-B
     public int bossTypeXHealth = 15;
+    public int[] spawnSequence3_B = new int[] {1};
     public string[][] keySequence3_B = new string[][] {
         new string[] {"l", "a", "l", "a"},
         new string[] {"n", "o", "a", "h"},

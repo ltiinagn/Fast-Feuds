@@ -28,9 +28,10 @@ public class ProjectileBoneSpawner : MonoBehaviour
     }
 
     IEnumerator spawnBulletPeriodically() {
+        yield return new WaitForSeconds(0.5f);
         while (true) {
-            yield return new WaitForSeconds(2);
             spawnFromPooler(BulletType.bone);
+            yield return new WaitForSeconds(2);
         }
     }
 

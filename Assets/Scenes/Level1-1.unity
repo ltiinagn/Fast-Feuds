@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 454422597}
   - component: {fileID: 454422596}
   - component: {fileID: 454422595}
+  - component: {fileID: 454422598}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -282,6 +283,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyConstants: {fileID: 11400000, guid: 2c8f5b28e8bd0cb43a7087e374e7223f, type: 2}
   gameConstants: {fileID: 11400000, guid: d8e3867deee51ae4cb56753d24c16ca0, type: 2}
+  startNextDialogue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 50cf0381973e28845a5252c0b8dc2d36, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   keyMapper: {fileID: 0}
 --- !u!114 &454422596
 MonoBehaviour:
@@ -325,6 +341,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &454422598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454422594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc74c1906a3b49647acae3b769252e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 78707c9d80adbc244ae42c7e301141d0, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 454422595}
+        m_TargetAssemblyTypeName: EnemySpawner1_1, Assembly-CSharp
+        m_MethodName: startNextSpawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &502422648
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,6 +466,68 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &639803529 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8441025847026186198, guid: ee216f64641f02a47aa7e467d43b8102, type: 3}
+  m_PrefabInstance: {fileID: 1889568652772853575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &639803530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639803529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc719fed2d0244247833253f3298dc47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameConstants: {fileID: 11400000, guid: d8e3867deee51ae4cb56753d24c16ca0, type: 2}
+  enemySpawner: {fileID: 454422594}
+  startNextSpawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 78707c9d80adbc244ae42c7e301141d0, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &639803531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639803529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc74c1906a3b49647acae3b769252e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 50cf0381973e28845a5252c0b8dc2d36, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 639803530}
+        m_TargetAssemblyTypeName: DialogueController1_1, Assembly-CSharp
+        m_MethodName: LoadNextDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!43 &645734797
 Mesh:
   m_ObjectHideFlags: 0
@@ -1102,7 +1208,8 @@ PrefabInstance:
       propertyPath: enemySpawner
       value: 
       objectReference: {fileID: 454422594}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9029912216024163690, guid: ee216f64641f02a47aa7e467d43b8102, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ee216f64641f02a47aa7e467d43b8102, type: 3}
 --- !u!1001 &3691900730319545865
 PrefabInstance:
