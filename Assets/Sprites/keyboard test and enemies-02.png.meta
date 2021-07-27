@@ -143,6 +143,9 @@ TextureImporter:
   - first:
       213: 1307862022305269925
     second: keyboard test and enemies-02_46
+  - first:
+      213: 7279760711467431056
+    second: keyboard test and enemies-02_47
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -274,7 +277,7 @@ TextureImporter:
         x: 113
         y: 2647
         width: 1407
-        height: 1734
+        height: 1733
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,7 +339,7 @@ TextureImporter:
         serializedVersion: 2
         x: 5298
         y: 2952
-        width: 941
+        width: 940
         height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -462,7 +465,7 @@ TextureImporter:
         serializedVersion: 2
         x: 4460
         y: 1861
-        width: 436
+        width: 435
         height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -504,7 +507,7 @@ TextureImporter:
         serializedVersion: 2
         x: 5437
         y: 1861
-        width: 442
+        width: 441
         height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -546,7 +549,7 @@ TextureImporter:
         serializedVersion: 2
         x: 6415
         y: 1861
-        width: 442
+        width: 441
         height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -609,7 +612,7 @@ TextureImporter:
         serializedVersion: 2
         x: 96
         y: 401
-        width: 2193
+        width: 2192
         height: 1201
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -630,7 +633,7 @@ TextureImporter:
         serializedVersion: 2
         x: 2270
         y: 1339
-        width: 437
+        width: 436
         height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -672,7 +675,7 @@ TextureImporter:
         serializedVersion: 2
         x: 3248
         y: 1339
-        width: 437
+        width: 436
         height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -693,7 +696,7 @@ TextureImporter:
         serializedVersion: 2
         x: 3737
         y: 1339
-        width: 442
+        width: 441
         height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -735,7 +738,7 @@ TextureImporter:
         serializedVersion: 2
         x: 4715
         y: 1339
-        width: 442
+        width: 441
         height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -798,7 +801,7 @@ TextureImporter:
         serializedVersion: 2
         x: 6181
         y: 1339
-        width: 442
+        width: 441
         height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -819,7 +822,7 @@ TextureImporter:
         serializedVersion: 2
         x: 6675
         y: 1339
-        width: 437
+        width: 436
         height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -903,7 +906,7 @@ TextureImporter:
         serializedVersion: 2
         x: 3332
         y: 809
-        width: 441
+        width: 440
         height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -924,7 +927,7 @@ TextureImporter:
         serializedVersion: 2
         x: 3822
         y: 803
-        width: 438
+        width: 437
         height: 470
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -966,7 +969,7 @@ TextureImporter:
         serializedVersion: 2
         x: 4803
         y: 808
-        width: 437
+        width: 436
         height: 471
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1008,7 +1011,7 @@ TextureImporter:
         serializedVersion: 2
         x: 5781
         y: 808
-        width: 437
+        width: 436
         height: 471
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1050,7 +1053,7 @@ TextureImporter:
         serializedVersion: 2
         x: 6759
         y: 808
-        width: 442
+        width: 441
         height: 471
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -1072,7 +1075,7 @@ TextureImporter:
         x: 2581
         y: 293
         width: 441
-        height: 476
+        height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1093,7 +1096,7 @@ TextureImporter:
         x: 3070
         y: 293
         width: 441
-        height: 476
+        height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1114,7 +1117,7 @@ TextureImporter:
         x: 3559
         y: 293
         width: 441
-        height: 476
+        height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1135,7 +1138,7 @@ TextureImporter:
         x: 4047
         y: 293
         width: 441
-        height: 476
+        height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1155,8 +1158,8 @@ TextureImporter:
         serializedVersion: 2
         x: 4536
         y: 293
-        width: 442
-        height: 476
+        width: 441
+        height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1176,8 +1179,8 @@ TextureImporter:
         serializedVersion: 2
         x: 5025
         y: 293
-        width: 442
-        height: 476
+        width: 441
+        height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1198,7 +1201,7 @@ TextureImporter:
         x: 5519
         y: 293
         width: 436
-        height: 476
+        height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1218,8 +1221,8 @@ TextureImporter:
         serializedVersion: 2
         x: 6008
         y: 293
-        width: 437
-        height: 476
+        width: 436
+        height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1240,7 +1243,7 @@ TextureImporter:
         x: 6497
         y: 293
         width: 436
-        height: 476
+        height: 475
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1250,6 +1253,27 @@ TextureImporter:
       bones: []
       spriteID: 5a8cab67495762210800000000000000
       internalID: 1307862022305269925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_47
+      rect:
+        serializedVersion: 2
+        x: 7368
+        y: 293
+        width: 436
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0947cd81cc7e60560800000000000000
+      internalID: 7279760711467431056
       vertices: []
       indices: 
       edges: []
