@@ -13,6 +13,8 @@ public class CharacterController : MonoBehaviour
     public GameObject keyMapper;
     Dictionary<string, Vector3> keyMap;
 
+    HashSet<string> spriteNames = new HashSet<string> {"Body", "LeftLeg", "RightLeg"};
+    List<SpriteRenderer> sprites = new List<SpriteRenderer> {};
     Vector3 prevPos;
     bool invulnerable;
     bool invulnerablePowerup;
@@ -25,6 +27,11 @@ public class CharacterController : MonoBehaviour
         invulnerablePowerup = false;
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
+        foreach (Transform sprite in gameObject.transform.parent.Find("Sprite")) {
+            if (spriteNames.Contains(sprite.name)) {
+                sprites.Add(sprite.GetComponent<SpriteRenderer>());
+            }
+        };
         prevPos = this.transform.position;
         speed = characterConstants.characterSpeed;
     }
@@ -47,6 +54,10 @@ public class CharacterController : MonoBehaviour
     IEnumerator moveCharacter(Vector3 from, Vector3 to) {
         float startTime = Time.time;
         float distance = Vector3.Distance(from, to);
+        int direction = from.x - to.x > 0 ? 0 : 1;
+        foreach (SpriteRenderer spriteRenderer in sprites) {
+            spriteRenderer.flipX = direction == 1 ? true : false;
+        }
         invulnerable = true;
         float fracDist = 0;
 
@@ -97,10 +108,7 @@ public class CharacterController : MonoBehaviour
         }
         else {
             if (!invulnerable && !invulnerablePowerup) {
-                if (col.gameObject.CompareTag("EnemyType1")) {
-                    onCharacterHit.Invoke();
-                }
-                else if (col.gameObject.CompareTag("TileDanger")) {
+                if (col.gameObject.CompareTag("TileDanger")) {
                     onCharacterHit.Invoke();
                 }
                 else if (col.gameObject.CompareTag("Bullet1")) {

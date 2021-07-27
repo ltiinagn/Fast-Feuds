@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum BulletType {
-	bullet1 =  0
+	bullet1 = 0,
+    bone = 1
 }
 
 [System.Serializable]

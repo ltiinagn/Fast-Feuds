@@ -29,7 +29,7 @@ public class EnemySpawner1_B : MonoBehaviour
     }
 
     void spawnEnemies() {
-        // Instantiate(enemyConstants.enemyType0Prefab, new Vector3(2,0,0), Quaternion.identity);
+        // Instantiate(enemyConstants.chickenStationaryPrefab, new Vector3(2,0,0), Quaternion.identity);
         for (int count = 0; count < spawnSequence[progress]; count++) {
             spawnEnemy(count);
         }

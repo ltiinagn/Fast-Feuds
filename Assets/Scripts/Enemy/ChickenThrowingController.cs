@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EnemyType0Controller : MonoBehaviour
+public class ChickenThrowingController : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
     public UnityEvent onEnemyDeath;
@@ -12,7 +12,11 @@ public class EnemyType0Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = enemyConstants.enemyType0Health;
+        health = enemyConstants.chickenStationaryHealth;
+        int direction = Random.Range(0, 2);
+        if (direction == 1) {
+            gameObject.transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX = true;
+        }
     }
 
     // Update is called once per frame

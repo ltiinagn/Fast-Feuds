@@ -30,7 +30,7 @@ public class EnemySpawner1_2 : MonoBehaviour
     }
 
     void spawnEnemies() {
-        // Instantiate(enemyConstants.enemyType0Prefab, new Vector3(2,0,0), Quaternion.identity);
+        // Instantiate(enemyConstants.chickenStationaryPrefab, new Vector3(2,0,0), Quaternion.identity);
         for (int count = 0; count < spawnSequence[progress]; count++) {
             spawnEnemy();
         }
@@ -38,7 +38,7 @@ public class EnemySpawner1_2 : MonoBehaviour
 
     void spawnEnemy() {
         int index = Random.Range(0, keyList.Count);
-        Instantiate(enemyConstants.enemyType1Prefab, keyList[index], Quaternion.identity);
+        Instantiate(enemyConstants.chickenMovingPrefab, keyList[index], Quaternion.identity);
         keyList.RemoveAt(index);
     }
 

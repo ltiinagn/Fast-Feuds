@@ -4,15 +4,16 @@ using UnityEngine;
 public class EnemyConstants : ScriptableObject
 {
     // Enemy Prefabs
-    public GameObject enemyType0Prefab;
-    public GameObject enemyType1Prefab;
+    public GameObject chickenStationaryPrefab;
+    public GameObject chickenMovingPrefab;
+    public GameObject chickenThrowingPrefab;
     public GameObject enemyTypeAPrefab;
     public GameObject boss1_BPrefab;
     public GameObject boss2_BPrefab;
     public GameObject bossTypeXPrefab;
 
     // Level 1-1 Spawn
-    public int[] spawnSequence1_1 = {1, 2, 3, 4, 10, 1, 2, 3, 4, 10};
+    public int[] spawnSequence1_1 = {1, 2, 3, 4, 10, 1, 2, 3, 4, 10, 1, 2, 3, 4};
 
     // Level 1-2 Spawn
     public int[] spawnSequence1_2 = {10, 10, 10};
@@ -44,11 +45,11 @@ public class EnemyConstants : ScriptableObject
         new string[] {"w", "e", "i", "t", "i", "n", "g"}
     };
 
-	// EnemyType0
-    public int enemyType0Health = 1;
+	// ChickenStationary
+    public int chickenStationaryHealth = 1;
 
-    // EnemyType1
-    public int enemyType1Health = 1;
+    // ChickenMoving
+    public int chickenMovingHealth = 1;
 
     // EnemyTypeA
     public int enemyTypeAHealth = 1;

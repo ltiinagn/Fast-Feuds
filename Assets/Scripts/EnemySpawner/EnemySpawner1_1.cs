@@ -15,7 +15,6 @@ public class EnemySpawner1_1 : MonoBehaviour
     private int[] spawnSequence;
     private int enemyCount;
     private int progress = 0;
-    private bool movable = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +30,7 @@ public class EnemySpawner1_1 : MonoBehaviour
     }
 
     void spawnEnemies() {
-        // Instantiate(enemyConstants.enemyType0Prefab, new Vector3(2,0,0), Quaternion.identity);
+        // Instantiate(enemyConstants.chickenStationaryPrefab, new Vector3(2,0,0), Quaternion.identity);
         for (int count = 0; count < spawnSequence[progress]; count++) {
             spawnEnemy();
         }
@@ -39,7 +38,15 @@ public class EnemySpawner1_1 : MonoBehaviour
 
     void spawnEnemy() {
         int index = Random.Range(0, keyList.Count);
-        Instantiate(movable ? enemyConstants.enemyType1Prefab : enemyConstants.enemyType0Prefab, keyList[index], Quaternion.identity);
+        if (progress <= 4) {
+            Instantiate(enemyConstants.chickenStationaryPrefab, keyList[index], Quaternion.identity);
+        }
+        else if (progress <= 8) {
+            Instantiate(enemyConstants.chickenMovingPrefab, keyList[index], Quaternion.identity);
+        }
+        else {
+            Instantiate(enemyConstants.chickenThrowingPrefab, keyList[index], Quaternion.identity);
+        }
         keyList.RemoveAt(index);
     }
 
@@ -75,9 +82,6 @@ public class EnemySpawner1_1 : MonoBehaviour
         if (enemyCount == 0) {
             if (progress < spawnSequence.Length-1) {
                 progress += 1;
-                if (!movable && progress > 4) {
-                    movable = true;
-                }
                 enemyCount = spawnSequence[progress];
                 StartCoroutine(WaitForNextSpawn());
             }

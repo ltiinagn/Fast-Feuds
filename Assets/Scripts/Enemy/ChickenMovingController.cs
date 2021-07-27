@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EnemyType1Controller : MonoBehaviour
+public class ChickenMovingController : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
     public UnityEvent onEnemyDeath;
@@ -11,6 +11,8 @@ public class EnemyType1Controller : MonoBehaviour
     Dictionary<string, Vector3> keyMap;
     List<Vector3> keyList;
 
+    HashSet<string> spriteNames = new HashSet<string> {"Body"};
+    List<SpriteRenderer> sprites = new List<SpriteRenderer> {};
     private int health;
     private Vector3 start;
     private Vector3 end;
@@ -21,9 +23,13 @@ public class EnemyType1Controller : MonoBehaviour
     {
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
-        keyList = new List<Vector3>(keyMap.Values);        
-
-        health = enemyConstants.enemyType1Health;
+        keyList = new List<Vector3>(keyMap.Values);
+        foreach (Transform sprite in gameObject.transform.parent.Find("Sprite")) {
+            if (spriteNames.Contains(sprite.name)) {
+                sprites.Add(sprite.GetComponent<SpriteRenderer>());
+            }
+        };
+        health = enemyConstants.chickenMovingHealth;
         start = transform.position;
         keyList.Remove(start);
         end = keyList[Random.Range(0, keyList.Count)];
@@ -43,6 +49,10 @@ public class EnemyType1Controller : MonoBehaviour
         float distance;
         startTime = Time.time;
         distance = Vector3.Distance(from, to);
+        int direction = from.x - to.x > 0 ? 0 : 1;
+        foreach (SpriteRenderer spriteRenderer in sprites) {
+            spriteRenderer.flipX = direction == 1 ? true : false;
+        }
 
         while (true) {
             float distCovered = (Time.time - startTime) * speed;
