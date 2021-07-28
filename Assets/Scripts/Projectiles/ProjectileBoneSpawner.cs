@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProjectileBoneSpawner : MonoBehaviour
 {
     Vector3 direction;
+    private Animator chickenThrowingAnimator;
 
     void spawnFromPooler(BulletType i){
         // static method access
@@ -23,6 +24,7 @@ public class ProjectileBoneSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        chickenThrowingAnimator = gameObject.transform.parent.parent.Find("Sprite").GetComponent<Animator>();
         direction = gameObject.transform.parent.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX ? new Vector3(-1f, 0f, 0f) : new Vector3(1f, 0f, 0f);
         StartCoroutine(spawnBulletPeriodically());
     }
@@ -30,6 +32,8 @@ public class ProjectileBoneSpawner : MonoBehaviour
     IEnumerator spawnBulletPeriodically() {
         yield return new WaitForSeconds(0.5f);
         while (true) {
+            chickenThrowingAnimator.SetTrigger("onThrow");
+            yield return new WaitForSeconds(0.4f);
             spawnFromPooler(BulletType.bone);
             yield return new WaitForSeconds(2);
         }
