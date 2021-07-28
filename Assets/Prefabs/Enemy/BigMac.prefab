@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3576879627057730725}
   - component: {fileID: 865891621644808693}
   m_Layer: 0
-  m_Name: ProjectileRedBallSpawner
+  m_Name: ProjectileBigMacJuiceSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

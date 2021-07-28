@@ -15,7 +15,6 @@ public class StageSelectionController : MonoBehaviour
         bool end = false;
         while (i < gameConstants.levelNames.Length - 1 && !end) {
             i += 1;
-            Debug.Log(PlayerPrefs.GetInt("completeLevel1-1"));
             if (PlayerPrefs.GetInt("complete" + gameConstants.levelNames[i]) != 1) {
                 end = true;
             }
@@ -32,7 +31,6 @@ public class StageSelectionController : MonoBehaviour
     public void OnClicked()
     {
         string name = EventSystem.current.currentSelectedGameObject.name;
-        Debug.Log(name);
         if (name == "SkillTree_Button") {
             skillTree.SetActive(!skillTree.activeSelf);
             skill_IncreaseStartingHealth = PlayerPrefs.GetInt("skill_IncreaseStartingHealth");

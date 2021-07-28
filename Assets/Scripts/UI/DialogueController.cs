@@ -19,7 +19,6 @@ public class DialogueController : MonoBehaviour
         dialogueText = dialogueBox.transform.Find("Panel/Dialogue_Text").GetComponent<Text>();
         dialogue = gameConstants.dialogueDummy;
         dialogueProgress = 0;
-        Debug.Log(dialogue.Length);
         if (dialogue.Length != 0) {
             LoadDialogue();
         }
