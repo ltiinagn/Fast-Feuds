@@ -41,7 +41,7 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!dialogueBox.active && Input.anyKeyDown)
+        if ((!dialogueBox || !dialogueBox.activeSelf) && Input.anyKeyDown)
         {
             foreach (KeyValuePair<string, Vector3> control in keyMap) {
                 if (Input.GetKeyDown(control.Key)) {

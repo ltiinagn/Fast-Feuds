@@ -23,7 +23,7 @@ public class ProjectileBoneSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        direction = gameObject.transform.parent.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX ? new Vector3(-1f, 0f, 0f) : new Vector3(1f, 0f, 0f);
+        direction = gameObject.transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX ? new Vector3(-1f, 0f, 0f) : new Vector3(1f, 0f, 0f);
         StartCoroutine(spawnBulletPeriodically());
     }
 

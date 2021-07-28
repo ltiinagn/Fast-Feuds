@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour
 {
     public void startButtonClicked() {
-        StartCoroutine(ChangeScene("LevelSelection"));
+        StartCoroutine(ChangeScene("StageSelection"));
     }
 
     IEnumerator ChangeScene(string sceneName)

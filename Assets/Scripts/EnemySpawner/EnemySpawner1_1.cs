@@ -101,6 +101,9 @@ public class EnemySpawner1_1 : MonoBehaviour
                 progress0 += 1;
                 progress1 = 0;
             }
+            else if (progress0 == spawnSequence.Length - 1) { // Last dialogue after all enemies killed
+                StartCoroutine(waitForStartNextDialogue());
+            }
         }
     }
 }

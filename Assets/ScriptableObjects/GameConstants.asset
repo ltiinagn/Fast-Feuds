@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706f781197bdb1a438c7fafcc8580dc8, type: 3}
   m_Name: GameConstants
   m_EditorClassIdentifier: 
+  levelNames:
+  - Level1-1
+  - Level1-2
+  - Level1-3
+  - Level1-B
   rowNames:
   - Tiles/Row1
   - Tiles/Row2
@@ -24,3 +29,14 @@ MonoBehaviour:
   powerupDestroyAllEnemiesPrefab: {fileID: 4714105714738006828, guid: a2de9c48d72a23f408d967b17dd2ce72, type: 3}
   powerupDestroyAllProjectilesPrefab: {fileID: 4714105714738006828, guid: c92232e7c5848a141bd62dedf56df4f8, type: 3}
   invulnerablePowerupDuration: 5
+  dialogueDummy: []
+  dialogue1_3: []
+  dialogue1_B: []
+  dialogue2_1: []
+  dialogue2_2: []
+  dialogue2_3: []
+  dialogue2_B: []
+  dialogue3_1: []
+  dialogue3_2: []
+  dialogue3_3: []
+  dialogue3_B: []

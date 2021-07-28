@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class DialogueController1_1 : MonoBehaviour
+public class DialogueController1_2 : MonoBehaviour
 {
     public GameConstants gameConstants;
     public GameObject enemySpawner;
     public UnityEvent startNextSpawn;
-    public UnityEvent stageComplete;
     private GameObject dialogueBox;
     private Text dialogueText;
     private string[][] dialogue;
@@ -22,11 +21,18 @@ public class DialogueController1_1 : MonoBehaviour
     {
         dialogueBox = GameObject.Find("UI/Dialogue");
         dialogueText = dialogueBox.transform.Find("Panel/Dialogue_Text").GetComponent<Text>();
-        dialogue = gameConstants.dialogue1_1;
+        dialogue = gameConstants.dialogue1_2;
         progress0 = 0;
         progress1 = 0;
         finishedSet = false;
-        LoadDialogue();
+        if (dialogue.Length != 0) {
+            LoadDialogue();
+        }
+        else {
+            dialogueBox.SetActive(false);
+            enemySpawner.SetActive(true);
+            gameObject.SetActive(false);
+        }
     }
 
     void LoadDialogue() {
@@ -65,9 +71,6 @@ public class DialogueController1_1 : MonoBehaviour
                     
                     if (progress0 != 0 && progress0 < dialogue.Length) {
                         StartCoroutine(waitForStartNextSpawn());
-                    }
-                    else if (progress0 == dialogue.Length) {
-                        stageComplete.Invoke();
                     }
                 }
                 else {

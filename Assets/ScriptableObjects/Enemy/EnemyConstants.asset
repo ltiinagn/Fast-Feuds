@@ -15,18 +15,19 @@ MonoBehaviour:
   chickenStationaryPrefab: {fileID: 629230319408024095, guid: 42d2ff474e50ef84fbdded0bc14e20b4, type: 3}
   chickenMovingPrefab: {fileID: 2256729703954811346, guid: 0c1acca57baea8d4fa1278f8764f664b, type: 3}
   chickenThrowingPrefab: {fileID: 629230319408024095, guid: d7c4f2cfc61842a429800a694a02fa76, type: 3}
+  clownMilkPrefab: {fileID: 629230319408024095, guid: a8ae9e3bfffdac348b6766e5899b1be3, type: 3}
   enemyTypeAPrefab: {fileID: 629230319408024095, guid: 70985279cde132747943c2ffbee43ea4, type: 3}
   boss1_BPrefab: {fileID: 9007750895088981850, guid: a462e2b654ae4bb47a6ebf8117d26cc8, type: 3}
   boss2_BPrefab: {fileID: 9007750895088981850, guid: 17fbe11e69b210b43ba634c836916826, type: 3}
   bossTypeXPrefab: {fileID: 9007750895088981850, guid: fb982a47a127f7a4c9bf7e0bc516382f, type: 3}
-  spawnSequence1_1: 010000000200000003000000040000000a000000010000000200000003000000040000000a000000
-  spawnSequence1_2: 0a0000000a0000000a000000
+  spawnSequence1_2: 020000000300000004000000
   boss1_B_Health: 10
   spawnSequence1_B: 010000000500000004000000040000000500000005000000
   bulletSpawns2_BPrefab: {fileID: 2924074043206399465, guid: cf9aa69e849aa7c4b81d46b3690abec6, type: 3}
   boss2_B_Health: 15
   lastHurrahDuration2_B: 15
   bossTypeXHealth: 15
+  spawnSequence3_B: 01000000
   chickenStationaryHealth: 1
   chickenMovingHealth: 1
   enemyTypeAHealth: 1

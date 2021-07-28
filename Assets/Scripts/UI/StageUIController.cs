@@ -4,10 +4,15 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class LevelUIController : MonoBehaviour
+public class StageUIController : MonoBehaviour
 {
+    public GameConstants gameConstants;
+    string[] levelNames;
+    int levelIndex;
+
     void Start() {
-        string[] buttonPaths = {"GameOverMenu/Panel/Restart_Button", "GameOverMenu/Panel/QuitToMenu_Button", "PauseMenu/Panel/Resume_Button", "PauseMenu/Panel/QuitToMenu_Button"};
+        levelNames = gameConstants.levelNames;
+        string[] buttonPaths = {"GameOverMenu/Panel/Restart_Button", "GameOverMenu/Panel/QuitToMenu_Button", "PauseMenu/Panel/Resume_Button", "PauseMenu/Panel/QuitToMenu_Button", "StageCompleteMenu/Panel/NextStage_Button", "StageCompleteMenu/Panel/QuitToMenu_Button"};
         foreach (string buttonPath in buttonPaths) {
             EventTrigger trigger = gameObject.transform.parent.Find(buttonPath).GetComponent<EventTrigger>();
             EventTrigger.Entry entry = new EventTrigger.Entry();
@@ -29,6 +34,19 @@ public class LevelUIController : MonoBehaviour
         gameObject.transform.parent.Find("GameOverMenu").gameObject.SetActive(true);
     }
 
+    public void showStageComplete() {
+        Time.timeScale = 0.0f;
+        levelIndex = System.Array.IndexOf(levelNames, SceneManager.GetActiveScene().name);
+        PlayerPrefs.SetInt("complete"+levelNames[levelIndex], 1);
+        PlayerPrefs.Save();
+        levelIndex += 1;
+        GameObject stageCompleteMenu = gameObject.transform.parent.Find("StageCompleteMenu").gameObject;
+        stageCompleteMenu.SetActive(true);
+        if (levelIndex == levelNames.Length) {
+            stageCompleteMenu.transform.Find("Panel/NextStage_Button").gameObject.SetActive(false);
+        }
+    }
+
     public void OnClicked(PointerEventData data)
     {
         string name = EventSystem.current.currentSelectedGameObject.name;
@@ -41,6 +59,9 @@ public class LevelUIController : MonoBehaviour
         }
         else if (name == "QuitToMenu_Button") {
             StartCoroutine(ChangeScene("MainMenu"));
+        }
+        else if (name == "NextStage_Button") {
+
         }
     }
 
