@@ -194,7 +194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 454422597}
   - component: {fileID: 454422596}
-  - component: {fileID: 454422595}
+  - component: {fileID: 454422598}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -202,35 +202,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &454422595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454422594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 213c27cdcc9501245bc27900ff82b78c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyConstants: {fileID: 11400000, guid: 2c8f5b28e8bd0cb43a7087e374e7223f, type: 2}
-  keyMapper: {fileID: 0}
-  SpawnPowerup:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 1f37efc017da1254faf0ea7eb9988396, type: 2}
-        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &454422596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,8 +218,8 @@ MonoBehaviour:
   Response:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 454422595}
-        m_TargetAssemblyTypeName: EnemySpawner1_2, Assembly-CSharp
+      - m_Target: {fileID: 454422598}
+        m_TargetAssemblyTypeName: EnemySpawner1_3, Assembly-CSharp
         m_MethodName: enemyDead
         m_Mode: 1
         m_Arguments:
@@ -273,6 +244,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &454422598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454422594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4d9b16b4794164e949974fdf74aa7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyConstants: {fileID: 11400000, guid: 2c8f5b28e8bd0cb43a7087e374e7223f, type: 2}
+  keyMapper: {fileID: 0}
+  SpawnPowerup:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &552680398
 PrefabInstance:
   m_ObjectHideFlags: 0

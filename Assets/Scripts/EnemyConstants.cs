@@ -8,6 +8,7 @@ public class EnemyConstants : ScriptableObject
     public GameObject chickenMovingPrefab;
     public GameObject chickenThrowingPrefab;
     public GameObject clownMilkPrefab;
+    public GameObject bigMacPrefab;
     public GameObject enemyTypeAPrefab;
     public GameObject boss1_BPrefab;
     public GameObject boss2_BPrefab;
@@ -28,6 +29,9 @@ public class EnemyConstants : ScriptableObject
     // Level 1-2 Spawn
     public int redBallSpawnCount = 5;
     public int[] spawnSequence1_2 = {2, 3, 4};
+
+    // Level 1-3 Spawn
+    public int[] spawnSequence1_3 = {2, 2, 2};
 
     // Level 1-B
     public int boss1_B_Health = 10;

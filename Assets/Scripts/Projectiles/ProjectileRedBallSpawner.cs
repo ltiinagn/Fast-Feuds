@@ -17,7 +17,7 @@ public class ProjectileRedBallSpawner : MonoBehaviour
         if (item != null) {
             //set position, and other necessary states
             item.transform.position = this.transform.position;
-            var redBallController = item.transform.Find("BoxCollider").GetComponent<RedBallController>();
+            var redBallController = item.transform.Find("BoxCollider").GetComponent<ProjectileRedBallController>();
             redBallController.direction = direction;
             redBallController.endPosition = endPosition;
             redBallController.spawner = this;
