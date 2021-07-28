@@ -14,9 +14,12 @@ public class CharacterController : MonoBehaviour
     GameObject dialogueBox;
     Dictionary<string, Vector3> keyMap;
 
-    HashSet<string> spriteNames = new HashSet<string> {"Body", "LeftLeg", "RightLeg"};
-    List<SpriteRenderer> sprites = new List<SpriteRenderer> {};
+    // HashSet<string> spriteNames = new HashSet<string> {"Body", "LeftHand", "RightHand", "LeftLeg", "RightLeg", "DetachedLeftLeg", "DetachedRightLeg", "SoundBarrier"};
+    // List<SpriteRenderer> sprites = new List<SpriteRenderer> {};
+    private Transform sprite;
+    private Animator characterAnimator;
     Vector3 prevPos;
+    bool faceRight = false;
     bool invulnerable;
     bool invulnerablePowerup;
     float speed;
@@ -28,14 +31,19 @@ public class CharacterController : MonoBehaviour
         invulnerablePowerup = false;
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
-        foreach (Transform sprite in gameObject.transform.parent.Find("Sprite")) {
-            if (spriteNames.Contains(sprite.name)) {
-                sprites.Add(sprite.GetComponent<SpriteRenderer>());
-            }
-        };
+        // foreach (Transform sprite in gameObject.transform.parent.Find("Sprite"))
+        // {
+        //     if (spriteNames.Contains(sprite.name)) {
+        //         sprites.Add(sprite.GetComponent<SpriteRenderer>());
+        //     }
+        // };
         prevPos = this.transform.position;
         speed = characterConstants.characterSpeed;
         dialogueBox = GameObject.Find("UI/Dialogue");
+        sprite = gameObject.transform.parent.Find("Sprite").transform;
+        sprite.Rotate(new Vector3(0, 180, 0));
+        faceRight = true;
+        characterAnimator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -43,9 +51,12 @@ public class CharacterController : MonoBehaviour
     {
         if (!dialogueBox.active && Input.anyKeyDown)
         {
-            foreach (KeyValuePair<string, Vector3> control in keyMap) {
-                if (Input.GetKeyDown(control.Key)) {
-                    if (control.Value != prevPos && !invulnerable) {
+            foreach (KeyValuePair<string, Vector3> control in keyMap)
+            {
+                if (Input.GetKeyDown(control.Key))
+                {
+                    if (control.Value != prevPos && !invulnerable)
+                    {
                         StartCoroutine(moveCharacter(prevPos, control.Value));
                     }
                 }
@@ -53,13 +64,17 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    IEnumerator moveCharacter(Vector3 from, Vector3 to) {
+    IEnumerator moveCharacter(Vector3 from, Vector3 to)
+    {
         float startTime = Time.time;
         float distance = Vector3.Distance(from, to);
-        int direction = from.x - to.x > 0 ? 0 : 1;
-        foreach (SpriteRenderer spriteRenderer in sprites) {
-            spriteRenderer.flipX = direction == 1 ? true : false;
+        bool moveRight = from.x - to.x < 0 ? true : false;
+        if (moveRight != faceRight)
+        {
+            faceRight = !faceRight;
+            sprite.Rotate(new Vector3(0, 180, 0));
         }
+        characterAnimator.SetBool("isMoving", true);
         invulnerable = true;
         float fracDist = 0;
 
@@ -73,8 +88,10 @@ public class CharacterController : MonoBehaviour
 
             // RaycastHit[] hits;
             // hits = Physics.RaycastAll(prevPos, dir, dist);
-            // foreach (RaycastHit hit in hits) {
-            //     if (hit.transform.tag != "TileDanger" && hit.transform.tag != "Bullet1") {
+            // foreach (RaycastHit hit in hits)
+            // {
+            //     if (hit.transform.tag != "TileDanger" && hit.transform.tag != "Bullet1")
+            //     {
             //         Debug.Log(hit.transform.tag);
             //         hit.transform.gameObject.SendMessage("OnTriggerEnter", hit.collider);
             //     }
@@ -83,37 +100,48 @@ public class CharacterController : MonoBehaviour
 
             yield return null;
         }
+        characterAnimator.SetBool("isMoving", false);
         invulnerable = false;
         onCharacterMove.Invoke();
     }
 
-    IEnumerator StartInvulnerablePowerup() {
+    IEnumerator StartInvulnerablePowerup()
+    {
         invulnerablePowerup = true;
         yield return new WaitForSeconds(gameConstants.invulnerablePowerupDuration);
         invulnerablePowerup = false;
     }
 
-    void OnTriggerEnter(Collider col) {
-        if (col.gameObject.CompareTag("Powerup")) {
-            if (col.gameObject.name == "PowerupInvulnerable") {
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.CompareTag("Powerup"))
+        {
+            if (col.gameObject.name == "PowerupInvulnerable") 
+            {
                 StartCoroutine(StartInvulnerablePowerup());
                 col.gameObject.SendMessage("UsePowerup");
             }
-            else if (col.gameObject.name == "PowerupDestroyAllEnemies") {
+            else if (col.gameObject.name == "PowerupDestroyAllEnemies")
+            {
                 col.gameObject.SendMessage("UsePowerup");
             }
-            else if (col.gameObject.name == "PowerupAddHealth") {
+            else if (col.gameObject.name == "PowerupAddHealth") 
+            {
                 col.gameObject.SendMessage("UsePowerup");
                 onCharacterAddHealth.Invoke();
             }
             // onCharacterHit.Invoke();
         }
-        else {
-            if (!invulnerable && !invulnerablePowerup) {
-                if (col.gameObject.CompareTag("TileDanger")) {
+        else 
+        {
+            if (!invulnerable && !invulnerablePowerup)
+            {
+                if (col.gameObject.CompareTag("TileDanger")) 
+                {
                     onCharacterHit.Invoke();
                 }
-                else if (col.gameObject.CompareTag("Bullet1")) {
+                else if (col.gameObject.CompareTag("Bullet1"))
+                {
                     col.gameObject.SendMessage("SetInactive");
                     onCharacterHit.Invoke();
                 }
@@ -121,7 +149,8 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    public void playerDeath() {
+    public void playerDeath() 
+    {
         Destroy(gameObject.transform.parent.gameObject);
     }
 }
