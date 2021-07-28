@@ -26,11 +26,13 @@ public class ChickenThrowingController : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider col) {
-        health -= 1;
-        Debug.Log("damaged by character!");
-        if (health == 0) {
-            onEnemyDeath.Invoke();
-            Destroy(gameObject.transform.parent.gameObject);
+        if (col.gameObject.CompareTag("Character")) {
+            health -= 1;
+            Debug.Log("damaged by character!");
+            if (health == 0) {
+                onEnemyDeath.Invoke();
+                Destroy(gameObject.transform.parent.gameObject);
+            }
         }
     }
 }

@@ -10,6 +10,8 @@ TagManager:
   - Powerup
   - Enemy
   - Projectile
+  - Character
+  - Obstacle
   layers:
   - Default
   - TransparentFX

@@ -12,7 +12,7 @@ public class BulletSpawner : MonoBehaviour
         if (item != null) {
             //set position, and other necessary states
             item.transform.position = this.transform.position;
-            item.transform.Find("BoxCollider").GetComponent<BulletController>().direction = direction;
+            item.transform.Find("BoxCollider").GetComponent<ProjectileBoneController>().direction = direction;
             item.SetActive(true);
         }
         else {

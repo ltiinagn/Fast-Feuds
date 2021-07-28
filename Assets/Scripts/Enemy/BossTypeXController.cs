@@ -27,7 +27,6 @@ public class BossTypeXController : MonoBehaviour
     void Update()
     {
         if (lastHits && Input.GetKeyDown("space")) {
-            Debug.Log("HIT");
             lastHits = false;
             health -= 1;
 

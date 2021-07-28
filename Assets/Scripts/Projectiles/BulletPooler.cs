@@ -4,7 +4,9 @@ using UnityEngine;
 
 public enum BulletType {
 	bullet1 = 0,
-    bone = 1
+    bone = 1,
+    redBall = 2,
+    bigMacSauce = 3
 }
 
 [System.Serializable]

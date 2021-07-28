@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ChickenStationaryController : MonoBehaviour
+public class ClownMilkController : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
     public UnityEvent onEnemyDeath;
     private int health;
-    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
-        health = enemyConstants.chickenStationaryHealth;
-        audioSource = GetComponent<AudioSource>();
+        health = enemyConstants.enemyHealth;
+        int direction = Random.Range(0, 2);
+        if (direction == 1) {
+            gameObject.transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX = true;
+        }
     }
 
     // Update is called once per frame
@@ -23,15 +25,11 @@ public class ChickenStationaryController : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.CompareTag("Character"))
-        {
+    void OnTriggerEnter(Collider col) {
+        if (col.gameObject.CompareTag("Character")) {
             health -= 1;
             Debug.Log("damaged by character!");
-            if (health == 0)
-            {
-                audioSource.PlayOneShot(audioSource.clip);
+            if (health == 0) {
                 onEnemyDeath.Invoke();
                 Destroy(gameObject.transform.parent.gameObject);
             }
