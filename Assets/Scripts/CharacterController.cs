@@ -14,15 +14,16 @@ public class CharacterController : MonoBehaviour
     GameObject dialogueBox;
     Dictionary<string, Vector3> keyMap;
 
-    // HashSet<string> spriteNames = new HashSet<string> {"Body", "LeftHand", "RightHand", "LeftLeg", "RightLeg", "DetachedLeftLeg", "DetachedRightLeg", "SoundBarrier"};
-    // List<SpriteRenderer> sprites = new List<SpriteRenderer> {};
+
     private Transform sprite;
-    private Animator characterAnimator;
     Vector3 prevPos;
     bool faceRight = false;
     bool invulnerable;
     bool invulnerablePowerup;
     float speed;
+    private Animator characterAnimator;
+    private AudioSource characterAudio;
+    public AudioClip[] movementAudioClips;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +32,6 @@ public class CharacterController : MonoBehaviour
         invulnerablePowerup = false;
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
-        // foreach (Transform sprite in gameObject.transform.parent.Find("Sprite"))
-        // {
-        //     if (spriteNames.Contains(sprite.name)) {
-        //         sprites.Add(sprite.GetComponent<SpriteRenderer>());
-        //     }
-        // };
         prevPos = this.transform.position;
         speed = characterConstants.characterSpeed;
         dialogueBox = GameObject.Find("UI/Dialogue");
@@ -44,6 +39,7 @@ public class CharacterController : MonoBehaviour
         sprite.Rotate(new Vector3(0, 180, 0));
         faceRight = true;
         characterAnimator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
+        characterAudio = gameObject.transform.parent.Find("AudioSource").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -76,6 +72,7 @@ public class CharacterController : MonoBehaviour
         }
         characterAnimator.SetBool("isMoving", true);
         invulnerable = true;
+        characterAudio.PlayOneShot(movementAudioClips[Random.Range(0, movementAudioClips.Length)]);
         float fracDist = 0;
 
         while (fracDist < 1) {
