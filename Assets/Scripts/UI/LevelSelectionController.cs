@@ -13,7 +13,6 @@ public class LevelSelectionController : MonoBehaviour
         // if (name == "SkillPoints")
         // {
         //     eachChild.gameObject.SetActive(false);
-
         // }
     }
 
