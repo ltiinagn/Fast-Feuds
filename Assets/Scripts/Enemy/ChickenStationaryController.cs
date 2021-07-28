@@ -8,11 +8,13 @@ public class ChickenStationaryController : MonoBehaviour
     public EnemyConstants enemyConstants;
     public UnityEvent onEnemyDeath;
     private int health;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         health = enemyConstants.chickenStationaryHealth;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,10 +23,12 @@ public class ChickenStationaryController : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider col) {
+    void OnTriggerEnter(Collider col)
+    {
         health -= 1;
         Debug.Log("damaged by character!");
         if (health == 0) {
+            audioSource.PlayOneShot(audioSource.clip);
             onEnemyDeath.Invoke();
             Destroy(gameObject.transform.parent.gameObject);
         }
