@@ -7,6 +7,7 @@ public class EnemyConstants : ScriptableObject
     public GameObject chickenStationaryPrefab;
     public GameObject chickenMovingPrefab;
     public GameObject chickenThrowingPrefab;
+    public GameObject chickenMovingExplodingPrefab;
     public GameObject clownMilkPrefab;
     public GameObject bigMacPrefab;
     public GameObject shooterPrefab;
@@ -21,11 +22,13 @@ public class EnemyConstants : ScriptableObject
     public int[][] spawnSequence1_1 = new int[][] {
         new int[] {1},
         new int[] {1},
+        new int[] {1},
         new int[] {1}
     };
     // public int[][] spawnSequence1_1 = new int[][] {
     //     new int[] {1, 2, 3, 4, 10},
     //     new int[] {1, 2, 3, 4, 10},
+    //     new int[] {1, 2, 3, 4},
     //     new int[] {1, 2, 3, 4}
     // };
 

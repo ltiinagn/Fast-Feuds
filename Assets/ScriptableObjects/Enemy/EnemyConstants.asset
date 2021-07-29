@@ -15,6 +15,7 @@ MonoBehaviour:
   chickenStationaryPrefab: {fileID: 629230319408024095, guid: 42d2ff474e50ef84fbdded0bc14e20b4, type: 3}
   chickenMovingPrefab: {fileID: 2256729703954811346, guid: 0c1acca57baea8d4fa1278f8764f664b, type: 3}
   chickenThrowingPrefab: {fileID: 629230319408024095, guid: d7c4f2cfc61842a429800a694a02fa76, type: 3}
+  chickenMovingExplodingPrefab: {fileID: 2256729703954811346, guid: 3bec79e0244c4cb4598647c70da9934f, type: 3}
   clownMilkPrefab: {fileID: 629230319408024095, guid: a8ae9e3bfffdac348b6766e5899b1be3, type: 3}
   bigMacPrefab: {fileID: 629230319408024095, guid: 225089b5af826ff469f9efcb1ba9bd1e, type: 3}
   shooterPrefab: {fileID: 629230319408024095, guid: 71306ef2e27e8de4681ab040a08b4131, type: 3}

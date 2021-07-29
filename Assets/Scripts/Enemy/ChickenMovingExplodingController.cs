@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ChickenMovingExplodingontroller : MonoBehaviour
+public class ChickenMovingExplodingController : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
     public UnityEvent onEnemyDeath;
     public GameObject keyMapper;
+    public GameObject projectileSpawner;
     Dictionary<string, Vector3> keyMap;
     List<Vector3> keyList;
+
+    public GameObject character;
 
     HashSet<string> spriteNames = new HashSet<string> {"Body"};
     List<SpriteRenderer> sprites = new List<SpriteRenderer> {};
@@ -17,6 +20,7 @@ public class ChickenMovingExplodingontroller : MonoBehaviour
     private Vector3 start;
     private Vector3 end;
     private float speed;
+    private bool explode;
 
     // Start is called before the first frame update
     void Start()
@@ -29,54 +33,54 @@ public class ChickenMovingExplodingontroller : MonoBehaviour
                 sprites.Add(sprite.GetComponent<SpriteRenderer>());
             }
         };
+        character = GameObject.Find("Character");
+        projectileSpawner = gameObject.transform.parent.Find("ProjectileBoneExplodeSpawner").gameObject;
         health = enemyConstants.chickenMovingHealth;
         start = transform.position;
         keyList.Remove(start);
         end = keyList[Random.Range(0, keyList.Count)];
         speed = 2.0f;
+        explode = false;
         StartCoroutine(moveEnemyLoop());
     }
 
     IEnumerator moveEnemyLoop() {
-        while (true) {
-            yield return moveEnemy(start, end);
-            yield return moveEnemy(end, start);
+        while (!explode) {
+            start = transform.position;
+            end = character.transform.position;
+            moveEnemy(start, end);
+            yield return null;
         }
     }
 
-    IEnumerator moveEnemy(Vector3 from, Vector3 to) {
-        float startTime;
-        float distance;
-        startTime = Time.time;
-        distance = Vector3.Distance(from, to);
-        int direction = from.x - to.x > 0 ? 0 : 1;
+    void moveEnemy(Vector3 from, Vector3 to) {
         foreach (SpriteRenderer spriteRenderer in sprites) {
-            spriteRenderer.flipX = direction == 1 ? true : false;
+            spriteRenderer.flipX = from.x - to.x > 0 ? true : false;
         }
-
-        while (true) {
-            float distCovered = (Time.time - startTime) * speed;
-            float fracDist = distCovered / distance;
-
-            gameObject.transform.parent.gameObject.transform.position = Vector3.Lerp(from, to, fracDist);
-
-            if (fracDist >= 1)
-                yield break;
-
-            yield return null;
-        }
+        Vector3 direction = (to - from).normalized;
+        to = from + direction;
+        float fracDist = Time.deltaTime * speed;
+        gameObject.transform.parent.gameObject.transform.position = Vector3.Lerp(from, to, fracDist);
     }
 
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    IEnumerator Explode() {
+        yield return new WaitForSeconds(1.0f);
     }
 
     void OnTriggerEnter(Collider col) {
-        if (col.gameObject.CompareTag("Character")) {
+        if (health > 0 && col.gameObject.CompareTag("Character")) {
             health -= 1;
             Debug.Log("damaged by character!");
             if (health == 0) {
+                explode = true;
+                // projectileSpawner.GetComponent<ProjectileBoneExplodeSpawner>().spawnProjectiles();
+                // StartCoroutine(Explode());
                 onEnemyDeath.Invoke();
                 Destroy(gameObject.transform.parent.gameObject);
             }
