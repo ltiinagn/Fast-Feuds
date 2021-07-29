@@ -11,17 +11,22 @@ public class DialogueController : MonoBehaviour
     private Text dialogueText;
     private string[] dialogue;
     private int dialogueProgress;
-    private int[] spawnSequence;
 
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 0.0f;
         dialogueBox = GameObject.Find("UI/Dialogue");
         dialogueText = dialogueBox.transform.Find("Panel/Dialogue_Text").GetComponent<Text>();
-        dialogue = gameConstants.dialogue1_1;
+        dialogue = gameConstants.dialogueDummy;
         dialogueProgress = 0;
-        LoadDialogue();
+        if (dialogue.Length != 0) {
+            LoadDialogue();
+        }
+        else {
+            dialogueBox.SetActive(false);
+            enemySpawner.SetActive(true);
+            gameObject.SetActive(false);
+        }
     }
 
     void LoadDialogue() {

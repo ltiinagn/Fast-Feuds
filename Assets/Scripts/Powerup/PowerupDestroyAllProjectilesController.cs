@@ -34,7 +34,7 @@ public class PowerupDestroyAllProjectilesController : MonoBehaviour
 
     void UsePowerup() {
         GameObject[] gameObjects;
-        gameObjects = GameObject.FindGameObjectsWithTag ("Projectiles");
+        gameObjects = GameObject.FindGameObjectsWithTag("Projectile");
         foreach (GameObject gameObject in gameObjects) {
             Destroy(gameObject);
         }

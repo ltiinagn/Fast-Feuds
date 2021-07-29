@@ -4,12 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - EnemyType1
+  - ChickenMoving
   - TileDanger
   - Bullet1
   - Powerup
   - Enemy
   - Projectile
+  - Character
+  - Obstacle
   layers:
   - Default
   - TransparentFX

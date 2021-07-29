@@ -1,0 +1,1296 @@
+fileFormatVersion: 2
+guid: d2f4c78d59140f44fa41481e97e48908
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -710283444348695264
+    second: keyboard test and enemies-02_0
+  - first:
+      213: 4738044036840596011
+    second: keyboard test and enemies-02_1
+  - first:
+      213: -5693699930279250069
+    second: keyboard test and enemies-02_2
+  - first:
+      213: -79140390312054839
+    second: keyboard test and enemies-02_3
+  - first:
+      213: 2144857731409435956
+    second: keyboard test and enemies-02_4
+  - first:
+      213: 540655050741478486
+    second: keyboard test and enemies-02_5
+  - first:
+      213: -7352058197596710202
+    second: keyboard test and enemies-02_6
+  - first:
+      213: 6273612564161544007
+    second: keyboard test and enemies-02_7
+  - first:
+      213: -5445853832470275702
+    second: keyboard test and enemies-02_8
+  - first:
+      213: 1492682006748988789
+    second: keyboard test and enemies-02_9
+  - first:
+      213: 3636310462663308397
+    second: keyboard test and enemies-02_10
+  - first:
+      213: 3015598901530625735
+    second: keyboard test and enemies-02_11
+  - first:
+      213: 1024344022080263062
+    second: keyboard test and enemies-02_12
+  - first:
+      213: -7553654778699960936
+    second: keyboard test and enemies-02_13
+  - first:
+      213: 846484904867938246
+    second: keyboard test and enemies-02_14
+  - first:
+      213: -5461125548539851831
+    second: keyboard test and enemies-02_15
+  - first:
+      213: -3178543444915331346
+    second: keyboard test and enemies-02_16
+  - first:
+      213: -3401273034131329598
+    second: keyboard test and enemies-02_17
+  - first:
+      213: 3195646572250269525
+    second: keyboard test and enemies-02_18
+  - first:
+      213: -3108304341027171771
+    second: keyboard test and enemies-02_19
+  - first:
+      213: -6844927300891156498
+    second: keyboard test and enemies-02_20
+  - first:
+      213: -1796382501309743532
+    second: keyboard test and enemies-02_21
+  - first:
+      213: 8348100810323929072
+    second: keyboard test and enemies-02_22
+  - first:
+      213: -6116010774694380858
+    second: keyboard test and enemies-02_23
+  - first:
+      213: -7552849904084631150
+    second: keyboard test and enemies-02_24
+  - first:
+      213: -8043250369933606625
+    second: keyboard test and enemies-02_25
+  - first:
+      213: -1463481837049441407
+    second: keyboard test and enemies-02_26
+  - first:
+      213: 4094947725512850343
+    second: keyboard test and enemies-02_27
+  - first:
+      213: -8597943725304775859
+    second: keyboard test and enemies-02_28
+  - first:
+      213: -2049669262293806493
+    second: keyboard test and enemies-02_29
+  - first:
+      213: -3694735619257963590
+    second: keyboard test and enemies-02_30
+  - first:
+      213: -1295488389469245516
+    second: keyboard test and enemies-02_31
+  - first:
+      213: 7882322917598032652
+    second: keyboard test and enemies-02_32
+  - first:
+      213: 7664817376237617376
+    second: keyboard test and enemies-02_33
+  - first:
+      213: 6893598115265633075
+    second: keyboard test and enemies-02_34
+  - first:
+      213: 2058103497972285486
+    second: keyboard test and enemies-02_35
+  - first:
+      213: 5132476263559317151
+    second: keyboard test and enemies-02_36
+  - first:
+      213: -1474989216289679465
+    second: keyboard test and enemies-02_37
+  - first:
+      213: -6101289556103516157
+    second: keyboard test and enemies-02_38
+  - first:
+      213: -2876387237360597188
+    second: keyboard test and enemies-02_39
+  - first:
+      213: -2104897439568675309
+    second: keyboard test and enemies-02_40
+  - first:
+      213: -4862579858758992287
+    second: keyboard test and enemies-02_41
+  - first:
+      213: -852407255015781777
+    second: keyboard test and enemies-02_42
+  - first:
+      213: 1323883068061102383
+    second: keyboard test and enemies-02_43
+  - first:
+      213: 8428721855650352528
+    second: keyboard test and enemies-02_44
+  - first:
+      213: -9110201143834578321
+    second: keyboard test and enemies-02_45
+  - first:
+      213: 1307862022305269925
+    second: keyboard test and enemies-02_46
+  - first:
+      213: 7279760711467431056
+    second: keyboard test and enemies-02_47
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_0
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 2647
+        width: 1407
+        height: 1733
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d41c978f09426f0800000000000000
+      internalID: -710283444348695264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_1
+      rect:
+        serializedVersion: 2
+        x: 1650
+        y: 2584
+        width: 1995
+        height: 1201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b22aa02c2f9e0c140800000000000000
+      internalID: 4738044036840596011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_2
+      rect:
+        serializedVersion: 2
+        x: 4021
+        y: 2830
+        width: 1276
+        height: 1201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b67f906741aebf0b0800000000000000
+      internalID: -5693699930279250069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_3
+      rect:
+        serializedVersion: 2
+        x: 5298
+        y: 2952
+        width: 940
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf601cfb36d6eef0800000000000000
+      internalID: -79140390312054839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_4
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 1861
+        width: 441
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43dd8662eb014cd10800000000000000
+      internalID: 2144857731409435956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_5
+      rect:
+        serializedVersion: 2
+        x: 2499
+        y: 1861
+        width: 441
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 654777577eac08700800000000000000
+      internalID: 540655050741478486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_6
+      rect:
+        serializedVersion: 2
+        x: 2988
+        y: 1861
+        width: 441
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cadf3ca50e38f990800000000000000
+      internalID: -7352058197596710202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_7
+      rect:
+        serializedVersion: 2
+        x: 3482
+        y: 1861
+        width: 436
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74fb6495369501750800000000000000
+      internalID: 6273612564161544007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_8
+      rect:
+        serializedVersion: 2
+        x: 3971
+        y: 1861
+        width: 435
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a89d8e0fac07c64b0800000000000000
+      internalID: -5445853832470275702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_9
+      rect:
+        serializedVersion: 2
+        x: 4460
+        y: 1861
+        width: 435
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57504e6606217b410800000000000000
+      internalID: 1492682006748988789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_10
+      rect:
+        serializedVersion: 2
+        x: 4948
+        y: 1861
+        width: 442
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d64351c8915c67230800000000000000
+      internalID: 3636310462663308397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_11
+      rect:
+        serializedVersion: 2
+        x: 5437
+        y: 1861
+        width: 441
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c68ace393f89d920800000000000000
+      internalID: 3015598901530625735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_12
+      rect:
+        serializedVersion: 2
+        x: 5926
+        y: 1861
+        width: 441
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69393ebf573373e00800000000000000
+      internalID: 1024344022080263062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_13
+      rect:
+        serializedVersion: 2
+        x: 6415
+        y: 1861
+        width: 441
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89d28afeff60c2790800000000000000
+      internalID: -7553654778699960936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_14
+      rect:
+        serializedVersion: 2
+        x: 6904
+        y: 1861
+        width: 441
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf326e39815fbb00800000000000000
+      internalID: 846484904867938246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_15
+      rect:
+        serializedVersion: 2
+        x: 7393
+        y: 1861
+        width: 441
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cbc8757f3f2634b0800000000000000
+      internalID: -5461125548539851831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_16
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 401
+        width: 2192
+        height: 1201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeedca6d39b83e3d0800000000000000
+      internalID: -3178543444915331346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_17
+      rect:
+        serializedVersion: 2
+        x: 2270
+        y: 1339
+        width: 436
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cdac7832304cc0d0800000000000000
+      internalID: -3401273034131329598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_18
+      rect:
+        serializedVersion: 2
+        x: 2759
+        y: 1339
+        width: 436
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5570cae40a7395c20800000000000000
+      internalID: 3195646572250269525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_19
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 1339
+        width: 436
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 542554b9ba51dd4d0800000000000000
+      internalID: -3108304341027171771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_20
+      rect:
+        serializedVersion: 2
+        x: 3737
+        y: 1339
+        width: 441
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eef5205c2eee101a0800000000000000
+      internalID: -6844927300891156498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_21
+      rect:
+        serializedVersion: 2
+        x: 4226
+        y: 1339
+        width: 441
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45e74b8f1a7f117e0800000000000000
+      internalID: -1796382501309743532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_22
+      rect:
+        serializedVersion: 2
+        x: 4715
+        y: 1339
+        width: 441
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f72284f4796ad370800000000000000
+      internalID: 8348100810323929072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_23
+      rect:
+        serializedVersion: 2
+        x: 5204
+        y: 1339
+        width: 441
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca31ebba909f1ba0800000000000000
+      internalID: -6116010774694380858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_24
+      rect:
+        serializedVersion: 2
+        x: 5692
+        y: 1339
+        width: 442
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29141396703ee2790800000000000000
+      internalID: -7552849904084631150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_25
+      rect:
+        serializedVersion: 2
+        x: 6181
+        y: 1339
+        width: 441
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11049c4762a06090800000000000000
+      internalID: -8043250369933606625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_26
+      rect:
+        serializedVersion: 2
+        x: 6675
+        y: 1339
+        width: 436
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1839e67e50ba0bbe0800000000000000
+      internalID: -1463481837049441407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_27
+      rect:
+        serializedVersion: 2
+        x: 7164
+        y: 1339
+        width: 436
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7abbcf8a24d24d830800000000000000
+      internalID: 4094947725512850343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_28
+      rect:
+        serializedVersion: 2
+        x: 2354
+        y: 809
+        width: 441
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4bf8665cb7fda880800000000000000
+      internalID: -8597943725304775859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_29
+      rect:
+        serializedVersion: 2
+        x: 2843
+        y: 809
+        width: 441
+        height: 469
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362d0f16aac1e83e0800000000000000
+      internalID: -2049669262293806493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_30
+      rect:
+        serializedVersion: 2
+        x: 3332
+        y: 809
+        width: 440
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb6523a789a9bcc0800000000000000
+      internalID: -3694735619257963590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_31
+      rect:
+        serializedVersion: 2
+        x: 3822
+        y: 803
+        width: 437
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bfea0f6c20850ee0800000000000000
+      internalID: -1295488389469245516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_32
+      rect:
+        serializedVersion: 2
+        x: 4313
+        y: 809
+        width: 437
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c03f9546ee2a36d60800000000000000
+      internalID: 7882322917598032652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_33
+      rect:
+        serializedVersion: 2
+        x: 4803
+        y: 808
+        width: 436
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e082e23bc6ee5a60800000000000000
+      internalID: 7664817376237617376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_34
+      rect:
+        serializedVersion: 2
+        x: 5292
+        y: 808
+        width: 436
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33bd5b446fafaaf50800000000000000
+      internalID: 6893598115265633075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_35
+      rect:
+        serializedVersion: 2
+        x: 5781
+        y: 808
+        width: 436
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2080a32a3adf8c10800000000000000
+      internalID: 2058103497972285486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_36
+      rect:
+        serializedVersion: 2
+        x: 6270
+        y: 809
+        width: 442
+        height: 470
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f96c39bf7f73a3740800000000000000
+      internalID: 5132476263559317151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_37
+      rect:
+        serializedVersion: 2
+        x: 6759
+        y: 808
+        width: 441
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79795836f19c78be0800000000000000
+      internalID: -1474989216289679465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_38
+      rect:
+        serializedVersion: 2
+        x: 2581
+        y: 293
+        width: 441
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30036a8897dd35ba0800000000000000
+      internalID: -6101289556103516157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_39
+      rect:
+        serializedVersion: 2
+        x: 3070
+        y: 293
+        width: 441
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3787a02c050518d0800000000000000
+      internalID: -2876387237360597188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_40
+      rect:
+        serializedVersion: 2
+        x: 3559
+        y: 293
+        width: 441
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31e31e15ee6e9c2e0800000000000000
+      internalID: -2104897439568675309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_41
+      rect:
+        serializedVersion: 2
+        x: 4047
+        y: 293
+        width: 441
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e73baa165a48cb0800000000000000
+      internalID: -4862579858758992287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_42
+      rect:
+        serializedVersion: 2
+        x: 4536
+        y: 293
+        width: 441
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a81d82e14ab24f0800000000000000
+      internalID: -852407255015781777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_43
+      rect:
+        serializedVersion: 2
+        x: 5025
+        y: 293
+        width: 441
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f21bfebd2a06f5210800000000000000
+      internalID: 1323883068061102383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_44
+      rect:
+        serializedVersion: 2
+        x: 5519
+        y: 293
+        width: 436
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09d4c94ded5d8f470800000000000000
+      internalID: 8428721855650352528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_45
+      rect:
+        serializedVersion: 2
+        x: 6008
+        y: 293
+        width: 436
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f62f16dd350129180800000000000000
+      internalID: -9110201143834578321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_46
+      rect:
+        serializedVersion: 2
+        x: 6497
+        y: 293
+        width: 436
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a8cab67495762210800000000000000
+      internalID: 1307862022305269925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: keyboard test and enemies-02_47
+      rect:
+        serializedVersion: 2
+        x: 7368
+        y: 293
+        width: 436
+        height: 475
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0947cd81cc7e60560800000000000000
+      internalID: 7279760711467431056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ee4516f8f83f2f14b8fb2187f46746e6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
