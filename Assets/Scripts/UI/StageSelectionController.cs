@@ -34,6 +34,7 @@ public class StageSelectionController : MonoBehaviour
         if (name == "SkillTree_Button") {
             skillTree.SetActive(!skillTree.activeSelf);
             skill_IncreaseStartingHealth = PlayerPrefs.GetInt("skill_IncreaseStartingHealth");
+            //if skill 1/2/3 selected
         }
         else if (name == "SkillIncreaseStartingHealth_Button") {
             skill_IncreaseStartingHealth += 1;
@@ -45,6 +46,10 @@ public class StageSelectionController : MonoBehaviour
         else if (name == "ClearSave_Button") {
             PlayerPrefs.DeleteAll();
         }
+        // else if(name == "Skill1Select"){
+
+        // }
+        //skilltree, level selection, clear save, back (for debug prolly)
         else {
             StartCoroutine(ChangeScene(name.Split('_')[0]));
         }
@@ -59,4 +64,6 @@ public class StageSelectionController : MonoBehaviour
             yield return null;
         }
     }
+
+
 }

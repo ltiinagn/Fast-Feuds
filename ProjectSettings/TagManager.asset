@@ -10,6 +10,8 @@ TagManager:
   - Powerup
   - Enemy
   - Projectile
+  - SkillPoints
+  - SkillSelect
   - Character
   - Obstacle
   - EnemyCollider
@@ -22,7 +24,8 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - 
+  - bgoverlay
+  - UIShape
   - 
   - 
   - 
