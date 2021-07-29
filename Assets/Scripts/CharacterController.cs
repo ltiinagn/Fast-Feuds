@@ -26,6 +26,7 @@ public class CharacterController : MonoBehaviour
     public AudioClip[] movementAudioClips;
     public AudioClip[] gruntingAudioClips;
     public AudioClip[] punchingAudioClips;
+    public AudioClip[] ouchAudioClips;
 
     // Start is called before the first frame update
     void Start()
@@ -114,7 +115,7 @@ public class CharacterController : MonoBehaviour
             // hits = Physics.RaycastAll(prevPos, dir, dist);
             // foreach (RaycastHit hit in hits)
             // {
-            //     if (hit.transform.tag != "TileDanger" && hit.transform.tag != "Bullet1")
+            //     if (hit.transform.tag != "TileDanger" && hit.transform.tag != "ProjectileCollider")
             //     {
             //         Debug.Log(hit.transform.tag);
             //         hit.transform.gameObject.SendMessage("OnTriggerEnter", hit.collider);
@@ -167,10 +168,12 @@ public class CharacterController : MonoBehaviour
             {
                 if (col.gameObject.CompareTag("TileDanger")) 
                 {
+                    characterAudio.PlayOneShot(ouchAudioClips[Random.Range(0, ouchAudioClips.Length)]);
                     onCharacterHit.Invoke();
                 }
-                else if (col.gameObject.CompareTag("Bullet1"))
+                else if (col.gameObject.CompareTag("ProjectileCollider"))
                 {
+                    characterAudio.PlayOneShot(ouchAudioClips[Random.Range(0, ouchAudioClips.Length)]);
                     col.gameObject.SendMessage("SetInactive");
                     onCharacterHit.Invoke();
                 }
