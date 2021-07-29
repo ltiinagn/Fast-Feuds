@@ -4,14 +4,18 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - EnemyType1
+  - ChickenMoving
   - TileDanger
-  - Bullet1
+  - ProjectileCollider
   - Powerup
   - Enemy
   - Projectile
   - SkillPoints
   - SkillSelect
+  - Character
+  - Obstacle
+  - EnemyCollider
+  - Bullet1
   layers:
   - Default
   - TransparentFX
@@ -20,11 +24,8 @@ TagManager:
   - Water
   - UI
   - Enemy
-<<<<<<< Updated upstream
   - bgoverlay
-=======
   - UIShape
->>>>>>> Stashed changes
   - 
   - 
   - 

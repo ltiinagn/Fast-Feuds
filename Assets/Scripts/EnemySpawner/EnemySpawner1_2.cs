@@ -30,16 +30,44 @@ public class EnemySpawner1_2 : MonoBehaviour
     }
 
     void spawnEnemies() {
-        // Instantiate(enemyConstants.enemyType0Prefab, new Vector3(2,0,0), Quaternion.identity);
+        // Instantiate(enemyConstants.chickenStationaryPrefab, new Vector3(2,0,0), Quaternion.identity);
         for (int count = 0; count < spawnSequence[progress]; count++) {
             spawnEnemy();
         }
     }
 
-    void spawnEnemy() {
+    IEnumerator spawnClownMilkPair() {
         int index = Random.Range(0, keyList.Count);
-        Instantiate(enemyConstants.enemyType1Prefab, keyList[index], Quaternion.identity);
+        GameObject clownMilk1 = Instantiate(enemyConstants.clownMilkPrefab, keyList[index], Quaternion.identity);
         keyList.RemoveAt(index);
+        
+        index = Random.Range(0, keyList.Count);
+        GameObject clownMilk2 = Instantiate(enemyConstants.clownMilkPrefab, keyList[index], Quaternion.identity);
+        keyList.RemoveAt(index);
+
+        ClownMilkController clownMilk1Controller = clownMilk1.transform.Find("BoxCollider").GetComponent<ClownMilkController>();
+        clownMilk1Controller.otherPair = clownMilk2;
+
+        ClownMilkController clownMilk2Controller = clownMilk2.transform.Find("BoxCollider").GetComponent<ClownMilkController>();
+        clownMilk2Controller.otherPair = clownMilk1;
+        
+        ProjectileRedBallSpawner clownMilk1RedBallSpawner = clownMilk1.transform.Find("ProjectileRedBallSpawner").GetComponent<ProjectileRedBallSpawner>();
+        clownMilk1RedBallSpawner.direction = (clownMilk2.transform.position - clownMilk1.transform.position).normalized;
+        clownMilk1RedBallSpawner.endPosition = clownMilk2.transform.position;
+        clownMilk1RedBallSpawner.shoot = true;
+
+        var clownMilk2RedBallSpawner = clownMilk2.transform.Find("ProjectileRedBallSpawner").GetComponent<ProjectileRedBallSpawner>();
+        clownMilk2RedBallSpawner.direction = (clownMilk1.transform.position - clownMilk2.transform.position).normalized;
+        clownMilk2RedBallSpawner.endPosition = clownMilk1.transform.position;
+        clownMilk2RedBallSpawner.shoot = false;
+
+        clownMilk1RedBallSpawner.otherPair = clownMilk2RedBallSpawner;
+        clownMilk2RedBallSpawner.otherPair = clownMilk1RedBallSpawner;
+        yield return null;
+    }
+
+    void spawnEnemy() {
+        StartCoroutine(spawnClownMilkPair());
     }
 
     IEnumerator spawnEnemiesWithDelay() {

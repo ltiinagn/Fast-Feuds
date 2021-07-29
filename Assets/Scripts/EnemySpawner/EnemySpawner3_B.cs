@@ -23,14 +23,14 @@ public class EnemySpawner3_B : MonoBehaviour
         character = GameObject.Find("Character");
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
-        spawnSequence = enemyConstants.spawnSequence1_1;
+        spawnSequence = enemyConstants.spawnSequence3_B;
         enemyCount = spawnSequence[progress];
 
         StartCoroutine(WaitForNextSpawn());
     }
 
     // void spawnEnemies() {
-    //     // Instantiate(enemyConstants.enemyType0Prefab, new Vector3(2,0,0), Quaternion.identity);
+    //     // Instantiate(enemyConstants.chickenStationaryPrefab, new Vector3(2,0,0), Quaternion.identity);
     //     for (int count = 0; count < spawnSequence[progress]; count++) {
     //         spawnEnemy();
     //     }
@@ -38,7 +38,7 @@ public class EnemySpawner3_B : MonoBehaviour
 
     // void spawnEnemy() {
     //     int index = Random.Range(0, keyList.Count);
-    //     Instantiate(movable ? enemyConstants.enemyType1Prefab : enemyConstants.enemyType0Prefab, keyList[index], Quaternion.identity);
+    //     Instantiate(movable ? enemyConstants.chickenMovingPrefab : enemyConstants.chickenStationaryPrefab, keyList[index], Quaternion.identity);
     //     keyList.RemoveAt(index);
     // }
 

@@ -30,7 +30,7 @@ public class EnemySpawner2_B : MonoBehaviour
     }
 
     // void spawnEnemies() {
-    //     // Instantiate(enemyConstants.enemyType0Prefab, new Vector3(2,0,0), Quaternion.identity);
+    //     // Instantiate(enemyConstants.chickenStationaryPrefab, new Vector3(2,0,0), Quaternion.identity);
     //     for (int count = 0; count < spawnSequence[progress]; count++) {
     //         spawnEnemy();
     //     }
@@ -38,7 +38,7 @@ public class EnemySpawner2_B : MonoBehaviour
 
     // void spawnEnemy() {
     //     int index = Random.Range(0, keyList.Count);
-    //     Instantiate(movable ? enemyConstants.enemyType1Prefab : enemyConstants.enemyType0Prefab, keyList[index], Quaternion.identity);
+    //     Instantiate(movable ? enemyConstants.chickenMovingPrefab : enemyConstants.chickenStationaryPrefab, keyList[index], Quaternion.identity);
     //     keyList.RemoveAt(index);
     // }
 
