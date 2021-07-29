@@ -114,7 +114,7 @@ public class CharacterController : MonoBehaviour
             // hits = Physics.RaycastAll(prevPos, dir, dist);
             // foreach (RaycastHit hit in hits)
             // {
-            //     if (hit.transform.tag != "TileDanger" && hit.transform.tag != "Bullet1")
+            //     if (hit.transform.tag != "TileDanger" && hit.transform.tag != "ProjectileCollider")
             //     {
             //         Debug.Log(hit.transform.tag);
             //         hit.transform.gameObject.SendMessage("OnTriggerEnter", hit.collider);
@@ -169,7 +169,7 @@ public class CharacterController : MonoBehaviour
                 {
                     onCharacterHit.Invoke();
                 }
-                else if (col.gameObject.CompareTag("Bullet1"))
+                else if (col.gameObject.CompareTag("ProjectileCollider"))
                 {
                     col.gameObject.SendMessage("SetInactive");
                     onCharacterHit.Invoke();

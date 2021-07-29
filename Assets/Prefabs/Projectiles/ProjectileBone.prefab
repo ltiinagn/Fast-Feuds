@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 7738079059252356726}
   m_Layer: 0
   m_Name: BoxCollider
-  m_TagString: Bullet1
+  m_TagString: ProjectileCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
