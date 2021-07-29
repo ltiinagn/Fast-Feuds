@@ -8,13 +8,18 @@ public class ChickenThrowingController : MonoBehaviour
     public EnemyConstants enemyConstants;
     public UnityEvent onEnemyDeath;
     private int health;
+    private Animator animator;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         health = enemyConstants.chickenStationaryHealth;
+        animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         int direction = Random.Range(0, 2);
-        if (direction == 1) {
+        if (direction == 1)
+        {
             gameObject.transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX = true;
         }
     }
@@ -25,13 +30,20 @@ public class ChickenThrowingController : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider col) {
-        if (col.gameObject.CompareTag("Character")) {
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.CompareTag("Character")) 
+        {
             health -= 1;
             Debug.Log("damaged by character!");
-            if (health == 0) {
+            if (health == 0)
+            {
                 onEnemyDeath.Invoke();
-                Destroy(gameObject.transform.parent.gameObject);
+                animator.SetTrigger("onDeath");
+                audioSource.PlayOneShot(audioSource.clip);
+                gameObject.transform.parent.Find("ProjectileBoneSpawner").gameObject.SetActive(false);
+                gameObject.GetComponent<BoxCollider>().enabled = false;
+                Destroy(gameObject.transform.parent.gameObject, audioSource.clip.length);
             }
         }
     }
