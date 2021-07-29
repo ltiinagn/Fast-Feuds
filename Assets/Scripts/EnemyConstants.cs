@@ -9,6 +9,8 @@ public class EnemyConstants : ScriptableObject
     public GameObject chickenThrowingPrefab;
     public GameObject clownMilkPrefab;
     public GameObject bigMacPrefab;
+    public GameObject shooterPrefab;
+    public GameObject shooter2Prefab;
     public GameObject friesPrefab;
     public GameObject enemyTypeAPrefab;
     public GameObject boss1_BPrefab;
