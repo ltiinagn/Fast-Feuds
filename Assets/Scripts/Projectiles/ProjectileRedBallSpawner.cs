@@ -40,6 +40,7 @@ public class ProjectileRedBallSpawner : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         while (true) {
             if (shoot) {
+                yield return new WaitForSeconds(0.5f);
                 for (int i = 0; i < 5; i++) {
                     spawnFromPooler(BulletType.redBall);
                     yield return new WaitForSeconds(0.2f);
