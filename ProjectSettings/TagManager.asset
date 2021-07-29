@@ -6,13 +6,14 @@ TagManager:
   tags:
   - ChickenMoving
   - TileDanger
-  - Bullet1
+  - ProjectileCollider
   - Powerup
   - Enemy
   - Projectile
   - Character
   - Obstacle
   - EnemyCollider
+  - Bullet1
   layers:
   - Default
   - TransparentFX

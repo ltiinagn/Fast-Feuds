@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 8859726406908320457}
   m_Layer: 0
   m_Name: BoxCollider
-  m_TagString: Bullet1
+  m_TagString: ProjectileCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
+  moveSpeed: 0
 --- !u!212 &8859726406908320457
 SpriteRenderer:
   m_ObjectHideFlags: 0
