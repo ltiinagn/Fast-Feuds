@@ -12,6 +12,7 @@ TagManager:
   - Projectile
   - Character
   - Obstacle
+  - EnemyCollider
   layers:
   - Default
   - TransparentFX

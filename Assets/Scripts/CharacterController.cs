@@ -24,6 +24,7 @@ public class CharacterController : MonoBehaviour
     private Animator characterAnimator;
     private AudioSource characterAudio;
     public AudioClip[] movementAudioClips;
+    public AudioClip[] punchingAudioClips;
 
     // Start is called before the first frame update
     void Start()
@@ -154,7 +155,11 @@ public class CharacterController : MonoBehaviour
             }
             // onCharacterHit.Invoke();
         }
-        else 
+        else if (col.gameObject.CompareTag("EnemyCollider") || col.gameObject.CompareTag("ChickenMoving"))
+        {
+            characterAudio.PlayOneShot(punchingAudioClips[Random.Range(0, punchingAudioClips.Length)]);
+        }
+        else
         {
             if (!invulnerable && !invulnerablePowerup)
             {
