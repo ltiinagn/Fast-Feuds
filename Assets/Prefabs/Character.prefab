@@ -175,6 +175,9 @@ MonoBehaviour:
   punchingAudioClips:
   - {fileID: 8300000, guid: 1adcb0f7952fed94485856827ebd4c32, type: 3}
   - {fileID: 8300000, guid: 55309c8956c078841995005bb05a108b, type: 3}
+  ouchAudioClips:
+  - {fileID: 8300000, guid: 9a73d9c47ad178e41a0100b1e310b8e1, type: 3}
+  - {fileID: 8300000, guid: 7c0086fde562b484e9e26fc3ebfb9063, type: 3}
 --- !u!114 &398760484489817924
 MonoBehaviour:
   m_ObjectHideFlags: 0
