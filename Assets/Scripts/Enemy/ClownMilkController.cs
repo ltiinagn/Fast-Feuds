@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class ClownMilkController : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
+    public GameObject otherPair;
     public UnityEvent onEnemyDeath;
     private int health;
 
@@ -31,6 +32,7 @@ public class ClownMilkController : MonoBehaviour
             Debug.Log("damaged by character!");
             if (health == 0) {
                 onEnemyDeath.Invoke();
+                Destroy(otherPair);
                 Destroy(gameObject.transform.parent.gameObject);
             }
         }

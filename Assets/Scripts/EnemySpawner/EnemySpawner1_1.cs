@@ -45,8 +45,11 @@ public class EnemySpawner1_1 : MonoBehaviour
         else if (progress0 == 1) {
             Instantiate(enemyConstants.chickenMovingPrefab, keyList[index], Quaternion.identity);
         }
-        else {
+        else if (progress0 == 2) {
             Instantiate(enemyConstants.chickenThrowingPrefab, keyList[index], Quaternion.identity);
+        }
+        else {
+            Instantiate(enemyConstants.chickenMovingExplodingPrefab, keyList[index], Quaternion.identity);
         }
         keyList.RemoveAt(index);
     }

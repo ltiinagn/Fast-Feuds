@@ -14,15 +14,18 @@ public class CharacterController : MonoBehaviour
     GameObject dialogueBox;
     Dictionary<string, Vector3> keyMap;
 
-    // HashSet<string> spriteNames = new HashSet<string> {"Body", "LeftHand", "RightHand", "LeftLeg", "RightLeg", "DetachedLeftLeg", "DetachedRightLeg", "SoundBarrier"};
-    // List<SpriteRenderer> sprites = new List<SpriteRenderer> {};
+
     private Transform sprite;
-    private Animator characterAnimator;
     Vector3 prevPos;
     bool faceRight = false;
     bool invulnerable;
     bool invulnerablePowerup;
     float speed;
+    private Animator characterAnimator;
+    private AudioSource characterAudio;
+    public AudioClip[] movementAudioClips;
+    public AudioClip[] gruntingAudioClips;
+    public AudioClip[] punchingAudioClips;
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +34,6 @@ public class CharacterController : MonoBehaviour
         invulnerablePowerup = false;
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
-        // foreach (Transform sprite in gameObject.transform.parent.Find("Sprite"))
-        // {
-        //     if (spriteNames.Contains(sprite.name)) {
-        //         sprites.Add(sprite.GetComponent<SpriteRenderer>());
-        //     }
-        // };
         prevPos = this.transform.position;
         speed = characterConstants.characterSpeed;
         dialogueBox = GameObject.Find("UI/Dialogue");
@@ -44,6 +41,7 @@ public class CharacterController : MonoBehaviour
         sprite.Rotate(new Vector3(0, 180, 0));
         faceRight = true;
         characterAnimator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
+        characterAudio = gameObject.transform.parent.Find("AudioSource").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -76,6 +74,7 @@ public class CharacterController : MonoBehaviour
         }
         characterAnimator.SetBool("isMoving", true);
         invulnerable = true;
+        characterAudio.PlayOneShot(movementAudioClips[Random.Range(0, movementAudioClips.Length)]);
         float fracDist = 0;
 
         Vector3 dir = to - from;
@@ -115,7 +114,7 @@ public class CharacterController : MonoBehaviour
             // hits = Physics.RaycastAll(prevPos, dir, dist);
             // foreach (RaycastHit hit in hits)
             // {
-            //     if (hit.transform.tag != "TileDanger" && hit.transform.tag != "Bullet1")
+            //     if (hit.transform.tag != "TileDanger" && hit.transform.tag != "ProjectileCollider")
             //     {
             //         Debug.Log(hit.transform.tag);
             //         hit.transform.gameObject.SendMessage("OnTriggerEnter", hit.collider);
@@ -157,7 +156,12 @@ public class CharacterController : MonoBehaviour
             }
             // onCharacterHit.Invoke();
         }
-        else 
+        else if (col.gameObject.CompareTag("EnemyCollider") || col.gameObject.CompareTag("ChickenMoving"))
+        {
+            characterAudio.PlayOneShot(gruntingAudioClips[Random.Range(0, gruntingAudioClips.Length)]);
+            characterAudio.PlayOneShot(punchingAudioClips[Random.Range(0, punchingAudioClips.Length)]);
+        }
+        else
         {
             if (!invulnerable && !invulnerablePowerup)
             {
@@ -165,7 +169,7 @@ public class CharacterController : MonoBehaviour
                 {
                     onCharacterHit.Invoke();
                 }
-                else if (col.gameObject.CompareTag("Bullet1"))
+                else if (col.gameObject.CompareTag("ProjectileCollider"))
                 {
                     col.gameObject.SendMessage("SetInactive");
                     onCharacterHit.Invoke();

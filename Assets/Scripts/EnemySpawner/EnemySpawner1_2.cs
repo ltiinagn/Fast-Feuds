@@ -44,8 +44,14 @@ public class EnemySpawner1_2 : MonoBehaviour
         index = Random.Range(0, keyList.Count);
         GameObject clownMilk2 = Instantiate(enemyConstants.clownMilkPrefab, keyList[index], Quaternion.identity);
         keyList.RemoveAt(index);
+
+        ClownMilkController clownMilk1Controller = clownMilk1.transform.Find("BoxCollider").GetComponent<ClownMilkController>();
+        clownMilk1Controller.otherPair = clownMilk2;
+
+        ClownMilkController clownMilk2Controller = clownMilk2.transform.Find("BoxCollider").GetComponent<ClownMilkController>();
+        clownMilk2Controller.otherPair = clownMilk1;
         
-        var clownMilk1RedBallSpawner = clownMilk1.transform.Find("ProjectileRedBallSpawner").GetComponent<ProjectileRedBallSpawner>();
+        ProjectileRedBallSpawner clownMilk1RedBallSpawner = clownMilk1.transform.Find("ProjectileRedBallSpawner").GetComponent<ProjectileRedBallSpawner>();
         clownMilk1RedBallSpawner.direction = (clownMilk2.transform.position - clownMilk1.transform.position).normalized;
         clownMilk1RedBallSpawner.endPosition = clownMilk2.transform.position;
         clownMilk1RedBallSpawner.shoot = true;

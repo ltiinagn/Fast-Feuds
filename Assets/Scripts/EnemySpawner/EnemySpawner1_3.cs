@@ -38,7 +38,15 @@ public class EnemySpawner1_3 : MonoBehaviour
 
     void spawnEnemy() {
         int index = Random.Range(0, keyList.Count);
-        Instantiate(enemyConstants.bigMacPrefab, keyList[index], Quaternion.identity);
+        if (progress == 0) {
+            Instantiate(enemyConstants.bigMacPrefab, keyList[index], Quaternion.identity);
+        }
+        else if (progress == 1) {
+            Instantiate(enemyConstants.shooterPrefab, keyList[index], Quaternion.identity);
+        }
+        else if (progress == 2) {
+            Instantiate(enemyConstants.shooter2Prefab, keyList[index], Quaternion.identity);
+        }
     }
 
     IEnumerator spawnEnemiesWithDelay() {
