@@ -731,14 +731,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
-    - target: {fileID: 6691636990540653952, guid: 7a0205e8100216f4e8b4a00ff8e533ba, type: 3}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8968596719964608687, guid: 7a0205e8100216f4e8b4a00ff8e533ba, type: 3}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a0205e8100216f4e8b4a00ff8e533ba, type: 3}
 --- !u!1001 &1889568652772853575

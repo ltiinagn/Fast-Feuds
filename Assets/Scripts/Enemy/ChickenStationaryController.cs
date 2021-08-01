@@ -8,12 +8,14 @@ public class ChickenStationaryController : MonoBehaviour
     public EnemyConstants enemyConstants;
     public UnityEvent onEnemyDeath;
     private int health;
+    private Animator animator;
     private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         health = enemyConstants.chickenStationaryHealth;
+        animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -31,9 +33,11 @@ public class ChickenStationaryController : MonoBehaviour
             Debug.Log("damaged by character!");
             if (health == 0)
             {
-                audioSource.PlayOneShot(audioSource.clip);
                 onEnemyDeath.Invoke();
-                Destroy(gameObject.transform.parent.gameObject);
+                animator.SetTrigger("onDeath");
+                audioSource.PlayOneShot(audioSource.clip);
+                gameObject.GetComponent<BoxCollider>().enabled = false;
+                Destroy(gameObject.transform.parent.gameObject, audioSource.clip.length);
             }
         }
     }
