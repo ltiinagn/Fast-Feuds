@@ -20,6 +20,7 @@ MonoBehaviour:
   bigMacPrefab: {fileID: 629230319408024095, guid: 225089b5af826ff469f9efcb1ba9bd1e, type: 3}
   shooterPrefab: {fileID: 629230319408024095, guid: 71306ef2e27e8de4681ab040a08b4131, type: 3}
   shooter2Prefab: {fileID: 629230319408024095, guid: 08068f822570c2d468274c35e732c13c, type: 3}
+  friesTutorialPrefab: {fileID: 629230319408024095, guid: 6892dde0de5f8a34087daa4a421c60e1, type: 3}
   friesPrefab: {fileID: 629230319408024095, guid: 6892dde0de5f8a34087daa4a421c60e1, type: 3}
   enemyTypeAPrefab: {fileID: 629230319408024095, guid: 70985279cde132747943c2ffbee43ea4, type: 3}
   boss1_BPrefab: {fileID: 9007750895088981850, guid: a462e2b654ae4bb47a6ebf8117d26cc8, type: 3}

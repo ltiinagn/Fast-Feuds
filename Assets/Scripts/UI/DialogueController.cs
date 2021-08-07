@@ -40,7 +40,7 @@ public class DialogueController : MonoBehaviour
             if (Input.GetKeyDown("space")) {
                 dialogueProgress += 1;
             }
-            else if (dialogueProgress == 0 && Input.GetKeyDown("k")) {
+            else if (dialogueProgress == 0 && Input.GetKeyDown(KeyCode.Return)) {
                 dialogueProgress = dialogue.Length;
             }
 

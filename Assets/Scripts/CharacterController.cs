@@ -14,9 +14,9 @@ public class CharacterController : MonoBehaviour
     GameObject dialogueBox;
     Dictionary<string, Vector3> keyMap;
 
-
     private Transform sprite;
     Vector3 prevPos;
+    bool weapon = false;
     bool faceRight = false;
     bool invulnerable;
     bool invulnerablePowerup;
@@ -141,7 +141,7 @@ public class CharacterController : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Powerup"))
         {
-            if (col.gameObject.name == "PowerupInvulnerable") 
+            if (col.gameObject.name == "PowerupInvulnerable")
             {
                 StartCoroutine(StartInvulnerablePowerup());
                 col.gameObject.SendMessage("UsePowerup");
@@ -150,23 +150,30 @@ public class CharacterController : MonoBehaviour
             {
                 col.gameObject.SendMessage("UsePowerup");
             }
-            else if (col.gameObject.name == "PowerupAddHealth") 
+            else if (col.gameObject.name == "PowerupAddHealth")
             {
                 col.gameObject.SendMessage("UsePowerup");
                 onCharacterAddHealth.Invoke();
             }
+            else if (col.gameObject.name == "PowerupWeapon") {
+                col.gameObject.SendMessage("UsePowerup");
+                weapon = true;
+            }
             // onCharacterHit.Invoke();
         }
-        else if (col.gameObject.CompareTag("EnemyCollider") || col.gameObject.CompareTag("ChickenMoving"))
-        {
+        else if (col.gameObject.CompareTag("EnemyCollider") || col.gameObject.CompareTag("ChickenMoving")) {
             characterAudio.PlayOneShot(gruntingAudioClips[Random.Range(0, gruntingAudioClips.Length)]);
             characterAudio.PlayOneShot(punchingAudioClips[Random.Range(0, punchingAudioClips.Length)]);
         }
-        else
-        {
+        else if (col.gameObject.CompareTag("EnemyTutorialCollider") && weapon) {
+            col.gameObject.SendMessage("DestroyEnemy");
+            characterAudio.PlayOneShot(gruntingAudioClips[Random.Range(0, gruntingAudioClips.Length)]);
+            characterAudio.PlayOneShot(punchingAudioClips[Random.Range(0, punchingAudioClips.Length)]);
+        }
+        else {
             if (!invulnerable && !invulnerablePowerup)
             {
-                if (col.gameObject.CompareTag("TileDanger")) 
+                if (col.gameObject.CompareTag("TileDanger"))
                 {
                     characterAudio.PlayOneShot(ouchAudioClips[Random.Range(0, ouchAudioClips.Length)]);
                     onCharacterHit.Invoke();
@@ -181,7 +188,7 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    public void playerDeath() 
+    public void playerDeath()
     {
         Destroy(gameObject.transform.parent.gameObject);
     }

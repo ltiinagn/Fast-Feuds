@@ -12,11 +12,18 @@ public class EnemyConstants : ScriptableObject
     public GameObject bigMacPrefab;
     public GameObject shooterPrefab;
     public GameObject shooter2Prefab;
+    public GameObject friesTutorialPrefab;
     public GameObject friesPrefab;
     public GameObject enemyTypeAPrefab;
     public GameObject boss1_BPrefab;
     public GameObject boss2_BPrefab;
     public GameObject bossTypeXPrefab;
+
+    // Level 0-T Spawn
+    public int[][] spawnSequence0_T = new int[][] {
+        new int[] {5},
+        new int[] {10}
+    };
 
     // Level 1-1 Spawn
     public int[][] spawnSequence1_1 = new int[][] {

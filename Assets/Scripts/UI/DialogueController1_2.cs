@@ -58,7 +58,7 @@ public class DialogueController1_2 : MonoBehaviour
                 if (Input.GetKeyDown("space")) {
                     progress1 += 1;
                 }
-                else if (progress1 == 0 && Input.GetKeyDown("k")) {
+                else if (progress1 == 0 && Input.GetKeyDown(KeyCode.Return)) {
                     progress1 = dialogue[progress0].Length;
                 }
 
@@ -67,9 +67,9 @@ public class DialogueController1_2 : MonoBehaviour
                     progress0 += 1;
                     progress1 = 0;
                     dialogueBox.SetActive(false);
-                    enemySpawner.SetActive(true);
-                    
+
                     if (progress0 != 0 && progress0 < dialogue.Length) {
+                        enemySpawner.SetActive(true);
                         StartCoroutine(waitForStartNextSpawn());
                     }
                 }

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GameConstants
   m_EditorClassIdentifier: 
   levelNames:
+  - Level0-T
   - Level1-1
   - Level1-2
   - Level1-3
@@ -24,6 +25,7 @@ MonoBehaviour:
   - Tiles/Row4
   powerupVisibilityDuration: 5
   powerupDisappearDuration: 3
+  powerupWeaponPrefab: {fileID: 4714105714738006828, guid: 8a568e3fdbb7eab409dbc1b01ced2dca, type: 3}
   powerupAddHealthPrefab: {fileID: 4714105714738006828, guid: 83bd2f9406a4c9c40901830978fcdc6c, type: 3}
   powerupInvulnerablePrefab: {fileID: 4714105714738006828, guid: e19c8300f5957c144891bc9c0f507923, type: 3}
   powerupDestroyAllEnemiesPrefab: {fileID: 4714105714738006828, guid: a2de9c48d72a23f408d967b17dd2ce72, type: 3}
