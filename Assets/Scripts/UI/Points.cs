@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Points : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     //stackoverflow
     private Text pointText;
@@ -31,18 +32,18 @@ public class Points : MonoBehaviour
 
     private void RegisterEvents()
     {
-        // Register the listener to the manager's event 
-        PointManager.OnScoreChanged += HandleOnScoreChanged; 
+        // Register the listener to the manager's event
+        // PointManager.OnScoreChanged += HandleOnScoreChanged;
     }
 
     private void UnregisterEvents()
     {
         // Unregister the listener
-        ScoreManager.OnScoreChanged -= HandleOnScoreChanged;
+        // ScoreManager.OnScoreChanged -= HandleOnScoreChanged;
     }
 
     private void HandleOnPointChanged(int newScore)
     {
-        scoreText.text = newScore.ToString();
+        //scoreText.text = newScore.ToString();
     }
 }

@@ -19,8 +19,8 @@ public class EndLevel: MonoBehaviour{
     public Text pointText;
     private int point = 0;
     private bool countPointState = false;
-    Update(){
+    void Update() {
 
-      }
+    }
 
 }
