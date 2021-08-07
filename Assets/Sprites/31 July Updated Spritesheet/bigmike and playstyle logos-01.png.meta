@@ -1,12 +1,45 @@
 fileFormatVersion: 2
 guid: 5bfbcfa4ba4fa6840b43e2164d145f1a
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4393806929559773844
+    second: bigmike and playstyle logos-01_0
+  - first:
+      213: 6332259471023661464
+    second: bigmike and playstyle logos-01_1
+  - first:
+      213: -1098067015203234002
+    second: bigmike and playstyle logos-01_2
+  - first:
+      213: 221711494931878934
+    second: bigmike and playstyle logos-01_3
+  - first:
+      213: -2744316349850220241
+    second: bigmike and playstyle logos-01_4
+  - first:
+      213: 273377699802353405
+    second: bigmike and playstyle logos-01_5
+  - first:
+      213: 3541267149901745831
+    second: bigmike and playstyle logos-01_6
+  - first:
+      213: 8868996623769165593
+    second: bigmike and playstyle logos-01_7
+  - first:
+      213: -23984149329655730
+    second: bigmike and playstyle logos-01_8
+  - first:
+      213: -6425660498303728762
+    second: bigmike and playstyle logos-01_9
+  - first:
+      213: 1334914457891135821
+    second: bigmike and playstyle logos-01_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -35,13 +68,13 @@ TextureImporter:
     filterMode: 1
     aniso: 2
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -50,9 +83,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -125,11 +158,158 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: bigmike and playstyle logos-01_0
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 1500
+        width: 566
+        height: 525
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4926f008f10f9fc30800000000000000
+      internalID: 4393806929559773844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigmike and playstyle logos-01_1
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 1463
+        width: 565
+        height: 544
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 891e7fb6074b0e750800000000000000
+      internalID: 6332259471023661464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigmike and playstyle logos-01_2
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 1239
+        width: 634
+        height: 834
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2fdc331ed1e2c0f0800000000000000
+      internalID: -1098067015203234002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigmike and playstyle logos-01_3
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 593
+        width: 634
+        height: 834
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61419021e6da31300800000000000000
+      internalID: 221711494931878934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigmike and playstyle logos-01_5
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 1126
+        width: 216
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfe8b3ec19b3bc300800000000000000
+      internalID: 273377699802353405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigmike and playstyle logos-01_8
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 256
+        width: 249
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4847f21b8acaaff0800000000000000
+      internalID: -23984149329655730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bigmike and playstyle logos-01_10
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 191
+        width: 299
+        height: 294
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d41622470a1968210800000000000000
+      internalID: 1334914457891135821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4a0a7cd6a084f0e4082ba5fe6bbd0eae
     internalID: 0
     vertices: []
     indices: 

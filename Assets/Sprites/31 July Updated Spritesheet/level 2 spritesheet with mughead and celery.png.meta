@@ -1,12 +1,87 @@
 fileFormatVersion: 2
 guid: 5fc8d471eb4ab1f40b6062e4ca4727ad
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8589357251226715522
+    second: level 2 spritesheet with mughead and celery_0
+  - first:
+      213: 2398709029655272342
+    second: level 2 spritesheet with mughead and celery_1
+  - first:
+      213: 4911932606690357128
+    second: level 2 spritesheet with mughead and celery_2
+  - first:
+      213: 6301121163508934463
+    second: level 2 spritesheet with mughead and celery_3
+  - first:
+      213: -7801907945908176442
+    second: level 2 spritesheet with mughead and celery_4
+  - first:
+      213: -2108128978035675282
+    second: level 2 spritesheet with mughead and celery_5
+  - first:
+      213: -3909049749692486721
+    second: level 2 spritesheet with mughead and celery_6
+  - first:
+      213: -5391830451493983768
+    second: level 2 spritesheet with mughead and celery_7
+  - first:
+      213: 8348038224691888
+    second: level 2 spritesheet with mughead and celery_8
+  - first:
+      213: -2754821812713495788
+    second: level 2 spritesheet with mughead and celery_9
+  - first:
+      213: -4482656105279435590
+    second: level 2 spritesheet with mughead and celery_10
+  - first:
+      213: -6024035081707109758
+    second: level 2 spritesheet with mughead and celery_11
+  - first:
+      213: 6956940912614045341
+    second: level 2 spritesheet with mughead and celery_12
+  - first:
+      213: -6321213174829640845
+    second: level 2 spritesheet with mughead and celery_13
+  - first:
+      213: -2164023468983459999
+    second: level 2 spritesheet with mughead and celery_14
+  - first:
+      213: 4947567221458426530
+    second: level 2 spritesheet with mughead and celery_15
+  - first:
+      213: -8319053628918569751
+    second: level 2 spritesheet with mughead and celery_16
+  - first:
+      213: -8576156021278427792
+    second: level 2 spritesheet with mughead and celery_17
+  - first:
+      213: 5013497234420752138
+    second: level 2 spritesheet with mughead and celery_18
+  - first:
+      213: -4255680874321012951
+    second: level 2 spritesheet with mughead and celery_19
+  - first:
+      213: -2177864495025675701
+    second: level 2 spritesheet with mughead and celery_20
+  - first:
+      213: -817590564650938206
+    second: level 2 spritesheet with mughead and celery_21
+  - first:
+      213: 223358468774311642
+    second: level 2 spritesheet with mughead and celery_22
+  - first:
+      213: 2164879979444868249
+    second: level 2 spritesheet with mughead and celery_23
+  - first:
+      213: 11362052198715956
+    second: level 2 spritesheet with mughead and celery_24
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -35,13 +110,13 @@ TextureImporter:
     filterMode: 1
     aniso: 2
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -50,9 +125,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -125,11 +200,536 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 1763
+        width: 249
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2854b4069e6833770800000000000000
+      internalID: 8589357251226715522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 1900
+        width: 101
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69bdf10572de94120800000000000000
+      internalID: 2398709029655272342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_2
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 1702
+        width: 292
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88fef666ea0ba2440800000000000000
+      internalID: 4911932606690357128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_3
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 1537
+        width: 824
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3765ad3054127750800000000000000
+      internalID: 6301121163508934463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_4
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 1652
+        width: 82
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c978d93f0e0ab390800000000000000
+      internalID: -7801907945908176442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_5
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1602
+        width: 62
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6fe9732ddb6eb2e0800000000000000
+      internalID: -2108128978035675282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_6
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 1383
+        width: 286
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbbef34b6f340c9c0800000000000000
+      internalID: -3909049749692486721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_7
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 1297
+        width: 224
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9219185ce5c25b0800000000000000
+      internalID: -5391830451493983768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_8
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1424
+        width: 77
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b244fc1f78ad1000800000000000000
+      internalID: 8348038224691888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1097
+        width: 343
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 413e6b13828e4c9d0800000000000000
+      internalID: -2754821812713495788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_10
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 943
+        width: 215
+        height: 276
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc459ab5086ac1c0800000000000000
+      internalID: -4482656105279435590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_11
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 903
+        width: 235
+        height: 301
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2824b588204566ca0800000000000000
+      internalID: -6024035081707109758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_12
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 1014
+        width: 258
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d96fdbb86e40c8060800000000000000
+      internalID: 6956940912614045341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_13
+      rect:
+        serializedVersion: 2
+        x: 1700
+        y: 931
+        width: 142
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37392c4db1a8648a0800000000000000
+      internalID: -6321213174829640845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_14
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 771
+        width: 87
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16fd1a5de18d7f1e0800000000000000
+      internalID: -2164023468983459999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_15
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 859
+        width: 68
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aa5561bc2a49a440800000000000000
+      internalID: 4947567221458426530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_16
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 860
+        width: 68
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e462ecfcc8cc8c80800000000000000
+      internalID: -8319053628918569751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_17
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 216
+        width: 453
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0753f5d798f5bf880800000000000000
+      internalID: -8576156021278427792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_18
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 436
+        width: 183
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0f5d0c0c25839540800000000000000
+      internalID: 5013497234420752138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_19
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 392
+        width: 575
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9271ca8dac8c0f4c0800000000000000
+      internalID: -4255680874321012951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_20
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 419
+        width: 484
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b422f05d7cba6c1e0800000000000000
+      internalID: -2177864495025675701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_21
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 92
+        width: 64
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0154696b557a4f0800000000000000
+      internalID: -817590564650938206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_22
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 68
+        width: 183
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad63edc0857891300800000000000000
+      internalID: 223358468774311642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_23
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 0
+        width: 251
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9949a2c0fd23b0e10800000000000000
+      internalID: 2164879979444868249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 spritesheet with mughead and celery_24
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 13
+        width: 251
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 432593de9bd582000800000000000000
+      internalID: 11362052198715956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c4b5d5f469d348c4fb32ac2343abe75f
     internalID: 0
     vertices: []
     indices: 
