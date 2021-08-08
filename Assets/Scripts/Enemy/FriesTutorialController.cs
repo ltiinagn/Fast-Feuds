@@ -19,6 +19,8 @@ public class FriesTutorialController : MonoBehaviour
     private Vector3 start;
     private Vector3 end;
     private float speed;
+    private Animator animator;
+    // private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +28,10 @@ public class FriesTutorialController : MonoBehaviour
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         keyList = new List<Vector3>(keyMap.Values);
-        foreach (Transform sprite in gameObject.transform.parent.Find("Sprite")) {
-            if (spriteNames.Contains(sprite.name)) {
+        foreach (Transform sprite in gameObject.transform.parent.Find("Sprite"))
+        {
+            if (spriteNames.Contains(sprite.name))
+            {
                 sprites.Add(sprite.GetComponent<SpriteRenderer>());
             }
         };
@@ -36,34 +40,44 @@ public class FriesTutorialController : MonoBehaviour
         keyList.Remove(start);
         end = keyList[Random.Range(0, keyList.Count)];
         speed = 0.5f;
+        animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
+        // audioSource = GetComponent<AudioSource>();
         StartCoroutine(findDialogueBox());
         StartCoroutine(moveEnemyLoop());
     }
 
-    IEnumerator findDialogueBox() {
+    IEnumerator findDialogueBox()
+    {
         bool found = false;
-        while (!found) {
+        while (!found)
+        {
             dialogueBox = GameObject.Find("UI/Dialogue");
-            if (dialogueBox) {
+            if (dialogueBox)
+            {
                 found = true;
             }
             yield return null;
         }
     }
 
-    IEnumerator moveEnemyLoop() {
-        while (true) {
+    IEnumerator moveEnemyLoop()
+    {
+        while (true)
+        {
             start = transform.position;
             end = character.transform.position;
-            if ((!dialogueBox || !dialogueBox.activeSelf) && (start-end).magnitude > 1) {
+            if ((!dialogueBox || !dialogueBox.activeSelf) && (start-end).magnitude > 1)
+            {
                 moveEnemy(start, end);
             }
             yield return null;
         }
     }
 
-    void moveEnemy(Vector3 from, Vector3 to) {
-        foreach (SpriteRenderer spriteRenderer in sprites) {
+    void moveEnemy(Vector3 from, Vector3 to)
+    {
+        foreach (SpriteRenderer spriteRenderer in sprites)
+        {
             spriteRenderer.flipX = from.x - to.x > 0 ? true : false;
         }
         Vector3 direction = (to - from).normalized;
@@ -78,8 +92,12 @@ public class FriesTutorialController : MonoBehaviour
 
     }
 
-    void DestroyEnemy() {
+    void DestroyEnemy()
+    {
         onEnemyDeath.Invoke();
-        Destroy(gameObject.transform.parent.gameObject);
+        animator.SetTrigger("onDeath");
+        // audioSource.PlayOneShot(audioSource.clip);
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+        Destroy(gameObject.transform.parent.gameObject, 0.75f); // audioSource.clip.length);
     }
 }
