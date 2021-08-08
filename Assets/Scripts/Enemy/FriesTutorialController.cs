@@ -20,6 +20,7 @@ public class FriesTutorialController : MonoBehaviour
     private Vector3 start;
     private Vector3 end;
     private bool faceRight = true;
+    private bool dying = false;
     private float speed;
     private Animator animator;
     // private AudioSource audioSource;
@@ -66,7 +67,7 @@ public class FriesTutorialController : MonoBehaviour
 
     IEnumerator moveEnemyLoop()
     {
-        while (true)
+        while (!dying)
         {
             start = transform.position;
             end = new Vector3(character.transform.position.x, 0.0f, character.transform.position.z);
@@ -101,9 +102,9 @@ public class FriesTutorialController : MonoBehaviour
 
     }
 
-    void DestroyEnemy()
+    public void DestroyEnemy()
     {
-        StopCoroutine(moveEnemyLoop());
+        dying = true;
         onEnemyDeath.Invoke();
         animator.SetTrigger("onDeath");
         // audioSource.PlayOneShot(audioSource.clip);

@@ -32,9 +32,9 @@ public class PowerupDestroyAllEnemiesController : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    void UsePowerup() {
+    public void UsePowerup() {
         GameObject[] gameObjects;
-        gameObjects = GameObject.FindGameObjectsWithTag ("Enemy");
+        gameObjects = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject gameObject in gameObjects) {
             Destroy(gameObject);
         }

@@ -206,19 +206,19 @@ public class CharacterController : MonoBehaviour
             if (col.gameObject.name == "PowerupInvulnerable")
             {
                 StartCoroutine(StartInvulnerablePowerup());
-                col.gameObject.SendMessage("UsePowerup");
+                col.gameObject.GetComponent<PowerupInvulnerableController>().UsePowerup();
             }
             else if (col.gameObject.name == "PowerupDestroyAllEnemies")
             {
-                col.gameObject.SendMessage("UsePowerup");
+                col.gameObject.GetComponent<PowerupDestroyAllEnemiesController>().UsePowerup();
             }
             else if (col.gameObject.name == "PowerupAddHealth")
             {
-                col.gameObject.SendMessage("UsePowerup");
+                col.gameObject.GetComponent<PowerupAddHealthController>().UsePowerup();
                 onCharacterAddHealth.Invoke();
             }
             else if (col.gameObject.name == "PowerupWeapon") {
-                col.gameObject.SendMessage("UsePowerup");
+                col.gameObject.GetComponent<PowerupWeaponController>().UsePowerup();
                 weapon = true;
             }
             // onCharacterHit.Invoke();
@@ -228,7 +228,7 @@ public class CharacterController : MonoBehaviour
             characterAudio.PlayOneShot(punchingAudioClips[Random.Range(0, punchingAudioClips.Length)]);
         }
         else if (col.gameObject.CompareTag("EnemyTutorialCollider") && weapon) {
-            col.gameObject.SendMessage("DestroyEnemy");
+            col.gameObject.GetComponent<FriesTutorialController>().DestroyEnemy();
             characterAudio.PlayOneShot(gruntingAudioClips[Random.Range(0, gruntingAudioClips.Length)]);
             characterAudio.PlayOneShot(punchingAudioClips[Random.Range(0, punchingAudioClips.Length)]);
         }
