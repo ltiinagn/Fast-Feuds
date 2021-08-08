@@ -477,6 +477,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  dialogueBox: {fileID: 7338748969721404726}
 --- !u!114 &639803531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,6 +734,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 398760484489817926, guid: 7a0205e8100216f4e8b4a00ff8e533ba, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 7338748969721404726}
     - target: {fileID: 3136811959087954924, guid: 7a0205e8100216f4e8b4a00ff8e533ba, type: 3}
       propertyPath: m_FlipX
       value: 0
@@ -1100,3 +1105,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c810badfcbead5a43b2c0ca2ddc9f8ee, type: 3}
+--- !u!1 &7338748969721404726 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 99868172223012090, guid: c810badfcbead5a43b2c0ca2ddc9f8ee, type: 3}
+  m_PrefabInstance: {fileID: 7338748969721404725}
+  m_PrefabAsset: {fileID: 0}

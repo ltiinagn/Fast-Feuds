@@ -34,5 +34,10 @@ public class ProjectileRedBallController : MonoBehaviour
             spawner.spawnCount -= 1;
             SetInactive();
         }
+        else if (col.gameObject.CompareTag("Character")) {
+            spawner.spawnCount -= 1;
+            spawner.initialSpawnCount -= 1;
+            SetInactive();
+        }
     }
 }

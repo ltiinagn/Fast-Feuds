@@ -54,7 +54,7 @@ public class FriesTutorialController : MonoBehaviour
     IEnumerator moveEnemyLoop() {
         while (true) {
             start = transform.position;
-            end = character.transform.position;
+            end = new Vector3(character.transform.position.x, 0.0f, character.transform.position.z);
             if ((!dialogueBox || !dialogueBox.activeSelf) && (start-end).magnitude > 1) {
                 moveEnemy(start, end);
             }

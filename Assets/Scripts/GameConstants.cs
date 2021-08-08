@@ -16,6 +16,8 @@ public class GameConstants : ScriptableObject
     public GameObject powerupDestroyAllEnemiesPrefab;
     public GameObject powerupDestroyAllProjectilesPrefab;
 
+    // public Vector3[] offTileSpawnPoints = {}
+
     public int invulnerablePowerupDuration = 5;
 
     public string[] dialogueDummy = {};
@@ -27,11 +29,11 @@ public class GameConstants : ScriptableObject
     };
 
     public string[][] dialogue1_1 = new string[][] {
-        new string[] {"Hello! Welcome to the tutorial! Press space to continue or K to skip!", "Press the corresponding key to move to the in-game tile.", "End of tutorial. Have fun!"},
-        new string[] {"Good job! Next, clear some moving chickens!"},
-        new string[] {"Good job! Next, clear some chickens that throw bones! Avoid getting hit by the bones!"},
-        new string[] {"Beware of these chickens!"},
-        new string[] {"Well done!"}
+        new string[] {"Hello! Welcome to Fast Feuds! Have fun! Here are some chickens!"},
+        new string[] {"ClownMilkk"},
+        new string[] {"Burgers"},
+        new string[] {"Fries"},
+        new string[] {"Phew!"}
     };
     public string[][] dialogue1_2 = new string[][] {};
     public string[] dialogue1_3 = {};
