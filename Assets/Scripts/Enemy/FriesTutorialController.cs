@@ -14,10 +14,12 @@ public class FriesTutorialController : MonoBehaviour
     public GameObject character;
     GameObject dialogueBox;
 
+    private Transform spriteParent;
     HashSet<string> spriteNames = new HashSet<string> {"Body"};
     List<SpriteRenderer> sprites = new List<SpriteRenderer> {};
     private Vector3 start;
     private Vector3 end;
+    private bool faceRight = true;
     private float speed;
     private Animator animator;
     // private AudioSource audioSource;
@@ -39,6 +41,8 @@ public class FriesTutorialController : MonoBehaviour
         start = transform.position;
         keyList.Remove(start);
         end = keyList[Random.Range(0, keyList.Count)];
+        spriteParent = gameObject.transform.parent.gameObject.transform;
+        // faceRight = transform.position.x - character.transform.position.x < 0 ? true : false;
         speed = 0.5f;
         animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
         // audioSource = GetComponent<AudioSource>();
@@ -76,10 +80,16 @@ public class FriesTutorialController : MonoBehaviour
 
     void moveEnemy(Vector3 from, Vector3 to)
     {
-        foreach (SpriteRenderer spriteRenderer in sprites)
+        bool moveRight = from.x - to.x < 0 ? true : false;
+        if (moveRight != faceRight)
         {
-            spriteRenderer.flipX = from.x - to.x > 0 ? true : false;
+            faceRight = !faceRight;
+            spriteParent.Rotate(new Vector3(0, 0, 180));
         }
+        // foreach (SpriteRenderer spriteRenderer in sprites)
+        // {
+        //     spriteRenderer.flipX = from.x - to.x > 0 ? true : false;
+        // }
         Vector3 direction = (to - from).normalized;
         to = from + direction;
         float fracDist = Time.deltaTime * speed;
@@ -94,6 +104,7 @@ public class FriesTutorialController : MonoBehaviour
 
     void DestroyEnemy()
     {
+        StopCoroutine(moveEnemyLoop());
         onEnemyDeath.Invoke();
         animator.SetTrigger("onDeath");
         // audioSource.PlayOneShot(audioSource.clip);
