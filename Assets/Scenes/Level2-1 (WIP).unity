@@ -1004,6 +1004,14 @@ PrefabInstance:
     - target: {fileID: 7475524398241239172, guid: cdeb340e889892c428a20847dedf3488, type: 3}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
+      objectReference: {fileID: 607092740}
+    - target: {fileID: 7475524398241239172, guid: cdeb340e889892c428a20847dedf3488, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateHealth
+      objectReference: {fileID: 0}
+    - target: {fileID: 7475524398241239172, guid: cdeb340e889892c428a20847dedf3488, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: HealthIcon, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7475524398241239173, guid: cdeb340e889892c428a20847dedf3488, type: 3}
       propertyPath: m_RootOrder

@@ -233,6 +233,7 @@ GameObject:
   m_Component:
   - component: {fileID: 57981215}
   - component: {fileID: 57981214}
+  - component: {fileID: 57981216}
   m_Layer: 0
   m_Name: CharacterHitEventListener
   m_TagString: Untagged
@@ -294,6 +295,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &57981216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57981213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc74c1906a3b49647acae3b769252e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 417da2b2443167f4590e0d949e7abf09, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 20bb807e62de17b46888f49ac59c873d, type: 2}
+        m_TargetAssemblyTypeName: IntVariable, Assembly-CSharp
+        m_MethodName: ApplyChange
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7338748969721404727}
+        m_TargetAssemblyTypeName: HealthIcon, Assembly-CSharp
+        m_MethodName: UpdateHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &454422594
 GameObject:
   m_ObjectHideFlags: 0

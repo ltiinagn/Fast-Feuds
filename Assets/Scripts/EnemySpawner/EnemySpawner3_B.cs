@@ -9,7 +9,7 @@ public class EnemySpawner3_B : MonoBehaviour
     public GameObject keyMapper;
     Dictionary<string, Vector3> keyMap;
     List<Vector3> keyList;
-    
+
     private GameObject character;
     private int[] spawnSequence;
     private int enemyCount;
@@ -29,30 +29,10 @@ public class EnemySpawner3_B : MonoBehaviour
         StartCoroutine(WaitForNextSpawn());
     }
 
-    // void spawnEnemies() {
-    //     // Instantiate(enemyConstants.chickenStationaryPrefab, new Vector3(2,0,0), Quaternion.identity);
-    //     for (int count = 0; count < spawnSequence[progress]; count++) {
-    //         spawnEnemy();
-    //     }
-    // }
-
-    // void spawnEnemy() {
-    //     int index = Random.Range(0, keyList.Count);
-    //     Instantiate(movable ? enemyConstants.chickenMovingPrefab : enemyConstants.chickenStationaryPrefab, keyList[index], Quaternion.identity);
-    //     keyList.RemoveAt(index);
-    // }
-
-    // IEnumerator spawnEnemiesWithDelay() {
-    //     for (int count = 0; count < spawnSequence[progress]; count++) {
-    //         spawnEnemy();
-    //         yield return new WaitForSeconds(0.2f);
-    //     }
-    // }
-
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void spawnBoss() {
@@ -64,12 +44,6 @@ public class EnemySpawner3_B : MonoBehaviour
         if (character != null) {
             keyList = new List<Vector3>(keyMap.Values);
             keyList.Remove(character.transform.position);
-            // if (enemyCount == 10) {
-            //     StartCoroutine(spawnEnemiesWithDelay());
-            // }
-            // else {
-            //     spawnEnemies();
-            // }
             spawnBoss();
         }
     }
