@@ -14,7 +14,7 @@ public class PowerupInvulnerableController : MonoBehaviour
     }
 
     IEnumerator WaitForDestroy() {
-        yield return new WaitForSeconds(gameConstants.powerupVisibilityDuration);
+        yield return new WaitForSeconds(gameConstants.powerupVisibilityDuration2);
         for (int i = 0; i < gameConstants.powerupDisappearDuration * 2; i++) {
             gameObject.transform.parent.transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled = !gameObject.transform.parent.transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled;
             yield return new WaitForSeconds(0.5f);

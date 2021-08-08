@@ -41,16 +41,16 @@ public class EnemyConstants : ScriptableObject
     //     new int[] {10}
     // };
     public int[][] spawnSequence1_2 = new int[][] {
-        new int[] {10},
-        new int[] {10}
+        new int[] {50},
+        new int[] {50}
     };
 
 
     // Level 1-3 Spawn
-    public int[] spawnSequence1_3 = {2, 2, 2};
+    public int[] spawnSequence2_1 = {2, 2, 2};
 
     // Level 1-3 Spawn
-    public int[] spawnSequence1_4 = {2, 3, 4};
+    public int[] spawnSequence2_2 = {2, 3, 4};
 
     // Level 1-B
     public int boss1_B_Health = 10;

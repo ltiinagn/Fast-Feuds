@@ -103,7 +103,7 @@ public class EnemySpawner1_1 : MonoBehaviour
         int spawnAt = Random.Range(0, spawnSequence[progress0][progress1]);
         for (int count = 0; count < spawnSequence[progress0][progress1]; count++) {
             spawnEnemy();
-            if (spawnAt == count) {
+            if (spawnAt == count && progress0 > 0) {
                 SpawnPowerup.Invoke();
             }
             if (progress0 == 0 && progress1 <= 9) {

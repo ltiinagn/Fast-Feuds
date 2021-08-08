@@ -109,10 +109,11 @@ public class EnemySpawner1_2 : MonoBehaviour
     }
 
     IEnumerator spawnEnemiesWithDelay() {
-        int spawnAt = Random.Range(0, spawnSequence[progress0][progress1]);
+        int spawnAt = Random.Range(0, spawnSequence[progress0][progress1] / 2);
+        int spawnAt2 = Random.Range(spawnSequence[progress0][progress1] / 2, spawnSequence[progress0][progress1]);
         for (int count = 0; count < spawnSequence[progress0][progress1]; count++) {
             spawnEnemy();
-            if (spawnAt == count) {
+            if (spawnAt == count || spawnAt2 == count) {
                 SpawnPowerup.Invoke();
             }
             if (progress0 == 0) {
