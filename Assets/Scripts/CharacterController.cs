@@ -22,7 +22,8 @@ public class CharacterController : MonoBehaviour
     bool weapon = false;
     string playStyle = "straightCutFry";
     bool faceRight = false;
-    bool invulnerable;
+    int bulletsPerDash;
+    bool moving;
     bool invulnerablePowerup;
     float speed;
     private Animator characterAnimator;
@@ -36,7 +37,8 @@ public class CharacterController : MonoBehaviour
     void Start()
     {
         dialogueText = dialogueBox.transform.Find("Panel/Dialogue_Text").GetComponent<Text>();
-        invulnerable = false;
+        bulletsPerDash = 0;
+        moving = false;
         invulnerablePowerup = false;
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
@@ -63,7 +65,7 @@ public class CharacterController : MonoBehaviour
                 {
                     if (Input.GetKeyDown(control.Key))
                     {
-                        if (!invulnerable)
+                        if (!moving)
                         {
                             if (playStyle == "straightCutFry" && control.Value != prevPos) {
                                 StartCoroutine(moveStraightCutFry(prevPos, control.Value));
@@ -86,7 +88,8 @@ public class CharacterController : MonoBehaviour
             sprite.Rotate(new Vector3(0, 180, 0));
         }
         characterAnimator.SetBool("isMoving", true);
-        invulnerable = true;
+        moving = true;
+        bulletsPerDash = 1;
         characterAudio.PlayOneShot(movementAudioClips[Random.Range(0, movementAudioClips.Length)]);
 
         float startTime = Time.time;
@@ -117,7 +120,8 @@ public class CharacterController : MonoBehaviour
         sphereCollider.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         sphereCollider.SetActive(false);
-        invulnerable = false;
+        moving = false;
+        bulletsPerDash = 1;
     }
 
     IEnumerator moveStraightCutFry(Vector3 from, Vector3 to)
@@ -131,7 +135,8 @@ public class CharacterController : MonoBehaviour
             sprite.Rotate(new Vector3(0, 180, 0));
         }
         characterAnimator.SetBool("isMoving", true);
-        invulnerable = true;
+        moving = true;
+        bulletsPerDash = 1;
         characterAudio.PlayOneShot(movementAudioClips[Random.Range(0, movementAudioClips.Length)]);
         float fracDist = 0;
 
@@ -164,6 +169,7 @@ public class CharacterController : MonoBehaviour
             float distCovered = (Time.time - startTime) * speed;
             fracDist = distCovered / distance;
             gameObject.transform.parent.gameObject.transform.position = Vector3.Lerp(from, to, fracDist);
+            yield return null;
 
             // float dist = Vector3.Distance(prevPos, this.transform.position);
             // dir = this.transform.position - prevPos;
@@ -178,12 +184,11 @@ public class CharacterController : MonoBehaviour
             //         hit.transform.gameObject.SendMessage("OnTriggerEnter", hit.collider);
             //     }
             // }
-
-            yield return null;
         }
         characterAnimator.SetBool("isMoving", false);
         prevPos = this.transform.position;
-        invulnerable = false;
+        moving = false;
+        bulletsPerDash = 0;
         onCharacterMove.Invoke();
     }
 
@@ -228,7 +233,7 @@ public class CharacterController : MonoBehaviour
             characterAudio.PlayOneShot(punchingAudioClips[Random.Range(0, punchingAudioClips.Length)]);
         }
         else {
-            if (!invulnerable && !invulnerablePowerup)
+            if (!invulnerablePowerup)
             {
                 if (col.gameObject.CompareTag("TileDanger"))
                 {
@@ -237,9 +242,14 @@ public class CharacterController : MonoBehaviour
                 }
                 else if (col.gameObject.CompareTag("ProjectileCollider"))
                 {
-                    characterAudio.PlayOneShot(ouchAudioClips[Random.Range(0, ouchAudioClips.Length)]);
-                    col.gameObject.SendMessage("SetInactive");
-                    onCharacterHit.Invoke();
+                    if (bulletsPerDash > 0) {
+                        bulletsPerDash -= 1;
+                    }
+                    else {
+                        characterAudio.PlayOneShot(ouchAudioClips[Random.Range(0, ouchAudioClips.Length)]);
+                        col.gameObject.SendMessage("SetInactive");
+                        onCharacterHit.Invoke();
+                    }
                 }
             }
         }

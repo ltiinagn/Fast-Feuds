@@ -9,6 +9,7 @@ public class EnemySpawner1_1 : MonoBehaviour
     public EnemyConstants enemyConstants;
     public GameConstants gameConstants;
     public UnityEvent startNextDialogue;
+    public UnityEvent SpawnPowerup;
     public GameObject keyMapper;
     Dictionary<string, Vector3> keyMap;
     List<Vector3> keyList;
@@ -17,7 +18,7 @@ public class EnemySpawner1_1 : MonoBehaviour
     private int[][] spawnSequence;
     private int enemyTotal;
     private int enemyCount;
-    private int progress0 = 0;
+    private int progress0 = 1;
     private int progress1 = 0;
 
     // Start is called before the first frame update
@@ -100,9 +101,12 @@ public class EnemySpawner1_1 : MonoBehaviour
     }
 
     IEnumerator spawnEnemiesWithDelay() {
+        int spawnAt = Random.Range(0, spawnSequence[progress0][progress1]);
         for (int count = 0; count < spawnSequence[progress0][progress1]; count++) {
-            Debug.Log(enemyCount);
             spawnEnemy();
+            if (spawnAt == count) {
+                SpawnPowerup.Invoke();
+            }
             if (progress0 == 0 && progress1 <= 9) {
                 yield return new WaitForSeconds(0.2f);
             }
