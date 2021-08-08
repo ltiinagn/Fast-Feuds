@@ -35,7 +35,12 @@ public class GameConstants : ScriptableObject
         new string[] {"Fries"},
         new string[] {"Phew!"}
     };
-    public string[][] dialogue1_2 = new string[][] {};
+
+    public string[][] dialogue1_2 = new string[][] {
+        new string[] {"They're coming everywhere!"},
+        new string[] {"Even more of them?!"},
+        new string[] {"I think that's it for now.."}
+    };
     public string[] dialogue1_3 = {};
     public string[] dialogue1_B = {};
 

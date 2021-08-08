@@ -18,7 +18,7 @@ public class EnemySpawner1_1 : MonoBehaviour
     private int[][] spawnSequence;
     private int enemyTotal;
     private int enemyCount;
-    private int progress0 = 1;
+    private int progress0 = 0;
     private int progress1 = 0;
 
     // Start is called before the first frame update
@@ -33,7 +33,6 @@ public class EnemySpawner1_1 : MonoBehaviour
     }
 
     void spawnEnemies() {
-        // Instantiate(enemyConstants.chickenStationaryPrefab, new Vector3(2,0,0), Quaternion.identity);
         for (int count = 0; count < spawnSequence[progress0][progress1]; count++) {
             spawnEnemy();
         }

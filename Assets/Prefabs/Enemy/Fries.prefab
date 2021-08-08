@@ -296,7 +296,7 @@ GameObject:
   - component: {fileID: 5048485268267755399}
   m_Layer: 6
   m_Name: BoxCollider
-  m_TagString: EnemyTutorialCollider
+  m_TagString: EnemyCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -456,46 +456,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[1].type
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[2].type
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[1].amount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[1].prefab
-      value: 
-      objectReference: {fileID: 8363571034866767812, guid: ed8fab1a8fc729849a63b74a487b4ba0, type: 3}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[2].amount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[2].prefab
-      value: 
-      objectReference: {fileID: 8363571034866767812, guid: 1855b7a04df0d714cb755760f7fef616, type: 3}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[0].expandPool
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[1].expandPool
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[2].expandPool
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9025203462316610012, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
       propertyPath: m_Name
       value: ProjectileSpawnPool
