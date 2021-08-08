@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
@@ -11,12 +12,15 @@ public class CharacterController : MonoBehaviour
     public UnityEvent onCharacterMove;
     public UnityEvent onCharacterAddHealth;
     public GameObject keyMapper;
-    GameObject dialogueBox;
+    public GameObject sphereCollider;
+    public GameObject dialogueBox;
+    Text dialogueText;
     Dictionary<string, Vector3> keyMap;
 
     private Transform sprite;
     Vector3 prevPos;
     bool weapon = false;
+    string playStyle = "straightCutFry";
     bool faceRight = false;
     bool invulnerable;
     bool invulnerablePowerup;
@@ -31,13 +35,13 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dialogueText = dialogueBox.transform.Find("Panel/Dialogue_Text").GetComponent<Text>();
         invulnerable = false;
         invulnerablePowerup = false;
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         prevPos = this.transform.position;
         speed = characterConstants.characterSpeed;
-        dialogueBox = GameObject.Find("UI/Dialogue");
         sprite = gameObject.transform.parent.Find("Sprite").transform;
         sprite.Rotate(new Vector3(0, 180, 0));
         faceRight = true;
@@ -48,22 +52,75 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((!dialogueBox || !dialogueBox.activeSelf) && Input.anyKeyDown)
+        if ((!dialogueBox.activeSelf || dialogueBox.activeSelf && dialogueText.text.Contains("move to a tile")) && Input.anyKeyDown)
         {
-            foreach (KeyValuePair<string, Vector3> control in keyMap)
-            {
-                if (Input.GetKeyDown(control.Key))
+            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)) {
+                playStyle = playStyle == "straightCutFry" ? "meateor" : "straightCutFry";
+                Debug.Log(playStyle);
+            }
+            else {
+                foreach (KeyValuePair<string, Vector3> control in keyMap)
                 {
-                    if (control.Value != prevPos && !invulnerable)
+                    if (Input.GetKeyDown(control.Key))
                     {
-                        StartCoroutine(moveCharacter(prevPos, control.Value));
+                        if (!invulnerable)
+                        {
+                            if (playStyle == "straightCutFry" && control.Value != prevPos) {
+                                StartCoroutine(moveStraightCutFry(prevPos, control.Value));
+                            }
+                            else if (playStyle == "meateor") {
+                                StartCoroutine(moveMeateor(prevPos, control.Value));
+                            }
+                        }
                     }
                 }
             }
         }
     }
 
-    IEnumerator moveCharacter(Vector3 from, Vector3 to)
+    IEnumerator moveMeateor(Vector3 from, Vector3 to) {
+        bool moveRight = from.x - to.x < 0 ? true : false;
+        if (moveRight != faceRight)
+        {
+            faceRight = !faceRight;
+            sprite.Rotate(new Vector3(0, 180, 0));
+        }
+        characterAnimator.SetBool("isMoving", true);
+        invulnerable = true;
+        characterAudio.PlayOneShot(movementAudioClips[Random.Range(0, movementAudioClips.Length)]);
+
+        float startTime = Time.time;
+        float fracDist = 0;
+        Vector3 fromUp = new Vector3(from.x, from.y + 10, from.z);
+        float distance = Vector3.Distance(from, fromUp);
+
+        while (fracDist < 1) {
+            float distCovered = (Time.time - startTime) * speed;
+            fracDist = distCovered / distance;
+            gameObject.transform.parent.gameObject.transform.position = Vector3.Lerp(from, fromUp, fracDist);
+            yield return null;
+        }
+
+        startTime = Time.time;
+        fracDist = 0;
+        Vector3 toUp = new Vector3(to.x, to.y + 10, to.z);
+        distance = Vector3.Distance(toUp, to);
+
+        while (fracDist < 1) {
+            float distCovered = (Time.time - startTime) * speed;
+            fracDist = distCovered / distance;
+            gameObject.transform.parent.gameObject.transform.position = Vector3.Lerp(toUp, to, fracDist);
+            yield return null;
+        }
+        characterAnimator.SetBool("isMoving", false);
+        prevPos = this.transform.position;
+        sphereCollider.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        sphereCollider.SetActive(false);
+        invulnerable = false;
+    }
+
+    IEnumerator moveStraightCutFry(Vector3 from, Vector3 to)
     {
         float startTime = Time.time;
         float distance = Vector3.Distance(from, to);
@@ -108,8 +165,8 @@ public class CharacterController : MonoBehaviour
             fracDist = distCovered / distance;
             gameObject.transform.parent.gameObject.transform.position = Vector3.Lerp(from, to, fracDist);
 
-            float dist = Vector3.Distance(prevPos, this.transform.position);
-            dir = this.transform.position - prevPos;
+            // float dist = Vector3.Distance(prevPos, this.transform.position);
+            // dir = this.transform.position - prevPos;
 
             // RaycastHit[] hits;
             // hits = Physics.RaycastAll(prevPos, dir, dist);
@@ -121,11 +178,11 @@ public class CharacterController : MonoBehaviour
             //         hit.transform.gameObject.SendMessage("OnTriggerEnter", hit.collider);
             //     }
             // }
-            prevPos = this.transform.position;
 
             yield return null;
         }
         characterAnimator.SetBool("isMoving", false);
+        prevPos = this.transform.position;
         invulnerable = false;
         onCharacterMove.Invoke();
     }

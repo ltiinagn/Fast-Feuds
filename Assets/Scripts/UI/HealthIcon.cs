@@ -14,39 +14,35 @@ public class HealthIcon : MonoBehaviour
     public CharacterConstants characterConstants;
     public UnityEvent onPlayerDeath;
     public IntVariable characterHealth;
-    public Text healthText;
-
 
     // Start is called before the first frame update
     void Start()
     {
         int healthIncrease = PlayerPrefs.GetInt("skill_IncreaseStartingHealth");
         characterHealth.SetValue(characterConstants.characterHealth + healthIncrease);
-        
+
         UpdateHealth();
         /*
         if (characterHealth.Value > numOfHearts)
         {
             numOfHearts = characterHealth.Value;
-        } 
+        }
         */
-       
+
     }
 
     public void UpdateHealth()
     {
-        healthText.text = "Health: " + characterHealth.Value.ToString();
-
         if (characterHealth.Value == 0)
         {
             onPlayerDeath.Invoke();
         }
     }
+
     void Update()
     {
         for (int i = 0; i < hearts.Length; i++)
         {
-            
             if (i < characterHealth.Value)
             {
                 hearts[i].enabled = true;
@@ -55,9 +51,6 @@ public class HealthIcon : MonoBehaviour
             {
                 hearts[i].enabled = false;
             }
-
         }
     }
-    // Update is called once per frame
-
 }

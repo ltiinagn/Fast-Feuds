@@ -12,7 +12,7 @@ public class ProjectileShooter2Spawner : MonoBehaviour
         if (item != null) {
             //set position, and other necessary states
             item.transform.position = this.transform.position;
-            Vector3 direction = (character.transform.position - item.transform.position).normalized;
+            Vector3 direction = (new Vector3(character.transform.position.x, 0.0f, character.transform.position.z) - item.transform.position).normalized;
             item.transform.Find("BoxCollider").GetComponent<ProjectileBigMacSauceController>().direction = direction;
             direction = Quaternion.AngleAxis(-45, Vector3.up) * direction;
             item.transform.rotation = Quaternion.LookRotation(direction);
@@ -44,6 +44,6 @@ public class ProjectileShooter2Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
