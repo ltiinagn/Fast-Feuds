@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CharacterConstants
   m_EditorClassIdentifier: 
   characterHealth: 10
-  characterSpeed: 50
+  characterSpeed: 20

@@ -42,10 +42,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5238737631546468360}
   - component: {fileID: 5238737631546468362}
-  - component: {fileID: 409172151401904480}
+  - component: {fileID: 3105426148049635147}
   m_Layer: 6
   m_Name: BoxCollider
-  m_TagString: EnemyCollider
+  m_TagString: EnemyTutorialCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.7, z: 1}
   m_Center: {x: 0, y: 0.35, z: 0}
---- !u!114 &409172151401904480
+--- !u!114 &3105426148049635147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,7 +86,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5238737631546468367}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8630f29539cd22d4da9791779d636566, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c56b7101676c8948b3f8257e6f1678a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyConstants: {fileID: 11400000, guid: 2c8f5b28e8bd0cb43a7087e374e7223f, type: 2}
@@ -105,6 +105,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  keyMapper: {fileID: 629230319408024095}
+  character: {fileID: 0}
 --- !u!1 &5238737631906799747
 GameObject:
   m_ObjectHideFlags: 0

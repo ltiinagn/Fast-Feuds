@@ -16,6 +16,7 @@ TagManager:
   - Obstacle
   - EnemyCollider
   - Bullet1
+  - EnemyTutorialCollider
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,6 @@ TagManager:
   - Enemy
   - bgoverlay
   - UIShape
-  - 
   - 
   - 
   - 
