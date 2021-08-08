@@ -138,6 +138,7 @@ public class CharacterController : MonoBehaviour
         moving = true;
         bulletsPerDash = 1;
         characterAudio.PlayOneShot(movementAudioClips[Random.Range(0, movementAudioClips.Length)]);
+        characterAudio.PlayOneShot(gruntingAudioClips[Random.Range(0, gruntingAudioClips.Length)]);
         float fracDist = 0;
 
         Vector3 dir = to - from;
@@ -224,12 +225,10 @@ public class CharacterController : MonoBehaviour
             // onCharacterHit.Invoke();
         }
         else if (col.gameObject.CompareTag("EnemyCollider") || col.gameObject.CompareTag("ChickenMoving")) {
-            characterAudio.PlayOneShot(gruntingAudioClips[Random.Range(0, gruntingAudioClips.Length)]);
             characterAudio.PlayOneShot(punchingAudioClips[Random.Range(0, punchingAudioClips.Length)]);
         }
         else if (col.gameObject.CompareTag("EnemyTutorialCollider") && weapon) {
             col.gameObject.GetComponent<FriesTutorialController>().DestroyEnemy();
-            characterAudio.PlayOneShot(gruntingAudioClips[Random.Range(0, gruntingAudioClips.Length)]);
             characterAudio.PlayOneShot(punchingAudioClips[Random.Range(0, punchingAudioClips.Length)]);
         }
         else {
