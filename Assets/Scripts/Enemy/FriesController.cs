@@ -9,13 +9,15 @@ public class FriesController : MonoBehaviour
     public UnityEvent onEnemyDeath;
     private int health;
     private int state; // 0 invulnerable, 1 attacking, 2 weakened
-    private AudioSource audioSource;
+    private Animator animator;
+    // private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         health = enemyConstants.enemyHealth;
         state = 0;
+        animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
         // audioSource = GetComponent<AudioSource>();
     }
 
@@ -27,26 +29,32 @@ public class FriesController : MonoBehaviour
 
     IEnumerator attackPhase() {
         // to add animation
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3.5f); // animator.GetCurrentAnimatorStateInfo(0).length);
         state = 2;
+        animator.SetBool("isProvoked", false);
     }
 
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.CompareTag("Character"))
         {
-            if (state == 0) {
+            if (state == 0)
+            {
                 state = 1;
+                animator.SetBool("isProvoked", true);
                 StartCoroutine(attackPhase());
             }
-            else if (state == 2) {
+            else if (state == 2)
+            {
                 health -= 1;
                 Debug.Log("damaged by character!");
                 if (health == 0)
                 {
-                    // audioSource.PlayOneShot(audioSource.clip);
                     onEnemyDeath.Invoke();
-                    Destroy(gameObject.transform.parent.gameObject);
+                    animator.SetTrigger("onDeath");
+                    // audioSource.PlayOneShot(audioSource.clip);
+                    gameObject.GetComponent<BoxCollider>().enabled = false;
+                    Destroy(gameObject.transform.parent.gameObject, 1); // audioSource.clip.length);
                 }
             }
         }
