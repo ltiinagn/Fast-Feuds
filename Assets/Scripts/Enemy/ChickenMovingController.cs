@@ -12,8 +12,6 @@ public class ChickenMovingController : MonoBehaviour
     List<Vector3> keyList;
 
     private Transform spriteParent;
-    HashSet<string> spriteNames = new HashSet<string> {"Body"};
-    List<SpriteRenderer> sprites = new List<SpriteRenderer> {};
     private int health;
     private Vector3 start;
     private Vector3 end;
@@ -28,13 +26,6 @@ public class ChickenMovingController : MonoBehaviour
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         keyList = new List<Vector3>(keyMap.Values);
-        foreach (Transform sprite in gameObject.transform.parent.Find("Sprite"))
-        {
-            if (spriteNames.Contains(sprite.name))
-            {
-                sprites.Add(sprite.GetComponent<SpriteRenderer>());
-            }
-        };
         health = enemyConstants.chickenMovingHealth;
         start = transform.position;
         keyList.Remove(start);
@@ -61,17 +52,12 @@ public class ChickenMovingController : MonoBehaviour
         float distance;
         startTime = Time.time;
         distance = Vector3.Distance(from, to);
-        // int direction = from.x - to.x > 0 ? 0 : 1;
         bool moveRight = from.x - to.x < 0 ? true : false;
         if (moveRight != faceRight)
         {
             faceRight = !faceRight;
             spriteParent.Rotate(new Vector3(0, 0, 180));
         }
-        // foreach (SpriteRenderer spriteRenderer in sprites)
-        // {
-        //     spriteRenderer.flipX = direction == 1 ? true : false;
-        // }
 
         while (true)
         {

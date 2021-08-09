@@ -15,8 +15,6 @@ public class FriesTutorialController : MonoBehaviour
     GameObject dialogueBox;
 
     private Transform spriteParent;
-    HashSet<string> spriteNames = new HashSet<string> {"Body"};
-    List<SpriteRenderer> sprites = new List<SpriteRenderer> {};
     private Vector3 start;
     private Vector3 end;
     private bool faceRight = true;
@@ -31,19 +29,11 @@ public class FriesTutorialController : MonoBehaviour
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         keyList = new List<Vector3>(keyMap.Values);
-        foreach (Transform sprite in gameObject.transform.parent.Find("Sprite"))
-        {
-            if (spriteNames.Contains(sprite.name))
-            {
-                sprites.Add(sprite.GetComponent<SpriteRenderer>());
-            }
-        };
         character = GameObject.Find("Character");
         start = transform.position;
         keyList.Remove(start);
         end = keyList[Random.Range(0, keyList.Count)];
         spriteParent = gameObject.transform.parent.gameObject.transform;
-        // faceRight = transform.position.x - character.transform.position.x < 0 ? true : false;
         speed = 0.5f;
         animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
         // audioSource = GetComponent<AudioSource>();
@@ -86,10 +76,6 @@ public class FriesTutorialController : MonoBehaviour
             faceRight = !faceRight;
             spriteParent.Rotate(new Vector3(0, 0, 180));
         }
-        // foreach (SpriteRenderer spriteRenderer in sprites)
-        // {
-        //     spriteRenderer.flipX = from.x - to.x > 0 ? true : false;
-        // }
         Vector3 direction = (to - from).normalized;
         to = from + direction;
         float fracDist = Time.deltaTime * speed;
