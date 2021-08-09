@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileShooter2Controller : MonoBehaviour
+public class ProjectileStrawberryChipController : MonoBehaviour
 {
     public GameObject character;
     public Vector3 direction;

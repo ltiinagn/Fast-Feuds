@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileShooter2Spawner : MonoBehaviour
+public class ProjectileStrawberryChipSpawner : MonoBehaviour
 {
     public GameObject character;
 
@@ -12,8 +12,10 @@ public class ProjectileShooter2Spawner : MonoBehaviour
         if (item != null) {
             //set position, and other necessary states
             item.transform.position = this.transform.position;
-            Vector3 direction = (new Vector3(character.transform.position.x, 0.0f, character.transform.position.z) - item.transform.position).normalized;
-            item.transform.Find("BoxCollider").GetComponent<ProjectileBigMacSauceController>().direction = direction;
+            float randomX = Random.Range(-2.0f, 2.0f);
+            float randomZ = Random.Range(-2.0f, 2.0f);
+            Vector3 direction = (new Vector3(character.transform.position.x + randomX, 0.0f, character.transform.position.z + randomZ) - item.transform.position).normalized;
+            item.transform.Find("BoxCollider").GetComponent<ProjectileStrawberryChipController>().direction = direction;
             direction = Quaternion.AngleAxis(-45, Vector3.up) * direction;
             item.transform.rotation = Quaternion.LookRotation(direction);
             item.SetActive(true);
@@ -34,8 +36,8 @@ public class ProjectileShooter2Spawner : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         while (true) {
             for (int i = 0; i < 5; i++) {
-                spawnFromPooler(BulletType.bigMacSauce);
-                yield return new WaitForSeconds(0.5f);
+                spawnFromPooler(BulletType.strawberryChip);
+                yield return new WaitForSeconds(0.2f);
             }
             yield return new WaitForSeconds(2.0f);
         }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 629230319408024066}
   m_Layer: 6
-  m_Name: Shooter2
+  m_Name: MuffinPink
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3576879627057730725}
   - component: {fileID: 1081945547229871350}
   m_Layer: 0
-  m_Name: ProjectileShooter2Spawner
+  m_Name: StrawberryChipSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5238737631546468360}
   - component: {fileID: 5238737631546468362}
-  - component: {fileID: 2232691541147750226}
+  - component: {fileID: 4772073377120630070}
   m_Layer: 6
   m_Name: BoxCollider
   m_TagString: Untagged
@@ -122,7 +122,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.7, z: 1}
   m_Center: {x: 0, y: 0.35, z: 0}
---- !u!114 &2232691541147750226
+--- !u!114 &4772073377120630070
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,10 +131,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5238737631546468367}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80879868a92813149b78ca0887ad8c60, type: 3}
+  m_Script: {fileID: 11500000, guid: 72676dd5278852e408c85b9e7265b321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyConstants: {fileID: 11400000, guid: 2c8f5b28e8bd0cb43a7087e374e7223f, type: 2}
+  enemyConstants: {fileID: 0}
   onEnemyDeath:
     m_PersistentCalls:
       m_Calls:
@@ -207,7 +207,7 @@ Transform:
   m_GameObject: {fileID: 7682153774490188145}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 5238737631906799756}
   m_RootOrder: 0
@@ -253,8 +253,8 @@ SpriteRenderer:
   m_SortingLayerID: 1905662745
   m_SortingLayer: 1
   m_SortingOrder: 15
-  m_Sprite: {fileID: 8569908201147147086, guid: 465b0e6cd397de54583b55b4cf891070, type: 3}
-  m_Color: {r: 1, g: 0.23677939, b: 0, a: 1}
+  m_Sprite: {fileID: -5391830451493983768, guid: 5fc8d471eb4ab1f40b6062e4ca4727ad, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
