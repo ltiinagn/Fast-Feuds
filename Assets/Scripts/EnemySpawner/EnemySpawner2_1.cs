@@ -18,7 +18,7 @@ public class EnemySpawner2_1 : MonoBehaviour
     private int[][] spawnSequence;
     private int enemyTotal;
     private int enemyCount;
-    private int progress0 = 0;
+    private int progress0 = 2;
     private int progress1 = 0;
 
     // Start is called before the first frame update
@@ -44,23 +44,23 @@ public class EnemySpawner2_1 : MonoBehaviour
             if (progress1 <= 4) {
                 Instantiate(enemyConstants.muffinPinkPrefab, keyList[index], Quaternion.identity);
             }
-            else if (progress1 <= 9) {
-                Instantiate(enemyConstants.chickenMovingPrefab, keyList[index], Quaternion.identity);
-            }
-            else {
-                Instantiate(enemyConstants.chickenThrowingPrefab, keyList[index], Quaternion.identity);
-                enemyCount += 1;
-            }
+            // else if (progress1 <= 9) {
+            //     Instantiate(enemyConstants.chickenMovingPrefab, keyList[index], Quaternion.identity);
+            // }
+            // else {
+            //     Instantiate(enemyConstants.chickenThrowingPrefab, keyList[index], Quaternion.identity);
+            //     enemyCount += 1;
+            // }
         }
         else if (progress0 == 1) {
-            // StartCoroutine(spawnClownMilkPair());
+            Instantiate(enemyConstants.chocolateCakePrefab, keyList[index], Quaternion.identity);
         }
         else if (progress0 == 2) {
-            Instantiate(enemyConstants.bigMacPrefab, keyList[index], Quaternion.identity);
+            Instantiate(enemyConstants.donutPrefab, keyList[index], Quaternion.identity);
         }
-        else if (progress0 == 3) {
-            Instantiate(enemyConstants.friesPrefab, keyList[index], Quaternion.identity);
-        }
+        // else if (progress0 == 3) {
+        //     Instantiate(enemyConstants.friesPrefab, keyList[index], Quaternion.identity);
+        // }
         if (progress0 != 1) {
             keyList.RemoveAt(index);
         }

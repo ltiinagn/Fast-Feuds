@@ -14,7 +14,7 @@ public class ChocolateCakeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = enemyConstants.chickenStationaryHealth;
+        health = enemyConstants.enemyHealth;
         animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         int direction = Random.Range(0, 2);

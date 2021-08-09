@@ -4,16 +4,17 @@ using UnityEngine;
 public class EnemyConstants : ScriptableObject
 {
     // Enemy Prefabs
+    public GameObject friesTutorialPrefab;
     public GameObject chickenStationaryPrefab;
     public GameObject chickenMovingPrefab;
     public GameObject chickenThrowingPrefab;
     public GameObject chickenMovingExplodingPrefab;
     public GameObject clownMilkPrefab;
     public GameObject bigMacPrefab;
-    public GameObject chocolateCakePrefab;
-    public GameObject muffinPinkPrefab;
-    public GameObject friesTutorialPrefab;
     public GameObject friesPrefab;
+    public GameObject muffinPinkPrefab;
+    public GameObject chocolateCakePrefab;
+    public GameObject donutPrefab;
     public GameObject enemyTypeAPrefab;
     public GameObject boss1_BPrefab;
     public GameObject boss2_BPrefab;
