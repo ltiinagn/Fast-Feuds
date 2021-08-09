@@ -1,0 +1,672 @@
+fileFormatVersion: 2
+guid: de4685bf522aea449b6938daf874364b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5532211281708527987
+    second: LastBossHpExpBeetroot_3
+  - first:
+      213: 7233519771802997110
+    second: LastBossHpExpBeetroot_4
+  - first:
+      213: -5347161097979612931
+    second: LastBossHpExpBeetroot_5
+  - first:
+      213: 6097003738818839334
+    second: LastBossHpExpBeetroot_12
+  - first:
+      213: 2800357135743408319
+    second: LastBossHpExpBeetroot_13
+  - first:
+      213: 8956052474659041423
+    second: LastBossHpExpBeetroot_23
+  - first:
+      213: -2255804397444956339
+    second: LastBossHpExpBeetroot_27
+  - first:
+      213: -4776815218381848394
+    second: LastBossHpExpBeetroot_28
+  - first:
+      213: -4934322332202048292
+    second: LastBossHpExpBeetroot_29
+  - first:
+      213: -3360348468657624752
+    second: LastBossHpExpBeetroot_30
+  - first:
+      213: -7811786898586898842
+    second: LastBossHpExpBeetroot_31
+  - first:
+      213: 4414900791795382348
+    second: LastBossHpExpBeetroot_32
+  - first:
+      213: -5693892648289865076
+    second: LastBossHpExpBeetroot_33
+  - first:
+      213: 3790704461990244363
+    second: LastBossHpExpBeetroot_36
+  - first:
+      213: -1349035075297777953
+    second: LastBossHpExpBeetroot_37
+  - first:
+      213: -3369621472517712879
+    second: LastBossHpExpBeetroot_38
+  - first:
+      213: -4784399074153868511
+    second: LastBossHpExpBeetroot_39
+  - first:
+      213: -1877335427838822592
+    second: LastBossHpExpBeetroot_41
+  - first:
+      213: -5582520405408020651
+    second: LastBossHpExpBeetroot_42
+  - first:
+      213: 3054831258826798540
+    second: LastBossHpExpBeetroot_43
+  - first:
+      213: -4035061645483925847
+    second: LastBossHpExpBeetroot_44
+  - first:
+      213: 6837450483649392078
+    second: LastBossHpExpBeetroot_45
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 2
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_3
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 3879
+        width: 316
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37135ac89dc56cc40800000000000000
+      internalID: 5532211281708527987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_4
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 3851
+        width: 351
+        height: 332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671151a58ef926460800000000000000
+      internalID: 7233519771802997110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_5
+      rect:
+        serializedVersion: 2
+        x: 1690
+        y: 3851
+        width: 356
+        height: 337
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df03326df411bc5b0800000000000000
+      internalID: -5347161097979612931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_12
+      rect:
+        serializedVersion: 2
+        x: 2722
+        y: 3812
+        width: 420
+        height: 404
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 623868ed898ec9450800000000000000
+      internalID: 6097003738818839334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_13
+      rect:
+        serializedVersion: 2
+        x: 3231
+        y: 3772
+        width: 473
+        height: 458
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb857306afddcd620800000000000000
+      internalID: 2800357135743408319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_23
+      rect:
+        serializedVersion: 2
+        x: 2204
+        y: 3818
+        width: 369
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 5, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f807fc5464a4a4c70800000000000000
+      internalID: 8956052474659041423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_27
+      rect:
+        serializedVersion: 2
+        x: 3750
+        y: 3770
+        width: 496
+        height: 461
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4f778f2ad5c1b0e0800000000000000
+      internalID: -2255804397444956339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_28
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 3450
+        width: 84
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b08ba61ed755bdb0800000000000000
+      internalID: -4776815218381848394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_29
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 3424
+        width: 104
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4e1d56bf3c58bb0800000000000000
+      internalID: -4934322332202048292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_30
+      rect:
+        serializedVersion: 2
+        x: 1721
+        y: 3412
+        width: 130
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05962242fd4ad51d0800000000000000
+      internalID: -3360348468657624752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_31
+      rect:
+        serializedVersion: 2
+        x: 2238
+        y: 3409
+        width: 163
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66e6da05435f69390800000000000000
+      internalID: -7811786898586898842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_32
+      rect:
+        serializedVersion: 2
+        x: 2764
+        y: 3390
+        width: 203
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c48fd8501e0e44d30800000000000000
+      internalID: 4414900791795382348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_33
+      rect:
+        serializedVersion: 2
+        x: 3259
+        y: 3342
+        width: 254
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c82797dcdca3bf0b0800000000000000
+      internalID: -5693892648289865076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_36
+      rect:
+        serializedVersion: 2
+        x: 2845
+        y: 1746
+        width: 1181
+        height: 1342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b00ba69cf994b9430800000000000000
+      internalID: 3790704461990244363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_37
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 1758
+        width: 1181
+        height: 1341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd6655b1fb3474de0800000000000000
+      internalID: -1349035075297777953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_38
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 1743
+        width: 1181
+        height: 1343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1149d0faf13bc31d0800000000000000
+      internalID: -3369621472517712879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_39
+      rect:
+        serializedVersion: 2
+        x: 3088
+        y: 1376
+        width: 180
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 123d95114666a9db0800000000000000
+      internalID: -4784399074153868511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_41
+      rect:
+        serializedVersion: 2
+        x: 3647
+        y: 1177
+        width: 297
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 047396bff5d52f5e0800000000000000
+      internalID: -1877335427838822592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_42
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 1107
+        width: 1309
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 557094cc447e682b0800000000000000
+      internalID: -5582520405408020651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_43
+      rect:
+        serializedVersion: 2
+        x: 2287
+        y: 858
+        width: 493
+        height: 493
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc5712f38d0f46a20800000000000000
+      internalID: 3054831258826798540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_44
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 768
+        width: 1214
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ae9026efc49008c0800000000000000
+      internalID: -4035061645483925847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LastBossHpExpBeetroot_45
+      rect:
+        serializedVersion: 2
+        x: 2181
+        y: 183
+        width: 1830
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecdae3f0df083ee50800000000000000
+      internalID: 6837450483649392078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 432d7056ac4663e409c088361f0f0c04
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,28 +1,40 @@
 fileFormatVersion: 2
-guid: a80a0c192322b50469f121494925288b
+guid: acd9640863f28204a8eac6be21a3f745
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6714115688330646367
-    second: pre-game ui elements_0
+      213: 6941632234793759593
+    second: dialogueboxcrymilkstealth-01_0
   - first:
-      213: 700927729671562401
-    second: pre-game ui elements_1
+      213: -2076775363094091111
+    second: dialogueboxcrymilkstealth-01_1
   - first:
-      213: 3028694408885710833
-    second: pre-game ui elements_2
+      213: 3146099419788111058
+    second: dialogueboxcrymilkstealth-01_2
   - first:
-      213: -5128029502564177515
-    second: pre-game ui elements_3
+      213: -8057070724805798172
+    second: dialogueboxcrymilkstealth-01_3
   - first:
-      213: 5673749783362024748
-    second: pre-game ui elements_4
+      213: 3826405104804091457
+    second: dialogueboxcrymilkstealth-01_4
   - first:
-      213: 649818423610996842
-    second: pre-game ui elements_5
+      213: -5408179269674316819
+    second: dialogueboxcrymilkstealth-01_5
   - first:
-      213: 6478517376518871289
-    second: pre-game ui elements_6
+      213: -8031666802787189036
+    second: dialogueboxcrymilkstealth-01_6
+  - first:
+      213: 1983399408770373419
+    second: dialogueboxcrymilkstealth-01_7
+  - first:
+      213: 3604102957563198195
+    second: dialogueboxcrymilkstealth-01_8
+  - first:
+      213: 5665801828317475795
+    second: dialogueboxcrymilkstealth-01_9
+  - first:
+      213: -4158600353271565636
+    second: dialogueboxcrymilkstealth-01_10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -148,13 +160,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pre-game ui elements_0
+      name: dialogueboxcrymilkstealth-01_0
       rect:
         serializedVersion: 2
-        x: 97
-        y: 3640
-        width: 499
-        height: 320
+        x: 258
+        y: 2964
+        width: 768
+        height: 1260
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5353d745a45d2d50800000000000000
-      internalID: 6714115688330646367
+      spriteID: 963784c3db1a55060800000000000000
+      internalID: 6941632234793759593
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pre-game ui elements_1
+      name: dialogueboxcrymilkstealth-01_1
       rect:
         serializedVersion: 2
-        x: 1106
-        y: 3752
-        width: 137
-        height: 182
+        x: 1385
+        y: 3571
+        width: 315
+        height: 428
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a46b447e023ab900800000000000000
-      internalID: 700927729671562401
+      spriteID: 99a6e7c7fcfcd23e0800000000000000
+      internalID: -2076775363094091111
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pre-game ui elements_2
+      name: dialogueboxcrymilkstealth-01_2
       rect:
         serializedVersion: 2
-        x: 470
-        y: 3536
-        width: 600
-        height: 100
+        x: 1938
+        y: 3666
+        width: 371
+        height: 341
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ff28d6a485180a20800000000000000
-      internalID: 3028694408885710833
+      spriteID: 2dc6888e0c039ab20800000000000000
+      internalID: 3146099419788111058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pre-game ui elements_3
+      name: dialogueboxcrymilkstealth-01_3
       rect:
         serializedVersion: 2
-        x: 56
-        y: 1653
-        width: 2959
-        height: 1844
+        x: 1868
+        y: 3286
+        width: 147
+        height: 225
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59960fd365495d8b0800000000000000
-      internalID: -5128029502564177515
+      spriteID: 4e650cd2dd88f2090800000000000000
+      internalID: -8057070724805798172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pre-game ui elements_4
+      name: dialogueboxcrymilkstealth-01_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 31
-        width: 1271
-        height: 1528
+        x: 1347
+        y: 3018
+        width: 384
+        height: 202
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c253ebdfd553dbe40800000000000000
-      internalID: 5673749783362024748
+      spriteID: 146d69e6b2f1a1530800000000000000
+      internalID: 3826405104804091457
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pre-game ui elements_5
+      name: dialogueboxcrymilkstealth-01_5
       rect:
         serializedVersion: 2
-        x: 1271
-        y: 0
-        width: 1270
-        height: 1527
+        x: 2972
+        y: 2600
+        width: 509
+        height: 686
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,20 +279,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6876d3d96e940900800000000000000
-      internalID: 649818423610996842
+      spriteID: deb4e65ab9942f4b0800000000000000
+      internalID: -5408179269674316819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pre-game ui elements_6
+      name: dialogueboxcrymilkstealth-01_6
       rect:
         serializedVersion: 2
-        x: 3132
-        y: 543
-        width: 651
-        height: 358
+        x: 839
+        y: 2598
+        width: 147
+        height: 225
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,8 +300,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f85a92ba3158e950800000000000000
-      internalID: 6478517376518871289
+      spriteID: 4de7291b899c98090800000000000000
+      internalID: -8031666802787189036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dialogueboxcrymilkstealth-01_7
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 2393
+        width: 384
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b275a77f043768b10800000000000000
+      internalID: 1983399408770373419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dialogueboxcrymilkstealth-01_8
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 796
+        width: 1288
+        height: 1336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fa3d776b88540230800000000000000
+      internalID: 3604102957563198195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dialogueboxcrymilkstealth-01_9
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 796
+        width: 1288
+        height: 1336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d33f908eb8f0ae40800000000000000
+      internalID: 5665801828317475795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dialogueboxcrymilkstealth-01_10
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 796
+        width: 1288
+        height: 1336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb23f6c030fa946c0800000000000000
+      internalID: -4158600353271565636
       vertices: []
       indices: 
       edges: []
@@ -297,7 +393,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 2ca78f01f0b29994ebbc19af0b5c5551
+    spriteID: 2796eb4ea00d2bf4994eac157002ec82
     internalID: 0
     vertices: []
     indices: 

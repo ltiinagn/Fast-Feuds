@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 629230319408024066}
   m_Layer: 6
-  m_Name: Shooter
+  m_Name: ChocolateCake
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3576879627057730725}
   - component: {fileID: 5332132955926946856}
   m_Layer: 0
-  m_Name: ProjectileShooterSpawner
+  m_Name: ProjectileSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +86,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5238737631546468360}
   - component: {fileID: 5238737631546468362}
-  - component: {fileID: 2232691541147750226}
+  - component: {fileID: 4970723184917220560}
   m_Layer: 6
   m_Name: BoxCollider
   m_TagString: Untagged
@@ -121,7 +121,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.7, z: 1}
   m_Center: {x: 0, y: 0.35, z: 0}
---- !u!114 &2232691541147750226
+--- !u!114 &4970723184917220560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,10 +130,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5238737631546468367}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80879868a92813149b78ca0887ad8c60, type: 3}
+  m_Script: {fileID: 11500000, guid: a0358e62e245aa14ba937c9d7268cfd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyConstants: {fileID: 11400000, guid: 2c8f5b28e8bd0cb43a7087e374e7223f, type: 2}
+  enemyConstants: {fileID: 0}
   onEnemyDeath:
     m_PersistentCalls:
       m_Calls:
@@ -252,8 +252,8 @@ SpriteRenderer:
   m_SortingLayerID: 1905662745
   m_SortingLayer: 1
   m_SortingOrder: 15
-  m_Sprite: {fileID: 8569908201147147086, guid: 465b0e6cd397de54583b55b4cf891070, type: 3}
-  m_Color: {r: 1, g: 0.99068856, b: 0, a: 1}
+  m_Sprite: {fileID: 4911932606690357128, guid: 5fc8d471eb4ab1f40b6062e4ca4727ad, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

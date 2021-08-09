@@ -10,8 +10,8 @@ public class EnemyConstants : ScriptableObject
     public GameObject chickenMovingExplodingPrefab;
     public GameObject clownMilkPrefab;
     public GameObject bigMacPrefab;
-    public GameObject shooterPrefab;
-    public GameObject shooter2Prefab;
+    public GameObject chocolateCakePrefab;
+    public GameObject muffinPinkPrefab;
     public GameObject friesTutorialPrefab;
     public GameObject friesPrefab;
     public GameObject enemyTypeAPrefab;
@@ -47,7 +47,13 @@ public class EnemyConstants : ScriptableObject
 
 
     // Level 1-3 Spawn
-    public int[] spawnSequence2_1 = {2, 2, 2};
+    public int[][] spawnSequence2_1 = new int[][] {
+        new int[] {1, 2, 3, 4, 10, 1, 2, 3, 4, 10, 1, 2, 3, 4, 10},
+        //new int[] {1, 1, 1, 1, 10, 1, 1, 1, 1, 10, 1, 1, 1, 1, 10},
+        new int[] {1, 2, 3, 4, 10},
+        new int[] {1, 2, 3, 4, 10},
+        new int[] {1, 2, 3, 4, 10}
+    };
 
     // Level 1-3 Spawn
     public int[] spawnSequence2_2 = {2, 3, 4};

@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileShooterSpawner : MonoBehaviour
+public class ProjectileChocolateBallSpawner : MonoBehaviour
 {
     void spawnFromPooler(BulletType i){
         // static method access
         GameObject item = BulletPooler.SharedInstance.GetPooledBullet(i);
-        int angle = Random.Range(0, 360);
+        int angle = Random.Range(0, 2) == 0 ? 0 : 180;
         if (item != null) {
             //set position, and other necessary states
             item.transform.position = this.transform.position;
-            item.transform.Find("BoxCollider").GetComponent<ProjectileBigMacSauceController>().direction = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.forward;
+            item.transform.Find("BoxCollider").GetComponent<ProjectileChocolateBallController>().direction = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.forward;
             item.transform.rotation = Quaternion.AngleAxis(angle - 45, Vector3.up);
             item.SetActive(true);
         }
@@ -30,7 +30,7 @@ public class ProjectileShooterSpawner : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         while (true) {
             for (int i = 0; i < 10; i++) {
-                spawnFromPooler(BulletType.bigMacSauce);
+                spawnFromPooler(BulletType.chocolateBall);
                 yield return new WaitForSeconds(0.2f);
             }
             yield return new WaitForSeconds(2.0f);
@@ -40,6 +40,6 @@ public class ProjectileShooterSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
