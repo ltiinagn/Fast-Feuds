@@ -45,11 +45,11 @@ public class GameConstants : ScriptableObject
     public string[] dialogue1_B = {};
 
     public string[][] dialogue2_1 = new string[][] {
-        new string[] {"Hello! Welcome to Fast Feuds! Have fun! Here are some chickens!"},
-        new string[] {"ClownMilkk"},
-        new string[] {"Burgers"},
-        new string[] {"Fries"},
-        new string[] {"Phew!"}
+        new string[] {"Dummy 2.1.1"},
+        new string[] {"Dummy 2.1.2"},
+        new string[] {"Dummy 2.1.3"},
+        new string[] {"Dummy 2.1.4"},
+        new string[] {"Dummy 2.1.5"}
     };
     public string[] dialogue2_2 = {};
     public string[] dialogue2_B = {};
