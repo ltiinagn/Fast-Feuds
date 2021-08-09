@@ -246,6 +246,7 @@ public class CharacterController : MonoBehaviour
                         bulletsPerDash -= 1;
                     }
                     else {
+                        characterAnimator.SetTrigger("onHit");
                         characterAudio.PlayOneShot(ouchAudioClips[Random.Range(0, ouchAudioClips.Length)]);
                         col.gameObject.SendMessage("SetInactive");
                         onCharacterHit.Invoke();
@@ -253,6 +254,7 @@ public class CharacterController : MonoBehaviour
                 }
                 else if (col.gameObject.CompareTag("MeleeCollider"))
                 {
+                    characterAnimator.SetTrigger("onHit");
                     characterAudio.PlayOneShot(ouchAudioClips[Random.Range(0, ouchAudioClips.Length)]);
                     onCharacterHit.Invoke();
                 }
