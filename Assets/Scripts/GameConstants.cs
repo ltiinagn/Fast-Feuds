@@ -8,6 +8,7 @@ public class GameConstants : ScriptableObject
     public string[] rowNames = {"Tiles/Row1", "Tiles/Row2", "Tiles/Row3", "Tiles/Row4"};
 
     public int powerupVisibilityDuration = 5;
+    public int powerupVisibilityDuration2 = 3; // for invulnerable
     public int powerupDisappearDuration = 3;
 
     public GameObject powerupWeaponPrefab;
@@ -15,6 +16,8 @@ public class GameConstants : ScriptableObject
     public GameObject powerupInvulnerablePrefab;
     public GameObject powerupDestroyAllEnemiesPrefab;
     public GameObject powerupDestroyAllProjectilesPrefab;
+
+    // public Vector3[] offTileSpawnPoints = {}
 
     public int invulnerablePowerupDuration = 5;
 
@@ -27,23 +30,23 @@ public class GameConstants : ScriptableObject
     };
 
     public string[][] dialogue1_1 = new string[][] {
-        new string[] {"Hello! Welcome to the tutorial! Press space to continue or K to skip!", "Press the corresponding key to move to the in-game tile.", "End of tutorial. Have fun!"},
-        new string[] {"Good job! Next, clear some moving chickens!"},
-        new string[] {"Good job! Next, clear some chickens that throw bones! Avoid getting hit by the bones!"},
-        new string[] {"Beware of these chickens!"},
-        new string[] {"Well done!"}
+        new string[] {"Hello! Welcome to Fast Feuds! Have fun! Here are some chickens!"},
+        new string[] {"ClownMilkk"},
+        new string[] {"Burgers"},
+        new string[] {"Fries"},
+        new string[] {"Phew!"}
     };
-    public string[][] dialogue1_2 = new string[][] {};
-    public string[] dialogue1_3 = {};
+
+    public string[][] dialogue1_2 = new string[][] {
+        new string[] {"They're coming everywhere!"},
+        new string[] {"Even more of them?!"},
+        new string[] {"I think that's it for now.."}
+    };
     public string[] dialogue1_B = {};
 
     public string[] dialogue2_1 = {};
     public string[] dialogue2_2 = {};
-    public string[] dialogue2_3 = {};
     public string[] dialogue2_B = {};
 
-    public string[] dialogue3_1 = {};
-    public string[] dialogue3_2 = {};
-    public string[] dialogue3_3 = {};
     public string[] dialogue3_B = {};
 }

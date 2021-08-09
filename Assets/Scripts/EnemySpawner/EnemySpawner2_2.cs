@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EnemySpawner1_3 : MonoBehaviour
+public class EnemySpawner2_2 : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
     public GameObject keyMapper;
     public UnityEvent SpawnPowerup;
     Dictionary<string, Vector3> keyMap;
     List<Vector3> keyList;
-    
+
     private GameObject character;
     private int[] spawnSequence;
     private int enemyCount;
@@ -23,7 +23,7 @@ public class EnemySpawner1_3 : MonoBehaviour
         character = GameObject.Find("Character");
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
-        spawnSequence = enemyConstants.spawnSequence1_3;
+        spawnSequence = enemyConstants.spawnSequence2_2;
         enemyCount = spawnSequence[progress];
 
         StartCoroutine(WaitForNextSpawn());
@@ -38,15 +38,7 @@ public class EnemySpawner1_3 : MonoBehaviour
 
     void spawnEnemy() {
         int index = Random.Range(0, keyList.Count);
-        if (progress == 0) {
-            Instantiate(enemyConstants.bigMacPrefab, keyList[index], Quaternion.identity);
-        }
-        else if (progress == 1) {
-            Instantiate(enemyConstants.shooterPrefab, keyList[index], Quaternion.identity);
-        }
-        else if (progress == 2) {
-            Instantiate(enemyConstants.shooter2Prefab, keyList[index], Quaternion.identity);
-        }
+        Instantiate(enemyConstants.friesPrefab, keyList[index], Quaternion.identity);
     }
 
     IEnumerator spawnEnemiesWithDelay() {
@@ -59,7 +51,7 @@ public class EnemySpawner1_3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     IEnumerator WaitForNextSpawn() {

@@ -18,7 +18,7 @@ public class HealthMonitor : MonoBehaviour
 
     public void UpdateHealth()
     {
-        healthText.text = "Health: " + characterHealth.Value.ToString();
+        healthText.text = "Å~" + characterHealth.Value.ToString();
         if (characterHealth.Value == 0) {
             onPlayerDeath.Invoke();
         }

@@ -32,7 +32,7 @@ public class PowerupAddHealthController : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    void UsePowerup() {
+    public void UsePowerup() {
         Destroy(gameObject.transform.parent.gameObject);
     }
 }

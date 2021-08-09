@@ -18,7 +18,7 @@ public class PowerupWeaponController : MonoBehaviour
 
     }
 
-    void UsePowerup() {
+    public void UsePowerup() {
         Destroy(gameObject.transform.parent.gameObject);
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerupSpawner1_2 : MonoBehaviour
+public class PowerupSpawner1_1 : MonoBehaviour
 {
     public GameConstants gameConstants;
     public GameObject keyMapper;
@@ -37,7 +37,6 @@ public class PowerupSpawner1_2 : MonoBehaviour
                 Instantiate(gameConstants.powerupInvulnerablePrefab, keyList[index], Quaternion.identity);
             }
             keyList.RemoveAt(index);
-            // Instantiate(gameConstants.powerupDestroyAllEnemiesPrefab, keyList[index], Quaternion.identity);
 
             yield return new WaitForSeconds(1.0f);
         }
