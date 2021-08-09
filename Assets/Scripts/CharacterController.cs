@@ -122,6 +122,7 @@ public class CharacterController : MonoBehaviour
         sphereCollider.SetActive(false);
         moving = false;
         bulletsPerDash = 1;
+        onCharacterMove.Invoke();
     }
 
     IEnumerator moveStraightCutFry(Vector3 from, Vector3 to)

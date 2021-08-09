@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ChocolateCakeController : MonoBehaviour
+public class MuffinBlueController : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
     public UnityEvent onEnemyDeath;
@@ -17,11 +17,6 @@ public class ChocolateCakeController : MonoBehaviour
         health = enemyConstants.enemyHealth;
         animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
-        int direction = Random.Range(0, 2);
-        if (direction == 1)
-        {
-            gameObject.transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX = true;
-        }
     }
 
     // Update is called once per frame
@@ -41,10 +36,9 @@ public class ChocolateCakeController : MonoBehaviour
                 onEnemyDeath.Invoke();
                 // animator.SetTrigger("onDeath");
                 // audioSource.PlayOneShot(audioSource.clip);
-                gameObject.transform.parent.Find("ProjectileChocolateBallSpawner").gameObject.SetActive(false);
                 gameObject.GetComponent<BoxCollider>().enabled = false;
-                Destroy(gameObject.transform.parent.gameObject);
                 // Destroy(gameObject.transform.parent.gameObject, audioSource.clip.length);
+                Destroy(gameObject.transform.parent.gameObject);
             }
         }
     }

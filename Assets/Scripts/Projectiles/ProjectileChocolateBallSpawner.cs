@@ -4,34 +4,39 @@ using UnityEngine;
 
 public class ProjectileChocolateBallSpawner : MonoBehaviour
 {
+    bool flipX;
+
     void spawnFromPooler(BulletType i){
-        // static method access
-        GameObject item = BulletPooler.SharedInstance.GetPooledBullet(i);
-        int angle = Random.Range(0, 2) == 0 ? 0 : 180;
-        if (item != null) {
-            //set position, and other necessary states
-            item.transform.position = this.transform.position;
-            item.transform.Find("BoxCollider").GetComponent<ProjectileChocolateBallController>().direction = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.forward;
-            item.transform.rotation = Quaternion.AngleAxis(angle - 45, Vector3.up);
-            item.SetActive(true);
-        }
-        else {
-            Debug.Log("not enough items in the pool.");
+        int center = flipX ? 270 : 90;
+        for (int angle = center-10; angle <= center+10; angle += 10) {
+            // static method access
+            GameObject item = BulletPooler.SharedInstance.GetPooledBullet(i);
+            if (item != null) {
+                //set position, and other necessary states
+                item.transform.position = this.transform.position;
+                item.transform.Find("BoxCollider").GetComponent<ProjectileChocolateBallController>().direction = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.forward;
+                item.transform.rotation = Quaternion.AngleAxis(angle - 45, Vector3.up);
+                item.SetActive(true);
+            }
+            else {
+                Debug.Log("not enough items in the pool.");
+            }
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        flipX = gameObject.transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX;
         StartCoroutine(spawnBulletPeriodically());
     }
 
     IEnumerator spawnBulletPeriodically() {
         yield return new WaitForSeconds(0.5f);
         while (true) {
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 5; i++) {
                 spawnFromPooler(BulletType.chocolateBall);
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.5f);
             }
             yield return new WaitForSeconds(2.0f);
         }

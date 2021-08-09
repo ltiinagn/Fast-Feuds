@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72676dd5278852e408c85b9e7265b321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyConstants: {fileID: 0}
+  enemyConstants: {fileID: 11400000, guid: 2c8f5b28e8bd0cb43a7087e374e7223f, type: 2}
   onEnemyDeath:
     m_PersistentCalls:
       m_Calls:

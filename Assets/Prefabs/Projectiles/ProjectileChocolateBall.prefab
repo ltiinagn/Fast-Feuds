@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8187078185397661338}
   - component: {fileID: 2334148142629060716}
-  - component: {fileID: 773724053519046698}
+  - component: {fileID: 2801986674538831123}
   m_Layer: 0
   m_Name: BoxCollider
   m_TagString: ProjectileCollider
@@ -128,7 +128,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &773724053519046698
+--- !u!114 &2801986674538831123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,12 +137,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2471834065724167718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3de27f37190046b4ca92fca1757c0c93, type: 3}
+  m_Script: {fileID: 11500000, guid: f4fe074cf0f8e0c469c1fed847dbc025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
-  moveSpeed: 6
+  moveSpeed: 8
 --- !u!1 &8363571034866767812
 GameObject:
   m_ObjectHideFlags: 0

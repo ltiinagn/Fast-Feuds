@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Boss1_BController : MonoBehaviour
+public class BossBigMikeController : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
     public GameConstants gameConstants;
@@ -21,7 +21,7 @@ public class Boss1_BController : MonoBehaviour
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         keyRowMap = keyMapper.GetComponent<KeyMapping>().keyRowMap;
-        health = enemyConstants.boss1_B_Health;
+        health = enemyConstants.bossBigMike_Health;
         SpawnPowerup.Invoke();
     }
 

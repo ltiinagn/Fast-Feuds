@@ -52,7 +52,7 @@ public class DialogueController2_1 : MonoBehaviour
                 if (Input.GetKeyDown("space")) {
                     progress1 += 1;
                 }
-                else if (progress1 == 0 && Input.GetKeyDown(KeyCode.Return)) {
+                else if (Input.GetKeyDown(KeyCode.Return)) {
                     progress1 = dialogue[progress0].Length;
                 }
 

@@ -367,7 +367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
       propertyPath: bulletsToPool.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
       propertyPath: bulletsToPool.Array.data[0].type
@@ -378,17 +378,33 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
+      propertyPath: bulletsToPool.Array.data[2].type
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
       propertyPath: bulletsToPool.Array.data[3].type
-      value: 3
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
+      propertyPath: bulletsToPool.Array.data[0].amount
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
       propertyPath: bulletsToPool.Array.data[0].prefab
       value: 
-      objectReference: {fileID: 8363571034866767812, guid: 1165b70a13445c747bb68baa0a89aeab, type: 3}
+      objectReference: {fileID: 8363571034866767812, guid: 48530164f306e4f4cb79227f44f4edbb, type: 3}
     - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
       propertyPath: bulletsToPool.Array.data[1].prefab
       value: 
-      objectReference: {fileID: 8363571034866767812, guid: 87b07adfb1ccde249bf0d2c253536479, type: 3}
+      objectReference: {fileID: 8363571034866767812, guid: 92adb0e670344894bb21868f9e593d06, type: 3}
+    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
+      propertyPath: bulletsToPool.Array.data[2].amount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
+      propertyPath: bulletsToPool.Array.data[2].prefab
+      value: 
+      objectReference: {fileID: 8363571034866767812, guid: 1165b70a13445c747bb68baa0a89aeab, type: 3}
     - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
       propertyPath: bulletsToPool.Array.data[3].amount
       value: 5
@@ -396,7 +412,7 @@ PrefabInstance:
     - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
       propertyPath: bulletsToPool.Array.data[3].prefab
       value: 
-      objectReference: {fileID: 8363571034866767812, guid: 1855b7a04df0d714cb755760f7fef616, type: 3}
+      objectReference: {fileID: 8363571034866767812, guid: 87b07adfb1ccde249bf0d2c253536479, type: 3}
     - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
       propertyPath: bulletsToPool.Array.data[0].expandPool
       value: 1

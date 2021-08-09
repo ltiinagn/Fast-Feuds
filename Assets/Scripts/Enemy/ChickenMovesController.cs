@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EnemyTypeAController : MonoBehaviour
+public class ChickenMovesController : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
     public UnityEvent onEnemyDeath;
@@ -21,13 +21,13 @@ public class EnemyTypeAController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Initialize(int movesAllowed) {
         movesLeft = movesAllowed;
         MovesText.GetComponent<TextMesh>().text = movesLeft.ToString();
-        health = enemyConstants.enemyTypeAHealth;
+        health = enemyConstants.enemyHealth;
     }
 
     void OnTriggerEnter(Collider col) {

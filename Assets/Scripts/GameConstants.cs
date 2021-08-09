@@ -42,7 +42,10 @@ public class GameConstants : ScriptableObject
         new string[] {"Even more of them?!"},
         new string[] {"I think that's it for now.."}
     };
-    public string[] dialogue1_B = {};
+    public string[][] dialogue1_B = new string[][] {
+        new string[] {"Boss"},
+        new string[] {"Rest point."},
+    };
 
     public string[][] dialogue2_1 = new string[][] {
         new string[] {"Dummy 2.1.1"},

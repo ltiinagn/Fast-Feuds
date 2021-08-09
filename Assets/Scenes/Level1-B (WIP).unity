@@ -316,7 +316,7 @@ Transform:
   m_LocalScale: {x: 0.77, y: 0.75, z: 0.75}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &873974921
 GameObject:
@@ -349,6 +349,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyConstants: {fileID: 11400000, guid: 2c8f5b28e8bd0cb43a7087e374e7223f, type: 2}
+  startNextDialogue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1881565450}
+        m_TargetAssemblyTypeName: DialogueController1_B, Assembly-CSharp
+        m_MethodName: LoadNextDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   keyMapper: {fileID: 0}
 --- !u!114 &873974923
 MonoBehaviour:
@@ -644,63 +659,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebfa28dc05da62d4b8c035ccc5ea2a2d, type: 3}
---- !u!1001 &1668122724
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2924074043206399464, guid: 5910c359994d90643871255b71e7b074, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924074043206399464, guid: 5910c359994d90643871255b71e7b074, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924074043206399464, guid: 5910c359994d90643871255b71e7b074, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924074043206399464, guid: 5910c359994d90643871255b71e7b074, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924074043206399464, guid: 5910c359994d90643871255b71e7b074, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924074043206399464, guid: 5910c359994d90643871255b71e7b074, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924074043206399464, guid: 5910c359994d90643871255b71e7b074, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924074043206399464, guid: 5910c359994d90643871255b71e7b074, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924074043206399464, guid: 5910c359994d90643871255b71e7b074, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924074043206399464, guid: 5910c359994d90643871255b71e7b074, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924074043206399464, guid: 5910c359994d90643871255b71e7b074, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924074043206399465, guid: 5910c359994d90643871255b71e7b074, type: 3}
-      propertyPath: m_Name
-      value: PowerupSpawner1-B
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5910c359994d90643871255b71e7b074, type: 3}
 --- !u!1001 &1881565448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -710,7 +668,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5661694846030001748, guid: ee216f64641f02a47aa7e467d43b8102, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5661694846030001748, guid: ee216f64641f02a47aa7e467d43b8102, type: 3}
       propertyPath: m_LocalPosition.x
@@ -777,11 +735,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1881565449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e940e290a2939544384ae86015769300, type: 3}
+  m_Script: {fileID: 11500000, guid: 85c781436c765134ab7284570f74395e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: d8e3867deee51ae4cb56753d24c16ca0, type: 2}
-  enemySpawner: {fileID: 0}
+  enemySpawner: {fileID: 873974921}
   startNextSpawn:
     m_PersistentCalls:
       m_Calls:
@@ -829,7 +787,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1881565450}
-        m_TargetAssemblyTypeName: DialogueController1_2, Assembly-CSharp
+        m_TargetAssemblyTypeName: DialogueController1_B, Assembly-CSharp
         m_MethodName: LoadNextDialogue
         m_Mode: 1
         m_Arguments:

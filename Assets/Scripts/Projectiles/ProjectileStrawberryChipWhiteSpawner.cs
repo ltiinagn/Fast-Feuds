@@ -2,22 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileStrawberryChipSpawner : MonoBehaviour
+public class ProjectileStrawberryChipWhiteSpawner : MonoBehaviour
 {
-    public GameObject character;
-
     void spawnFromPooler(BulletType i){
         // static method access
         GameObject item = BulletPooler.SharedInstance.GetPooledBullet(i);
+        int angle = Random.Range(0, 360);
         if (item != null) {
             //set position, and other necessary states
             item.transform.position = this.transform.position;
-            float randomX = Random.Range(-2.0f, 2.0f);
-            float randomZ = Random.Range(-2.0f, 2.0f);
-            Vector3 direction = (new Vector3(character.transform.position.x + randomX, 0.0f, character.transform.position.z + randomZ) - item.transform.position).normalized;
-            item.transform.Find("BoxCollider").GetComponent<ProjectileStrawberryChipController>().direction = direction;
-            direction = Quaternion.AngleAxis(-45, Vector3.up) * direction;
-            item.transform.rotation = Quaternion.LookRotation(direction);
+            item.transform.Find("BoxCollider").GetComponent<ProjectileStrawberryChipWhiteController>().direction = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.forward;
+            item.transform.rotation = Quaternion.AngleAxis(angle - 45, Vector3.up);
             item.SetActive(true);
         }
         else {
@@ -28,16 +23,15 @@ public class ProjectileStrawberryChipSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        character = GameObject.Find("Character");
         StartCoroutine(spawnBulletPeriodically());
     }
 
     IEnumerator spawnBulletPeriodically() {
         yield return new WaitForSeconds(0.5f);
         while (true) {
-            for (int i = 0; i < 3; i++) {
-                spawnFromPooler(BulletType.strawberryChip);
-                yield return new WaitForSeconds(0.5f);
+            for (int i = 0; i < 5; i++) {
+                spawnFromPooler(BulletType.strawberryChipWhite);
+                yield return new WaitForSeconds(0.2f);
             }
             yield return new WaitForSeconds(2.0f);
         }

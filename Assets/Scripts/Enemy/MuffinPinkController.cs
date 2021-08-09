@@ -34,10 +34,11 @@ public class MuffinPinkController : MonoBehaviour
             if (health == 0)
             {
                 onEnemyDeath.Invoke();
-                animator.SetTrigger("onDeath");
-                audioSource.PlayOneShot(audioSource.clip);
+                // animator.SetTrigger("onDeath");
+                // audioSource.PlayOneShot(audioSource.clip);
                 gameObject.GetComponent<BoxCollider>().enabled = false;
-                Destroy(gameObject.transform.parent.gameObject, audioSource.clip.length);
+                // Destroy(gameObject.transform.parent.gameObject, audioSource.clip.length);
+                Destroy(gameObject.transform.parent.gameObject);
             }
         }
     }

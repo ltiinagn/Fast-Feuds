@@ -7,8 +7,10 @@ public enum BulletType {
     bone = 1,
     redBall = 2,
     bigMacSauce = 3,
-    strawberryChip = 4,
-    chocolateBall = 5
+    strawberryChipWhite = 4,
+    strawberryChipBlue = 5,
+    strawberryChip = 6,
+    chocolateBall = 7
 }
 
 [System.Serializable]

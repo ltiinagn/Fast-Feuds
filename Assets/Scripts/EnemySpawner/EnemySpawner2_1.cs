@@ -18,7 +18,7 @@ public class EnemySpawner2_1 : MonoBehaviour
     private int[][] spawnSequence;
     private int enemyTotal;
     private int enemyCount;
-    private int progress0 = 2;
+    private int progress0 = 0;
     private int progress1 = 0;
 
     // Start is called before the first frame update
@@ -42,15 +42,15 @@ public class EnemySpawner2_1 : MonoBehaviour
         int index = Random.Range(0, keyList.Count);
         if (progress0 == 0) {
             if (progress1 <= 4) {
+                Instantiate(enemyConstants.muffinWhitePrefab, keyList[index], Quaternion.identity);
+            }
+            else if (progress1 <= 9) {
+                Instantiate(enemyConstants.muffinBluePrefab, keyList[index], Quaternion.identity);
+            }
+            else {
                 Instantiate(enemyConstants.muffinPinkPrefab, keyList[index], Quaternion.identity);
             }
-            // else if (progress1 <= 9) {
-            //     Instantiate(enemyConstants.chickenMovingPrefab, keyList[index], Quaternion.identity);
-            // }
-            // else {
-            //     Instantiate(enemyConstants.chickenThrowingPrefab, keyList[index], Quaternion.identity);
-            //     enemyCount += 1;
-            // }
+            enemyCount += 1;
         }
         else if (progress0 == 1) {
             Instantiate(enemyConstants.chocolateCakePrefab, keyList[index], Quaternion.identity);
@@ -73,19 +73,14 @@ public class EnemySpawner2_1 : MonoBehaviour
             if (spawnAt == count && progress0 > 0) {
                 SpawnPowerup.Invoke();
             }
-            if (progress0 == 0 && progress1 <= 9) {
-                yield return new WaitForSeconds(0.2f);
+            if (enemyCount < 4) {
+                yield return new WaitForSeconds(0.5f);
             }
             else {
-                if (enemyCount < 4) {
-                    yield return new WaitForSeconds(0.5f);
+                while (enemyCount >= 4) {
+                    yield return null;
                 }
-                else {
-                    while (enemyCount >= 4) {
-                        yield return null;
-                    }
-                    yield return new WaitForSeconds(0.5f);
-                }
+                yield return new WaitForSeconds(0.5f);
             }
         }
     }

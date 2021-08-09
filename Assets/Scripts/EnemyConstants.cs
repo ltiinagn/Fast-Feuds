@@ -12,11 +12,13 @@ public class EnemyConstants : ScriptableObject
     public GameObject clownMilkPrefab;
     public GameObject bigMacPrefab;
     public GameObject friesPrefab;
+    public GameObject muffinWhitePrefab;
+    public GameObject muffinBluePrefab;
     public GameObject muffinPinkPrefab;
     public GameObject chocolateCakePrefab;
     public GameObject donutPrefab;
-    public GameObject enemyTypeAPrefab;
-    public GameObject boss1_BPrefab;
+    public GameObject bossBigMikePrefab;
+    public GameObject chickenMovesPrefab;
     public GameObject boss2_BPrefab;
     public GameObject bossTypeXPrefab;
 
@@ -47,7 +49,7 @@ public class EnemyConstants : ScriptableObject
     };
 
 
-    // Level 1-3 Spawn
+    // Level 2-1 Spawn
     public int[][] spawnSequence2_1 = new int[][] {
         new int[] {1, 2, 3, 4, 10, 1, 2, 3, 4, 10, 1, 2, 3, 4, 10},
         //new int[] {1, 1, 1, 1, 10, 1, 1, 1, 1, 10, 1, 1, 1, 1, 10},
@@ -56,12 +58,17 @@ public class EnemyConstants : ScriptableObject
         new int[] {1, 2, 3, 4, 10}
     };
 
-    // Level 1-3 Spawn
-    public int[] spawnSequence2_2 = {2, 3, 4};
+    // Level 2-2 Spawn
+    public int[][] spawnSequence2_2 = new int[][] {
+        new int[] {75},
+        new int[] {100}
+    };
 
     // Level 1-B
-    public int boss1_B_Health = 10;
-    public int[] spawnSequence1_B = {1, 5, 4, 4, 5, 5}; // include boss
+    public int bossBigMike_Health = 10;
+    public int[][] spawnSequence1_B = new int[][] {
+        new int[] {1, 5, 4, 4, 5, 5} // include boss
+    };
     public int[][] spawnMovesAllowed1_B = new int[][] {
         new int[] {1, 2, 3, 4, 5},
         new int[] {1, 2, 3, 4}
@@ -109,7 +116,4 @@ public class EnemyConstants : ScriptableObject
 
     // ChickenMoving
     public int chickenMovingHealth = 1;
-
-    // EnemyTypeA
-    public int enemyTypeAHealth = 1;
 }

@@ -5,8 +5,8 @@ using UnityEngine;
 public class ProjectileBigMacSauceSpawner : MonoBehaviour
 {
     void spawnFromPooler(BulletType i){
-        // static method access
         for (int j = 0; j < 8; j++) {
+            // static method access
             GameObject item = BulletPooler.SharedInstance.GetPooledBullet(i);
             int angle = j * 45;
             if (item != null) {
@@ -39,6 +39,6 @@ public class ProjectileBigMacSauceSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
