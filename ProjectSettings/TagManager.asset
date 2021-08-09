@@ -17,6 +17,7 @@ TagManager:
   - EnemyCollider
   - Bullet1
   - EnemyTutorialCollider
+  - MeleeCollider
   layers:
   - Default
   - TransparentFX

@@ -250,6 +250,11 @@ public class CharacterController : MonoBehaviour
                         onCharacterHit.Invoke();
                     }
                 }
+                else if (col.gameObject.CompareTag("MeleeCollider"))
+                {
+                    characterAudio.PlayOneShot(ouchAudioClips[Random.Range(0, ouchAudioClips.Length)]);
+                    onCharacterHit.Invoke();
+                }
             }
         }
     }
