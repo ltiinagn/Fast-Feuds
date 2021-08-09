@@ -46,5 +46,13 @@ MonoBehaviour:
   bulletsToPool:
   - amount: 5
     prefab: {fileID: 8363571034866767812, guid: 15bd241d9615e184ea75fc29eee23355, type: 3}
-    expandPool: 0
+    expandPool: 1
     type: 1
+  - amount: 5
+    prefab: {fileID: 8363571034866767812, guid: ed8fab1a8fc729849a63b74a487b4ba0, type: 3}
+    expandPool: 1
+    type: 2
+  - amount: 5
+    prefab: {fileID: 8363571034866767812, guid: 1855b7a04df0d714cb755760f7fef616, type: 3}
+    expandPool: 1
+    type: 3

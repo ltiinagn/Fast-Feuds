@@ -8,6 +8,7 @@ public class GameConstants : ScriptableObject
     public string[] rowNames = {"Tiles/Row1", "Tiles/Row2", "Tiles/Row3", "Tiles/Row4"};
 
     public int powerupVisibilityDuration = 5;
+    public int powerupVisibilityDuration2 = 3; // for invulnerable
     public int powerupDisappearDuration = 3;
 
     public GameObject powerupWeaponPrefab;
@@ -35,17 +36,17 @@ public class GameConstants : ScriptableObject
         new string[] {"Fries"},
         new string[] {"Phew!"}
     };
-    public string[][] dialogue1_2 = new string[][] {};
-    public string[] dialogue1_3 = {};
+
+    public string[][] dialogue1_2 = new string[][] {
+        new string[] {"They're coming everywhere!"},
+        new string[] {"Even more of them?!"},
+        new string[] {"I think that's it for now.."}
+    };
     public string[] dialogue1_B = {};
 
     public string[] dialogue2_1 = {};
     public string[] dialogue2_2 = {};
-    public string[] dialogue2_3 = {};
     public string[] dialogue2_B = {};
 
-    public string[] dialogue3_1 = {};
-    public string[] dialogue3_2 = {};
-    public string[] dialogue3_3 = {};
     public string[] dialogue3_B = {};
 }

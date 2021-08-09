@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 57981215}
   - component: {fileID: 57981214}
+  - component: {fileID: 57981216}
   m_Layer: 0
   m_Name: CharacterHitEventListener
   m_TagString: Untagged
@@ -194,6 +195,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &57981216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57981213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc74c1906a3b49647acae3b769252e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 417da2b2443167f4590e0d949e7abf09, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 20bb807e62de17b46888f49ac59c873d, type: 2}
+        m_TargetAssemblyTypeName: IntVariable, Assembly-CSharp
+        m_MethodName: ApplyChange
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 818929905}
+        m_TargetAssemblyTypeName: HealthIcon, Assembly-CSharp
+        m_MethodName: UpdateHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &454422594
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,46 +496,6 @@ PrefabInstance:
     - target: {fileID: 2735038055381871880, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[1].type
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[2].type
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[1].amount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[1].prefab
-      value: 
-      objectReference: {fileID: 8363571034866767812, guid: ed8fab1a8fc729849a63b74a487b4ba0, type: 3}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[2].amount
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[2].prefab
-      value: 
-      objectReference: {fileID: 8363571034866767812, guid: 1855b7a04df0d714cb755760f7fef616, type: 3}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[0].expandPool
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[1].expandPool
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009538056013662590, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
-      propertyPath: bulletsToPool.Array.data[2].expandPool
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9025203462316610012, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
       propertyPath: m_Name

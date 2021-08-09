@@ -36,13 +36,21 @@ public class EnemyConstants : ScriptableObject
     public int redBallSpawnCount = 5;
 
     // Level 1-2 Spawn
-    public int[] spawnSequence1_2 = {2, 3, 4};
+    // public int[][] spawnSequence1_2 = new int[][] {
+    //     new int[] {10},
+    //     new int[] {10}
+    // };
+    public int[][] spawnSequence1_2 = new int[][] {
+        new int[] {50},
+        new int[] {50}
+    };
+
 
     // Level 1-3 Spawn
-    public int[] spawnSequence1_3 = {2, 2, 2};
+    public int[] spawnSequence2_1 = {2, 2, 2};
 
     // Level 1-3 Spawn
-    public int[] spawnSequence1_4 = {2, 3, 4};
+    public int[] spawnSequence2_2 = {2, 3, 4};
 
     // Level 1-B
     public int boss1_B_Health = 10;
@@ -64,7 +72,21 @@ public class EnemyConstants : ScriptableObject
     // Level 3-B
     public int bossTypeXHealth = 15;
     public int[] spawnSequence3_B = new int[] {1};
-    public string[][] keySequence3_B = new string[][] {
+    public string[][][] keySequence3_B_2 = new string[][][] {
+        new string[][] {
+            new string[] {"z", "x"}, new string[] {"x", "c"}, new string[] {"c", "v"}, new string[] {"v", "b"}, new string[] {"b", "n"}, new string[] {"n", "m"}, new string[] {"m", ","}, new string[] {",", "."},
+        },
+        new string[][] {
+            new string[] {";", "l"}, new string[] {"l", "k"}, new string[] {"k", "j"}, new string[] {"j", "h"}, new string[] {"h", "g"}, new string[] {"g", "f"}, new string[] {"f", "d"}, new string[] {"d", "s"}, new string[] {"s", "a"}
+        },
+        new string[][] {
+            new string[] {"q", "w"}, new string[] {"w", "e"}, new string[] {"e", "r"}, new string[] {"r", "t"}, new string[] {"t", "y"}, new string[] {"y", "i"}, new string[] {"i", "o"}, new string[] {"o", "p"}, new string[] {"p", "["}
+        },
+        new string[][] {
+            new string[] {"1", "2"}, new string[] {"2", "3"}, new string[] {"3", "4"}, new string[] {"4", "5"}, new string[] {"5", "6"}, new string[] {"6", "7"}, new string[] {"7", "8"}, new string[] {"8", "9"}, new string[] {"9", "0"}, new string[] {"0", "-"}, new string[] {"-", "="}
+        }
+    };
+    public string[][] keySequence3_B_L = new string[][] {
         new string[] {"l", "a", "l", "a"},
         new string[] {"n", "o", "a", "h"},
         new string[] {"s", "h", "a", "h", "u", "l"},
