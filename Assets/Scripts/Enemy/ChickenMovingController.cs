@@ -13,6 +13,7 @@ public class ChickenMovingController : MonoBehaviour
 
     private Transform spriteParent;
     private int health;
+    private bool dying;
     private Vector3 start;
     private Vector3 end;
     private bool faceRight = true;
@@ -26,6 +27,7 @@ public class ChickenMovingController : MonoBehaviour
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         keyList = new List<Vector3>(keyMap.Values);
+        dying = false;
         health = enemyConstants.chickenMovingHealth;
         start = transform.position;
         keyList.Remove(start);
@@ -39,10 +41,12 @@ public class ChickenMovingController : MonoBehaviour
 
     IEnumerator moveEnemyLoop()
     {
-        while (true)
+        while (!dying)
         {
             yield return moveEnemy(start, end);
-            yield return moveEnemy(end, start);
+            if (!dying) {
+                yield return moveEnemy(end, start);
+            }
         }
     }
 
@@ -59,7 +63,7 @@ public class ChickenMovingController : MonoBehaviour
             spriteParent.Rotate(new Vector3(0, 0, 180));
         }
 
-        while (true)
+        while (!dying)
         {
             float distCovered = (Time.time - startTime) * speed;
             float fracDist = distCovered / distance;
@@ -87,8 +91,8 @@ public class ChickenMovingController : MonoBehaviour
             Debug.Log("damaged by character!");
             if (health == 0)
             {
+                dying = true;
                 onEnemyDeath.Invoke();
-                StopCoroutine(moveEnemyLoop());
                 animator.SetTrigger("onDeath");
                 audioSource.PlayOneShot(audioSource.clip);
                 gameObject.GetComponent<BoxCollider>().enabled = false;
