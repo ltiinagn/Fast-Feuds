@@ -9,7 +9,6 @@ public class ChickenStationaryController : MonoBehaviour
     public UnityEvent onEnemyDeath;
     private int health;
     private Transform sprite;
-    HashSet<string> spriteNames = new HashSet<string> {"Body"};
     List<SpriteRenderer> spriteDescendants = new List<SpriteRenderer> {};
     private Animator animator;
     private AudioSource audioSource;
