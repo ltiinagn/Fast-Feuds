@@ -15,7 +15,7 @@ public class ChocolateCakeController : MonoBehaviour
     void Start()
     {
         health = enemyConstants.enemyHealth;
-        animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
+        animator = transform.parent.Find("Sprite").GetComponent<Animator>();
         // audioSource = GetComponent<AudioSource>();
         int direction = Random.Range(0, 2);
         if (direction == 1)
@@ -43,7 +43,7 @@ public class ChocolateCakeController : MonoBehaviour
                 // audioSource.PlayOneShot(audioSource.clip);
                 transform.parent.Find("ProjectileChocolateBallSpawner").gameObject.SetActive(false);
                 gameObject.GetComponent<BoxCollider>().enabled = false;
-                Destroy(gameObject.transform.parent.gameObject, 1); // audioSource.clip.length);
+                Destroy(transform.parent.gameObject, 1); // audioSource.clip.length);
             }
         }
     }
