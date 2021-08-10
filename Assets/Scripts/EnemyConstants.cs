@@ -81,9 +81,16 @@ public class EnemyConstants : ScriptableObject
     };
 
     // Level 2-B
-    public GameObject bulletSpawns2_BPrefab;
     public int boss2_B_Health = 15;
-    public int lastHurrahDuration2_B = 15;
+    public string[][] spawnKey2_B = new string[][] {
+        new string[] {"n", "o", "t", "h", "i", "n", "g", "s"},
+        new string[] {"g", "o", "n", "n", "a"},
+        new string[] {"c", "h", "a", "n", "g", "e"},
+        new string[] {"m", "y"},
+        new string[] {"l", "o", "v", "e"},
+        new string[] {"f", "o", "r"},
+        new string[] {"y", "o", "u"},
+    };
 
     // Level 3-B
     public int bossTypeXHealth = 15;

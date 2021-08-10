@@ -87,7 +87,7 @@ public class DonutController : MonoBehaviour
             float distCovered = (Time.time - startTime) * speed;
             float fracDist = distCovered / distance;
 
-            gameObject.transform.parent.gameObject.transform.position = Vector3.Lerp(from, to, fracDist);
+            transform.parent.position = Vector3.Lerp(from, to, fracDist);
 
             if (fracDist >= 1)
                 yield break;

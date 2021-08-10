@@ -59,12 +59,14 @@ public class BossBigMikeController : MonoBehaviour
         float startTime = Time.time;
         float fracDist = 0;
         float distance = Vector3.Distance(from, to);
-
-        while (fracDist < 1) {
-            float distCovered = (Time.time - startTime) * speed;
-            fracDist = distCovered / distance;
-            gameObject.transform.parent.gameObject.transform.position = Vector3.Lerp(from, to, fracDist);
-            yield return null;
+        float distCovered;
+        if (distance > 0) {
+            while (fracDist < 1) {
+                distCovered = (Time.time - startTime) * speed;
+                fracDist = distCovered / distance;
+                transform.parent.position = Vector3.Lerp(from, to, fracDist);
+                yield return null;
+            }
         }
     }
 
