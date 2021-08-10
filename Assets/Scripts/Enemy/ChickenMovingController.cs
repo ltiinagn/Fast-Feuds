@@ -19,7 +19,6 @@ public class ChickenMovingController : MonoBehaviour
     private float speed;
     private bool faceRight = true;
     private Transform sprite;
-    // HashSet<string> spriteNames = new HashSet<string> {"Body"};
     List<SpriteRenderer> spriteDescendants = new List<SpriteRenderer> {};
     private Animator animator;
     private AudioSource audioSource;
