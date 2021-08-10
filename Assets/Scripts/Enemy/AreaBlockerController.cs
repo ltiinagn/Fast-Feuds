@@ -29,7 +29,7 @@ public class AreaBlockerController : MonoBehaviour
     }
 
     IEnumerator ActivatePeriodically() {
-        //yield return new WaitForSeconds(30.0f);
+        yield return new WaitForSeconds(30.0f);
         while (true) {
             float xPosition = xInitialPosition + Random.Range(-1, 2) * 2.0f;
             transform.parent.position = new Vector3(xPosition, transform.parent.position.y, transform.parent.position.z);

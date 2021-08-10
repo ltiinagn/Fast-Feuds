@@ -8,6 +8,8 @@ public class HealthMonitor : MonoBehaviour
     public UnityEvent onPlayerDeath;
     public IntVariable characterHealth;
     public Text healthText;
+    public Image heartMultiply;
+    public Image[] hearts;
 
     public void Start()
     {
@@ -18,9 +20,37 @@ public class HealthMonitor : MonoBehaviour
 
     public void UpdateHealth()
     {
-        healthText.text = "Å~" + characterHealth.Value.ToString();
+        if (characterHealth.Value <= 5)
+        {
+            heartMultiply.enabled = false;
+            for (int j = 0; j < hearts.Length; j++)
+            {
+                if (j < characterHealth.Value)
+                {
+                    hearts[j].enabled = true;
+                }
+                else
+                {
+                    hearts[j].enabled = false;
+                }
+            }
+            healthText.text = "";
+        }
+        else if (characterHealth.Value > 5) {
+            heartMultiply.enabled = true;
+            healthText.text = "√ó" + characterHealth.Value.ToString();
+            for (int j = 0; j < hearts.Length; j++)
+            {
+                hearts[j].enabled = false;
+            }
+        }
         if (characterHealth.Value == 0) {
             onPlayerDeath.Invoke();
         }
+    }
+
+    void Update()
+    {
+        UpdateHealth();
     }
 }

@@ -14,12 +14,9 @@ public class EnemySpawner1_B : MonoBehaviour
     List<Vector3> removedKeyList;
 
     private GameObject character;
-    private int[][] spawnSequence;
     private int enemyCount;
     private bool phaseChanged;
     private bool dead;
-    // private int progress0 = 0;
-    // private int progress1 = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +26,6 @@ public class EnemySpawner1_B : MonoBehaviour
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         removedKeyList = new List<Vector3> {};
-        // spawnSequence = enemyConstants.spawnSequence1_B;
         enemyCount = 0;
         phaseChanged = false;
         dead = false;
@@ -142,15 +138,5 @@ public class EnemySpawner1_B : MonoBehaviour
 
     public void enemyDead() {
         enemyCount -= 1;
-        // if (enemyCount == 0) {
-        //     if (progress0 == 0 && progress1 < spawnSequence[progress0].Length-1) {
-        //         progress1 += 1;
-        //         enemyCount = spawnSequence[progress0][progress1];
-        //         StartCoroutine(WaitForNextSpawn());
-        //     }
-        //     else {
-        //         StartCoroutine(waitForStartNextDialogue());
-        //     }
-        // }
     }
 }

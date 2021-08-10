@@ -420,17 +420,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &466027198 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7640312095602807977, guid: c810badfcbead5a43b2c0ca2ddc9f8ee, type: 3}
-  m_PrefabInstance: {fileID: 7338748969721404725}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee0ccfe5482f42d49abe2887e8cc8908, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &552680398
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -627,6 +616,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1636271765 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2914594003212093152, guid: c810badfcbead5a43b2c0ca2ddc9f8ee, type: 3}
+  m_PrefabInstance: {fileID: 7338748969721404725}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0b5cd5ce3e0c04cad1cb363f2df495, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1896491537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,26 +1118,26 @@ PrefabInstance:
     - target: {fileID: 5976262871352009188, guid: cdeb340e889892c428a20847dedf3488, type: 3}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 466027198}
+      objectReference: {fileID: 1636271765}
     - target: {fileID: 5976262871352009188, guid: cdeb340e889892c428a20847dedf3488, type: 3}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: UpdateHealth
       objectReference: {fileID: 0}
     - target: {fileID: 5976262871352009188, guid: cdeb340e889892c428a20847dedf3488, type: 3}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: HealthIcon, Assembly-CSharp
+      value: HealthMonitor, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7475524398241239172, guid: cdeb340e889892c428a20847dedf3488, type: 3}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 466027198}
+      objectReference: {fileID: 1636271765}
     - target: {fileID: 7475524398241239172, guid: cdeb340e889892c428a20847dedf3488, type: 3}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: UpdateHealth
       objectReference: {fileID: 0}
     - target: {fileID: 7475524398241239172, guid: cdeb340e889892c428a20847dedf3488, type: 3}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: HealthIcon, Assembly-CSharp
+      value: HealthMonitor, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7475524398241239173, guid: cdeb340e889892c428a20847dedf3488, type: 3}
       propertyPath: m_RootOrder

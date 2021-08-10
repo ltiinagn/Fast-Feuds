@@ -8,6 +8,7 @@ public class FriesController : MonoBehaviour
     public EnemyConstants enemyConstants;
     public UnityEvent onEnemyDeath;
     private int health;
+    private BoxCollider swordCollider;
     private int state; // 0 invulnerable, 1 attacking, 2 weakened
     private Animator animator;
     // private AudioSource audioSource;
@@ -17,6 +18,8 @@ public class FriesController : MonoBehaviour
     {
         health = enemyConstants.enemyHealth;
         state = 0;
+        swordCollider = transform.parent.Find("Sprite/Body/LeftArm/Sword").GetComponent<BoxCollider>();
+        swordCollider.enabled = false;
         animator = transform.parent.Find("Sprite").GetComponent<Animator>();
         // audioSource = GetComponent<AudioSource>();
     }
@@ -29,7 +32,10 @@ public class FriesController : MonoBehaviour
 
     IEnumerator attackPhase() {
         // to add animation
-        yield return new WaitForSeconds(3.5f); // animator.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSeconds(1.0f);
+        swordCollider.enabled = true;
+        yield return new WaitForSeconds(2.0f); // animator.GetCurrentAnimatorStateInfo(0).length);
+        swordCollider.enabled = false;
         state = 2;
         animator.SetBool("isProvoked", false);
     }

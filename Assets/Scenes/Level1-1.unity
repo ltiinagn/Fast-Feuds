@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -169,8 +169,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 818929905}
-        m_TargetAssemblyTypeName: HealthIcon, Assembly-CSharp
+      - m_Target: {fileID: 7338748969721404727}
+        m_TargetAssemblyTypeName: HealthMonitor, Assembly-CSharp
         m_MethodName: UpdateHealth
         m_Mode: 1
         m_Arguments:
@@ -223,8 +223,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 818929905}
-        m_TargetAssemblyTypeName: HealthIcon, Assembly-CSharp
+      - m_Target: {fileID: 7338748969721404727}
+        m_TargetAssemblyTypeName: HealthMonitor, Assembly-CSharp
         m_MethodName: UpdateHealth
         m_Mode: 1
         m_Arguments:
@@ -503,17 +503,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
---- !u!114 &818929905 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7640312095602807977, guid: c810badfcbead5a43b2c0ca2ddc9f8ee, type: 3}
-  m_PrefabInstance: {fileID: 7338748969721404725}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee0ccfe5482f42d49abe2887e8cc8908, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &942127570
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1188,3 +1177,14 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 99868172223012090, guid: c810badfcbead5a43b2c0ca2ddc9f8ee, type: 3}
   m_PrefabInstance: {fileID: 7338748969721404725}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7338748969721404727 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2914594003212093152, guid: c810badfcbead5a43b2c0ca2ddc9f8ee, type: 3}
+  m_PrefabInstance: {fileID: 7338748969721404725}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0b5cd5ce3e0c04cad1cb363f2df495, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
