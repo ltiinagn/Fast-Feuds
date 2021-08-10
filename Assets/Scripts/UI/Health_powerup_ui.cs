@@ -26,15 +26,8 @@ public class Health_powerup_ui : MonoBehaviour
         health_no_multiply = GetComponent<SpriteRenderer>();
         int healthIncrease = PlayerPrefs.GetInt("skill_IncreaseStartingHealth");
         characterHealth.SetValue(characterConstants.characterHealth + healthIncrease);
-        
-        UpdateHealth();
-        /*
-        if (characterHealth.Value > numOfHearts)
-        {
-            numOfHearts = characterHealth.Value;
-        }
-        */
 
+        UpdateHealth();
     }
 
     public void UpdateHealth()
@@ -63,7 +56,7 @@ public class Health_powerup_ui : MonoBehaviour
             }
         }
 
-        else 
+        else
         {
             for (int i=7; i<poweruphp.Length+7; i++)
             {
@@ -77,6 +70,6 @@ public class Health_powerup_ui : MonoBehaviour
                 }
             }
         }
-        
+
     }
 }
