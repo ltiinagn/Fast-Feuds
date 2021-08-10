@@ -34,7 +34,7 @@ public class CupcakeController : MonoBehaviour
             if (health == 0)
             {
                 onEnemyDeath.Invoke();
-                // animator.SetTrigger("onDeath");
+                animator.SetTrigger("onDeath");
                 // audioSource.PlayOneShot(audioSource.clip);
                 transform.parent.Find("ProjectileStrawberrySpawner").gameObject.SetActive(false);
                 gameObject.GetComponent<BoxCollider>().enabled = false;
