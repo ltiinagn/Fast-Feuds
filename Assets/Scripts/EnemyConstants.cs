@@ -66,16 +66,18 @@ public class EnemyConstants : ScriptableObject
 
     // Level 1-B
     public int bossBigMike_Health = 10;
-    public int[][] spawnSequence1_B = new int[][] {
-        new int[] {1, 5, 4, 4, 5, 5} // include boss
-    };
-    public int[][] spawnMovesAllowed1_B = new int[][] {
-        new int[] {1, 2, 3, 4, 5},
-        new int[] {1, 2, 3, 4}
-    };
+    // public int[][] spawnSequence1_B = new int[][] {
+    //     new int[] {1, 5, 4, 4, 5, 5} // include boss
+    // };
+    // public int[][] spawnMovesAllowed1_B = new int[][] {
+    //     new int[] {1, 2, 3, 4, 5},
+    //     new int[] {1, 2, 3, 4}
+    // };
     public string[][] spawnKey1_B = new string[][] {
-        new string[] {"w", "a", "t", "e", "r"},
-        new string[] {"w", "i", "n", "e"}
+        new string[] {"t", "h", "i", "s"},
+        new string[] {"i", "s"},
+        new string[] {"m", "y"},
+        new string[] {"d", "e", "s", "t", "i", "n", "y"}
     };
 
     // Level 2-B

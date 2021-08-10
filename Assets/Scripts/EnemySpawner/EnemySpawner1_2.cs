@@ -67,9 +67,10 @@ public class EnemySpawner1_2 : MonoBehaviour
     void spawnEnemy() {
         enemyCount += 1;
         spawned += 1;
-        int index = Random.Range(0, prefabsArray.Length);
-        if (index != 3) {
-            Instantiate(prefabsArray[index], keyList[index], Quaternion.identity);
+        int indexPrefab = Random.Range(0, prefabsArray.Length);
+        int index = Random.Range(0, keyList.Count);
+        if (indexPrefab != 3) {
+            Instantiate(prefabsArray[indexPrefab], keyList[index], Quaternion.identity);
             removedKeyList.Add(keyList[index]);
             keyList.RemoveAt(index);
         }

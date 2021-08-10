@@ -18,6 +18,7 @@ TagManager:
   - Bullet1
   - EnemyTutorialCollider
   - MeleeCollider
+  - BossBigMike
   layers:
   - Default
   - TransparentFX

@@ -22,15 +22,14 @@ public class ChickenStationaryController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.CompareTag("Character"))
+        if (col.gameObject.CompareTag("Character") || col.gameObject.CompareTag("BossBigMike"))
         {
             health -= 1;
-            Debug.Log("damaged by character!");
             if (health == 0)
             {
                 onEnemyDeath.Invoke();
