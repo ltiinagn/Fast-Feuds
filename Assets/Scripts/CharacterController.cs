@@ -32,6 +32,7 @@ public class CharacterController : MonoBehaviour
     public AudioClip[] gruntingAudioClips;
     public AudioClip[] punchingAudioClips;
     public AudioClip[] ouchAudioClips;
+    public AudioClip screamAudioClip;
 
     // Start is called before the first frame update
     void Start()
@@ -225,14 +226,17 @@ public class CharacterController : MonoBehaviour
             }
             // onCharacterHit.Invoke();
         }
-        else if (col.gameObject.CompareTag("EnemyCollider") || col.gameObject.CompareTag("ChickenMoving")) {
+        else if (col.gameObject.CompareTag("EnemyCollider") || col.gameObject.CompareTag("ChickenMoving"))
+        {
             characterAudio.PlayOneShot(punchingAudioClips[Random.Range(0, punchingAudioClips.Length)]);
         }
-        else if (col.gameObject.CompareTag("EnemyTutorialCollider") && weapon) {
+        else if (col.gameObject.CompareTag("EnemyTutorialCollider") && weapon)
+        {
             col.gameObject.GetComponent<FriesTutorialController>().DestroyEnemy();
             characterAudio.PlayOneShot(punchingAudioClips[Random.Range(0, punchingAudioClips.Length)]);
         }
-        else {
+        else
+        {
             if (!invulnerablePowerup)
             {
                 if (col.gameObject.CompareTag("TileDanger"))
@@ -242,10 +246,12 @@ public class CharacterController : MonoBehaviour
                 }
                 else if (col.gameObject.CompareTag("ProjectileCollider"))
                 {
-                    if (bulletsPerDash > 0) {
+                    if (bulletsPerDash > 0)
+                    {
                         bulletsPerDash -= 1;
                     }
-                    else {
+                    else
+                    {
                         characterAnimator.SetTrigger("onHit");
                         characterAudio.PlayOneShot(ouchAudioClips[Random.Range(0, ouchAudioClips.Length)]);
                         col.gameObject.SendMessage("SetInactive");
@@ -264,6 +270,8 @@ public class CharacterController : MonoBehaviour
 
     public void playerDeath()
     {
-        Destroy(gameObject.transform.parent.gameObject);
+        characterAnimator.SetTrigger("onDeath");
+        characterAudio.PlayOneShot(screamAudioClip);
+        Destroy(gameObject.transform.parent.gameObject, 1);
     }
 }

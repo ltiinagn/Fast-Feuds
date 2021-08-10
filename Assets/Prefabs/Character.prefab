@@ -193,6 +193,7 @@ MonoBehaviour:
   ouchAudioClips:
   - {fileID: 8300000, guid: 9a73d9c47ad178e41a0100b1e310b8e1, type: 3}
   - {fileID: 8300000, guid: 7c0086fde562b484e9e26fc3ebfb9063, type: 3}
+  screamAudioClip: {fileID: 8300000, guid: ec7bec01bf6e4054ba9592a4de1a1137, type: 3}
 --- !u!114 &398760484489817924
 MonoBehaviour:
   m_ObjectHideFlags: 0
