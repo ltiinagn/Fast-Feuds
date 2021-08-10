@@ -267,8 +267,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: -1}
-  m_SizeDelta: {x: 500, y: 15}
+  m_AnchoredPosition: {x: 10, y: 0}
+  m_SizeDelta: {x: 500, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &73007602189989713
 CanvasRenderer:
@@ -305,7 +305,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 300
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1303,8 +1303,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 85, y: -1}
-  m_SizeDelta: {x: 500, y: 15}
+  m_AnchoredPosition: {x: 90, y: 0}
+  m_SizeDelta: {x: 500, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &7041281735946261652
 CanvasRenderer:
@@ -1341,7 +1341,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 300
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -2249,7 +2249,6 @@ GameObject:
   - component: {fileID: 6766651020846567755}
   - component: {fileID: 4603007553472536432}
   - component: {fileID: 712772349231238290}
-  - component: {fileID: 8009181002045948196}
   m_Layer: 5
   m_Name: CeleryBar
   m_TagString: Untagged
@@ -2338,51 +2337,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8009181002045948196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8593781587877392758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee0ccfe5482f42d49abe2887e8cc8908, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numOfHearts: 0
-  hearts:
-  - {fileID: 1814784152110437794}
-  - {fileID: 981920206806600032}
-  - {fileID: 2192972844949872348}
-  - {fileID: 140419353122365356}
-  - {fileID: 2197270195461875260}
-  - {fileID: 0}
-  - {fileID: 0}
-  heartIcon: {fileID: 8189263601069848695, guid: 44c381baee7e2424dad6bc99352f2301, type: 3}
-  characterConstants: {fileID: 11400000, guid: 799e08f7bb30e3649a46208f5a7766b5, type: 2}
-  onPlayerDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11400000, guid: 3463d6e08ad5d794fa836c27a9252ae4, type: 2}
-        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
-        m_MethodName: Raise
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  characterHealth: {fileID: 11400000, guid: 20bb807e62de17b46888f49ac59c873d, type: 2}
-  poweruphp:
-  - {fileID: 5910287303671106064}
-  - {fileID: 1013347702258635971}
-  - {fileID: 7038980134298163672}
-  Hp1: {fileID: 0}
-  Hp2: {fileID: 0}
 --- !u!1 &8995801058002644234
 GameObject:
   m_ObjectHideFlags: 0
