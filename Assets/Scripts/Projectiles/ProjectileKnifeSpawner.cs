@@ -1,28 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ProjectileKnifeSpawner : MonoBehaviour
 {
     private GameObject character;
     public GameObject dialogueBox;
+    private int phase = 1;
 
     void spawnFromPooler(BulletType i){
         // static method access
         GameObject item = BulletPooler.SharedInstance.GetPooledBullet(i);
-        Vector3 knifeOffset = new Vector3(Random.Range(-1.0f, 1.0f), 0.0f, Random.Range(-1.0f, 1.0f)).normalized * 3;
-        float angle = -Vector3.SignedAngle(knifeOffset, Vector3.forward, Vector3.up);
+        Vector3 knifeOffset = new Vector3(Random.Range(-1.0f, 1.0f), 0.0f, Random.Range(-1.0f, 1.0f)).normalized;
+        float angle = Vector3.SignedAngle(knifeOffset, Vector3.forward, Vector3.up);
         if (item != null) {
             //set position, and other necessary states
-            item.transform.position = knifeOffset + this.transform.position;
-            // item.transform.Find("BoxCollider").GetComponent<ProjectileKnifeController>().direction = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.forward;
-            item.transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
-            Debug.Log(string.Format("Test: {0}, {1}", angle, item.transform.rotation));
+            item.transform.position = knifeOffset * 3 + this.transform.position;
+            ProjectileKnifeController projectileKnifeController = item.transform.Find("BoxCollider").GetComponent<ProjectileKnifeController>();
+            projectileKnifeController.direction = -knifeOffset;
+            projectileKnifeController.phase = phase;
+            item.transform.rotation = Quaternion.AngleAxis(-angle, Vector3.up);
             item.SetActive(true);
         }
         else {
             Debug.Log("not enough items in the pool.");
         }
+    }
+
+    public void changePhase() {
+        phase += 1;
     }
 
     // Start is called before the first frame update
@@ -38,7 +45,7 @@ public class ProjectileKnifeSpawner : MonoBehaviour
         }
         yield return new WaitForSeconds(0.5f);
         while (true) {
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 1; i++) {
                 spawnFromPooler(BulletType.knife);
                 yield return new WaitForSeconds(0.2f);
             }

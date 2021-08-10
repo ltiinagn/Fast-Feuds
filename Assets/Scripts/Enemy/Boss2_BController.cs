@@ -7,6 +7,7 @@ public class Boss2_BController : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
     public GameConstants gameConstants;
+    public UnityEvent onBossHalfHealth;
     public GameObject keyMapper;
     Dictionary<string, Vector3> keyMap;
     Dictionary<string, string> keyRowMap;
@@ -14,7 +15,9 @@ public class Boss2_BController : MonoBehaviour
     HashSet<string> spriteNames = new HashSet<string> {"Body"};
     List<SpriteRenderer> sprites = new List<SpriteRenderer> {};
 
+    private int initialHealth;
     private int health;
+    private int phase;
     private bool damaged;
     private float speed;
 
@@ -24,7 +27,9 @@ public class Boss2_BController : MonoBehaviour
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         keyRowMap = keyMapper.GetComponent<KeyMapping>().keyRowMap;
-        health = enemyConstants.boss2_B_Health;
+        initialHealth = enemyConstants.boss2_B_Health;
+        health = initialHealth;
+        phase = 1;
         speed = 8.0f;
         foreach (Transform sprite in gameObject.transform.parent.Find("Sprite")) {
             if (spriteNames.Contains(sprite.name)) {
@@ -83,9 +88,14 @@ public class Boss2_BController : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider col) {
-        if (col.gameObject.CompareTag("ProjectileCollider") || col.gameObject.CompareTag("Character")) {
+        if (col.gameObject.CompareTag("ProjectileCollider")) {
+            col.gameObject.SendMessage("SetInactive");
             damaged = true;
             health -= 1;
+            if (phase == 1 && health <= initialHealth / 2) {
+                phase = 2;
+                onBossHalfHealth.Invoke();
+            }
             if (health == 1) {
                 Debug.Log("entering last hurrah");
                 GetComponent<Collider>().enabled = false;

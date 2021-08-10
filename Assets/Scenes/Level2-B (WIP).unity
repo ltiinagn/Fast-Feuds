@@ -621,6 +621,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1317457453}
   - component: {fileID: 1317457452}
+  - component: {fileID: 1317457454}
   m_Layer: 0
   m_Name: ProjectileKnifeSpawner
   m_TagString: Untagged
@@ -655,6 +656,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1317457454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317457451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc74c1906a3b49647acae3b769252e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: b1fd73ef45a6cc443b2dff270ab0a650, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1317457452}
+        m_TargetAssemblyTypeName: ProjectileKnifeSpawner, Assembly-CSharp
+        m_MethodName: changePhase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1342287187
 PrefabInstance:
   m_ObjectHideFlags: 0
