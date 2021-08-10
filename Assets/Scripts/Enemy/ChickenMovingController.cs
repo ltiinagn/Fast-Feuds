@@ -35,9 +35,9 @@ public class ChickenMovingController : MonoBehaviour
         keyList.Remove(start);
         end = keyList[Random.Range(0, keyList.Count)];
         speed = 2.0f;
-        spriteParent = gameObject.transform.parent.gameObject.transform;
-        sprite = gameObject.transform.parent.Find("Sprite").transform;
-        foreach (Transform spriteChild in gameObject.transform.parent.Find("Sprite"))
+        spriteParent = transform.parent.gameObject.transform;
+        sprite = transform.parent.Find("Sprite").transform;
+        foreach (Transform spriteChild in transform.parent.Find("Sprite"))
         {
             spriteDescendants.Add(spriteChild.GetComponent<SpriteRenderer>());
             foreach (Transform spriteGrandchild in spriteChild)
@@ -49,7 +49,7 @@ public class ChickenMovingController : MonoBehaviour
                 spriteDescendants.Add(spriteGrandchild.GetComponent<SpriteRenderer>());
             }
         };
-        animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
+        animator = transform.parent.Find("Sprite").GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         StartCoroutine(moveEnemyLoop());
     }
@@ -138,11 +138,11 @@ public class ChickenMovingController : MonoBehaviour
                 }
                 else if (col.gameObject.CompareTag("BossBigMike"))
                 {
-                    StartCoroutine(eatenByBoss(col.gameObject.transform.parent.gameObject.transform.position, 0.6f));
+                    StartCoroutine(eatenByBoss(col.transform.parent.gameObject.transform.position, 0.6f));
                 }
                 audioSource.PlayOneShot(audioSource.clip);
                 gameObject.GetComponent<BoxCollider>().enabled = false;
-                Destroy(gameObject.transform.parent.gameObject, audioSource.clip.length);
+                Destroy(transform.parent.gameObject, audioSource.clip.length);
             }
         }
     }

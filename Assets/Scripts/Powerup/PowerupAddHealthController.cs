@@ -16,7 +16,7 @@ public class PowerupAddHealthController : MonoBehaviour
     IEnumerator WaitForDestroy() {
         yield return new WaitForSeconds(gameConstants.powerupVisibilityDuration);
         for (int i = 0; i < gameConstants.powerupDisappearDuration * 2; i++) {
-            gameObject.transform.parent.transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled = !gameObject.transform.parent.transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled;
+            transform.parent.transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled = !transform.parent.transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled;
             yield return new WaitForSeconds(0.5f);
         }
         UsePowerup();
@@ -33,6 +33,6 @@ public class PowerupAddHealthController : MonoBehaviour
     }
 
     public void UsePowerup() {
-        Destroy(gameObject.transform.parent.gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }

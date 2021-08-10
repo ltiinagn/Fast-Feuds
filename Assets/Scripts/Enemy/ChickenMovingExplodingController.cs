@@ -28,13 +28,13 @@ public class ChickenMovingExplodingController : MonoBehaviour
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         keyList = new List<Vector3>(keyMap.Values);
-        foreach (Transform sprite in gameObject.transform.parent.Find("Sprite")) {
+        foreach (Transform sprite in transform.parent.Find("Sprite")) {
             if (spriteNames.Contains(sprite.name)) {
                 sprites.Add(sprite.GetComponent<SpriteRenderer>());
             }
         };
         character = GameObject.Find("Character");
-        projectileSpawner = gameObject.transform.parent.Find("ProjectileBoneExplodeSpawner").gameObject;
+        projectileSpawner = transform.parent.Find("ProjectileBoneExplodeSpawner").gameObject;
         health = enemyConstants.chickenMovingHealth;
         start = transform.position;
         keyList.Remove(start);
@@ -82,7 +82,7 @@ public class ChickenMovingExplodingController : MonoBehaviour
                 // projectileSpawner.GetComponent<ProjectileBoneExplodeSpawner>().spawnProjectiles();
                 // StartCoroutine(Explode());
                 onEnemyDeath.Invoke();
-                Destroy(gameObject.transform.parent.gameObject);
+                Destroy(transform.parent.gameObject);
             }
         }
     }

@@ -48,14 +48,11 @@ public class EnemySpawner2_B : MonoBehaviour
     }
 
     IEnumerator waitForStartNextDialogue() {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(5);
         startNextDialogue.Invoke();
     }
 
     public void enemyDead() {
-        enemyCount -= 1;
-        if (enemyCount == 0) {
-            StartCoroutine(waitForStartNextDialogue());
-        }
+        StartCoroutine(waitForStartNextDialogue());
     }
 }

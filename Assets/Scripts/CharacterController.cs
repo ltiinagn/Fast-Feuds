@@ -45,11 +45,11 @@ public class CharacterController : MonoBehaviour
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         prevPos = this.transform.position;
         speed = characterConstants.characterSpeed;
-        sprite = gameObject.transform.parent.Find("Sprite").transform;
+        sprite = transform.parent.Find("Sprite").transform;
         sprite.Rotate(new Vector3(0, 180, 0));
         faceRight = true;
-        characterAnimator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
-        characterAudio = gameObject.transform.parent.Find("AudioSource").GetComponent<AudioSource>();
+        characterAnimator = transform.parent.Find("Sprite").GetComponent<Animator>();
+        characterAudio = transform.parent.Find("AudioSource").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -272,6 +272,6 @@ public class CharacterController : MonoBehaviour
     {
         characterAnimator.SetTrigger("onDeath");
         characterAudio.PlayOneShot(screamAudioClip);
-        Destroy(gameObject.transform.parent.gameObject, 1);
+        Destroy(transform.parent.gameObject, 1);
     }
 }

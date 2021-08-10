@@ -17,14 +17,14 @@ public class FriesController : MonoBehaviour
     {
         health = enemyConstants.enemyHealth;
         state = 0;
-        animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
+        animator = transform.parent.Find("Sprite").GetComponent<Animator>();
         // audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     IEnumerator attackPhase() {
@@ -54,7 +54,7 @@ public class FriesController : MonoBehaviour
                     animator.SetTrigger("onDeath");
                     // audioSource.PlayOneShot(audioSource.clip);
                     gameObject.GetComponent<BoxCollider>().enabled = false;
-                    Destroy(gameObject.transform.parent.gameObject, 1); // audioSource.clip.length);
+                    Destroy(transform.parent.gameObject, 1); // audioSource.clip.length);
                 }
             }
         }

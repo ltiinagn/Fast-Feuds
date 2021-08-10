@@ -25,15 +25,14 @@ MonoBehaviour:
   muffinPinkPrefab: {fileID: 629230319408024095, guid: 08068f822570c2d468274c35e732c13c, type: 3}
   chocolateCakePrefab: {fileID: 629230319408024095, guid: 71306ef2e27e8de4681ab040a08b4131, type: 3}
   donutPrefab: {fileID: 2256729703954811346, guid: 35345c6a9569e7f45892be9835f2e6e6, type: 3}
+  cupcakePrefab: {fileID: 629230319408024095, guid: c6ae9c45cb14dc140a388da994f55167, type: 3}
   bossBigMikePrefab: {fileID: 9007750895088981850, guid: a462e2b654ae4bb47a6ebf8117d26cc8, type: 3}
   chickenMovesPrefab: {fileID: 629230319408024095, guid: 70985279cde132747943c2ffbee43ea4, type: 3}
   boss2_BPrefab: {fileID: 9007750895088981850, guid: 17fbe11e69b210b43ba634c836916826, type: 3}
   bossTypeXPrefab: {fileID: 9007750895088981850, guid: fb982a47a127f7a4c9bf7e0bc516382f, type: 3}
   redBallSpawnCount: 5
-  bossBigMike_Health: 10
-  bulletSpawns2_BPrefab: {fileID: 2924074043206399465, guid: cf9aa69e849aa7c4b81d46b3690abec6, type: 3}
-  boss2_B_Health: 15
-  lastHurrahDuration2_B: 15
+  bossBigMike_Health: 100
+  boss2_B_Health: 2
   bossTypeXHealth: 15
   spawnSequence3_B: 01000000
   enemyHealth: 1

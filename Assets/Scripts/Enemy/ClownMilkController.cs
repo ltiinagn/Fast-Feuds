@@ -19,10 +19,10 @@ public class ClownMilkController : MonoBehaviour
         health = enemyConstants.enemyHealth;
         int direction = Random.Range(0, 2);
         if (direction == 1) {
-            gameObject.transform.parent.gameObject.transform.Rotate(new Vector3(0, 0, 180));
-            gameObject.transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX = true;
+            transform.parent.gameObject.transform.Rotate(new Vector3(0, 0, 180));
+            transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX = true;
         }
-        animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
+        animator = transform.parent.Find("Sprite").GetComponent<Animator>();
         otherPairAnimator = otherPair.transform.Find("Sprite").GetComponent<Animator>();
         // audioSource = GetComponent<AudioSource>();
     }
@@ -30,7 +30,7 @@ public class ClownMilkController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnTriggerEnter(Collider col) {
@@ -44,10 +44,10 @@ public class ClownMilkController : MonoBehaviour
                 // audioSource.PlayOneShot(audioSource.clip);
                 gameObject.GetComponent<BoxCollider>().enabled = false;
                 otherPair.transform.Find("BoxCollider").GetComponent<BoxCollider>().enabled = false;
-                gameObject.transform.parent.Find("ProjectileRedBallSpawner").gameObject.SetActive(false);
+                transform.parent.Find("ProjectileRedBallSpawner").gameObject.SetActive(false);
                 otherPair.transform.Find("ProjectileRedBallSpawner").gameObject.SetActive(false);
                 Destroy(otherPair, 1); // audioSource.clip.length);
-                Destroy(gameObject.transform.parent.gameObject, 1); // audioSource.clip.length);
+                Destroy(transform.parent.gameObject, 1); // audioSource.clip.length);
             }
         }
     }

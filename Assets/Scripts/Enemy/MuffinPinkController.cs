@@ -15,7 +15,7 @@ public class MuffinPinkController : MonoBehaviour
     void Start()
     {
         health = enemyConstants.enemyHealth;
-        animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
+        animator = transform.parent.Find("Sprite").GetComponent<Animator>();
         // audioSource = GetComponent<AudioSource>();
     }
 
@@ -36,9 +36,9 @@ public class MuffinPinkController : MonoBehaviour
                 onEnemyDeath.Invoke();
                 animator.SetTrigger("onDeath");
                 // audioSource.PlayOneShot(audioSource.clip);
-                gameObject.transform.parent.Find("StrawberryChipSpawner").gameObject.SetActive(false);
+                transform.parent.Find("StrawberryChipSpawner").gameObject.SetActive(false);
                 gameObject.GetComponent<BoxCollider>().enabled = false;
-                Destroy(gameObject.transform.parent.gameObject, 1); // audioSource.clip.length);
+                Destroy(transform.parent.gameObject, 1); // audioSource.clip.length);
             }
         }
     }

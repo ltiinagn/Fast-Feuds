@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileBoneSpawner : MonoBehaviour
+public class ProjectileStrawberrySpawner : MonoBehaviour
 {
     Vector3 direction;
-    private Animator chickenThrowingAnimator;
+    // private Animator chickenThrowingAnimator;
 
     void spawnFromPooler(BulletType i){
         // static method access
@@ -13,7 +13,7 @@ public class ProjectileBoneSpawner : MonoBehaviour
         if (item != null) {
             //set position, and other necessary states
             item.transform.position = this.transform.position;
-            item.transform.Find("BoxCollider").GetComponent<ProjectileBoneController>().direction = direction;
+            item.transform.Find("BoxCollider").GetComponent<ProjectileStrawberryController>().direction = direction;
             item.SetActive(true);
         }
         else {
@@ -24,7 +24,7 @@ public class ProjectileBoneSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        chickenThrowingAnimator = transform.parent.Find("Sprite").GetComponent<Animator>();
+        // chickenThrowingAnimator = transform.parent.Find("Sprite").GetComponent<Animator>();
         direction = transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX ? new Vector3(-1f, 0f, 0f) : new Vector3(1f, 0f, 0f);
         StartCoroutine(spawnBulletPeriodically());
     }
@@ -32,10 +32,10 @@ public class ProjectileBoneSpawner : MonoBehaviour
     IEnumerator spawnBulletPeriodically() {
         yield return new WaitForSeconds(0.5f);
         while (true) {
-            chickenThrowingAnimator.SetTrigger("onThrow");
+            // chickenThrowingAnimator.SetTrigger("onThrow");
             yield return new WaitForSeconds(0.4f);
-            spawnFromPooler(BulletType.bone);
-            yield return new WaitForSeconds(2);
+            spawnFromPooler(BulletType.strawberry);
+            yield return new WaitForSeconds(5);
         }
     }
 

@@ -16,14 +16,14 @@ public class ProjectileStrawberryChipController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.parent.transform.position += direction * moveSpeed * Time.deltaTime;
+        transform.parent.transform.position += direction * moveSpeed * Time.deltaTime;
     }
 
     void OnBecameInvisible() {
-        gameObject.transform.parent.gameObject.SetActive(false);
+        transform.parent.gameObject.SetActive(false);
     }
 
     void SetInactive() {
-        gameObject.transform.parent.gameObject.SetActive(false);
+        transform.parent.gameObject.SetActive(false);
     }
 }

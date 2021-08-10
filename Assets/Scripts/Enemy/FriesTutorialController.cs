@@ -33,9 +33,9 @@ public class FriesTutorialController : MonoBehaviour
         start = transform.position;
         keyList.Remove(start);
         end = keyList[Random.Range(0, keyList.Count)];
-        spriteParent = gameObject.transform.parent.gameObject.transform;
+        spriteParent = transform.parent.gameObject.transform;
         speed = 0.5f;
-        animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
+        animator = transform.parent.Find("Sprite").GetComponent<Animator>();
         // audioSource = GetComponent<AudioSource>();
         StartCoroutine(findDialogueBox());
         StartCoroutine(moveEnemyLoop());
@@ -95,6 +95,6 @@ public class FriesTutorialController : MonoBehaviour
         animator.SetTrigger("onDeath");
         // audioSource.PlayOneShot(audioSource.clip);
         gameObject.GetComponent<BoxCollider>().enabled = false;
-        Destroy(gameObject.transform.parent.gameObject, 0.75f); // audioSource.clip.length);
+        Destroy(transform.parent.gameObject, 0.75f); // audioSource.clip.length);
     }
 }

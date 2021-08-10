@@ -35,7 +35,7 @@ public class ChickenMovesController : MonoBehaviour
         Debug.Log("damaged by character!");
         if (health == 0) {
             onEnemyDeath.Invoke();
-            Destroy(gameObject.transform.parent.gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 
@@ -45,7 +45,7 @@ public class ChickenMovesController : MonoBehaviour
         if (movesLeft == 0 && health!= 0) {
             onCharacterHit.Invoke();
             onEnemyDeath.Invoke();
-            Destroy(gameObject.transform.parent.gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 }

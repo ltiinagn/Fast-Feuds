@@ -17,6 +17,7 @@ public class EnemyConstants : ScriptableObject
     public GameObject muffinPinkPrefab;
     public GameObject chocolateCakePrefab;
     public GameObject donutPrefab;
+    public GameObject cupcakePrefab;
     public GameObject bossBigMikePrefab;
     public GameObject chickenMovesPrefab;
     public GameObject boss2_BPrefab;
@@ -81,7 +82,7 @@ public class EnemyConstants : ScriptableObject
     };
 
     // Level 2-B
-    public int boss2_B_Health = 15;
+    public int boss2_B_Health = 31;
     public string[][] spawnKey2_B = new string[][] {
         new string[] {"n", "o", "t", "h", "i", "n", "g", "s"},
         new string[] {"g", "o", "n", "n", "a"},
@@ -91,6 +92,11 @@ public class EnemyConstants : ScriptableObject
         new string[] {"f", "o", "r"},
         new string[] {"y", "o", "u"},
     };
+    // public int boss2_B_Health = 2;
+    // public string[][] spawnKey2_B = new string[][] {
+    //     new string[] {"n"},
+    //     new string[] {"g"}
+    // };
 
     // Level 3-B
     public int bossTypeXHealth = 15;

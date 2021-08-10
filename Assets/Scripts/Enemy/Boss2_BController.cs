@@ -8,6 +8,7 @@ public class Boss2_BController : MonoBehaviour
     public EnemyConstants enemyConstants;
     public GameConstants gameConstants;
     public UnityEvent onBossHalfHealth;
+    public UnityEvent onBossDeath;
     public GameObject keyMapper;
     Dictionary<string, Vector3> keyMap;
     Dictionary<string, string> keyRowMap;
@@ -31,7 +32,7 @@ public class Boss2_BController : MonoBehaviour
         health = initialHealth;
         phase = 1;
         speed = 8.0f;
-        foreach (Transform sprite in gameObject.transform.parent.Find("Sprite")) {
+        foreach (Transform sprite in transform.parent.Find("Sprite")) {
             if (spriteNames.Contains(sprite.name)) {
                 sprites.Add(sprite.GetComponent<SpriteRenderer>());
             }
@@ -96,8 +97,8 @@ public class Boss2_BController : MonoBehaviour
                 phase = 2;
                 onBossHalfHealth.Invoke();
             }
-            if (health == 1) {
-                Debug.Log("entering last hurrah");
+            if (health == 0) {
+                onBossDeath.Invoke();
                 GetComponent<Collider>().enabled = false;
             }
         }

@@ -63,7 +63,6 @@ public class ProjectileKnifeController : MonoBehaviour
     }
 
     void OnBecameInvisible() {
-        Debug.Log("XXXX");
         transform.parent.gameObject.SetActive(false);
     }
 

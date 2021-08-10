@@ -16,10 +16,10 @@ public class PowerupDestroyAllProjectilesController : MonoBehaviour
     IEnumerator WaitForDestroy() {
         yield return new WaitForSeconds(gameConstants.powerupVisibilityDuration);
         for (int i = 0; i < gameConstants.powerupDisappearDuration * 2; i++) {
-            gameObject.transform.parent.transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled = !gameObject.transform.parent.transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled;
+            transform.parent.transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled = !transform.parent.transform.Find("Sprite").GetComponent<SpriteRenderer>().enabled;
             yield return new WaitForSeconds(0.5f);
         }
-        Destroy(gameObject.transform.parent.gameObject);
+        Destroy(transform.parent.gameObject);
     }
 
     // Update is called once per frame
@@ -38,6 +38,6 @@ public class PowerupDestroyAllProjectilesController : MonoBehaviour
         foreach (GameObject gameObject in gameObjects) {
             Destroy(gameObject);
         }
-        Destroy(gameObject.transform.parent.gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }
