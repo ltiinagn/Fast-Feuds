@@ -21,7 +21,7 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 2100000, guid: 41d5c2e1ba74f2d4e9fb59413bcc6286, type: 2}
-    - time: 0.083333336
+    - time: 0.05
       value: {fileID: 2100000, guid: 41d5c2e1ba74f2d4e9fb59413bcc6286, type: 2}
     attribute: m_Materials.Array.data[0]
     path: Body
@@ -30,7 +30,7 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 2100000, guid: 41d5c2e1ba74f2d4e9fb59413bcc6286, type: 2}
-    - time: 0.083333336
+    - time: 0.05
       value: {fileID: 2100000, guid: 41d5c2e1ba74f2d4e9fb59413bcc6286, type: 2}
     attribute: m_Materials.Array.data[0]
     path: Body/RightHand
@@ -39,7 +39,7 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 2100000, guid: 41d5c2e1ba74f2d4e9fb59413bcc6286, type: 2}
-    - time: 0.083333336
+    - time: 0.05
       value: {fileID: 2100000, guid: 41d5c2e1ba74f2d4e9fb59413bcc6286, type: 2}
     attribute: m_Materials.Array.data[0]
     path: Body/LeftHand
@@ -48,7 +48,7 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 2100000, guid: 41d5c2e1ba74f2d4e9fb59413bcc6286, type: 2}
-    - time: 0.083333336
+    - time: 0.05
       value: {fileID: 2100000, guid: 41d5c2e1ba74f2d4e9fb59413bcc6286, type: 2}
     attribute: m_Materials.Array.data[0]
     path: Body/RightLeg
@@ -57,7 +57,7 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 2100000, guid: 41d5c2e1ba74f2d4e9fb59413bcc6286, type: 2}
-    - time: 0.083333336
+    - time: 0.05
       value: {fileID: 2100000, guid: 41d5c2e1ba74f2d4e9fb59413bcc6286, type: 2}
     attribute: m_Materials.Array.data[0]
     path: Body/LeftLeg
@@ -66,7 +66,7 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 2100000, guid: 41d5c2e1ba74f2d4e9fb59413bcc6286, type: 2}
-    - time: 0.083333336
+    - time: 0.05
       value: {fileID: 2100000, guid: 41d5c2e1ba74f2d4e9fb59413bcc6286, type: 2}
     attribute: m_Materials.Array.data[0]
     path: DetachedRightLeg
@@ -75,7 +75,7 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 2100000, guid: 41d5c2e1ba74f2d4e9fb59413bcc6286, type: 2}
-    - time: 0.083333336
+    - time: 0.05
       value: {fileID: 2100000, guid: 41d5c2e1ba74f2d4e9fb59413bcc6286, type: 2}
     attribute: m_Materials.Array.data[0]
     path: DetachedLeftLeg
@@ -157,7 +157,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.1
+    m_StopTime: 0.06666667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
