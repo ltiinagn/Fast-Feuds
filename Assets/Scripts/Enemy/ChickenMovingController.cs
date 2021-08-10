@@ -85,10 +85,9 @@ public class ChickenMovingController : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.CompareTag("Character"))
+        if (col.gameObject.CompareTag("Character") || col.gameObject.CompareTag("BossBigMike"))
         {
             health -= 1;
-            Debug.Log("damaged by character!");
             if (health == 0)
             {
                 dying = true;

@@ -94,9 +94,10 @@ GameObject:
   - component: {fileID: 4398099339990840653}
   - component: {fileID: 4398099339990840655}
   - component: {fileID: 2506108124594542863}
+  - component: {fileID: 2522428385745677443}
   m_Layer: 0
   m_Name: BoxCollider
-  m_TagString: Untagged
+  m_TagString: BossBigMike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +127,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.7, z: 1}
+  m_Size: {x: 2, y: 0.7, z: 2}
   m_Center: {x: 0, y: 0.35, z: 0}
 --- !u!114 &2506108124594542863
 MonoBehaviour:
@@ -143,10 +144,10 @@ MonoBehaviour:
   enemyConstants: {fileID: 11400000, guid: 2c8f5b28e8bd0cb43a7087e374e7223f, type: 2}
   gameConstants: {fileID: 11400000, guid: d8e3867deee51ae4cb56753d24c16ca0, type: 2}
   keyMapper: {fileID: 0}
-  onEnemyDeath:
+  onBossDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: b5cbd5c7d9802ab4d84f9f4b52cdb222, type: 2}
+      - m_Target: {fileID: 11400000, guid: 93ac3bca032897b4f87f059ea2b25141, type: 2}
         m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
         m_MethodName: Raise
         m_Mode: 1
@@ -158,10 +159,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  SpawnPowerup:
+  onBossHalfHealth:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 1f37efc017da1254faf0ea7eb9988396, type: 2}
+      - m_Target: {fileID: 11400000, guid: b1fd73ef45a6cc443b2dff270ab0a650, type: 2}
         m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
         m_MethodName: Raise
         m_Mode: 1
@@ -173,6 +174,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!54 &2522428385745677443
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4398099339990840650}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!1 &4398099340367920582
 GameObject:
   m_ObjectHideFlags: 0
