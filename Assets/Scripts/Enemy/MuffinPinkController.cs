@@ -9,14 +9,14 @@ public class MuffinPinkController : MonoBehaviour
     public UnityEvent onEnemyDeath;
     private int health;
     private Animator animator;
-    private AudioSource audioSource;
+    // private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         health = enemyConstants.enemyHealth;
         animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        // audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
