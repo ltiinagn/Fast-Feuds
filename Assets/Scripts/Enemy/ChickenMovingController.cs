@@ -57,7 +57,7 @@ public class ChickenMovingController : MonoBehaviour
         startTime = Time.time;
         distance = Vector3.Distance(from, to);
         bool moveRight = from.x - to.x < 0 ? true : false;
-        if (moveRight != faceRight)
+        if (moveRight != faceRight && !dying)
         {
             faceRight = !faceRight;
             spriteParent.Rotate(new Vector3(0, 0, 180));
