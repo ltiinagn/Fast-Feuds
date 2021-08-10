@@ -24,8 +24,8 @@ public class ProjectileBoneSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        chickenThrowingAnimator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
-        direction = gameObject.transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX ? new Vector3(-1f, 0f, 0f) : new Vector3(1f, 0f, 0f);
+        chickenThrowingAnimator = transform.parent.Find("Sprite").GetComponent<Animator>();
+        direction = transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX ? new Vector3(-1f, 0f, 0f) : new Vector3(1f, 0f, 0f);
         StartCoroutine(spawnBulletPeriodically());
     }
 
@@ -42,6 +42,6 @@ public class ProjectileBoneSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

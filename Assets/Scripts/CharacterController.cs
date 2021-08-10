@@ -32,6 +32,7 @@ public class CharacterController : MonoBehaviour
     public AudioClip[] gruntingAudioClips;
     public AudioClip[] punchingAudioClips;
     public AudioClip[] ouchAudioClips;
+    public AudioClip screamAudioClip;
 
     // Start is called before the first frame update
     void Start()
@@ -44,11 +45,11 @@ public class CharacterController : MonoBehaviour
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         prevPos = this.transform.position;
         speed = characterConstants.characterSpeed;
-        sprite = gameObject.transform.parent.Find("Sprite").transform;
+        sprite = transform.parent.Find("Sprite").transform;
         sprite.Rotate(new Vector3(0, 180, 0));
         faceRight = true;
-        characterAnimator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
-        characterAudio = gameObject.transform.parent.Find("AudioSource").GetComponent<AudioSource>();
+        characterAnimator = transform.parent.Find("Sprite").GetComponent<Animator>();
+        characterAudio = transform.parent.Find("AudioSource").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -100,7 +101,7 @@ public class CharacterController : MonoBehaviour
         while (fracDist < 1) {
             float distCovered = (Time.time - startTime) * speed;
             fracDist = distCovered / distance;
-            gameObject.transform.parent.gameObject.transform.position = Vector3.Lerp(from, fromUp, fracDist);
+            transform.parent.position = Vector3.Lerp(from, fromUp, fracDist);
             yield return null;
         }
 
@@ -112,7 +113,7 @@ public class CharacterController : MonoBehaviour
         while (fracDist < 1) {
             float distCovered = (Time.time - startTime) * speed;
             fracDist = distCovered / distance;
-            gameObject.transform.parent.gameObject.transform.position = Vector3.Lerp(toUp, to, fracDist);
+            transform.parent.position = Vector3.Lerp(toUp, to, fracDist);
             yield return null;
         }
         characterAnimator.SetBool("isMoving", false);
@@ -122,6 +123,7 @@ public class CharacterController : MonoBehaviour
         sphereCollider.SetActive(false);
         moving = false;
         bulletsPerDash = 1;
+        onCharacterMove.Invoke();
     }
 
     IEnumerator moveStraightCutFry(Vector3 from, Vector3 to)
@@ -138,6 +140,7 @@ public class CharacterController : MonoBehaviour
         moving = true;
         bulletsPerDash = 1;
         characterAudio.PlayOneShot(movementAudioClips[Random.Range(0, movementAudioClips.Length)]);
+        characterAudio.PlayOneShot(gruntingAudioClips[Random.Range(0, gruntingAudioClips.Length)]);
         float fracDist = 0;
 
         Vector3 dir = to - from;
@@ -168,22 +171,8 @@ public class CharacterController : MonoBehaviour
         while (fracDist < 1) {
             float distCovered = (Time.time - startTime) * speed;
             fracDist = distCovered / distance;
-            gameObject.transform.parent.gameObject.transform.position = Vector3.Lerp(from, to, fracDist);
+            transform.parent.position = Vector3.Lerp(from, to, fracDist);
             yield return null;
-
-            // float dist = Vector3.Distance(prevPos, this.transform.position);
-            // dir = this.transform.position - prevPos;
-
-            // RaycastHit[] hits;
-            // hits = Physics.RaycastAll(prevPos, dir, dist);
-            // foreach (RaycastHit hit in hits)
-            // {
-            //     if (hit.transform.tag != "TileDanger" && hit.transform.tag != "ProjectileCollider")
-            //     {
-            //         Debug.Log(hit.transform.tag);
-            //         hit.transform.gameObject.SendMessage("OnTriggerEnter", hit.collider);
-            //     }
-            // }
         }
         characterAnimator.SetBool("isMoving", false);
         prevPos = this.transform.position;
@@ -223,16 +212,17 @@ public class CharacterController : MonoBehaviour
             }
             // onCharacterHit.Invoke();
         }
-        else if (col.gameObject.CompareTag("EnemyCollider") || col.gameObject.CompareTag("ChickenMoving")) {
-            characterAudio.PlayOneShot(gruntingAudioClips[Random.Range(0, gruntingAudioClips.Length)]);
+        else if (col.gameObject.CompareTag("EnemyCollider") || col.gameObject.CompareTag("ChickenMoving"))
+        {
             characterAudio.PlayOneShot(punchingAudioClips[Random.Range(0, punchingAudioClips.Length)]);
         }
-        else if (col.gameObject.CompareTag("EnemyTutorialCollider") && weapon) {
+        else if (col.gameObject.CompareTag("EnemyTutorialCollider") && weapon)
+        {
             col.gameObject.GetComponent<FriesTutorialController>().DestroyEnemy();
-            characterAudio.PlayOneShot(gruntingAudioClips[Random.Range(0, gruntingAudioClips.Length)]);
             characterAudio.PlayOneShot(punchingAudioClips[Random.Range(0, punchingAudioClips.Length)]);
         }
-        else {
+        else
+        {
             if (!invulnerablePowerup)
             {
                 if (col.gameObject.CompareTag("TileDanger"))
@@ -242,14 +232,23 @@ public class CharacterController : MonoBehaviour
                 }
                 else if (col.gameObject.CompareTag("ProjectileCollider"))
                 {
-                    if (bulletsPerDash > 0) {
+                    if (bulletsPerDash > 0)
+                    {
                         bulletsPerDash -= 1;
                     }
-                    else {
+                    else
+                    {
+                        characterAnimator.SetTrigger("onHit");
                         characterAudio.PlayOneShot(ouchAudioClips[Random.Range(0, ouchAudioClips.Length)]);
                         col.gameObject.SendMessage("SetInactive");
                         onCharacterHit.Invoke();
                     }
+                }
+                else if (col.gameObject.CompareTag("MeleeCollider"))
+                {
+                    characterAnimator.SetTrigger("onHit");
+                    characterAudio.PlayOneShot(ouchAudioClips[Random.Range(0, ouchAudioClips.Length)]);
+                    onCharacterHit.Invoke();
                 }
             }
         }
@@ -257,6 +256,8 @@ public class CharacterController : MonoBehaviour
 
     public void playerDeath()
     {
-        Destroy(gameObject.transform.parent.gameObject);
+        characterAnimator.SetTrigger("onDeath");
+        characterAudio.PlayOneShot(screamAudioClip);
+        Destroy(transform.parent.gameObject, 1);
     }
 }

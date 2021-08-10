@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8187078185397661338}
   - component: {fileID: 2334148142629060716}
   - component: {fileID: 1041677273420945570}
-  - component: {fileID: 7738079059252356726}
+  - component: {fileID: 1391638612273756250}
   m_Layer: 0
   m_Name: BoxCollider
   m_TagString: ProjectileCollider
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
   moveSpeed: 4
---- !u!212 &7738079059252356726
+--- !u!212 &1391638612273756250
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

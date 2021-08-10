@@ -18,7 +18,7 @@ public class EnemySpawner1_1 : MonoBehaviour
     private int[][] spawnSequence;
     private int enemyTotal;
     private int enemyCount;
-    private int progress0 = 1;
+    private int progress0 = 0;
     private int progress1 = 0;
 
     // Start is called before the first frame update
@@ -33,7 +33,6 @@ public class EnemySpawner1_1 : MonoBehaviour
     }
 
     void spawnEnemies() {
-        // Instantiate(enemyConstants.chickenStationaryPrefab, new Vector3(2,0,0), Quaternion.identity);
         for (int count = 0; count < spawnSequence[progress0][progress1]; count++) {
             spawnEnemy();
         }
@@ -104,7 +103,7 @@ public class EnemySpawner1_1 : MonoBehaviour
         int spawnAt = Random.Range(0, spawnSequence[progress0][progress1]);
         for (int count = 0; count < spawnSequence[progress0][progress1]; count++) {
             spawnEnemy();
-            if (spawnAt == count) {
+            if (spawnAt == count && progress0 > 0) {
                 SpawnPowerup.Invoke();
             }
             if (progress0 == 0 && progress1 <= 9) {

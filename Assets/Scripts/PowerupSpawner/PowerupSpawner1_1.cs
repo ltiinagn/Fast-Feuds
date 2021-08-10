@@ -25,11 +25,26 @@ public class PowerupSpawner1_1 : MonoBehaviour
 
     }
 
+    IEnumerator spawnPowerupInterval() {
+        int index;
+        int invulnerableIndex = Random.Range(0, 5);
+        for (int i = 0; i < 5; i++) {
+            index = Random.Range(0, keyList.Count);
+            if (i != invulnerableIndex) {
+                Instantiate(gameConstants.powerupAddHealthPrefab, keyList[index], Quaternion.identity);
+            }
+            else {
+                Instantiate(gameConstants.powerupInvulnerablePrefab, keyList[index], Quaternion.identity);
+            }
+            keyList.RemoveAt(index);
+
+            yield return new WaitForSeconds(1.0f);
+        }
+    }
+
     public void spawnPowerup() {
         keyList = new List<Vector3>(keyMap.Values);
         keyList.Remove(character.transform.position);
-        int index = Random.Range(0, keyList.Count);
-        Instantiate(gameConstants.powerupAddHealthPrefab, keyList[index], Quaternion.identity);
-        keyList.RemoveAt(index);
+        StartCoroutine(spawnPowerupInterval());
     }
 }

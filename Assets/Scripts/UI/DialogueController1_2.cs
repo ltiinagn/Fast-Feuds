@@ -9,6 +9,7 @@ public class DialogueController1_2 : MonoBehaviour
     public GameConstants gameConstants;
     public GameObject enemySpawner;
     public UnityEvent startNextSpawn;
+    public UnityEvent stageComplete;
     private GameObject dialogueBox;
     private Text dialogueText;
     private string[][] dialogue;
@@ -58,7 +59,7 @@ public class DialogueController1_2 : MonoBehaviour
                 if (Input.GetKeyDown("space")) {
                     progress1 += 1;
                 }
-                else if (progress1 == 0 && Input.GetKeyDown(KeyCode.Return)) {
+                else if (Input.GetKeyDown(KeyCode.Return)) {
                     progress1 = dialogue[progress0].Length;
                 }
 
@@ -71,6 +72,9 @@ public class DialogueController1_2 : MonoBehaviour
                     if (progress0 != 0 && progress0 < dialogue.Length) {
                         enemySpawner.SetActive(true);
                         StartCoroutine(waitForStartNextSpawn());
+                    }
+                    else if (progress0 == dialogue.Length) {
+                        stageComplete.Invoke();
                     }
                 }
                 else {

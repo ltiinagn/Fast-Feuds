@@ -6,7 +6,14 @@ public enum BulletType {
 	bullet1 = 0,
     bone = 1,
     redBall = 2,
-    bigMacSauce = 3
+    bigMacSauce = 3,
+    strawberryChipWhite = 4,
+    strawberryChipBlue = 5,
+    strawberryChip = 6,
+    chocolateBall = 7,
+    knife = 8,
+    strawberry = 9,
+    redBubble = 10
 }
 
 [System.Serializable]
@@ -48,7 +55,7 @@ public class BulletPooler : MonoBehaviour
                 return pooledBullets[i].gameObject;
             }
         }
-        
+
         // this will be called when no more active object is present, item to expand pool if required
         foreach (BulletPoolItem item in bulletsToPool)
         {
@@ -70,7 +77,7 @@ public class BulletPooler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     void Awake()
@@ -95,6 +102,6 @@ public class BulletPooler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

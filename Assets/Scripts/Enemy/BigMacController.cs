@@ -15,12 +15,12 @@ public class BigMacController : MonoBehaviour
     void Start()
     {
         health = enemyConstants.chickenStationaryHealth;
-        animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
+        animator = transform.parent.Find("Sprite").GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         int direction = Random.Range(0, 2);
         if (direction == 1)
         {
-            gameObject.transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX = true;
+            transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX = true;
         }
     }
 
@@ -41,9 +41,9 @@ public class BigMacController : MonoBehaviour
                 onEnemyDeath.Invoke();
                 animator.SetTrigger("onDeath");
                 audioSource.PlayOneShot(audioSource.clip);
-                gameObject.transform.parent.Find("ProjectileBigMacSauceSpawner").gameObject.SetActive(false);
+                transform.parent.Find("ProjectileBigMacSauceSpawner").gameObject.SetActive(false);
                 gameObject.GetComponent<BoxCollider>().enabled = false;
-                Destroy(gameObject.transform.parent.gameObject, audioSource.clip.length);
+                Destroy(transform.parent.gameObject, audioSource.clip.length);
             }
         }
     }

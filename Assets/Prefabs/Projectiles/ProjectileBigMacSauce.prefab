@@ -93,8 +93,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8187078185397661338}
   - component: {fileID: 2334148142629060716}
-  - component: {fileID: 7738079059252356726}
   - component: {fileID: 3420195628748189948}
+  - component: {fileID: 5906708463496186448}
   m_Layer: 0
   m_Name: BoxCollider
   m_TagString: ProjectileCollider
@@ -129,7 +129,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!212 &7738079059252356726
+--- !u!114 &3420195628748189948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2471834065724167718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7057ce719ba5be340802bc2217a14f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0, z: 0}
+  moveSpeed: 5
+--- !u!212 &5906708463496186448
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,20 +195,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3420195628748189948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2471834065724167718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7057ce719ba5be340802bc2217a14f47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0, z: 0}
-  moveSpeed: 6
 --- !u!1 &8363571034866767812
 GameObject:
   m_ObjectHideFlags: 0
