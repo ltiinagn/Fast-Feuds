@@ -71,7 +71,7 @@ public class FriesTutorialController : MonoBehaviour
     void moveEnemy(Vector3 from, Vector3 to)
     {
         bool moveRight = from.x - to.x < 0 ? true : false;
-        if (moveRight != faceRight)
+        if (moveRight != faceRight && !dying)
         {
             faceRight = !faceRight;
             spriteParent.Rotate(new Vector3(0, 0, 180));
