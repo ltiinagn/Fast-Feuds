@@ -100,7 +100,7 @@ public class CharacterController : MonoBehaviour
         while (fracDist < 1) {
             float distCovered = (Time.time - startTime) * speed;
             fracDist = distCovered / distance;
-            gameObject.transform.parent.gameObject.transform.position = Vector3.Lerp(from, fromUp, fracDist);
+            transform.parent.position = Vector3.Lerp(from, fromUp, fracDist);
             yield return null;
         }
 
@@ -112,7 +112,7 @@ public class CharacterController : MonoBehaviour
         while (fracDist < 1) {
             float distCovered = (Time.time - startTime) * speed;
             fracDist = distCovered / distance;
-            gameObject.transform.parent.gameObject.transform.position = Vector3.Lerp(toUp, to, fracDist);
+            transform.parent.position = Vector3.Lerp(toUp, to, fracDist);
             yield return null;
         }
         characterAnimator.SetBool("isMoving", false);
@@ -170,7 +170,7 @@ public class CharacterController : MonoBehaviour
         while (fracDist < 1) {
             float distCovered = (Time.time - startTime) * speed;
             fracDist = distCovered / distance;
-            gameObject.transform.parent.gameObject.transform.position = Vector3.Lerp(from, to, fracDist);
+            transform.parent.position = Vector3.Lerp(from, to, fracDist);
             yield return null;
 
             // float dist = Vector3.Distance(prevPos, this.transform.position);

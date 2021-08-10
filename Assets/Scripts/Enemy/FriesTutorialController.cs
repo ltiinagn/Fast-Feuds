@@ -79,7 +79,7 @@ public class FriesTutorialController : MonoBehaviour
         Vector3 direction = (to - from).normalized;
         to = from + direction;
         float fracDist = Time.deltaTime * speed;
-        gameObject.transform.parent.gameObject.transform.position = Vector3.Lerp(from, to, fracDist);
+        transform.parent.position = Vector3.Lerp(from, to, fracDist);
     }
 
     // Update is called once per frame

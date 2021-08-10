@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &327752423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 99868172223012090, guid: c810badfcbead5a43b2c0ca2ddc9f8ee, type: 3}
+  m_PrefabInstance: {fileID: 7338748969721404725}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &454422594
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +687,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 398760484489817926, guid: 7a0205e8100216f4e8b4a00ff8e533ba, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 327752423}
     - target: {fileID: 398760484489817926, guid: 7a0205e8100216f4e8b4a00ff8e533ba, type: 3}
       propertyPath: onCharacterAddHealth.m_PersistentCalls.m_Calls.Array.size
       value: 1

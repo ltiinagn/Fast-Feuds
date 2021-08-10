@@ -60,7 +60,6 @@ MonoBehaviour:
   enemyConstants: {fileID: 11400000, guid: 2c8f5b28e8bd0cb43a7087e374e7223f, type: 2}
   gameConstants: {fileID: 11400000, guid: d8e3867deee51ae4cb56753d24c16ca0, type: 2}
   keyMapper: {fileID: 0}
-  bulletSpawns2_BPrefab: {fileID: 0}
 --- !u!1 &6053449800253719023
 GameObject:
   m_ObjectHideFlags: 0
