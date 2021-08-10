@@ -9,14 +9,14 @@ public class ChocolateCakeController : MonoBehaviour
     public UnityEvent onEnemyDeath;
     private int health;
     private Animator animator;
-    private AudioSource audioSource;
+    // private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         health = enemyConstants.enemyHealth;
-        animator = transform.parent.Find("Sprite").GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
+        // audioSource = GetComponent<AudioSource>();
         int direction = Random.Range(0, 2);
         if (direction == 1)
         {
@@ -39,12 +39,11 @@ public class ChocolateCakeController : MonoBehaviour
             if (health == 0)
             {
                 onEnemyDeath.Invoke();
-                // animator.SetTrigger("onDeath");
+                animator.SetTrigger("onDeath");
                 // audioSource.PlayOneShot(audioSource.clip);
                 transform.parent.Find("ProjectileChocolateBallSpawner").gameObject.SetActive(false);
                 gameObject.GetComponent<BoxCollider>().enabled = false;
-                Destroy(transform.parent.gameObject);
-                // Destroy(transform.parent.gameObject, audioSource.clip.length);
+                Destroy(gameObject.transform.parent.gameObject, 1); // audioSource.clip.length);
             }
         }
     }
