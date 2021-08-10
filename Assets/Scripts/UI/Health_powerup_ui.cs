@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class HealthIcon : MonoBehaviour
+public class Health_powerup_ui : MonoBehaviour
 {
     //public int health;
     public int numOfHearts;
@@ -15,20 +15,18 @@ public class HealthIcon : MonoBehaviour
     public UnityEvent onPlayerDeath;
     public IntVariable characterHealth;
 
+    public IntVariable characterPowerUpHp;
+
     public Image[] poweruphp;
 
-    public GameObject Hp1;
-
-    public GameObject Hp2;
-    
+    private SpriteRenderer health_no_multiply;
     // Start is called before the first frame update
     void Start()
     {
-        //health_no_multiply = GetComponent<SpriteRenderer>();
-        
+        health_no_multiply = GetComponent<SpriteRenderer>();
         int healthIncrease = PlayerPrefs.GetInt("skill_IncreaseStartingHealth");
         characterHealth.SetValue(characterConstants.characterHealth + healthIncrease);
-       
+        
         UpdateHealth();
         /*
         if (characterHealth.Value > numOfHearts)
@@ -50,32 +48,28 @@ public class HealthIcon : MonoBehaviour
     void Update()
     {
         if (characterHealth.Value <= 7)
-        {
-            
-
-            for (int j = 0; j < hearts.Length; j++)
+            {
+            for (int i = 0; i < hearts.Length; i++)
             {
 
-                if (j < characterHealth.Value)
+                if (i < characterHealth.Value)
                 {
-                    hearts[j].enabled = true;
+                    hearts[i].enabled = true;
                 }
                 else
                 {
-                    hearts[j].enabled = false;
+                    hearts[i].enabled = false;
                 }
             }
         }
 
-        else
+        else 
         {
-            Hp2.SetActive(false);
-
-            for (int i = 7; i < poweruphp.Length + 7; i++)
+            for (int i=7; i<poweruphp.Length+7; i++)
             {
-                if (i <= characterHealth.Value)
+                if (i < characterHealth.Value)
                 {
-                    poweruphp[i - 7].enabled = true;
+                    poweruphp[i-7].enabled = true;
                 }
                 else
                 {
@@ -83,6 +77,6 @@ public class HealthIcon : MonoBehaviour
                 }
             }
         }
-
+        
     }
 }

@@ -8,6 +8,7 @@ public class HealthMonitor : MonoBehaviour
     public UnityEvent onPlayerDeath;
     public IntVariable characterHealth;
     public Text healthText;
+    public GameObject Hp1;
 
     public void Start()
     {
@@ -18,9 +19,19 @@ public class HealthMonitor : MonoBehaviour
 
     public void UpdateHealth()
     {
+        if (characterHealth.Value <= 7)
+        {
+            Hp1.SetActive(true);
+        }
+
         healthText.text = "~" + characterHealth.Value.ToString();
         if (characterHealth.Value == 0) {
             onPlayerDeath.Invoke();
         }
+    }
+
+    void Update()
+    {
+        UpdateHealth();
     }
 }
