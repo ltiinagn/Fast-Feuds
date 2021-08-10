@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-public class DialogueController2_B : MonoBehaviour
+public class DialogueController3_B : MonoBehaviour
 {
     public GameConstants gameConstants;
     public GameObject enemySpawner;
@@ -22,7 +22,7 @@ public class DialogueController2_B : MonoBehaviour
     {
         dialogueBox = GameObject.Find("UI/Dialogue");
         dialogueText = dialogueBox.transform.Find("Panel/Dialogue_Text").GetComponent<Text>();
-        dialogue = gameConstants.dialogue2_B;
+        dialogue = gameConstants.dialogue3_B;
         progress0 = 0;
         progress1 = 0;
         finishedSet = false;

@@ -1,20 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 // TODO
 public class EnemySpawner3_B : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
     public GameObject keyMapper;
+    public UnityEvent startNextDialogue;
     Dictionary<string, Vector3> keyMap;
     List<Vector3> keyList;
 
     private GameObject character;
-    private int[] spawnSequence;
-    private int enemyCount;
-    private int progress = 0;
-    private bool movable = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +21,7 @@ public class EnemySpawner3_B : MonoBehaviour
         character = GameObject.Find("Character");
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
-        spawnSequence = enemyConstants.spawnSequence3_B;
-        enemyCount = spawnSequence[progress];
-
-        StartCoroutine(WaitForNextSpawn());
+        keyList = new List<Vector3>(keyMap.Values);
     }
 
     // Update is called once per frame
@@ -35,30 +30,27 @@ public class EnemySpawner3_B : MonoBehaviour
 
     }
 
+    public void startNextSpawn() {
+        StartCoroutine(WaitForNextSpawn());
+    }
+
     void spawnBoss() {
-        Instantiate(enemyConstants.bossTypeXPrefab, new Vector3(8,0,2), Quaternion.identity);
+        Instantiate(enemyConstants.bossTypeXPrefab, new Vector3(11,0,9), Quaternion.identity);
     }
 
     IEnumerator WaitForNextSpawn() {
         yield return new WaitForSeconds(1);
         if (character != null) {
-            keyList = new List<Vector3>(keyMap.Values);
-            keyList.Remove(character.transform.position);
             spawnBoss();
         }
     }
 
+    IEnumerator waitForStartNextDialogue() {
+        yield return new WaitForSeconds(5);
+        startNextDialogue.Invoke();
+    }
+
     public void enemyDead() {
-        enemyCount -= 1;
-        if (enemyCount == 0) {
-            if (progress < spawnSequence.Length-1) {
-                progress += 1;
-                if (!movable && progress > 4) {
-                    movable = true;
-                }
-                enemyCount = spawnSequence[progress];
-                StartCoroutine(WaitForNextSpawn());
-            }
-        }
+        StartCoroutine(waitForStartNextDialogue());
     }
 }

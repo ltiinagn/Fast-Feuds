@@ -173,20 +173,6 @@ public class CharacterController : MonoBehaviour
             fracDist = distCovered / distance;
             transform.parent.position = Vector3.Lerp(from, to, fracDist);
             yield return null;
-
-            // float dist = Vector3.Distance(prevPos, this.transform.position);
-            // dir = this.transform.position - prevPos;
-
-            // RaycastHit[] hits;
-            // hits = Physics.RaycastAll(prevPos, dir, dist);
-            // foreach (RaycastHit hit in hits)
-            // {
-            //     if (hit.transform.tag != "TileDanger" && hit.transform.tag != "ProjectileCollider")
-            //     {
-            //         Debug.Log(hit.transform.tag);
-            //         hit.transform.gameObject.SendMessage("OnTriggerEnter", hit.collider);
-            //     }
-            // }
         }
         characterAnimator.SetBool("isMoving", false);
         prevPos = this.transform.position;

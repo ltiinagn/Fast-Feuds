@@ -12,7 +12,8 @@ public enum BulletType {
     strawberryChip = 6,
     chocolateBall = 7,
     knife = 8,
-    strawberry = 9
+    strawberry = 9,
+    redBubble = 10
 }
 
 [System.Serializable]

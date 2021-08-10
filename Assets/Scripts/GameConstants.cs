@@ -60,9 +60,12 @@ public class GameConstants : ScriptableObject
         new string[] {"I think that's it for now.."}
     };
     public string[][] dialogue2_B = new string[][] {
-        new string[] {"Boss"},
-        new string[] {"Rest point."},
+        new string[] {"Boss2"},
+        new string[] {"Rest point.2"},
     };
 
-    public string[] dialogue3_B = {};
+    public string[][] dialogue3_B = new string[][] {
+        new string[] {"Final Boss"},
+        new string[] {"I'm freed at last.."},
+    };
 }

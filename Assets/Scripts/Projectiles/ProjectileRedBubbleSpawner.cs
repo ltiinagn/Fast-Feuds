@@ -1,0 +1,113 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Linq;
+
+public class ProjectileRedBubbleSpawner : MonoBehaviour
+{
+    public EnemyConstants enemyConstants;
+    public GameConstants gameConstants;
+    public GameObject keyMapper;
+    public GameObject dialogueBox;
+    Dictionary<string, Vector3> keyMap;
+    Dictionary<string, string> keyRowMap;
+
+    void spawnFromPooler(BulletType i, string n, float margin1, float margin2){
+        // static method access
+        GameObject item = BulletPooler.SharedInstance.GetPooledBullet(i);
+        if (item != null) {
+            //set position, and other necessary states
+            item.transform.position = keyMap[n];
+            item.SetActive(true);
+            ProjectileRedBubbleController projectileRedBubbleController = item.transform.Find("BoxCollider").GetComponent<ProjectileRedBubbleController>();
+            projectileRedBubbleController.margin1 = margin1;
+            projectileRedBubbleController.margin2 = margin2;
+        }
+        else {
+            Debug.Log("not enough items in the pool.");
+        }
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        keyMapper = GameObject.Find("KeyMapper");
+        keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
+        keyRowMap = keyMapper.GetComponent<KeyMapping>().keyRowMap;
+        StartCoroutine(Phase1());
+    }
+
+    IEnumerator Phase1() {
+        while ((!dialogueBox || dialogueBox.activeSelf)) {
+            yield return null;
+        }
+        yield return new WaitForSeconds(1.5f);
+        float margin1 = 0.5f;
+        float margin2 = 1.0f;
+        foreach (string[] name in enemyConstants.keySequence3_B_1) {
+            foreach (string n in name) {
+                spawnFromPooler(BulletType.redBubble, n, margin1, margin2);
+                yield return new WaitForSeconds(0.2f);
+            }
+            yield return new WaitForSeconds(2.0f);
+        }
+        foreach (string[] name in enemyConstants.keySequence3_B_1_2) {
+            foreach (string n in name) {
+                spawnFromPooler(BulletType.redBubble, n, margin1, margin2);
+                yield return new WaitForSeconds(0.2f);
+            }
+            yield return new WaitForSeconds(2.0f);
+        }
+        StartCoroutine(Phase2());
+    }
+
+    IEnumerator Phase2() {
+        float margin1 = 0.3f;
+        float margin2 = 0.2f;
+        yield return new WaitForSeconds(0.5f);
+        float speedChange = 0.0f;
+        foreach (string[][] name in enemyConstants.keySequence3_B_2) {
+            float interval = 1.0f - speedChange * 0.2f;
+            for (int j = 0; j < name.Length; j++) {
+                foreach (string c in keyMap.Keys) {
+                    if (!name[j].Contains(c)) {
+                        spawnFromPooler(BulletType.redBubble, c, margin1, margin2);
+                    }
+                }
+                yield return new WaitForSeconds(interval);
+            }
+            yield return new WaitForSeconds(2.0f);
+            speedChange += 1;
+        }
+        StartCoroutine(LastHurrah());
+    }
+
+    IEnumerator LastHurrah() {
+        float margin1 = 0.6f;
+        float margin2 = 0.4f;
+        float speedChange = 0.0f;
+        foreach (string[] name in enemyConstants.keySequence3_B_L) {
+            float interval = 1.4f - speedChange * 0.1f;
+            for (int j = 0; j < name.Length; j++) {
+                foreach (string c in keyMap.Keys) {
+                    if (!name[j].Contains(c)) {
+                        spawnFromPooler(BulletType.redBubble, c, margin1, margin2);
+                    }
+                }
+                yield return new WaitForSeconds(interval);
+            }
+            yield return new WaitForSeconds(2.0f);
+            speedChange += 1;
+        }
+    }
+
+    public void SetInactive() {
+        gameObject.SetActive(false);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+}

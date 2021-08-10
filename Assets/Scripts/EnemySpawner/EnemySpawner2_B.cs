@@ -13,8 +13,6 @@ public class EnemySpawner2_B : MonoBehaviour
     List<Vector3> keyList;
 
     private GameObject character;
-    private int[] spawnSequence;
-    private int enemyCount;
 
     // Start is called before the first frame update
     void Start()
