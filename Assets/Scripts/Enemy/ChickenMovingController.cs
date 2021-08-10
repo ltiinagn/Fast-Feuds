@@ -16,8 +16,11 @@ public class ChickenMovingController : MonoBehaviour
     private bool dying;
     private Vector3 start;
     private Vector3 end;
-    private bool faceRight = true;
     private float speed;
+    private bool faceRight = true;
+    private Transform sprite;
+    // HashSet<string> spriteNames = new HashSet<string> {"Body"};
+    List<SpriteRenderer> spriteDescendants = new List<SpriteRenderer> {};
     private Animator animator;
     private AudioSource audioSource;
 
@@ -32,8 +35,21 @@ public class ChickenMovingController : MonoBehaviour
         start = transform.position;
         keyList.Remove(start);
         end = keyList[Random.Range(0, keyList.Count)];
-        spriteParent = gameObject.transform.parent.gameObject.transform;
         speed = 2.0f;
+        spriteParent = gameObject.transform.parent.gameObject.transform;
+        sprite = gameObject.transform.parent.Find("Sprite").transform;
+        foreach (Transform spriteChild in gameObject.transform.parent.Find("Sprite"))
+        {
+            spriteDescendants.Add(spriteChild.GetComponent<SpriteRenderer>());
+            foreach (Transform spriteGrandchild in spriteChild)
+            {
+                if (null == spriteGrandchild)
+                {
+                    continue;
+                }
+                spriteDescendants.Add(spriteGrandchild.GetComponent<SpriteRenderer>());
+            }
+        };
         animator = gameObject.transform.parent.Find("Sprite").GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         StartCoroutine(moveEnemyLoop());
@@ -77,6 +93,31 @@ public class ChickenMovingController : MonoBehaviour
         }
     }
 
+    IEnumerator eatenByBoss(Vector3 bossPosition, float duration)
+    {
+        Vector3 originalPosition = sprite.position;
+        Vector3 finalPosition = bossPosition;
+
+        Vector3 originalScale = sprite.localScale;
+        Vector3 finalScale = new Vector3(0.0f, 0.0f, 0.0f);
+
+        float counter = 0;
+        float fracTime = 0;
+
+        while (counter < duration)
+        {
+            counter += Time.deltaTime;
+            fracTime = counter / duration;
+            sprite.position = Vector3.Lerp(originalPosition, finalPosition, fracTime);
+            sprite.localScale = Vector3.Lerp(originalScale, finalScale, fracTime);
+            foreach (SpriteRenderer spriteRenderer in spriteDescendants)
+            {
+                spriteRenderer.material.color = new Color(1, 1, 1, Mathf.Lerp(1, 0, fracTime));
+            }
+            yield return null;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -92,6 +133,14 @@ public class ChickenMovingController : MonoBehaviour
             {
                 dying = true;
                 onEnemyDeath.Invoke();
+                if (col.gameObject.CompareTag("Character"))
+                {
+                    animator.SetTrigger("onDeath");
+                }
+                else if (col.gameObject.CompareTag("BossBigMike"))
+                {
+                    StartCoroutine(eatenByBoss(col.gameObject.transform.parent.gameObject.transform.position, 0.6f));
+                }
                 animator.SetTrigger("onDeath");
                 audioSource.PlayOneShot(audioSource.clip);
                 gameObject.GetComponent<BoxCollider>().enabled = false;
