@@ -34,11 +34,11 @@ public class MuffinBlueController : MonoBehaviour
             if (health == 0)
             {
                 onEnemyDeath.Invoke();
-                // animator.SetTrigger("onDeath");
+                animator.SetTrigger("onDeath");
                 // audioSource.PlayOneShot(audioSource.clip);
+                gameObject.transform.parent.Find("StrawberryChipBlueSpawner").gameObject.SetActive(false);
                 gameObject.GetComponent<BoxCollider>().enabled = false;
-                // Destroy(gameObject.transform.parent.gameObject, audioSource.clip.length);
-                Destroy(gameObject.transform.parent.gameObject);
+                Destroy(gameObject.transform.parent.gameObject, 1); // audioSource.clip.length);
             }
         }
     }
