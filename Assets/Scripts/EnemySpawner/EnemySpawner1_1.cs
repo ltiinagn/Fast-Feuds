@@ -18,7 +18,7 @@ public class EnemySpawner1_1 : MonoBehaviour
     private int[][] spawnSequence;
     private int enemyTotal;
     private int enemyCount;
-    private int progress0 = 0;
+    private int progress0 = 1;
     private int progress1 = 0;
 
     // Start is called before the first frame update

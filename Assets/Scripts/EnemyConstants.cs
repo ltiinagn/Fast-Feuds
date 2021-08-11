@@ -37,7 +37,7 @@ public class EnemyConstants : ScriptableObject
         new int[] {1, 2, 3, 4, 10},
         new int[] {1, 2, 3, 4, 10}
     };
-    public int redBallSpawnCount = 5;
+    public int redBallSpawnCount = 3;
 
     // Level 1-2 Spawn
     // public int[][] spawnSequence1_2 = new int[][] {

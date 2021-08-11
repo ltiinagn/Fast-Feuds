@@ -254,7 +254,12 @@ public class CharacterController : MonoBehaviour
                 }
                 else if (col.gameObject.CompareTag("ProjectileCollider"))
                 {
-                    col.gameObject.SendMessage("SetInactive");
+                    try {
+                        col.gameObject.SendMessage("SetInactive");
+                    } catch {
+
+                    }
+
                     if (bulletsPerDash > 0)
                     {
                         bulletsPerDash -= 1;
