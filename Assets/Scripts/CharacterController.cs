@@ -23,10 +23,12 @@ public class CharacterController : MonoBehaviour
     bool weapon = false;
     string playStyle = "straightCutFry";
     bool faceRight = false;
+    int initialBulletsPerDash;
     int bulletsPerDash;
     bool moving;
     bool invulnerablePowerup;
     float speed;
+    float delay;
     private Animator characterAnimator;
     private AudioSource characterAudio;
     public AudioClip[] movementAudioClips;
@@ -39,13 +41,15 @@ public class CharacterController : MonoBehaviour
     void Start()
     {
         dialogueText = dialogueBox.transform.Find("Panel/Dialogue_Text").GetComponent<Text>();
+        initialBulletsPerDash = PlayerPrefs.GetInt("skill_Skill3");
         bulletsPerDash = 0;
         moving = false;
         invulnerablePowerup = false;
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         prevPos = this.transform.position;
-        speed = characterConstants.characterSpeed;
+        speed = characterConstants.characterSpeed * (PlayerPrefs.GetInt("skill_Skill2") + 1);
+        delay = characterConstants.characterDelay / (PlayerPrefs.GetInt("skill_Skill2") + 1);
         sprite = transform.parent.Find("Sprite").transform;
         sprite.Rotate(new Vector3(0, 180, 0));
         faceRight = true;
@@ -91,9 +95,8 @@ public class CharacterController : MonoBehaviour
         }
         characterAnimator.SetBool("isMoving", true);
         moving = true;
-        bulletsPerDash = 1;
         characterAudio.PlayOneShot(movementAudioClips[Random.Range(0, movementAudioClips.Length)]);
-
+        bulletsPerDash = initialBulletsPerDash;
         float startTime = Time.time;
         float fracDist = 0;
         Vector3 fromUp = new Vector3(from.x, from.y + 10, from.z);
@@ -105,6 +108,8 @@ public class CharacterController : MonoBehaviour
             transform.parent.position = Vector3.Lerp(from, fromUp, fracDist);
             yield return null;
         }
+
+        yield return new WaitForSeconds(delay);
 
         startTime = Time.time;
         fracDist = 0;
@@ -123,7 +128,7 @@ public class CharacterController : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         sphereCollider.SetActive(false);
         moving = false;
-        bulletsPerDash = 1;
+        bulletsPerDash = 0;
         onCharacterMove.Invoke();
     }
 
@@ -138,8 +143,8 @@ public class CharacterController : MonoBehaviour
             sprite.Rotate(new Vector3(0, 180, 0));
         }
         characterAnimator.SetBool("isMoving", true);
+        bulletsPerDash = initialBulletsPerDash;
         moving = true;
-        bulletsPerDash = 1;
         characterAudio.PlayOneShot(movementAudioClips[Random.Range(0, movementAudioClips.Length)]);
         characterAudio.PlayOneShot(gruntingAudioClips[Random.Range(0, gruntingAudioClips.Length)]);
         float fracDist = 0;
@@ -233,6 +238,7 @@ public class CharacterController : MonoBehaviour
                 }
                 else if (col.gameObject.CompareTag("ProjectileCollider"))
                 {
+                    col.gameObject.SendMessage("SetInactive");
                     if (bulletsPerDash > 0)
                     {
                         bulletsPerDash -= 1;
@@ -241,7 +247,6 @@ public class CharacterController : MonoBehaviour
                     {
                         characterAnimator.SetTrigger("onHit");
                         characterAudio.PlayOneShot(ouchAudioClips[Random.Range(0, ouchAudioClips.Length)]);
-                        col.gameObject.SendMessage("SetInactive");
                         onCharacterHit.Invoke();
                     }
                 }
