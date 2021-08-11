@@ -10,6 +10,8 @@ public class BossBigMikeController : MonoBehaviour
     public GameObject keyMapper;
     public UnityEvent onBossDeath;
     public UnityEvent onBossHalfHealth;
+    public UnityEvent onBossMinusHealth;
+    public UnityEvent onBossAddHealth2;
     Dictionary<string, Vector3> keyMap;
     Dictionary<string, string> keyRowMap;
     List<Vector3> keyList;
@@ -87,8 +89,9 @@ public class BossBigMikeController : MonoBehaviour
 
     IEnumerator loseHealthPeriodically() {
         while (health > 1) { // not a typo, don't want boss to actually die, but making use of onEnemyDeath
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.8f);
             health -=1;
+            onBossMinusHealth.Invoke();
         }
         Debug.Log("entering last hurrah");
         onBossDeath.Invoke();
@@ -106,7 +109,10 @@ public class BossBigMikeController : MonoBehaviour
     void OnTriggerEnter(Collider col) {
         if (col.gameObject.CompareTag("EnemyCollider") || col.gameObject.CompareTag("ChickenMoving")) {
             eating = true;
-            health += 2;
+            if (health < 99) {
+                health += 2;
+                onBossAddHealth2.Invoke();
+            }
         }
     }
 }
