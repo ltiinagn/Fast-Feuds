@@ -15,9 +15,12 @@ public class BossBigMikeController : MonoBehaviour
     List<Vector3> keyList;
 
     private GameObject character;
-    private bool raised;
+    private bool phaseChanged;
+    private bool eating;
     private int health;
     private int halfHealth;
+    private int quarterHealth;
+    private float initialSpeed;
     private float speed;
 
     // Start is called before the first frame update
@@ -27,10 +30,13 @@ public class BossBigMikeController : MonoBehaviour
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         keyRowMap = keyMapper.GetComponent<KeyMapping>().keyRowMap;
-        raised = false;
+        phaseChanged = false;
+        eating = false;
         health = enemyConstants.bossBigMike_Health;
         halfHealth = health / 2;
+        quarterHealth = health / 4;
         speed = 3.0f;
+        initialSpeed = speed;
 
         StartCoroutine(loseHealthPeriodically());
         StartCoroutine(moveRandom());
@@ -41,8 +47,12 @@ public class BossBigMikeController : MonoBehaviour
             keyList = new List<Vector3>(keyMap.Values);
             keyList.Remove(character.transform.position);
             int index = Random.Range(0, keyList.Count);
-            if (!raised && health <= halfHealth) {
+            if (!phaseChanged && health <= halfHealth) {
+                phaseChanged = true;
                 onBossHalfHealth.Invoke();
+            }
+            if (health <= quarterHealth) {
+                speed = initialSpeed + Random.Range(0.0f, 3.0f);
             }
             yield return move(transform.position, keyList[index]);
         }
@@ -62,6 +72,11 @@ public class BossBigMikeController : MonoBehaviour
         float distCovered;
         if (distance > 0) {
             while (fracDist < 1) {
+                if (eating) {
+                    yield return new WaitForSeconds(0.5f);
+                    startTime += 0.5f;
+                    eating = false;
+                }
                 distCovered = (Time.time - startTime) * speed;
                 fracDist = distCovered / distance;
                 transform.parent.position = Vector3.Lerp(from, to, fracDist);
@@ -79,17 +94,18 @@ public class BossBigMikeController : MonoBehaviour
         onBossDeath.Invoke();
         GetComponent<Collider>().enabled = false;
         speed = 5.0f;
-        yield return move(transform.position, keyMap["q"]);
+        yield return move(transform.position, keyMap["1"]);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(health);
+
     }
 
     void OnTriggerEnter(Collider col) {
         if (col.gameObject.CompareTag("EnemyCollider") || col.gameObject.CompareTag("ChickenMoving")) {
+            eating = true;
             health += 2;
         }
     }
