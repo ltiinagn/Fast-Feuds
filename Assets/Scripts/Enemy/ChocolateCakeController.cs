@@ -33,7 +33,8 @@ public class ChocolateCakeController : MonoBehaviour
         int direction = Random.Range(0, 2);
         if (direction == 1)
         {
-            transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX = true;
+            // transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX = true;
+            transform.parent.gameObject.transform.Rotate(new Vector3(0, 0, 180));
         }
     }
 

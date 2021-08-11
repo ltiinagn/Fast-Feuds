@@ -27,7 +27,15 @@ public class ProjectileChocolateBallSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        flipX = transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX;
+        // flipX = transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX;
+        if (transform.parent.gameObject.transform.rotation.eulerAngles.z > 179 && transform.parent.gameObject.transform.rotation.eulerAngles.z < 181)
+        {
+            flipX = true;
+        }
+        else
+        {
+            flipX = false;
+        }
         StartCoroutine(spawnBulletPeriodically());
     }
 
