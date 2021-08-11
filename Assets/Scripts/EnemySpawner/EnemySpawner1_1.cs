@@ -18,7 +18,7 @@ public class EnemySpawner1_1 : MonoBehaviour
     private int[][] spawnSequence;
     private int enemyTotal;
     private int enemyCount;
-    private int progress0 = 1;
+    private int progress0 = 0;
     private int progress1 = 0;
 
     // Start is called before the first frame update
@@ -54,12 +54,15 @@ public class EnemySpawner1_1 : MonoBehaviour
         }
         else if (progress0 == 1) {
             StartCoroutine(spawnClownMilkPair());
+            enemyCount += 1;
         }
         else if (progress0 == 2) {
             Instantiate(enemyConstants.bigMacPrefab, keyList[index], Quaternion.identity);
+            enemyCount += 1;
         }
         else if (progress0 == 3) {
             Instantiate(enemyConstants.friesPrefab, keyList[index], Quaternion.identity);
+            enemyCount += 1;
         }
 
         if (progress0 != 1) {
