@@ -42,8 +42,7 @@ public class EnemySpawner1_1 : MonoBehaviour
         int index = Random.Range(0, keyList.Count);
         if (progress0 == 0) {
             if (progress1 <= 4) {
-                Instantiate(enemyConstants.friesPrefab, keyList[index], Quaternion.identity);
-                // Instantiate(enemyConstants.chickenStationaryPrefab, keyList[index], Quaternion.identity);
+                Instantiate(enemyConstants.chickenStationaryPrefab, keyList[index], Quaternion.identity);
             }
             else if (progress1 <= 9) {
                 Instantiate(enemyConstants.chickenMovingPrefab, keyList[index], Quaternion.identity);
@@ -62,9 +61,7 @@ public class EnemySpawner1_1 : MonoBehaviour
         else if (progress0 == 3) {
             Instantiate(enemyConstants.friesPrefab, keyList[index], Quaternion.identity);
         }
-        // else {
-        //     Instantiate(enemyConstants.chickenMovingExplodingPrefab, keyList[index], Quaternion.identity);
-        // }
+
         if (progress0 != 1) {
             keyList.RemoveAt(index);
         }
@@ -110,12 +107,23 @@ public class EnemySpawner1_1 : MonoBehaviour
             if (progress0 == 0 && progress1 <= 9) {
                 yield return new WaitForSeconds(0.2f);
             }
-            else {
+            else if (progress0 == 0 && progress1 <= 14) {
                 if (enemyCount < 4) {
                     yield return new WaitForSeconds(0.5f);
                 }
                 else {
                     while (enemyCount >= 4) {
+                        yield return null;
+                    }
+                    yield return new WaitForSeconds(0.5f);
+                }
+            }
+            else {
+                if (enemyCount < 3) {
+                    yield return new WaitForSeconds(0.5f);
+                }
+                else {
+                    while (enemyCount >= 3) {
                         yield return null;
                     }
                     yield return new WaitForSeconds(0.5f);
