@@ -7,6 +7,9 @@ using UnityEngine.UI;
 public class StageUIController : MonoBehaviour
 {
     public GameConstants gameConstants;
+    public GameObject bossHPContainer;
+    public GameObject bossBlackBorderTop;
+    public GameObject bossBlackBorderBottom;
     string[] levelNames;
     int levelIndex;
 
@@ -19,6 +22,13 @@ public class StageUIController : MonoBehaviour
             entry.eventID = EventTriggerType.PointerClick;
             entry.callback.AddListener((data) => { OnClicked((PointerEventData) data); });
             trigger.triggers.Add(entry);
+        }
+        if (!SceneManager.GetActiveScene().name.Contains("-B")) {
+            bossBlackBorderBottom.SetActive(false);
+            bossBlackBorderTop.SetActive(false);
+        }
+        if (!SceneManager.GetActiveScene().name.Contains("1-B")) {
+            bossHPContainer.SetActive(false);
         }
     }
 
