@@ -118,7 +118,7 @@ public class CharacterController : MonoBehaviour
         Vector3 fromUp = new Vector3(from.x, from.y + 10, from.z);
         float distance = Vector3.Distance(from, fromUp);
 
-        while (fracDist < 1) {
+        while (fracDist < 0.98) {
             float distCovered = (Time.time - startTime) * upSpeed;
             fracDist = distCovered / distance;
             transform.parent.position = Vector3.Lerp(from, fromUp, fracDist);
@@ -132,7 +132,7 @@ public class CharacterController : MonoBehaviour
         Vector3 toUp = new Vector3(to.x, to.y + 10, to.z);
         distance = Vector3.Distance(toUp, to);
 
-        while (fracDist < 1) {
+        while (fracDist < 0.98) {
             float distCovered = (Time.time - startTime) * upSpeed;
             fracDist = distCovered / distance;
             transform.parent.position = Vector3.Lerp(toUp, to, fracDist);
@@ -190,7 +190,7 @@ public class CharacterController : MonoBehaviour
             }
         }
 
-        while (fracDist < 1) {
+        while (fracDist < 0.98) {
             float distCovered = (Time.time - startTime) * speed;
             fracDist = distCovered / distance;
             transform.parent.position = Vector3.Lerp(from, to, fracDist);

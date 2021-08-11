@@ -20,6 +20,7 @@ public class StageUIController : MonoBehaviour
     public UnityEvent startNextDialogue;
     string[] levelNames;
     int levelIndex;
+    bool start;
 
     void Start() {
         levelNames = gameConstants.levelNames;
@@ -31,13 +32,7 @@ public class StageUIController : MonoBehaviour
             entry.callback.AddListener((data) => { OnClicked((PointerEventData) data); });
             trigger.triggers.Add(entry);
         }
-        if (SceneManager.GetActiveScene().name.Contains("-B")) {
-            bossBlackBorderBottom.SetActive(true);
-            bossBlackBorderTop.SetActive(true);
-        }
-        if (SceneManager.GetActiveScene().name.Contains("1-B")) {
-            bossHPContainer.SetActive(true);
-        }
+        start = true;
     }
 
     void Update() {
@@ -65,6 +60,16 @@ public class StageUIController : MonoBehaviour
     }
 
     IEnumerator showHUDCoroutine() {
+        if (start) {
+            start = false;
+            if (SceneManager.GetActiveScene().name.Contains("-B")) {
+                bossBlackBorderBottom.SetActive(true);
+                bossBlackBorderTop.SetActive(true);
+            }
+            if (SceneManager.GetActiveScene().name.Contains("1-B")) {
+                bossHPContainer.SetActive(true);
+            }
+        }
         healthBarContainer.SetActive(true);
         celeryBarContainer.SetActive(true);
         playstyleContainer.SetActive(true);
