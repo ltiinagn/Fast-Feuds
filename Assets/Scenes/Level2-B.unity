@@ -408,6 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyConstants: {fileID: 11400000, guid: 2c8f5b28e8bd0cb43a7087e374e7223f, type: 2}
   keyMapper: {fileID: 0}
+  projectileKnifeSpawner: {fileID: 1317457451}
   startNextDialogue:
     m_PersistentCalls:
       m_Calls:
@@ -629,7 +630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1317457452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -936,10 +937,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: d8e3867deee51ae4cb56753d24c16ca0, type: 2}
   enemySpawner: {fileID: 873974921}
-  startNextSpawn:
+  onReadyFight:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 78707c9d80adbc244ae42c7e301141d0, type: 2}
+      - m_Target: {fileID: 11400000, guid: 9769dd581cf587640835bc093e8e899b, type: 2}
         m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
         m_MethodName: Raise
         m_Mode: 1

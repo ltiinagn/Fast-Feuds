@@ -8,6 +8,7 @@ public class EnemySpawner3_B : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
     public GameObject keyMapper;
+    public GameObject projectileRedBubbleSpawner;
     public UnityEvent startNextDialogue;
     Dictionary<string, Vector3> keyMap;
     List<Vector3> keyList;
@@ -36,6 +37,7 @@ public class EnemySpawner3_B : MonoBehaviour
 
     void spawnBoss() {
         Instantiate(enemyConstants.bossTypeXPrefab, new Vector3(11,0,9), Quaternion.identity);
+        projectileRedBubbleSpawner.SetActive(true);
     }
 
     IEnumerator WaitForNextSpawn() {

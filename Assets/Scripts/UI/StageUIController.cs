@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class StageUIController : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class StageUIController : MonoBehaviour
     public GameObject bossHPContainer;
     public GameObject bossBlackBorderTop;
     public GameObject bossBlackBorderBottom;
+    public GameObject ready;
+    public GameObject FIGHT;
+    public UnityEvent startNextSpawn;
     string[] levelNames;
     int levelIndex;
 
@@ -23,12 +27,12 @@ public class StageUIController : MonoBehaviour
             entry.callback.AddListener((data) => { OnClicked((PointerEventData) data); });
             trigger.triggers.Add(entry);
         }
-        if (!SceneManager.GetActiveScene().name.Contains("-B")) {
-            bossBlackBorderBottom.SetActive(false);
-            bossBlackBorderTop.SetActive(false);
+        if (SceneManager.GetActiveScene().name.Contains("-B")) {
+            bossBlackBorderBottom.SetActive(true);
+            bossBlackBorderTop.SetActive(true);
         }
-        if (!SceneManager.GetActiveScene().name.Contains("1-B")) {
-            bossHPContainer.SetActive(false);
+        if (SceneManager.GetActiveScene().name.Contains("1-B")) {
+            bossHPContainer.SetActive(true);
         }
     }
 
@@ -37,6 +41,20 @@ public class StageUIController : MonoBehaviour
             Time.timeScale = 0.0f;
             transform.parent.Find("PauseMenu").gameObject.SetActive(true);
         }
+    }
+
+    public void showReadyFight() {
+        StartCoroutine(showReadyFightCoroutine());
+    }
+
+    IEnumerator showReadyFightCoroutine() {
+        ready.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        ready.SetActive(false);
+        FIGHT.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        FIGHT.SetActive(false);
+        startNextSpawn.Invoke();
     }
 
     public void showGameOver() {

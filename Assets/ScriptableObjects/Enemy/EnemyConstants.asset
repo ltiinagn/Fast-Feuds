@@ -30,7 +30,7 @@ MonoBehaviour:
   chickenMovesPrefab: {fileID: 629230319408024095, guid: 70985279cde132747943c2ffbee43ea4, type: 3}
   boss2_BPrefab: {fileID: 9007750895088981850, guid: 17fbe11e69b210b43ba634c836916826, type: 3}
   bossTypeXPrefab: {fileID: 9007750895088981850, guid: fb982a47a127f7a4c9bf7e0bc516382f, type: 3}
-  redBallSpawnCount: 5
+  redBallSpawnCount: 3
   bossBigMike_Health: 100
   boss2_B_Health: 31
   enemyHealth: 1

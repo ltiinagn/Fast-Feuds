@@ -47,7 +47,7 @@ public class ProjectileKnifeSpawner : MonoBehaviour
         while ((!dialogueBox || dialogueBox.activeSelf)) {
             yield return null;
         }
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(3.0f);
         while (true) {
             for (int i = 0; i < 1; i++) {
                 spawnFromPooler(BulletType.knife);

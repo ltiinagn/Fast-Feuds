@@ -8,7 +8,7 @@ public class DialogueController1_1 : MonoBehaviour
 {
     public GameConstants gameConstants;
     public GameObject enemySpawner;
-    public UnityEvent startNextSpawn;
+    public UnityEvent onReadyFight;
     public UnityEvent stageComplete;
     private GameObject dialogueBox;
     private Text dialogueText;
@@ -41,7 +41,7 @@ public class DialogueController1_1 : MonoBehaviour
 
     IEnumerator waitForStartNextSpawn() {
         yield return new WaitForSeconds(1);
-        startNextSpawn.Invoke();
+        onReadyFight.Invoke();
     }
 
     // Update is called once per frame
