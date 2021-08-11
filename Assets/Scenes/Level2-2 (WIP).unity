@@ -383,6 +383,78 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e9c3ee01acdc114aa09b2a2d93b892e, type: 3}
+--- !u!1 &566149655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5238737631546468367, guid: b99f88f19ad956542b071f0ccf97e0f3, type: 3}
+  m_PrefabInstance: {fileID: 1034600881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &566149657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566149655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc74c1906a3b49647acae3b769252e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 50cf0381973e28845a5252c0b8dc2d36, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 566149658}
+        m_TargetAssemblyTypeName: AreaBlockerController, Assembly-CSharp
+        m_MethodName: SetInactive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &566149658 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2995509160761310666, guid: b99f88f19ad956542b071f0ccf97e0f3, type: 3}
+  m_PrefabInstance: {fileID: 1034600881}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566149655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd7aa58e69a943f44a245c4289b63913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &566149660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566149655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc74c1906a3b49647acae3b769252e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 78707c9d80adbc244ae42c7e301141d0, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 566149658}
+        m_TargetAssemblyTypeName: AreaBlockerController, Assembly-CSharp
+        m_MethodName: SetActive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1034600881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -446,6 +518,10 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2995509160761310666, guid: b99f88f19ad956542b071f0ccf97e0f3, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 327752423}
     - target: {fileID: 5238737631546468367, guid: b99f88f19ad956542b071f0ccf97e0f3, type: 3}
       propertyPath: m_TagString
       value: MeleeCollider
@@ -720,7 +796,19 @@ MonoBehaviour:
         m_CallState: 2
   stageComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 54b02f9713081ba479e12b8a83dc54da, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1756202480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,7 +1314,7 @@ PrefabInstance:
       objectReference: {fileID: 7338748969721404726}
     - target: {fileID: 5976262871352009188, guid: cdeb340e889892c428a20847dedf3488, type: 3}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Start
+      value: UpdateHealth
       objectReference: {fileID: 0}
     - target: {fileID: 5976262871352009188, guid: cdeb340e889892c428a20847dedf3488, type: 3}
       propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName

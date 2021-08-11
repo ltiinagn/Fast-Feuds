@@ -591,6 +591,10 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2995509160761310666, guid: b99f88f19ad956542b071f0ccf97e0f3, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 1945937274}
     - target: {fileID: 5238737631546468367, guid: b99f88f19ad956542b071f0ccf97e0f3, type: 3}
       propertyPath: m_TagString
       value: MeleeCollider

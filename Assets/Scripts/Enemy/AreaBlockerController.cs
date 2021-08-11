@@ -9,6 +9,7 @@ public class AreaBlockerController : MonoBehaviour
     private GameObject sprite;
     private BoxCollider boxCollider;
     private SpriteRenderer spriteRenderer;
+    public GameObject dialogueBox;
     private Color red;
     private Color yellow;
     private float xInitialPosition;
@@ -25,11 +26,16 @@ public class AreaBlockerController : MonoBehaviour
         yellow = new Color(1.0f, 0.92f, 0.016f, 0.3f);
         xInitialPosition = 11.0f;
 
-        StartCoroutine(ActivatePeriodically());
+        StartCoroutine(ActivatePeriodically(true));
     }
 
-    IEnumerator ActivatePeriodically() {
-        yield return new WaitForSeconds(30.0f);
+    IEnumerator ActivatePeriodically(bool wait) {
+        while ((!dialogueBox || dialogueBox.activeSelf)) {
+            yield return null;
+        }
+        if (wait) {
+            yield return new WaitForSeconds(10.0f);
+        }
         while (true) {
             float xPosition = xInitialPosition + Random.Range(-1, 2) * 2.0f;
             transform.parent.position = new Vector3(xPosition, transform.parent.position.y, transform.parent.position.z);
@@ -43,6 +49,15 @@ public class AreaBlockerController : MonoBehaviour
             sprite.SetActive(false);
             yield return new WaitForSeconds(3.0f);
         }
+    }
+
+    public void SetSpawnerInactive() {
+        gameObject.SetActive(false);
+    }
+
+    public void SetSpawnerActive() {
+        gameObject.SetActive(true);
+        StartCoroutine(ActivatePeriodically(false));
     }
 
     // Update is called once per frame

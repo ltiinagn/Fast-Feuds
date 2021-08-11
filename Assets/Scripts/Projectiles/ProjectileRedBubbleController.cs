@@ -23,6 +23,7 @@ public class ProjectileRedBubbleController : MonoBehaviour
         boxCollider.enabled = true;
         // TODO: second set of animation
         yield return new WaitForSeconds(margin2);
+        boxCollider.enabled = false;
         SetInactive();
     }
 

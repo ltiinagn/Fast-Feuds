@@ -126,8 +126,9 @@ GameObject:
   - component: {fileID: 5238737631546468360}
   - component: {fileID: 5238737631546468362}
   - component: {fileID: 2995509160761310666}
+  - component: {fileID: 200449074424921264}
   m_Layer: 6
-  m_Name: BoxCollider
+  m_Name: AreaBlockerBoxCollider
   m_TagString: EnemyCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -172,6 +173,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd7aa58e69a943f44a245c4289b63913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 0}
+--- !u!114 &200449074424921264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5238737631546468367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc74c1906a3b49647acae3b769252e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 54b02f9713081ba479e12b8a83dc54da, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2995509160761310666}
+        m_TargetAssemblyTypeName: AreaBlockerController, Assembly-CSharp
+        m_MethodName: SetInactive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5238737631906799747
 GameObject:
   m_ObjectHideFlags: 0
