@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterController : MonoBehaviour
 {
@@ -13,11 +14,11 @@ public class CharacterController : MonoBehaviour
     public UnityEvent onCharacterMove;
     public UnityEvent onCharacterAddHealth;
     public GameObject keyMapper;
-    public GameObject sphereCollider;
     public GameObject dialogueBox;
     Text dialogueText;
     Dictionary<string, Vector3> keyMap;
 
+    string sceneName;
     private Transform sprite;
     Vector3 prevPos;
     bool weapon = false;
@@ -27,8 +28,10 @@ public class CharacterController : MonoBehaviour
     int bulletsPerDash;
     bool moving;
     bool invulnerablePowerup;
-    float speed;
-    float delay;
+    float speed; // for straightCutFry
+    float upSpeed; // for meateor
+    float delay; // for meateor
+    private GameObject sphereCollider;
     private Animator characterAnimator;
     private AudioSource characterAudio;
     public AudioClip[] movementAudioClips;
@@ -40,6 +43,7 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        sceneName = SceneManager.GetActiveScene().name;
         dialogueText = dialogueBox.transform.Find("Panel/Dialogue_Text").GetComponent<Text>();
         initialBulletsPerDash = PlayerPrefs.GetInt("skill_Skill3");
         bulletsPerDash = 0;
@@ -49,6 +53,16 @@ public class CharacterController : MonoBehaviour
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         prevPos = this.transform.position;
         speed = characterConstants.characterSpeed * (PlayerPrefs.GetInt("skill_Skill2") + 1);
+        sphereCollider = transform.parent.Find("SphereCollider").gameObject;
+        float scaleIncrease = PlayerPrefs.GetInt("skill_Skill3") * 0.75f;
+        scaleIncrease = 3 * 0.75f;
+        Vector3 sphereColliderScale = sphereCollider.transform.localScale;
+        sphereColliderScale.x += scaleIncrease;
+        sphereColliderScale.y += scaleIncrease;
+        sphereColliderScale.z += scaleIncrease;
+        sphereCollider.transform.localScale = sphereColliderScale;
+        sphereCollider.SetActive(false);
+        upSpeed = characterConstants.characterSpeed;
         delay = characterConstants.characterDelay / (PlayerPrefs.GetInt("skill_Skill2") + 1);
         sprite = transform.parent.Find("Sprite").transform;
         sprite.Rotate(new Vector3(0, 180, 0));
@@ -63,8 +77,10 @@ public class CharacterController : MonoBehaviour
         if ((!dialogueBox.activeSelf || dialogueBox.activeSelf && dialogueText.text.Contains("move to a tile")) && Input.anyKeyDown)
         {
             if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)) {
-                playStyle = playStyle == "straightCutFry" ? "meateor" : "straightCutFry";
-                onPlaystyleChange.Invoke();
+                if (!sceneName.Contains("Level0") && !sceneName.Contains("Level1")) {
+                    playStyle = playStyle == "straightCutFry" ? "meateor" : "straightCutFry";
+                    onPlaystyleChange.Invoke();
+                }
             }
             else {
                 foreach (KeyValuePair<string, Vector3> control in keyMap)
@@ -103,7 +119,7 @@ public class CharacterController : MonoBehaviour
         float distance = Vector3.Distance(from, fromUp);
 
         while (fracDist < 1) {
-            float distCovered = (Time.time - startTime) * speed;
+            float distCovered = (Time.time - startTime) * upSpeed;
             fracDist = distCovered / distance;
             transform.parent.position = Vector3.Lerp(from, fromUp, fracDist);
             yield return null;
@@ -117,7 +133,7 @@ public class CharacterController : MonoBehaviour
         distance = Vector3.Distance(toUp, to);
 
         while (fracDist < 1) {
-            float distCovered = (Time.time - startTime) * speed;
+            float distCovered = (Time.time - startTime) * upSpeed;
             fracDist = distCovered / distance;
             transform.parent.position = Vector3.Lerp(toUp, to, fracDist);
             yield return null;
