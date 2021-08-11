@@ -11,13 +11,15 @@ public class ProjectileBoneSpawner : MonoBehaviour
     {
         // static method access
         GameObject item = BulletPooler.SharedInstance.GetPooledBullet(i);
-        if (item != null) {
+        if (item != null)
+        {
             // set position, and other necessary states
             item.transform.position = this.transform.position;
             item.transform.Find("BoxCollider").GetComponent<ProjectileBoneController>().direction = direction;
             item.SetActive(true);
         }
-        else {
+        else
+        {
             Debug.Log("not enough items in the pool.");
         }
     }
