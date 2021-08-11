@@ -76,8 +76,8 @@ public class CharacterController : MonoBehaviour
     {
         if ((!dialogueBox.activeSelf || dialogueBox.activeSelf && dialogueText.text.Contains("move to a tile")) && Input.anyKeyDown)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)) {
-                if (!sceneName.Contains("Level0") && !sceneName.Contains("Level1")) {
+            if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl)) {
+                if (!sceneName.Contains("Level0") && !sceneName.Contains("Level1") && !sceneName.Contains("-B")) {
                     playStyle = playStyle == "straightCutFry" ? "meateor" : "straightCutFry";
                     onPlaystyleChange.Invoke();
                 }
