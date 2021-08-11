@@ -7,6 +7,10 @@ public class FriesController : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
     public UnityEvent onEnemyDeath;
+    private GameObject character;
+    private Transform spriteParent;
+    private float initialSpriteScaleX;
+    private float initialSwordScaleX;
     private int health;
     private int state; // 0 invulnerable, 1 attacking, 2 weakened
     private BoxCollider swordCollider;
@@ -17,8 +21,10 @@ public class FriesController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        character = GameObject.Find("Character");
         health = enemyConstants.enemyHealth;
         state = 0;
+        spriteParent = transform.parent;
         swordCollider = transform.parent.Find("Sprite/Body/LeftArm/Sword").GetComponent<BoxCollider>();
         swordCollider.enabled = false;
         foreach (Transform spriteChild in transform.parent.Find("Sprite"))
@@ -66,7 +72,9 @@ public class FriesController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (state == 1) {
+            spriteParent.localEulerAngles = new Vector3(0, 0, transform.position.x - character.transform.position.x > 0 ? 180 : 0);
+        }
     }
 
     IEnumerator attackPhase()

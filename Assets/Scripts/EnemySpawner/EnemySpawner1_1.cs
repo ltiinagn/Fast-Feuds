@@ -42,7 +42,8 @@ public class EnemySpawner1_1 : MonoBehaviour
         int index = Random.Range(0, keyList.Count);
         if (progress0 == 0) {
             if (progress1 <= 4) {
-                Instantiate(enemyConstants.chickenStationaryPrefab, keyList[index], Quaternion.identity);
+                Instantiate(enemyConstants.friesPrefab, keyList[index], Quaternion.identity);
+                // Instantiate(enemyConstants.chickenStationaryPrefab, keyList[index], Quaternion.identity);
             }
             else if (progress1 <= 9) {
                 Instantiate(enemyConstants.chickenMovingPrefab, keyList[index], Quaternion.identity);

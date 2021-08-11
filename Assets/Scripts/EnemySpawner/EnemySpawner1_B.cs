@@ -29,39 +29,36 @@ public class EnemySpawner1_B : MonoBehaviour
         enemyCount = 0;
         phaseChanged = false;
         dead = false;
-
-        StartCoroutine(restoreKeyList());
     }
 
     IEnumerator restoreKeyList() {
-        while (true) {
-            for (int i = 0; i < removedKeyList.Count; i++) {
-                int count = 0;
-                Collider[] colliders = Physics.OverlapSphere(removedKeyList[i], 0.5f);
-                foreach (Collider collider in colliders) {
-                    if (collider.tag == "EnemyCollider" || collider.tag == "Character") {
-                        count += 1;
-                    }
-                }
-                if (count == 0) {
-                    keyList.Add(keyList[i]);
-                    removedKeyList.RemoveAt(i);
-                    // Debug.Log(string.Format("Test: {0}, {1}", keyList.Count, removedKeyList.Count));
+        for (int i = 0; i < removedKeyList.Count; i++) {
+            int count = 0;
+            Collider[] colliders = Physics.OverlapSphere(removedKeyList[i], 0.5f);
+            foreach (Collider collider in colliders) {
+                if (collider.tag == "EnemyCollider" || collider.tag == "Character") {
+                    count += 1;
                 }
             }
-            yield return null;
+            if (count == 0) {
+                keyList.Add(removedKeyList[i]);
+                removedKeyList.RemoveAt(i);
+            }
         }
+        yield return null;
     }
 
     IEnumerator spawnEnemiesPeriodically() {
         while (!dead) {
             spawnEnemy();
+            yield return restoreKeyList();
             yield return new WaitForSeconds(0.5f);
         }
     }
 
     void spawnEnemy() {
         int index = Random.Range(0, keyList.Count);
+        // Debug.Log(string.Format("Test: {0}, {1}", keyList.Count, index));
         if (!phaseChanged) {
             Instantiate(enemyConstants.chickenStationaryPrefab, keyList[index], Quaternion.identity);
         }

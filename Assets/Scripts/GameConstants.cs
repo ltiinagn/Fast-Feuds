@@ -55,9 +55,9 @@ public class GameConstants : ScriptableObject
         new string[] {"Dummy 2.1.5"}
     };
     public string[][] dialogue2_2 = new string[][] {
-        new string[] {"They're coming everywhere!"},
-        new string[] {"Even more of them?!"},
-        new string[] {"I think that's it for now.."}
+        new string[] {"They're coming everywhere! 2"},
+        new string[] {"Even more of them?! 2"},
+        new string[] {"I think that's it for now.. 2"}
     };
     public string[][] dialogue2_B = new string[][] {
         new string[] {"Boss2"},

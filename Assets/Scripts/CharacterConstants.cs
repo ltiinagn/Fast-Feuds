@@ -6,5 +6,6 @@ public class CharacterConstants : ScriptableObject
     // Character
     public int characterHealth = 10;
     public float characterSpeed = 20.0f;
+    public float characterDelay = 0.5f;
     public int characterPowerUpHp = 0;
 }

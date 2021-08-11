@@ -14,7 +14,7 @@ public class HealthMonitor : MonoBehaviour
     public void Start()
     {
         int healthIncrease = PlayerPrefs.GetInt("skill_IncreaseStartingHealth");
-        characterHealth.SetValue(characterConstants.characterHealth + healthIncrease);
+        characterHealth.SetValue(characterConstants.characterHealth * (1 + healthIncrease));
         UpdateHealth();
     }
 
