@@ -1004,7 +1004,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5421823907582677622
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1782,7 +1782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7181890723322802502
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2338,6 +2338,7 @@ GameObject:
   - component: {fileID: 3886897384398318633}
   - component: {fileID: 5115543868873546501}
   - component: {fileID: 7524169423385990674}
+  - component: {fileID: 6712838549569930625}
   m_Layer: 5
   m_Name: StageUIController
   m_TagString: Untagged
@@ -2438,10 +2439,28 @@ MonoBehaviour:
   bossBlackBorderBottom: {fileID: 7009872618456254781}
   ready: {fileID: 4994726185516922966}
   FIGHT: {fileID: 5987310658613237675}
+  healthBarContainer: {fileID: 2156251406522687471}
+  celeryBarContainer: {fileID: 8593781587877392758}
+  playstyleContainer: {fileID: 3508164670090733146}
   startNextSpawn:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 78707c9d80adbc244ae42c7e301141d0, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  startNextDialogue:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 50cf0381973e28845a5252c0b8dc2d36, type: 2}
         m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
         m_MethodName: Raise
         m_Mode: 1
@@ -2472,6 +2491,34 @@ MonoBehaviour:
       - m_Target: {fileID: 5115543868873546501}
         m_TargetAssemblyTypeName: StageUIController, Assembly-CSharp
         m_MethodName: showReadyFight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6712838549569930625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5181277321416716920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc74c1906a3b49647acae3b769252e54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: e0c1fb323de435c48941c0ca06f87431, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5115543868873546501}
+        m_TargetAssemblyTypeName: StageUIController, Assembly-CSharp
+        m_MethodName: hideHUD
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3812,7 +3859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5704969310976144475
 RectTransform:
   m_ObjectHideFlags: 0

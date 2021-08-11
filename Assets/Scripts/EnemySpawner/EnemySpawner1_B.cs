@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class EnemySpawner1_B : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
-    public UnityEvent startNextDialogue;
+    public UnityEvent onWaveComplete;
     public GameObject keyMapper;
     Dictionary<string, Vector3> keyMap;
     List<Vector3> keyList;
@@ -93,7 +93,7 @@ public class EnemySpawner1_B : MonoBehaviour
 
     IEnumerator waitForStartNextDialogue() {
         yield return new WaitForSeconds(1);
-        startNextDialogue.Invoke();
+        onWaveComplete.Invoke();
     }
 
     IEnumerator WaitForNextSpawn() {

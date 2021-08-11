@@ -352,12 +352,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyConstants: {fileID: 11400000, guid: 2c8f5b28e8bd0cb43a7087e374e7223f, type: 2}
-  startNextDialogue:
+  onWaveComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1881565450}
-        m_TargetAssemblyTypeName: DialogueController1_B, Assembly-CSharp
-        m_MethodName: LoadNextDialogue
+      - m_Target: {fileID: 11400000, guid: e0c1fb323de435c48941c0ca06f87431, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

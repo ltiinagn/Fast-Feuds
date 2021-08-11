@@ -319,10 +319,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyConstants: {fileID: 11400000, guid: 2c8f5b28e8bd0cb43a7087e374e7223f, type: 2}
   gameConstants: {fileID: 0}
-  startNextDialogue:
+  onWaveComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 50cf0381973e28845a5252c0b8dc2d36, type: 2}
+      - m_Target: {fileID: 11400000, guid: e0c1fb323de435c48941c0ca06f87431, type: 2}
         m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
         m_MethodName: Raise
         m_Mode: 1

@@ -8,7 +8,7 @@ public class EnemySpawner2_2 : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
     public GameConstants gameConstants;
-    public UnityEvent startNextDialogue;
+    public UnityEvent onWaveComplete;
     public UnityEvent SpawnPowerup;
     public GameObject keyMapper;
     Dictionary<string, Vector3> keyMap;
@@ -130,7 +130,7 @@ public class EnemySpawner2_2 : MonoBehaviour
 
     IEnumerator waitForStartNextDialogue() {
         yield return new WaitForSeconds(1);
-        startNextDialogue.Invoke();
+        onWaveComplete.Invoke();
     }
 
     public void enemyDead() {

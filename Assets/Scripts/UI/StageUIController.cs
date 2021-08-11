@@ -13,7 +13,11 @@ public class StageUIController : MonoBehaviour
     public GameObject bossBlackBorderBottom;
     public GameObject ready;
     public GameObject FIGHT;
+    public GameObject healthBarContainer;
+    public GameObject celeryBarContainer;
+    public GameObject playstyleContainer;
     public UnityEvent startNextSpawn;
+    public UnityEvent startNextDialogue;
     string[] levelNames;
     int levelIndex;
 
@@ -48,13 +52,37 @@ public class StageUIController : MonoBehaviour
     }
 
     IEnumerator showReadyFightCoroutine() {
-        ready.SetActive(true);
-        yield return new WaitForSeconds(1.0f);
-        ready.SetActive(false);
-        FIGHT.SetActive(true);
-        yield return new WaitForSeconds(1.0f);
-        FIGHT.SetActive(false);
+        yield return showHUDCoroutine();
+        if (!SceneManager.GetActiveScene().name.Contains("0-T")) {
+            ready.SetActive(true);
+            yield return new WaitForSeconds(1.0f);
+            ready.SetActive(false);
+            FIGHT.SetActive(true);
+            yield return new WaitForSeconds(1.0f);
+            FIGHT.SetActive(false);
+        }
         startNextSpawn.Invoke();
+    }
+
+    IEnumerator showHUDCoroutine() {
+        healthBarContainer.SetActive(true);
+        celeryBarContainer.SetActive(true);
+        playstyleContainer.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+    }
+
+    public void hideHUD() {
+        StartCoroutine(hideHUDCoroutine());
+    }
+
+    IEnumerator hideHUDCoroutine() {
+        if (!SceneManager.GetActiveScene().name.Contains("0-T")) {
+            healthBarContainer.SetActive(false);
+            celeryBarContainer.SetActive(false);
+            playstyleContainer.SetActive(false);
+        }
+        yield return new WaitForSeconds(1.0f);
+        startNextDialogue.Invoke();
     }
 
     public void showGameOver() {
