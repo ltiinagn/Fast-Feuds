@@ -754,7 +754,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1489016566}
-        m_TargetAssemblyTypeName: DialogueController1_2, Assembly-CSharp
+        m_TargetAssemblyTypeName: DialogueController2_2, Assembly-CSharp
         m_MethodName: LoadNextDialogue
         m_Mode: 1
         m_Arguments:
@@ -774,7 +774,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1489016564}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e940e290a2939544384ae86015769300, type: 3}
+  m_Script: {fileID: 11500000, guid: a67d90b29ea0c63418c1c84e3ac7ec49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameConstants: {fileID: 11400000, guid: d8e3867deee51ae4cb56753d24c16ca0, type: 2}
