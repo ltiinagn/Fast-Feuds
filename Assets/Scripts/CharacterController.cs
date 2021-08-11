@@ -8,6 +8,7 @@ public class CharacterController : MonoBehaviour
 {
     public GameConstants gameConstants;
     public CharacterConstants characterConstants;
+    public UnityEvent onPlaystyleChange;
     public UnityEvent onCharacterHit;
     public UnityEvent onCharacterMove;
     public UnityEvent onCharacterAddHealth;
@@ -59,7 +60,7 @@ public class CharacterController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKeyDown(KeyCode.RightShift)) {
                 playStyle = playStyle == "straightCutFry" ? "meateor" : "straightCutFry";
-                Debug.Log(playStyle);
+                onPlaystyleChange.Invoke();
             }
             else {
                 foreach (KeyValuePair<string, Vector3> control in keyMap)
