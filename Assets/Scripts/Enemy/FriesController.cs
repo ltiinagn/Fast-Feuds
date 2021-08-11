@@ -8,8 +8,9 @@ public class FriesController : MonoBehaviour
     public EnemyConstants enemyConstants;
     public UnityEvent onEnemyDeath;
     private int health;
-    private BoxCollider swordCollider;
     private int state; // 0 invulnerable, 1 attacking, 2 weakened
+    private BoxCollider swordCollider;
+    List<SpriteRenderer> spriteDescendants = new List<SpriteRenderer> {};
     private Animator animator;
     // private AudioSource audioSource;
 
@@ -20,8 +21,46 @@ public class FriesController : MonoBehaviour
         state = 0;
         swordCollider = transform.parent.Find("Sprite/Body/LeftArm/Sword").GetComponent<BoxCollider>();
         swordCollider.enabled = false;
+        foreach (Transform spriteChild in transform.parent.Find("Sprite"))
+        {
+            spriteDescendants.Add(spriteChild.GetComponent<SpriteRenderer>());
+            foreach (Transform spriteGrandchild in spriteChild)
+            {
+                if (null == spriteGrandchild)
+                {
+                    continue;
+                }
+                spriteDescendants.Add(spriteGrandchild.GetComponent<SpriteRenderer>());
+                foreach (Transform spriteGreatgrandchild in spriteGrandchild)
+                {
+                    if (null == spriteGreatgrandchild)
+                    {
+                        continue;
+                    }
+                    spriteDescendants.Add(spriteGreatgrandchild.GetComponent<SpriteRenderer>());
+                }
+            }
+        };
         animator = transform.parent.Find("Sprite").GetComponent<Animator>();
         // audioSource = GetComponent<AudioSource>();
+    }
+
+    IEnumerator fadeIntoOblivion(List<SpriteRenderer> sprites, float startTime, float totalDuration)
+    {
+        float counter = 0;
+        float fadeDuration = totalDuration - startTime;
+
+        yield return new WaitForSeconds(startTime);
+
+        while (counter < fadeDuration)
+        {
+            counter += Time.deltaTime;
+            foreach (SpriteRenderer spriteRenderer in sprites)
+            {
+                spriteRenderer.material.color = new Color(1, 1, 1, Mathf.Lerp(1, 0, counter / fadeDuration));
+            }
+            yield return null;
+        }
     }
 
     // Update is called once per frame
@@ -30,7 +69,8 @@ public class FriesController : MonoBehaviour
 
     }
 
-    IEnumerator attackPhase() {
+    IEnumerator attackPhase()
+    {
         // to add animation
         yield return new WaitForSeconds(1.0f);
         swordCollider.enabled = true;
@@ -58,6 +98,7 @@ public class FriesController : MonoBehaviour
                 {
                     onEnemyDeath.Invoke();
                     animator.SetTrigger("onDeath");
+                    StartCoroutine(fadeIntoOblivion(spriteDescendants, 0, 1));
                     // audioSource.PlayOneShot(audioSource.clip);
                     gameObject.GetComponent<BoxCollider>().enabled = false;
                     Destroy(transform.parent.gameObject, 1); // audioSource.clip.length);

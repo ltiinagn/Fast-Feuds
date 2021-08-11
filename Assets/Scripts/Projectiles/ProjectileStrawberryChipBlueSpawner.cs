@@ -6,11 +6,13 @@ public class ProjectileStrawberryChipBlueSpawner : MonoBehaviour
 {
     public GameObject character;
 
-    void spawnFromPooler(BulletType i){
+    void spawnFromPooler(BulletType i)
+    {
         // static method access
         GameObject item = BulletPooler.SharedInstance.GetPooledBullet(i);
-        if (item != null) {
-            //set position, and other necessary states
+        if (item != null)
+        {
+            // set position, and other necessary states
             item.transform.position = this.transform.position;
             float randomX = Random.Range(-5.0f, 5.0f);
             float randomZ = Random.Range(-5.0f, 5.0f);
@@ -20,7 +22,8 @@ public class ProjectileStrawberryChipBlueSpawner : MonoBehaviour
             item.transform.rotation = Quaternion.LookRotation(direction);
             item.SetActive(true);
         }
-        else {
+        else
+        {
             Debug.Log("not enough items in the pool.");
         }
     }
@@ -32,10 +35,13 @@ public class ProjectileStrawberryChipBlueSpawner : MonoBehaviour
         StartCoroutine(spawnBulletPeriodically());
     }
 
-    IEnumerator spawnBulletPeriodically() {
+    IEnumerator spawnBulletPeriodically()
+    {
         yield return new WaitForSeconds(0.5f);
-        while (true) {
-            for (int i = 0; i < 3; i++) {
+        while (true)
+        {
+            for (int i = 0; i < 3; i++)
+            {
                 spawnFromPooler(BulletType.strawberryChipBlue);
                 yield return new WaitForSeconds(0.3f);
             }

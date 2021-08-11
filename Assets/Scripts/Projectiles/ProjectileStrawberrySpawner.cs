@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileStrawberrySpawner : MonoBehaviour
 {
     Vector3 direction;
-    // private Animator chickenThrowingAnimator;
+    private Animator cupcakeAnimator;
 
     void spawnFromPooler(BulletType i){
         // static method access
@@ -24,7 +24,7 @@ public class ProjectileStrawberrySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // chickenThrowingAnimator = transform.parent.Find("Sprite").GetComponent<Animator>();
+        cupcakeAnimator = transform.parent.Find("Sprite").GetComponent<Animator>();
         direction = transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX ? new Vector3(-1f, 0f, 0f) : new Vector3(1f, 0f, 0f);
         StartCoroutine(spawnBulletPeriodically());
     }
@@ -32,7 +32,7 @@ public class ProjectileStrawberrySpawner : MonoBehaviour
     IEnumerator spawnBulletPeriodically() {
         yield return new WaitForSeconds(0.5f);
         while (true) {
-            // chickenThrowingAnimator.SetTrigger("onThrow");
+            cupcakeAnimator.SetTrigger("onThrow");
             yield return new WaitForSeconds(0.4f);
             spawnFromPooler(BulletType.strawberry);
             yield return new WaitForSeconds(5);

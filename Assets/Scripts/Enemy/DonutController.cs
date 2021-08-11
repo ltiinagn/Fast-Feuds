@@ -16,8 +16,9 @@ public class DonutController : MonoBehaviour
     private bool dying;
     private Vector3 start;
     private Vector3 end;
-    private bool faceRight = true;
     private float speed;
+    private bool faceRight = true;
+    List<SpriteRenderer> spriteDescendants = new List<SpriteRenderer> {};
     private Animator animator;
     // private AudioSource audioSource;
 
@@ -32,8 +33,20 @@ public class DonutController : MonoBehaviour
         start = transform.position;
         keyList.Remove(start);
         end = keyList[Random.Range(0, keyList.Count)];
-        spriteParent = transform.parent.gameObject.transform;
         speed = 2.0f;
+        spriteParent = transform.parent.gameObject.transform;
+        foreach (Transform spriteChild in transform.parent.Find("Sprite"))
+        {
+            spriteDescendants.Add(spriteChild.GetComponent<SpriteRenderer>());
+            foreach (Transform spriteGrandchild in spriteChild)
+            {
+                if (null == spriteGrandchild)
+                {
+                    continue;
+                }
+                spriteDescendants.Add(spriteGrandchild.GetComponent<SpriteRenderer>());
+            }
+        };
         animator = transform.parent.Find("Sprite").GetComponent<Animator>();
         // audioSource = GetComponent<AudioSource>();
         StartCoroutine(moveEnemyLoop());
@@ -75,7 +88,8 @@ public class DonutController : MonoBehaviour
 
         while (!dying)
         {
-            if (Time.time - startTime > count) {
+            if (Time.time - startTime > count)
+            {
                 count += 2;
                 startTime += 1.0f;
                 transform.gameObject.tag = "EnemyCollider";
@@ -92,6 +106,24 @@ public class DonutController : MonoBehaviour
             if (fracDist >= 1)
                 yield break;
 
+            yield return null;
+        }
+    }
+
+    IEnumerator fadeIntoOblivion(List<SpriteRenderer> sprites, float startTime, float totalDuration)
+    {
+        float counter = 0;
+        float fadeDuration = totalDuration - startTime;
+
+        yield return new WaitForSeconds(startTime);
+
+        while (counter < fadeDuration)
+        {
+            counter += Time.deltaTime;
+            foreach (SpriteRenderer spriteRenderer in sprites)
+            {
+                spriteRenderer.material.color = new Color(1, 1, 1, Mathf.Lerp(1, 0, counter / fadeDuration));
+            }
             yield return null;
         }
     }
@@ -113,6 +145,7 @@ public class DonutController : MonoBehaviour
                 dying = true;
                 onEnemyDeath.Invoke();
                 animator.SetTrigger("onDeath");
+                StartCoroutine(fadeIntoOblivion(spriteDescendants, 0, 1));
                 // audioSource.PlayOneShot(audioSource.clip);
                 gameObject.GetComponent<BoxCollider>().enabled = false;
                 Destroy(transform.parent.gameObject, 1); // audioSource.clip.length);

@@ -34,6 +34,24 @@ public class ChickenStationaryController : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
+    IEnumerator fadeIntoOblivion(List<SpriteRenderer> sprites, float startTime, float totalDuration)
+    {
+        float counter = 0;
+        float fadeDuration = totalDuration - startTime;
+
+        yield return new WaitForSeconds(startTime);
+
+        while (counter < fadeDuration)
+        {
+            counter += Time.deltaTime;
+            foreach (SpriteRenderer spriteRenderer in sprites)
+            {
+                spriteRenderer.material.color = new Color(1, 1, 1, Mathf.Lerp(1, 0, counter / fadeDuration));
+            }
+            yield return null;
+        }
+    }
+
     IEnumerator eatenByBoss(Vector3 bossPosition, float duration)
     {
         Vector3 originalPosition = sprite.position;
@@ -51,10 +69,7 @@ public class ChickenStationaryController : MonoBehaviour
             fracTime = counter / duration;
             sprite.position = Vector3.Lerp(originalPosition, finalPosition, fracTime);
             sprite.localScale = Vector3.Lerp(originalScale, finalScale, fracTime);
-            foreach (SpriteRenderer spriteRenderer in spriteDescendants)
-            {
-                spriteRenderer.material.color = new Color(1, 1, 1, Mathf.Lerp(1, 0, fracTime));
-            }
+            StartCoroutine(fadeIntoOblivion(spriteDescendants, 0, 1));
             yield return null;
         }
     }
@@ -76,6 +91,7 @@ public class ChickenStationaryController : MonoBehaviour
                 if (col.gameObject.CompareTag("Character"))
                 {
                     animator.SetTrigger("onDeath");
+                    StartCoroutine(fadeIntoOblivion(spriteDescendants, 0, 1));
                 }
                 else if (col.gameObject.CompareTag("BossBigMike"))
                 {
