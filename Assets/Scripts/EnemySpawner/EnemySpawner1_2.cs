@@ -68,13 +68,13 @@ public class EnemySpawner1_2 : MonoBehaviour
         enemyCount += 1;
         spawned += 1;
         int indexPrefab = Random.Range(0, prefabsArray.Length);
-        int index = Random.Range(0, keyList.Count);
         if (indexPrefab != 3) {
+            int index = Random.Range(0, keyList.Count);
             Instantiate(prefabsArray[indexPrefab], keyList[index], Quaternion.identity);
             removedKeyList.Add(keyList[index]);
             keyList.RemoveAt(index);
         }
-        else if (index == 3) {
+        else if (indexPrefab == 3) {
             StartCoroutine(spawnClownMilkPair());
         }
     }
@@ -83,10 +83,12 @@ public class EnemySpawner1_2 : MonoBehaviour
         int index = Random.Range(0, keyList.Count);
         GameObject clownMilk1 = Instantiate(enemyConstants.clownMilkPrefab, keyList[index], Quaternion.identity);
         keyList.RemoveAt(index);
+        Debug.Log("spawn1");
 
         index = Random.Range(0, keyList.Count);
         GameObject clownMilk2 = Instantiate(enemyConstants.clownMilkPrefab, keyList[index], Quaternion.identity);
         keyList.RemoveAt(index);
+        Debug.Log("spawn2");
 
         ClownMilkController clownMilk1Controller = clownMilk1.transform.Find("BoxCollider").GetComponent<ClownMilkController>();
         clownMilk1Controller.otherPair = clownMilk2;
@@ -106,6 +108,7 @@ public class EnemySpawner1_2 : MonoBehaviour
 
         clownMilk1RedBallSpawner.otherPair = clownMilk2RedBallSpawner;
         clownMilk2RedBallSpawner.otherPair = clownMilk1RedBallSpawner;
+        Debug.Log("spawndone");
         yield return null;
     }
 
@@ -145,7 +148,7 @@ public class EnemySpawner1_2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        // Debug.Log(enemyCount);
     }
 
     IEnumerator WaitForNextSpawn() {
@@ -169,6 +172,7 @@ public class EnemySpawner1_2 : MonoBehaviour
     }
 
     public void enemyDead() {
+        Debug.Log("enemyDead");
         if (enemyCount > 0) {
             enemyCount -= 1;
         }
