@@ -8,12 +8,11 @@ public class FriesController : MonoBehaviour
     public EnemyConstants enemyConstants;
     public UnityEvent onEnemyDeath;
     private GameObject character;
-    private Transform spriteTransform;
+    private Transform spriteParent;
     private float initialSpriteScaleX;
     private float initialSwordScaleX;
     private int health;
     private int state; // 0 invulnerable, 1 attacking, 2 weakened
-    private Transform swordTransform;
     private BoxCollider swordCollider;
     List<SpriteRenderer> spriteDescendants = new List<SpriteRenderer> {};
     private Animator animator;
@@ -25,11 +24,8 @@ public class FriesController : MonoBehaviour
         character = GameObject.Find("Character");
         health = enemyConstants.enemyHealth;
         state = 0;
-        spriteTransform = transform.parent.Find("Sprite");
-        initialSpriteScaleX = spriteTransform.localScale.x;
-        swordTransform = transform.parent.Find("Sprite/Body/LeftArm/Sword");
-        swordCollider = swordTransform.GetComponent<BoxCollider>();
-        initialSwordScaleX = swordTransform.localScale.x;
+        spriteParent = transform.parent;
+        swordCollider = transform.parent.Find("Sprite/Body/LeftArm/Sword").GetComponent<BoxCollider>();
         swordCollider.enabled = false;
         foreach (Transform spriteChild in transform.parent.Find("Sprite"))
         {
@@ -77,12 +73,7 @@ public class FriesController : MonoBehaviour
     void Update()
     {
         if (state == 1) {
-            Vector3 newSpriteScale = spriteTransform.localScale;
-            Vector3 newSwordScale = swordTransform.localScale;
-            newSpriteScale.x = transform.position.x - character.transform.position.x > 0 ? -initialSpriteScaleX : initialSpriteScaleX;
-            newSwordScale.x = newSpriteScale.x == -initialSpriteScaleX ? -initialSwordScaleX : initialSwordScaleX;
-            spriteTransform.localScale = newSpriteScale;
-            swordTransform.localScale = newSwordScale;
+            spriteParent.localEulerAngles = new Vector3(0, 0, transform.position.x - character.transform.position.x > 0 ? 180 : 0);
         }
     }
 
