@@ -32,7 +32,7 @@ MonoBehaviour:
   bossTypeXPrefab: {fileID: 9007750895088981850, guid: fb982a47a127f7a4c9bf7e0bc516382f, type: 3}
   redBallSpawnCount: 3
   bossBigMike_Health: 100
-  bossBuffCake_Health: 2
+  bossBuffCake_Health: 31
   enemyHealth: 1
   chickenStationaryHealth: 1
   chickenMovingHealth: 1

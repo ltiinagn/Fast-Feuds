@@ -9,9 +9,9 @@ public class StageSelectionController : MonoBehaviour
     public GameConstants gameConstants;
     public GameObject skillTree;
     private int skill_IncreaseStartingHealth;
-    
+
     public Image black;
-    public Animator anim;
+    //public Animator anim;
 
     void Start() {
         int i = -1;
@@ -59,11 +59,12 @@ public class StageSelectionController : MonoBehaviour
     }
 
     IEnumerator ChangeScene(string sceneName)
-    {   //set Fade bool to true, stay on scene till fade completes,
+    {
+        //set Fade bool to true, stay on scene till fade completes,
         //then wait till it's black to show next scene
 
-        anim.SetBool("Fade", true);
-        yield return new WaitUntil(()=>black.color.a==1);
+        //anim.SetBool("Fade", true);
+        //yield return new WaitUntil(()=>black.color.a==1);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
