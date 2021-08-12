@@ -127,9 +127,7 @@ public class StageUIController : MonoBehaviour
         levelIndex += 1;
         GameObject stageCompleteMenu = transform.parent.Find("StageCompleteMenu").gameObject;
         stageCompleteMenu.SetActive(true);
-        if (levelIndex == levelNames.Length) {
-            stageCompleteMenu.transform.Find("Panel/NextStage_Button").gameObject.SetActive(false);
-        }
+        stageCompleteMenu.transform.Find("Panel/NextStage_Button").gameObject.SetActive(false);
         yield return null;
     }
 
