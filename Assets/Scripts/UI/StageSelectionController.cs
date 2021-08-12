@@ -81,22 +81,53 @@ public class StageSelectionController : MonoBehaviour
             skill_Skill3 = PlayerPrefs.GetInt("skill_Skill3");
             //if skill 1/2/3 selected
         }
-        else if (name == "AddSkillLevel" && skillPoints > 0) {
-            if (selectedGameObjectTransform.parent.name == "Skill_IncreaseStartingHealth" && skill_IncreaseStartingHealth < 3) {
-                skill_IncreaseStartingHealth += 1;
+        else if (name == "AddSkillLevel") {
+            if (skillPoints > 0) {
+                bool set = false;
+                if (selectedGameObjectTransform.parent.name == "Skill_IncreaseStartingHealth" && skill_IncreaseStartingHealth < 3) {
+                    skill_IncreaseStartingHealth += 1;
+                    PlayerPrefs.SetInt("skill_IncreaseStartingHealth", skill_IncreaseStartingHealth);
+                    set = true;
+                }
+                else if (selectedGameObjectTransform.parent.name == "Skill_Skill2" && skill_Skill2 < 3) {
+                    skill_Skill2 += 1;
+                    PlayerPrefs.SetInt("skill_Skill2", skill_Skill2);
+                    set = true;
+                }
+                else if (selectedGameObjectTransform.parent.name == "Skill_Skill3" && skill_Skill3 < 3) {
+                    skill_Skill3 += 1;
+                    PlayerPrefs.SetInt("skill_Skill3", skill_Skill3);
+                    set = true;
+                }
+                if (set) {
+                    PlayerPrefs.SetInt("skillPoints", skillPoints);
+                    skillPoints -= 1;
+                    skillPointsText.text = "Skill Points: " + skillPoints.ToString();
+                }
+            }
+        }
+        else if (name == "DecreaseSkillLevel") {
+            bool set = false;
+            if (selectedGameObjectTransform.parent.name == "Skill_IncreaseStartingHealth" && skill_IncreaseStartingHealth > 0) {
+                skill_IncreaseStartingHealth -= 1;
                 PlayerPrefs.SetInt("skill_IncreaseStartingHealth", skill_IncreaseStartingHealth);
+                set = true;
             }
-            else if (selectedGameObjectTransform.parent.name == "Skill_Skill2" && skill_Skill2 < 3) {
-                skill_Skill2 += 1;
+            else if (selectedGameObjectTransform.parent.name == "Skill_Skill2" && skill_Skill2 > 0) {
+                skill_Skill2 -= 1;
                 PlayerPrefs.SetInt("skill_Skill2", skill_Skill2);
+                set = true;
             }
-            else if (selectedGameObjectTransform.parent.name == "Skill_Skill3" && skill_Skill3 < 3) {
-                skill_Skill3 += 1;
+            else if (selectedGameObjectTransform.parent.name == "Skill_Skill3" && skill_Skill3 > 0) {
+                skill_Skill3 -= 1;
                 PlayerPrefs.SetInt("skill_Skill3", skill_Skill3);
+                set = true;
             }
-            PlayerPrefs.SetInt("skillPoints", skillPoints);
-            skillPoints -= 1;
-            skillPointsText.text = "Skill Points: " + skillPoints.ToString();
+            if (set) {
+                PlayerPrefs.SetInt("skillPoints", skillPoints);
+                skillPoints += 1;
+                skillPointsText.text = "Skill Points: " + skillPoints.ToString();
+            }
         }
         else if (name == "Back_Button") {
             StartCoroutine(ChangeScene("MainMenu"));
