@@ -57,7 +57,6 @@ public class CharacterController : MonoBehaviour
         speed = characterConstants.characterSpeed * (PlayerPrefs.GetInt("skill_Skill2") + 1);
         sphereCollider = transform.parent.Find("SphereCollider").gameObject;
         float scaleIncrease = PlayerPrefs.GetInt("skill_Skill3") * 0.75f;
-        scaleIncrease = 3 * 0.75f;
         Vector3 sphereColliderScale = sphereCollider.transform.localScale;
         sphereColliderScale.x += scaleIncrease;
         sphereColliderScale.y += scaleIncrease;
