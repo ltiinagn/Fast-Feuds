@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProjectileStrawberryChipSpawner : MonoBehaviour
 {
     public GameObject character;
+    private Animator muffinPinkAnimator;
 
     void spawnFromPooler(BulletType i)
     {
@@ -32,6 +33,7 @@ public class ProjectileStrawberryChipSpawner : MonoBehaviour
     void Start()
     {
         character = GameObject.Find("Character");
+        muffinPinkAnimator = transform.parent.Find("Sprite").GetComponent<Animator>();
         StartCoroutine(spawnBulletPeriodically());
     }
 
@@ -42,8 +44,10 @@ public class ProjectileStrawberryChipSpawner : MonoBehaviour
         {
             for (int i = 0; i < 3; i++)
             {
+                muffinPinkAnimator.SetTrigger("onThrow");
+                yield return new WaitForSeconds(0.2f);
                 spawnFromPooler(BulletType.strawberryChip);
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.3f);
             }
             yield return new WaitForSeconds(2.0f);
         }

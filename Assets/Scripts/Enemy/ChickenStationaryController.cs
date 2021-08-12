@@ -32,6 +32,11 @@ public class ChickenStationaryController : MonoBehaviour
         };
         animator = transform.parent.Find("Sprite").GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        int direction = Random.Range(0, 2);
+        if (direction == 1)
+        {
+            transform.parent.gameObject.transform.Rotate(new Vector3(0, 0, 180));
+        }
     }
 
     IEnumerator fadeIntoOblivion(List<SpriteRenderer> sprites, float startTime, float totalDuration)

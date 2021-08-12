@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ProjectileStrawberryChipWhiteSpawner : MonoBehaviour
 {
+    private Animator muffinWhiteAnimator;
+
     void spawnFromPooler(BulletType i)
     {
         // static method access
@@ -26,6 +28,7 @@ public class ProjectileStrawberryChipWhiteSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        muffinWhiteAnimator = transform.parent.Find("Sprite").GetComponent<Animator>();
         StartCoroutine(spawnBulletPeriodically());
     }
 
@@ -34,6 +37,8 @@ public class ProjectileStrawberryChipWhiteSpawner : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         while (true)
         {
+            muffinWhiteAnimator.SetTrigger("onThrow");
+            yield return new WaitForSeconds(0.2f);
             for (int i = 0; i < 5; i++)
             {
                 spawnFromPooler(BulletType.strawberryChipWhite);

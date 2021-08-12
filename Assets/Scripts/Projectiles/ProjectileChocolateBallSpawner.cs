@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProjectileChocolateBallSpawner : MonoBehaviour
 {
     bool flipX;
+    private Animator chocolateCakeAnimator;
 
     void spawnFromPooler(BulletType i)
     {
@@ -31,6 +32,7 @@ public class ProjectileChocolateBallSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        chocolateCakeAnimator = transform.parent.Find("Sprite").GetComponent<Animator>();
         // flipX = transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX;
         if (transform.parent.gameObject.transform.rotation.eulerAngles.z > 179 && transform.parent.gameObject.transform.rotation.eulerAngles.z < 181)
         {
@@ -50,8 +52,10 @@ public class ProjectileChocolateBallSpawner : MonoBehaviour
         {
             for (int i = 0; i < 5; i++)
             {
+                chocolateCakeAnimator.SetTrigger("onThrow");
+                yield return new WaitForSeconds(0.2f);
                 spawnFromPooler(BulletType.chocolateBall);
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(0.3f);
             }
             yield return new WaitForSeconds(2.0f);
         }

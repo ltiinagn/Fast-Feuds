@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterHealth: 10
   characterSpeed: 20
+  characterDelay: 0.5
+  characterPowerUpHp: 0
