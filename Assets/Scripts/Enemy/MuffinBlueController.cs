@@ -6,8 +6,11 @@ using UnityEngine.Events;
 public class MuffinBlueController : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
+    public GameObject character;
     public UnityEvent onEnemyDeath;
+    private Transform spriteParent;
     private int health;
+    private bool faceRight = true;
     List<SpriteRenderer> spriteDescendants = new List<SpriteRenderer> {};
     private Animator animator;
     // private AudioSource audioSource;
@@ -15,7 +18,9 @@ public class MuffinBlueController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        character = GameObject.Find("Character");
         health = enemyConstants.enemyHealth;
+        spriteParent = transform.parent.gameObject.transform;
         foreach (Transform spriteChild in transform.parent.Find("Sprite"))
         {
             spriteDescendants.Add(spriteChild.GetComponent<SpriteRenderer>());
@@ -53,7 +58,11 @@ public class MuffinBlueController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (character.transform.position.x - transform.position.x > 0 != faceRight)
+        {
+            faceRight = !faceRight;
+            spriteParent.Rotate(new Vector3(0, 0, 180));
+        }
     }
 
     void OnTriggerEnter(Collider col)
