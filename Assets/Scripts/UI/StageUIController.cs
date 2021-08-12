@@ -21,24 +21,17 @@ public class StageUIController : MonoBehaviour
     public UnityEvent startNextSpawn;
     public UnityEvent startNextDialogue;
     string[] levelNames;
+    string[] buttonPaths;
     int levelIndex;
     bool start;
 
     void Start() {
         levelNames = gameConstants.levelNames;
-        string[] buttonPaths = {"GameOverMenu/Panel/Restart_Button", "GameOverMenu/Panel/QuitToMenu_Button", "PauseMenu/Panel/Resume_Button", "PauseMenu/Panel/QuitToMenu_Button", "StageCompleteMenu/Panel/NextStage_Button", "StageCompleteMenu/Panel/QuitToMenu_Button"};
-        foreach (string buttonPath in buttonPaths) {
-            EventTrigger trigger = transform.parent.Find(buttonPath).GetComponent<EventTrigger>();
-            EventTrigger.Entry entry = new EventTrigger.Entry();
-            entry.eventID = EventTriggerType.PointerClick;
-            entry.callback.AddListener((data) => { OnClicked((PointerEventData) data); });
-            trigger.triggers.Add(entry);
-        }
         start = true;
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (start && Input.GetKeyDown(KeyCode.Escape)) {
             Time.timeScale = 0.0f;
             transform.parent.Find("PauseMenu").gameObject.SetActive(true);
         }
@@ -140,7 +133,7 @@ public class StageUIController : MonoBehaviour
         yield return null;
     }
 
-    public void OnClicked(PointerEventData data)
+    public void OnClicked()
     {
         string name = EventSystem.current.currentSelectedGameObject.name;
         if (name == "Resume_Button") {

@@ -8,6 +8,11 @@ public class StageSelectionController : MonoBehaviour
 {
     public GameConstants gameConstants;
     public GameObject skillTree;
+    public GameObject[] stageButtons;
+    public GameObject[] levels;
+    public GameObject[] levelBackgrounds;
+    public GameObject[] levelText;
+    public GameObject[] stageBorders;
     private int skill_IncreaseStartingHealth;
 
     public Image black;
@@ -18,15 +23,41 @@ public class StageSelectionController : MonoBehaviour
         bool end = false;
         while (i < gameConstants.levelNames.Length - 1 && !end) {
             i += 1;
+            //Debug.Log(PlayerPrefs.GetInt("complete" + gameConstants.levelNames[i]));
             if (PlayerPrefs.GetInt("complete" + gameConstants.levelNames[i]) != 1) {
                 end = true;
             }
         }
-        i += 1;
-        for (; i < gameConstants.levelNames.Length - 1; i++) {
-            GameObject levelButton = GameObject.Find("UI/" + gameConstants.levelNames[i] + "_Button");
-            if (levelButton) {
-                levelButton.SetActive(false);
+        string level = gameConstants.levelNames[i].Substring(0, 6);
+        string stage = gameConstants.levelNames[i].Substring(0, 8);
+        foreach (GameObject gameObj in levels) {
+            gameObj.SetActive(true);
+            if (gameObj.name.Contains(level)) {
+                break;
+            }
+        }
+        foreach (GameObject gameObj in stageButtons) {
+            gameObj.SetActive(true);
+            if (gameObj.name.Contains(stage)) {
+                break;
+            }
+        }
+        foreach (GameObject gameObj in levelBackgrounds) {
+            gameObj.SetActive(true);
+            if (gameObj.name.Contains(level)) {
+                break;
+            }
+        }
+        foreach (GameObject gameObj in levelText) {
+            gameObj.SetActive(true);
+            if (gameObj.name.Contains(level)) {
+                break;
+            }
+        }
+        foreach (GameObject gameObj in stageBorders) {
+            gameObj.SetActive(true);
+            if (gameObj.name.Contains(level)) {
+                break;
             }
         }
     }
@@ -72,6 +103,4 @@ public class StageSelectionController : MonoBehaviour
             yield return null;
         }
     }
-
-
 }
