@@ -231,7 +231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9007750895088981831}
   m_Layer: 0
-  m_Name: Boss2_B
+  m_Name: BossBuffCake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

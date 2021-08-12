@@ -141,8 +141,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyConstants: {fileID: 11400000, guid: 2c8f5b28e8bd0cb43a7087e374e7223f, type: 2}
-  gameConstants: {fileID: 11400000, guid: d8e3867deee51ae4cb56753d24c16ca0, type: 2}
-  keyMapper: {fileID: 0}
 --- !u!1 &4398099340367920582
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9007750895088981831}
   m_Layer: 0
-  m_Name: BossTypeX
+  m_Name: BossDietChoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

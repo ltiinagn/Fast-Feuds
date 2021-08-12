@@ -75,7 +75,7 @@ public class EnemyConstants : ScriptableObject
     };
 
     // Level 2-B
-    public int boss2_B_Health = 31;
+    public int bossBuffCake_Health = 31;
     public string[][] spawnKey2_B = new string[][] {
         new string[] {"n", "o", "t", "h", "i", "n", "g", "s"},
         new string[] {"g", "o", "n", "n", "a"},
@@ -85,7 +85,7 @@ public class EnemyConstants : ScriptableObject
         new string[] {"f", "o", "r"},
         new string[] {"y", "o", "u"},
     };
-    // public int boss2_B_Health = 2;
+    // public int bossBuffCake_Health = 2;
     // public string[][] spawnKey2_B = new string[][] {
     //     new string[] {"n"},
     //     new string[] {"g"}

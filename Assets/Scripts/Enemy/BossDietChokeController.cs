@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using System;
 
-public class BossTypeXController : MonoBehaviour
+public class BossDietChokeController : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
 

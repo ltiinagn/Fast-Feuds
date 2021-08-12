@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Boss2_BController : MonoBehaviour
+public class BossBuffCakeController : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
     public GameConstants gameConstants;
@@ -28,7 +28,7 @@ public class Boss2_BController : MonoBehaviour
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         keyRowMap = keyMapper.GetComponent<KeyMapping>().keyRowMap;
-        initialHealth = enemyConstants.boss2_B_Health;
+        initialHealth = enemyConstants.bossBuffCake_Health;
         health = initialHealth;
         phase = 1;
         speed = 8.0f;
