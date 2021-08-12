@@ -48,7 +48,6 @@ public class ProjectileKnifeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(speedIncrease);
         if (waited == 0) {
             waited = 1;
             StartCoroutine(waitForFire());

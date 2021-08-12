@@ -101,7 +101,6 @@ public class FriesController : MonoBehaviour
             else if (state == 2)
             {
                 health -= 1;
-                Debug.Log("damaged by character!");
                 if (health == 0)
                 {
                     onEnemyDeath.Invoke();

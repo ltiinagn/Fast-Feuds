@@ -17,7 +17,6 @@ public class ProjectileBigMacSauceController : MonoBehaviour
     }
 
     IEnumerator initialNoCollision() {
-        Debug.Log(moveSpeed);
         BoxCollider boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = false;
         yield return new WaitForSeconds(delay);

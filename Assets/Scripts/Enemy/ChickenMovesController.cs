@@ -32,7 +32,6 @@ public class ChickenMovesController : MonoBehaviour
 
     void OnTriggerEnter(Collider col) {
         health -= 1;
-        Debug.Log("damaged by character!");
         if (health == 0) {
             onEnemyDeath.Invoke();
             Destroy(transform.parent.gameObject);

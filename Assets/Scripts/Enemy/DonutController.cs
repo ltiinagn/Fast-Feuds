@@ -139,7 +139,6 @@ public class DonutController : MonoBehaviour
         if (col.gameObject.CompareTag("Character") && transform.gameObject.tag != "MeleeCollider")
         {
             health -= 1;
-            Debug.Log("damaged by character!");
             if (health == 0)
             {
                 dying = true;

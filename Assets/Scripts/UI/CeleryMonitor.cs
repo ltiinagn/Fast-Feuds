@@ -16,7 +16,6 @@ public class CeleryMonitor : MonoBehaviour
     void InitializeCelery() {
         for (int j = 0; j < celeryCount; j++)
         {
-            Debug.Log(j);
             celeryArray[j].enabled = true;
         }
     }

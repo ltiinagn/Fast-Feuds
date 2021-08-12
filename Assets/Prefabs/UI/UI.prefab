@@ -2599,6 +2599,9 @@ MonoBehaviour:
   ready: {fileID: 4994726185516922966}
   FIGHT: {fileID: 5987310658613237675}
   endGameOverlay: {fileID: 7279322453390710293}
+  pauseMenu: {fileID: 4136146644373188888}
+  stageCompleteMenu: {fileID: 6442568816048120351}
+  gameOverMenu: {fileID: 538622884839689347}
   healthBarContainer: {fileID: 2156251406522687471}
   celeryBarContainer: {fileID: 8593781587877392758}
   playstyleContainer: {fileID: 3508164670090733146}
@@ -4435,7 +4438,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556790864805095076, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
       propertyPath: m_Name
-      value: QuitToMenu_Button
+      value: StageSelection_Button
       objectReference: {fileID: 0}
     - target: {fileID: 7556790864805095087, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
@@ -4443,11 +4446,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556790866769092595, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
       propertyPath: m_Text
-      value: Quit To Menu
+      value: Back to Stage Selection
       objectReference: {fileID: 0}
     - target: {fileID: 7556790866769092597, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
       propertyPath: m_Name
-      value: QuitToMenu_Text
+      value: StageSelection_Text
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
@@ -4797,7 +4800,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556790864805095076, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
       propertyPath: m_Name
-      value: QuitToMenu_Button
+      value: StageSelection_Button
       objectReference: {fileID: 0}
     - target: {fileID: 7556790864805095087, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
@@ -4805,11 +4808,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556790866769092595, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
       propertyPath: m_Text
-      value: Quit To Menu
+      value: Back to Stage Selection
       objectReference: {fileID: 0}
     - target: {fileID: 7556790866769092597, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
       propertyPath: m_Name
-      value: QuitToMenu_Text
+      value: StageSelection_Text
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
@@ -5041,7 +5044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556790864805095076, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
       propertyPath: m_Name
-      value: QuitToMenu_Button
+      value: StageSelection_Button
       objectReference: {fileID: 0}
     - target: {fileID: 7556790864805095087, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
@@ -5049,11 +5052,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556790866769092595, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
       propertyPath: m_Text
-      value: Quit To Menu
+      value: Back to Stage Selection
       objectReference: {fileID: 0}
     - target: {fileID: 7556790866769092597, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
       propertyPath: m_Name
-      value: QuitToMenu_Text
+      value: StageSelection_Text
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}

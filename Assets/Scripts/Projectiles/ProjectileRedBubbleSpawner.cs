@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Events;
 
 public class ProjectileRedBubbleSpawner : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
     public GameConstants gameConstants;
+    public UnityEvent onBossDeath;
     public GameObject keyMapper;
     public GameObject dialogueBox;
     Dictionary<string, Vector3> keyMap;
@@ -101,7 +103,7 @@ public class ProjectileRedBubbleSpawner : MonoBehaviour
     }
 
     IEnumerator LastHurrah() {
-        float margin1 = 0.6f;
+        float margin1 = 1.0f;
         float margin2 = 0.4f;
         float speedChange = 0.0f;
         foreach (string[] name in enemyConstants.keySequence3_B_L) {
@@ -117,6 +119,7 @@ public class ProjectileRedBubbleSpawner : MonoBehaviour
             yield return new WaitForSeconds(2.0f);
             speedChange += 1;
         }
+        onBossDeath.Invoke();
     }
 
     public void SetInactive() {

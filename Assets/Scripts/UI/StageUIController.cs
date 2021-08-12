@@ -14,6 +14,9 @@ public class StageUIController : MonoBehaviour
     public GameObject ready;
     public GameObject FIGHT;
     public GameObject endGameOverlay;
+    public GameObject pauseMenu;
+    public GameObject stageCompleteMenu;
+    public GameObject gameOverMenu;
     public GameObject healthBarContainer;
     public GameObject celeryBarContainer;
     public GameObject playstyleContainer;
@@ -31,9 +34,9 @@ public class StageUIController : MonoBehaviour
     }
 
     void Update() {
-        if (start && Input.GetKeyDown(KeyCode.Escape)) {
-            Time.timeScale = 0.0f;
-            transform.parent.Find("PauseMenu").gameObject.SetActive(true);
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            pauseMenu.SetActive(!pauseMenu.activeSelf);
+            Time.timeScale = pauseMenu.activeSelf ? 0.0f : 1.0f;
         }
     }
 
@@ -99,7 +102,7 @@ public class StageUIController : MonoBehaviour
 
     public void showGameOver() {
         Time.timeScale = 0.0f;
-        transform.parent.Find("GameOverMenu").gameObject.SetActive(true);
+        gameOverMenu.SetActive(true);
     }
 
     public void showStageComplete() {
@@ -108,11 +111,11 @@ public class StageUIController : MonoBehaviour
 
     IEnumerator showStageCompleteCoroutine() {
         Time.timeScale = 0.0f;
-        if (SceneManager.GetActiveScene().name.Contains("0-T")) {
+        if (SceneManager.GetActiveScene().name.Contains("3-B")) {
             endGameOverlay.SetActive(true);
             Transform panel = endGameOverlay.transform.Find("Panel");
             Image image = panel.GetComponent<Image>();
-            for (int i = 0; i <= 255; i+=2) {
+            for (int i = 0; i <= 255; i++) {
                 image.color = new Color(1.0f,1.0f,1.0f,(float) i / 255.0f);
                 yield return new WaitForSecondsRealtime(0.01f);
             }
@@ -122,10 +125,21 @@ public class StageUIController : MonoBehaviour
             yield return new WaitForSecondsRealtime(3.0f);
         }
         levelIndex = System.Array.IndexOf(levelNames, SceneManager.GetActiveScene().name);
-        PlayerPrefs.SetInt("complete"+levelNames[levelIndex], 1);
-        PlayerPrefs.Save();
+        bool completedBefore = PlayerPrefs.GetInt("complete"+levelNames[levelIndex]) == 1 ? true : false;
+        if (!completedBefore) {
+            PlayerPrefs.SetInt("complete"+levelNames[levelIndex], 1);
+            int skillPoints = PlayerPrefs.GetInt("skillPoints");
+            Debug.Log(levelIndex);
+            if (levelIndex <= 3) {
+                skillPoints += 1;
+            }
+            else if (levelIndex <= 5) {
+                skillPoints += 2;
+            }
+            PlayerPrefs.SetInt("skillPoints", skillPoints);
+            PlayerPrefs.Save();
+        }
         levelIndex += 1;
-        GameObject stageCompleteMenu = transform.parent.Find("StageCompleteMenu").gameObject;
         stageCompleteMenu.SetActive(true);
         stageCompleteMenu.transform.Find("Panel/NextStage_Button").gameObject.SetActive(false);
         yield return null;
@@ -141,11 +155,11 @@ public class StageUIController : MonoBehaviour
         else if (name == "Restart_Button") {
             StartCoroutine(ChangeScene(SceneManager.GetActiveScene().name));
         }
+        else if (name == "StageSelection_Button") {
+            StartCoroutine(ChangeScene("StageSelection"));
+        }
         else if (name == "QuitToMenu_Button") {
             StartCoroutine(ChangeScene("MainMenu"));
-        }
-        else if (name == "NextStage_Button") {
-
         }
     }
 

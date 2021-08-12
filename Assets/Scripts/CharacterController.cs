@@ -180,7 +180,6 @@ public class CharacterController : MonoBehaviour
                 Vector3 closest = new Vector3(99,99,99);
                 float xDiff = obstacle.x - transform.position.x;
                 float yDiff = obstacle.y - transform.position.y;
-                // Debug.Log(Mathf.Abs(xDiff) - Mathf.Abs(yDiff));
                 if (Mathf.Abs(xDiff) > Mathf.Abs(yDiff)) {
                     if (xDiff > 0) {
                         foreach (Vector3 vector in keyList) {
@@ -192,7 +191,6 @@ public class CharacterController : MonoBehaviour
                     else if (xDiff < 0) {
                         foreach (Vector3 vector in keyList) {
                             if (obstacle.x < vector.x && obstacle.y == vector.y && (vector - obstacle).magnitude < (closest - obstacle).magnitude && (vector - obstacle).magnitude > 0) {
-                                Debug.Log((vector-obstacle).magnitude);
                                 closest = vector;
                             }
                         }

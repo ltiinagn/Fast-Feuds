@@ -76,7 +76,6 @@ public class ChickenMovingExplodingController : MonoBehaviour
     void OnTriggerEnter(Collider col) {
         if (health > 0 && col.gameObject.CompareTag("Character")) {
             health -= 1;
-            Debug.Log("damaged by character!");
             if (health == 0) {
                 explode = true;
                 // projectileSpawner.GetComponent<ProjectileBoneExplodeSpawner>().spawnProjectiles();

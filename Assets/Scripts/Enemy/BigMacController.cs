@@ -35,7 +35,6 @@ public class BigMacController : MonoBehaviour
         if (col.gameObject.CompareTag("Character"))
         {
             health -= 1;
-            Debug.Log("damaged by character!");
             if (health == 0)
             {
                 onEnemyDeath.Invoke();
