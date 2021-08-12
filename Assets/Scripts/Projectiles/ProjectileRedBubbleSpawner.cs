@@ -44,7 +44,7 @@ public class ProjectileRedBubbleSpawner : MonoBehaviour
             yield return null;
         }
         yield return new WaitForSeconds(3.0f);
-        float margin1 = 0.5f;
+        float margin1 = 0.7f;
         float margin2 = 1.0f;
         foreach (string[] name in enemyConstants.keySequence3_B_1) {
             foreach (string n in name) {
@@ -66,7 +66,7 @@ public class ProjectileRedBubbleSpawner : MonoBehaviour
     }
 
     IEnumerator PhaseIntermediate(float duration) {
-        float margin1 = 0.5f;
+        float margin1 = 0.7f;
         float margin2 = 1.0f;
         float interval = duration == 30.0f ? 0.1f : 0.08f;
         string[] keyMapKeys = keyMap.Keys.ToArray();
@@ -79,7 +79,7 @@ public class ProjectileRedBubbleSpawner : MonoBehaviour
     }
 
     IEnumerator Phase2() {
-        float margin1 = 0.3f;
+        float margin1 = 0.5f;
         float margin2 = 0.2f;
         yield return new WaitForSeconds(0.5f);
         float speedChange = 0.0f;

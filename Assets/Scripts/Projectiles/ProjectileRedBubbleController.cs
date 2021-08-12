@@ -14,11 +14,6 @@ public class ProjectileRedBubbleController : MonoBehaviour
     void Start()
     {
         waited = 0;
-        boxCollider = GetComponent<BoxCollider>();
-        boxCollider.enabled = false;
-        animator = transform.parent.Find("Sprite").GetComponent<Animator>();
-        animator.SetFloat("margin1Inverse", 1 / margin1);
-        animator.SetFloat("margin2Inverse", 1 / margin2);
     }
 
     IEnumerator waitForSetInactive() {
@@ -27,6 +22,7 @@ public class ProjectileRedBubbleController : MonoBehaviour
         boxCollider.enabled = true;
         animator.SetTrigger("onBurst");
         yield return new WaitForSeconds(margin2);
+        animator.SetTrigger("onInactive");
         boxCollider.enabled = false;
         SetInactive();
     }
@@ -36,11 +32,18 @@ public class ProjectileRedBubbleController : MonoBehaviour
     {
         if (waited == 0) {
             waited = 1;
+            boxCollider = GetComponent<BoxCollider>();
+            boxCollider.enabled = false;
+            animator = transform.parent.Find("Sprite").GetComponent<Animator>();
+            animator.SetFloat("margin1Inverse", 1 / margin1);
+            animator.SetFloat("margin2Inverse", 1 / margin2);
+            transform.parent.gameObject.SetActive(true);
             StartCoroutine(waitForSetInactive());
         }
     }
 
     void OnBecameInvisible() {
+        waited = 0;
         transform.parent.gameObject.SetActive(false);
     }
 
