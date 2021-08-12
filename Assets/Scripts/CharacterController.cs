@@ -14,6 +14,7 @@ public class CharacterController : MonoBehaviour
     public UnityEvent onCharacterMove;
     public UnityEvent onCharacterAddHealth;
     public GameObject keyMapper;
+    List<Vector3> keyList;
     public GameObject dialogueBox;
     Text dialogueText;
     Dictionary<string, Vector3> keyMap;
@@ -51,6 +52,7 @@ public class CharacterController : MonoBehaviour
         invulnerablePowerup = false;
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
+        keyList = new List<Vector3>(keyMap.Values);
         prevPos = this.transform.position;
         speed = characterConstants.characterSpeed * (PlayerPrefs.GetInt("skill_Skill2") + 1);
         sphereCollider = transform.parent.Find("SphereCollider").gameObject;
@@ -118,7 +120,7 @@ public class CharacterController : MonoBehaviour
         Vector3 fromUp = new Vector3(from.x, from.y + 10, from.z);
         float distance = Vector3.Distance(from, fromUp);
 
-        while (fracDist < 0.98) {
+        while (fracDist < 1) {
             float distCovered = (Time.time - startTime) * upSpeed;
             fracDist = distCovered / distance;
             transform.parent.position = Vector3.Lerp(from, fromUp, fracDist);
@@ -132,7 +134,7 @@ public class CharacterController : MonoBehaviour
         Vector3 toUp = new Vector3(to.x, to.y + 10, to.z);
         distance = Vector3.Distance(toUp, to);
 
-        while (fracDist < 0.98) {
+        while (fracDist < 1) {
             float distCovered = (Time.time - startTime) * upSpeed;
             fracDist = distCovered / distance;
             transform.parent.position = Vector3.Lerp(toUp, to, fracDist);
@@ -175,22 +177,50 @@ public class CharacterController : MonoBehaviour
 
         for (int i = 0; i < hits.Length; i++) {
             if (hits[i].transform.tag == "Obstacle" && hits[i].transform.gameObject.activeSelf) {
-                if (i == 0 || i == 1) {
-                    to = from;
-                }
-                else {
-                    if (hits[i-1].collider.transform.position == hits[i].collider.transform.position) {
-                        to = hits[i-2].collider.transform.position;
+                Vector3 obstacle = hits[i].transform.position;
+                Vector3 closest = new Vector3(99,99,99);
+                float xDiff = obstacle.x - transform.position.x;
+                float yDiff = obstacle.y - transform.position.y;
+                // Debug.Log(Mathf.Abs(xDiff) - Mathf.Abs(yDiff));
+                if (Mathf.Abs(xDiff) > Mathf.Abs(yDiff)) {
+                    if (xDiff > 0) {
+                        foreach (Vector3 vector in keyList) {
+                            if (obstacle.x > vector.x && obstacle.y == vector.y && (vector - obstacle).magnitude < (closest - obstacle).magnitude && (vector - obstacle).magnitude > 0) {
+                                closest = vector;
+                            }
+                        }
                     }
-                    else {
-                        to = hits[i-1].collider.transform.position;
+                    else if (xDiff < 0) {
+                        foreach (Vector3 vector in keyList) {
+                            if (obstacle.x < vector.x && obstacle.y == vector.y && (vector - obstacle).magnitude < (closest - obstacle).magnitude && (vector - obstacle).magnitude > 0) {
+                                Debug.Log((vector-obstacle).magnitude);
+                                closest = vector;
+                            }
+                        }
                     }
                 }
+                else if (Mathf.Abs(xDiff) < Mathf.Abs(yDiff)) {
+                    if (xDiff > 0) {
+                        foreach (Vector3 vector in keyList) {
+                            if (obstacle.y > vector.y && obstacle.x == vector.x && (vector - obstacle).magnitude < (closest - obstacle).magnitude && (vector - obstacle).magnitude > 0) {
+                                closest = vector;
+                            }
+                        }
+                    }
+                    else if (xDiff < 0) {
+                        foreach (Vector3 vector in keyList) {
+                            if (obstacle.y < vector.y && obstacle.x == vector.x && (vector - obstacle).magnitude < (closest - obstacle).magnitude && (vector - obstacle).magnitude > 0) {
+                                closest = vector;
+                            }
+                        }
+                    }
+                }
+                to = closest;
                 break;
             }
         }
 
-        while (fracDist < 0.98) {
+        while (fracDist < 1) {
             float distCovered = (Time.time - startTime) * speed;
             fracDist = distCovered / distance;
             transform.parent.position = Vector3.Lerp(from, to, fracDist);

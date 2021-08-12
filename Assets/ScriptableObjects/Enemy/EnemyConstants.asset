@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e92adb56ae96e924e903c9f85965599b, type: 3}
   m_Name: EnemyConstants
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   friesTutorialPrefab: {fileID: 629230319408024095, guid: 6892dde0de5f8a34087daa4a421c60e1, type: 3}
   chickenStationaryPrefab: {fileID: 629230319408024095, guid: 42d2ff474e50ef84fbdded0bc14e20b4, type: 3}
   chickenMovingPrefab: {fileID: 2256729703954811346, guid: 0c1acca57baea8d4fa1278f8764f664b, type: 3}
@@ -32,7 +32,7 @@ MonoBehaviour:
   bossTypeXPrefab: {fileID: 9007750895088981850, guid: fb982a47a127f7a4c9bf7e0bc516382f, type: 3}
   redBallSpawnCount: 3
   bossBigMike_Health: 100
-  bossBuffCake_Health: 31
+  bossBuffCake_Health: 2
   enemyHealth: 1
   chickenStationaryHealth: 1
   chickenMovingHealth: 1

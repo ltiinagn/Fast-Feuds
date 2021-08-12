@@ -90,6 +90,10 @@ public class EnemyConstants : ScriptableObject
     //     new string[] {"n"},
     //     new string[] {"g"}
     // };
+    public string[][] spawnKey2_B_L = new string[][] {
+        new string[] {"f", "i", "n", "a", "l"},
+        new string[] {"f", "a", "n", "t", "a", "s", "y"}
+    };
 
     // Level 3-B
     public string[][] keySequence3_B_1 = new string[][] {
