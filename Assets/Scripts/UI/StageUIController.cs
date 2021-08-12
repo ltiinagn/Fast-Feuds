@@ -13,6 +13,7 @@ public class StageUIController : MonoBehaviour
     public GameObject bossBlackBorderBottom;
     public GameObject ready;
     public GameObject FIGHT;
+    public GameObject endGameOverlay;
     public GameObject healthBarContainer;
     public GameObject celeryBarContainer;
     public GameObject playstyleContainer;
@@ -109,7 +110,24 @@ public class StageUIController : MonoBehaviour
     }
 
     public void showStageComplete() {
+        StartCoroutine(showStageCompleteCoroutine());
+    }
+
+    IEnumerator showStageCompleteCoroutine() {
         Time.timeScale = 0.0f;
+        if (SceneManager.GetActiveScene().name.Contains("0-T")) {
+            endGameOverlay.SetActive(true);
+            Transform panel = endGameOverlay.transform.Find("Panel");
+            Image image = panel.GetComponent<Image>();
+            for (int i = 0; i <= 255; i+=2) {
+                image.color = new Color(1.0f,1.0f,1.0f,(float) i / 255.0f);
+                yield return new WaitForSecondsRealtime(0.01f);
+            }
+            foreach (Transform child in panel) {
+                child.gameObject.SetActive(true);
+            }
+            yield return new WaitForSecondsRealtime(3.0f);
+        }
         levelIndex = System.Array.IndexOf(levelNames, SceneManager.GetActiveScene().name);
         PlayerPrefs.SetInt("complete"+levelNames[levelIndex], 1);
         PlayerPrefs.Save();
@@ -119,6 +137,7 @@ public class StageUIController : MonoBehaviour
         if (levelIndex == levelNames.Length) {
             stageCompleteMenu.transform.Find("Panel/NextStage_Button").gameObject.SetActive(false);
         }
+        yield return null;
     }
 
     public void OnClicked(PointerEventData data)
