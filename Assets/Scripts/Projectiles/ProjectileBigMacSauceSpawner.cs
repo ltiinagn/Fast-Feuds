@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ProjectileBigMacSauceSpawner : MonoBehaviour
 {
-    void spawnFromPooler(BulletType i){
-        for (int j = 0; j < 8; j++) {
+    void spawnFromPooler(BulletType i, bool diagonal) {
+        int angleOffset = diagonal ? 45 : 0;
+        for (int j = 0; j < 4; j++) {
             // static method access
             GameObject item = BulletPooler.SharedInstance.GetPooledBullet(i);
-            int angle = j * 45;
+            int angle = j * 90 + angleOffset;
             if (item != null) {
                 //set position, and other necessary states
                 item.transform.position = this.transform.position;
@@ -30,8 +31,10 @@ public class ProjectileBigMacSauceSpawner : MonoBehaviour
 
     IEnumerator spawnBulletPeriodically() {
         yield return new WaitForSeconds(0.5f);
+        bool diagonal = Random.Range(0,2) == 1 ? true : false;
         while (true) {
-            spawnFromPooler(BulletType.bigMacSauce);
+            spawnFromPooler(BulletType.bigMacSauce, diagonal);
+            diagonal = !diagonal;
             yield return new WaitForSeconds(2);
         }
     }

@@ -37,13 +37,14 @@ public class EnemySpawner2_B : MonoBehaviour
 
     void spawnBoss() {
         Instantiate(enemyConstants.boss2_BPrefab, new Vector3(8,0,2), Quaternion.identity);
-        projectileKnifeSpawner.SetActive(true);
     }
 
     IEnumerator WaitForNextSpawn() {
         yield return new WaitForSeconds(1);
         if (character != null) {
             spawnBoss();
+            yield return new WaitForSeconds(0.5f);
+            projectileKnifeSpawner.SetActive(true);
         }
     }
 

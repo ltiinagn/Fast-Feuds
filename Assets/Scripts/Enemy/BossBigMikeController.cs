@@ -45,6 +45,7 @@ public class BossBigMikeController : MonoBehaviour
     }
 
     IEnumerator moveRandom() {
+        yield return new WaitForSeconds(1.5f);
         while (health > 1) {
             keyList = new List<Vector3>(keyMap.Values);
             keyList.Remove(character.transform.position);

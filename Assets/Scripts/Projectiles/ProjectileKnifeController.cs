@@ -10,16 +10,21 @@ public class ProjectileKnifeController : MonoBehaviour
     public int phase;
     private int waited;
     private float speedIncrease;
+    SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
         waited = 0;
         character = GameObject.Find("Character");
-        GetComponent<Collider>().enabled = false;
+        spriteRenderer = transform.parent.Find("Sprite").GetComponent<SpriteRenderer>();
     }
 
     IEnumerator waitForFire() {
+        GetComponent<Collider>().enabled = false;
+        spriteRenderer.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
         yield return new WaitForSeconds(1.5f);
+        spriteRenderer.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+        yield return new WaitForSeconds(0.1f);
         GetComponent<Collider>().enabled = true;
         if (phase == 1) {
             if (speedIncrease < 4) {
@@ -63,6 +68,7 @@ public class ProjectileKnifeController : MonoBehaviour
     }
 
     void OnBecameInvisible() {
+        waited = 0;
         transform.parent.gameObject.SetActive(false);
     }
 

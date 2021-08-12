@@ -7,17 +7,20 @@ public class ProjectileBigMacSauceController : MonoBehaviour
     public Vector3 direction;
     public float moveSpeed; // Set in inspector
     public bool reenabled;
+    private float delay;
 
     // Start is called before the first frame update
     void Start()
     {
+        delay = 0.5f - 0.04f *  moveSpeed;
         reenabled = true;
     }
 
     IEnumerator initialNoCollision() {
+        Debug.Log(moveSpeed);
         BoxCollider boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(delay);
         boxCollider.enabled = true;
     }
 

@@ -102,6 +102,7 @@ public class EnemySpawner1_B : MonoBehaviour
             keyList = new List<Vector3>(keyMap.Values);
             keyList.Remove(character.transform.position);
             spawnBoss();
+            yield return new WaitForSeconds(3.0f);
             StartCoroutine(spawnEnemiesPeriodically());
         }
     }
