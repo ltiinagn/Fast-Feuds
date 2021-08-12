@@ -8,6 +8,7 @@ public class ProjectileRedBubbleController : MonoBehaviour
     private int waited;
     public float margin1;
     public float margin2;
+    private Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -15,13 +16,16 @@ public class ProjectileRedBubbleController : MonoBehaviour
         waited = 0;
         boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = false;
+        animator = transform.parent.Find("Sprite").GetComponent<Animator>();
+        animator.SetFloat("margin1Inverse", 1 / margin1);
+        animator.SetFloat("margin2Inverse", 1 / margin2);
     }
 
     IEnumerator waitForSetInactive() {
-        // TODO: first set of animation
+        animator.SetTrigger("onGrow");
         yield return new WaitForSeconds(margin1);
         boxCollider.enabled = true;
-        // TODO: second set of animation
+        animator.SetTrigger("onBurst");
         yield return new WaitForSeconds(margin2);
         boxCollider.enabled = false;
         SetInactive();
