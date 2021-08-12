@@ -16,6 +16,7 @@ public class StageUIController : MonoBehaviour
     public GameObject healthBarContainer;
     public GameObject celeryBarContainer;
     public GameObject playstyleContainer;
+    public GameObject bossName_Text;
     public UnityEvent startNextSpawn;
     public UnityEvent startNextDialogue;
     string[] levelNames;
@@ -65,9 +66,21 @@ public class StageUIController : MonoBehaviour
             if (SceneManager.GetActiveScene().name.Contains("-B")) {
                 bossBlackBorderBottom.SetActive(true);
                 bossBlackBorderTop.SetActive(true);
+                bossName_Text.SetActive(true);
             }
             if (SceneManager.GetActiveScene().name.Contains("1-B")) {
                 bossHPContainer.SetActive(true);
+                bossName_Text.transform.GetComponent<Text>().text = "Thicc Mike";
+            }
+            else if (SceneManager.GetActiveScene().name.Contains("2-B")) {
+                bossName_Text.transform.GetComponent<Text>().text = "BuFF Cake";
+                RectTransform bossName_TextRectTransform = bossName_Text.GetComponent<RectTransform>();
+                bossName_TextRectTransform.anchoredPosition = new Vector2(bossName_TextRectTransform.anchoredPosition.x, bossName_TextRectTransform.anchoredPosition.y - 10.0f);
+            }
+            else if (SceneManager.GetActiveScene().name.Contains("3-B")) {
+                bossName_Text.transform.GetComponent<Text>().text = "Die(T) Choke";
+                RectTransform bossName_TextRectTransform = bossName_Text.GetComponent<RectTransform>();
+                bossName_TextRectTransform.anchoredPosition = new Vector2(bossName_TextRectTransform.anchoredPosition.x, bossName_TextRectTransform.anchoredPosition.y - 10.0f);
             }
         }
         healthBarContainer.SetActive(true);
