@@ -18,12 +18,17 @@ MonoBehaviour:
   - Level1-2
   - Level1-3
   - Level1-B
+  - Level2-1
+  - Level2-2
+  - Level2-B
+  - Level3-B
   rowNames:
   - Tiles/Row1
   - Tiles/Row2
   - Tiles/Row3
   - Tiles/Row4
   powerupVisibilityDuration: 5
+  powerupVisibilityDuration2: 3
   powerupDisappearDuration: 3
   powerupWeaponPrefab: {fileID: 4714105714738006828, guid: 8a568e3fdbb7eab409dbc1b01ced2dca, type: 3}
   powerupAddHealthPrefab: {fileID: 4714105714738006828, guid: 83bd2f9406a4c9c40901830978fcdc6c, type: 3}
@@ -32,13 +37,3 @@ MonoBehaviour:
   powerupDestroyAllProjectilesPrefab: {fileID: 4714105714738006828, guid: c92232e7c5848a141bd62dedf56df4f8, type: 3}
   invulnerablePowerupDuration: 5
   dialogueDummy: []
-  dialogue1_3: []
-  dialogue1_B: []
-  dialogue2_1: []
-  dialogue2_2: []
-  dialogue2_3: []
-  dialogue2_B: []
-  dialogue3_1: []
-  dialogue3_2: []
-  dialogue3_3: []
-  dialogue3_B: []

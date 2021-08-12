@@ -8,7 +8,7 @@ public class BossBuffCakeController : MonoBehaviour
     public EnemyConstants enemyConstants;
     public GameConstants gameConstants;
     public UnityEvent onBossHalfHealth;
-    public UnityEvent onBossDeath;
+    public UnityEvent onBossLastHurrah;
     public GameObject keyMapper;
     Dictionary<string, Vector3> keyMap;
     Dictionary<string, string> keyRowMap;
@@ -50,7 +50,6 @@ public class BossBuffCakeController : MonoBehaviour
     IEnumerator moveBossMain() {
         foreach (string[] name in enemyConstants.spawnKey2_B) {
             foreach (string c in name) {
-                GetComponent<Collider>().enabled = false;
                 yield return moveBoss(transform.position, keyMap[c]);
                 GetComponent<Collider>().enabled = true;
                 damaged = false;
@@ -61,6 +60,7 @@ public class BossBuffCakeController : MonoBehaviour
             }
             yield return new WaitForSeconds(0.5f);
         }
+        yield return new WaitForSeconds(1.0f);
     }
 
     IEnumerator moveBoss(Vector3 from, Vector3 to)
@@ -88,8 +88,38 @@ public class BossBuffCakeController : MonoBehaviour
         }
     }
 
+    IEnumerator moveFinal(Vector3 from, Vector3 to) {
+        float upSpeed = 10.0f;
+        float startTime = Time.time;
+        float fracDist = 0;
+        Vector3 fromUp = new Vector3(from.x, from.y + 10, from.z);
+        float distance = Vector3.Distance(from, fromUp);
+
+        while (fracDist < 1) {
+            float distCovered = (Time.time - startTime) * upSpeed;
+            fracDist = distCovered / distance;
+            transform.parent.position = Vector3.Lerp(from, fromUp, fracDist);
+            yield return null;
+        }
+
+        startTime = Time.time;
+        fracDist = 0;
+        Vector3 toUp = new Vector3(to.x, to.y + 10, to.z);
+        distance = Vector3.Distance(toUp, to);
+
+        while (fracDist < 1) {
+            float distCovered = (Time.time - startTime) * upSpeed;
+            fracDist = distCovered / distance;
+            transform.parent.position = Vector3.Lerp(toUp, to, fracDist);
+            yield return null;
+        }
+        yield return new WaitForSeconds(1.0f);
+        onBossLastHurrah.Invoke();
+    }
+
     void OnTriggerEnter(Collider col) {
         if (col.gameObject.CompareTag("ProjectileCollider")) {
+            GetComponent<Collider>().enabled = false;
             col.gameObject.SendMessage("SetInactive");
             damaged = true;
             health -= 1;
@@ -98,8 +128,8 @@ public class BossBuffCakeController : MonoBehaviour
                 onBossHalfHealth.Invoke();
             }
             if (health == 0) {
-                onBossDeath.Invoke();
                 GetComponent<Collider>().enabled = false;
+                StartCoroutine(moveFinal(transform.position, new Vector3(11,0,9)));
             }
         }
     }

@@ -6,13 +6,24 @@ using UnityEngine.Events;
 public class ProjectileKnifeSpawner : MonoBehaviour
 {
     private GameObject character;
+    public EnemyConstants enemyConstants;
+    public UnityEvent onBossDeath;
     public GameObject dialogueBox;
+    public GameObject keyMapper;
+    Dictionary<string, Vector3> keyMap;
     private int phase = 1;
+    private bool lastHurrah = false;
 
-    void spawnFromPooler(BulletType i){
+    void spawnFromPooler(BulletType i, Vector3 position){
         // static method access
         GameObject item = BulletPooler.SharedInstance.GetPooledBullet(i);
-        Vector3 knifeOffset = new Vector3(Random.Range(-1.0f, 1.0f), 0.0f, Random.Range(-1.0f, 1.0f)).normalized;
+        Vector3 knifeOffset = new Vector3(0,0,0);
+        if (!lastHurrah) {
+            knifeOffset = new Vector3(Random.Range(-1.0f, 1.0f), 0.0f, Random.Range(-1.0f, 1.0f)).normalized;
+        }
+        else if (lastHurrah) {
+            knifeOffset = (position - character.transform.position).normalized;
+        }
         float angle = Vector3.SignedAngle(knifeOffset, Vector3.forward, Vector3.up);
         if (item != null) {
             //set position, and other necessary states
@@ -40,7 +51,13 @@ public class ProjectileKnifeSpawner : MonoBehaviour
     void Start()
     {
         character = GameObject.Find("Character");
+        keyMapper = GameObject.Find("KeyMapper");
+        keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
         StartCoroutine(spawnBulletPeriodically());
+    }
+
+    public void StartLastHurrah() {
+        lastHurrah = true;
     }
 
     IEnumerator spawnBulletPeriodically() {
@@ -48,14 +65,26 @@ public class ProjectileKnifeSpawner : MonoBehaviour
             yield return null;
         }
         yield return new WaitForSeconds(3.0f);
-        while (true) {
+        while (!lastHurrah) {
             for (int i = 0; i < 1; i++) {
-                spawnFromPooler(BulletType.knife);
+                transform.position = character.transform.position;
+                spawnFromPooler(BulletType.knife, transform.position);
                 yield return new WaitForSeconds(0.2f);
             }
             yield return new WaitForSeconds(1.0f);
-            transform.position = character.transform.position;
         }
+        StartCoroutine(spawnLastHurrah());
+    }
+
+    IEnumerator spawnLastHurrah() {
+        foreach (string[] name in enemyConstants.spawnKey2_B_L) {
+            foreach (string c in name) {
+                transform.position = keyMap[c];
+                spawnFromPooler(BulletType.knife, keyMap[c]);
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
+        onBossDeath.Invoke();
     }
 
     // Update is called once per frame

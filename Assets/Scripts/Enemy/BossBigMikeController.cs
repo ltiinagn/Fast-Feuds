@@ -88,17 +88,44 @@ public class BossBigMikeController : MonoBehaviour
         }
     }
 
+    IEnumerator moveFinal(Vector3 from, Vector3 to) {
+        float upSpeed = 10.0f;
+        float startTime = Time.time;
+        float fracDist = 0;
+        Vector3 fromUp = new Vector3(from.x, from.y + 10, from.z);
+        float distance = Vector3.Distance(from, fromUp);
+
+        while (fracDist < 1) {
+            float distCovered = (Time.time - startTime) * upSpeed;
+            fracDist = distCovered / distance;
+            transform.parent.position = Vector3.Lerp(from, fromUp, fracDist);
+            yield return null;
+        }
+
+        startTime = Time.time;
+        fracDist = 0;
+        Vector3 toUp = new Vector3(to.x, to.y + 10, to.z);
+        distance = Vector3.Distance(toUp, to);
+
+        while (fracDist < 1) {
+            float distCovered = (Time.time - startTime) * upSpeed;
+            fracDist = distCovered / distance;
+            transform.parent.position = Vector3.Lerp(toUp, to, fracDist);
+            yield return null;
+        }
+    }
+
     IEnumerator loseHealthPeriodically() {
         while (health > 1) { // not a typo, don't want boss to actually die, but making use of onEnemyDeath
             yield return new WaitForSeconds(0.8f);
             health -=1;
             onBossMinusHealth.Invoke();
         }
-        Debug.Log("entering last hurrah");
         onBossDeath.Invoke();
         GetComponent<Collider>().enabled = false;
         speed = 5.0f;
-        yield return move(transform.position, keyMap["1"]);
+        yield return new WaitForSeconds(1.0f);
+        yield return moveFinal(transform.position, new Vector3(11,0,9));
     }
 
     // Update is called once per frame

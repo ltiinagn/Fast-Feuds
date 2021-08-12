@@ -5,8 +5,29 @@ using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
+    public GameObject startScreen;
+    public GameObject mainMenu;
+    public GameObject startButton;
+    public GameObject exitButton;
+
+    void Start() {
+        StartCoroutine(waitForShowMainMenu());
+    }
+
+    IEnumerator waitForShowMainMenu() {
+        yield return new WaitForSeconds(1.0f);
+        startScreen.SetActive(false);
+        mainMenu.SetActive(true);
+        startButton.SetActive(true);
+        exitButton.SetActive(true);
+    }
+
     public void startButtonClicked() {
         StartCoroutine(ChangeScene("StageSelection"));
+    }
+
+    public void exitButtonClicked() {
+        Application.Quit();
     }
 
     IEnumerator ChangeScene(string sceneName)
