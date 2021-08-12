@@ -13,12 +13,20 @@ public class StageSelectionController : MonoBehaviour
     public GameObject[] levelBackgrounds;
     public GameObject[] levelText;
     public GameObject[] stageBorders;
+    public GameObject skillPointsTextGameObject;
+    Text skillPointsText;
+    private int skillPoints;
     private int skill_IncreaseStartingHealth;
+    private int skill_Skill2;
+    private int skill_Skill3;
 
     public Image black;
     //public Animator anim;
 
     void Start() {
+        skillPointsText = skillPointsTextGameObject.GetComponent<Text>();
+        skillPoints = PlayerPrefs.GetInt("skillPoints");
+        skillPointsText.text = "Skill Points: " + skillPoints.ToString();
         int i = -1;
         bool end = false;
         while (i < gameConstants.levelNames.Length - 1 && !end) {
@@ -64,26 +72,49 @@ public class StageSelectionController : MonoBehaviour
 
     public void OnClicked()
     {
+        Transform selectedGameObjectTransform = EventSystem.current.currentSelectedGameObject.transform;
         string name = EventSystem.current.currentSelectedGameObject.name;
         if (name == "SkillTree_Button") {
             skillTree.SetActive(!skillTree.activeSelf);
             skill_IncreaseStartingHealth = PlayerPrefs.GetInt("skill_IncreaseStartingHealth");
+            skill_Skill2 = PlayerPrefs.GetInt("skill_Skill2");
+            skill_Skill3 = PlayerPrefs.GetInt("skill_Skill3");
             //if skill 1/2/3 selected
         }
-        else if (name == "SkillIncreaseStartingHealth_Button") {
-            skill_IncreaseStartingHealth += 1;
-            PlayerPrefs.SetInt("skill_IncreaseStartingHealth", skill_IncreaseStartingHealth);
+        else if (name == "AddSkillLevel" && skillPoints > 0) {
+            if (selectedGameObjectTransform.parent.name == "Skill_IncreaseStartingHealth" && skill_IncreaseStartingHealth < 3) {
+                skill_IncreaseStartingHealth += 1;
+                PlayerPrefs.SetInt("skill_IncreaseStartingHealth", skill_IncreaseStartingHealth);
+            }
+            else if (selectedGameObjectTransform.parent.name == "Skill_Skill2" && skill_Skill2 < 3) {
+                skill_Skill2 += 1;
+                PlayerPrefs.SetInt("skill_Skill2", skill_Skill2);
+            }
+            else if (selectedGameObjectTransform.parent.name == "Skill_Skill3" && skill_Skill3 < 3) {
+                skill_Skill3 += 1;
+                PlayerPrefs.SetInt("skill_Skill3", skill_Skill3);
+            }
+            PlayerPrefs.SetInt("skillPoints", skillPoints);
+            skillPoints -= 1;
+            skillPointsText.text = "Skill Points: " + skillPoints.ToString();
         }
         else if (name == "Back_Button") {
             StartCoroutine(ChangeScene("MainMenu"));
         }
         else if (name == "ClearSave_Button") {
             PlayerPrefs.DeleteAll();
+            StartCoroutine(ChangeScene("StageSelection"));
         }
-        // else if(name == "Skill1Select"){
-
-        // }
-        //skilltree, level selection, clear save, back (for debug prolly)
+        else if (name == "UnlockAllStages_Button") {
+            foreach (string stage in gameConstants.levelNames) {
+                PlayerPrefs.SetInt("complete" + stage, 1);
+            }
+            StartCoroutine(ChangeScene("StageSelection"));
+        }
+        else if (name == "MaxSkillPoints_Button") {
+            PlayerPrefs.SetInt("skillPoints", 9);
+            StartCoroutine(ChangeScene("StageSelection"));
+        }
         else {
             StartCoroutine(ChangeScene(name.Split('_')[0]));
         }
