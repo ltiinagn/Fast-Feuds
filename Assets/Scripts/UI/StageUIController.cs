@@ -129,7 +129,6 @@ public class StageUIController : MonoBehaviour
         if (!completedBefore) {
             PlayerPrefs.SetInt("complete"+levelNames[levelIndex], 1);
             int skillPoints = PlayerPrefs.GetInt("skillPoints");
-            Debug.Log(levelIndex);
             if (levelIndex <= 3) {
                 skillPoints += 1;
             }

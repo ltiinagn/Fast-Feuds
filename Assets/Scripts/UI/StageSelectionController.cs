@@ -79,7 +79,6 @@ public class StageSelectionController : MonoBehaviour
             skill_IncreaseStartingHealth = PlayerPrefs.GetInt("skill_IncreaseStartingHealth");
             skill_Skill2 = PlayerPrefs.GetInt("skill_Skill2");
             skill_Skill3 = PlayerPrefs.GetInt("skill_Skill3");
-            //if skill 1/2/3 selected
         }
         else if (name == "AddSkillLevel") {
             if (skillPoints > 0) {
@@ -100,8 +99,9 @@ public class StageSelectionController : MonoBehaviour
                     set = true;
                 }
                 if (set) {
-                    PlayerPrefs.SetInt("skillPoints", skillPoints);
                     skillPoints -= 1;
+                    PlayerPrefs.SetInt("skillPoints", skillPoints);
+                    PlayerPrefs.Save();
                     skillPointsText.text = "Skill Points: " + skillPoints.ToString();
                 }
             }
@@ -124,8 +124,9 @@ public class StageSelectionController : MonoBehaviour
                 set = true;
             }
             if (set) {
-                PlayerPrefs.SetInt("skillPoints", skillPoints);
                 skillPoints += 1;
+                PlayerPrefs.SetInt("skillPoints", skillPoints);
+                PlayerPrefs.Save();
                 skillPointsText.text = "Skill Points: " + skillPoints.ToString();
             }
         }
