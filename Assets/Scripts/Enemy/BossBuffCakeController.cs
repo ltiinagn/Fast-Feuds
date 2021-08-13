@@ -13,13 +13,14 @@ public class BossBuffCakeController : MonoBehaviour
     Dictionary<string, Vector3> keyMap;
     Dictionary<string, string> keyRowMap;
 
-    HashSet<string> spriteNames = new HashSet<string> {"Body"};
-    List<SpriteRenderer> sprites = new List<SpriteRenderer> {};
+    // HashSet<string> spriteNames = new HashSet<string> {"Body"};
+    // List<SpriteRenderer> sprites = new List<SpriteRenderer> {};
 
     private int initialHealth;
     private int health;
     private int phase;
     private bool damaged;
+    private Animator animator;
     private float speed;
 
     // Start is called before the first frame update
@@ -32,11 +33,14 @@ public class BossBuffCakeController : MonoBehaviour
         health = initialHealth;
         phase = 1;
         speed = 8.0f;
-        foreach (Transform sprite in transform.parent.Find("Sprite")) {
-            if (spriteNames.Contains(sprite.name)) {
-                sprites.Add(sprite.GetComponent<SpriteRenderer>());
-            }
-        };
+        // foreach (Transform sprite in transform.parent.Find("Sprite"))
+        // {
+        //     if (spriteNames.Contains(sprite.name))
+        //     {
+        //         sprites.Add(sprite.GetComponent<SpriteRenderer>());
+        //     }
+        // };
+        animator = transform.parent.Find("Sprite").GetComponent<Animator>();
 
         StartCoroutine(moveBossMain());
     }
@@ -57,12 +61,18 @@ public class BossBuffCakeController : MonoBehaviour
     }
 
     IEnumerator moveBossMain() {
-        foreach (string[] name in enemyConstants.spawnKey2_B) {
-            for (int i = 0; i < name.Length - 1; i++) {
+        foreach (string[] name in enemyConstants.spawnKey2_B)
+        {
+            for (int i = 0; i < name.Length - 1; i++)
+            {
                 yield return bossAtKey(name[i]);
+                animator.SetFloat("hitSpeedMultiplier", 1f / 0.2f);
+                animator.SetTrigger("onHit");
                 yield return new WaitForSeconds(0.2f);
             }
             yield return bossAtKey(name[name.Length-1]);
+            animator.SetFloat("hitSpeedMultiplier", 1f / 0.7f);
+            animator.SetTrigger("onHit");
             yield return new WaitForSeconds(0.5f);
         }
         yield return new WaitForSeconds(1.0f);
@@ -82,7 +92,9 @@ public class BossBuffCakeController : MonoBehaviour
         //     faceRight = !faceRight;
         //     spriteParent.Rotate(new Vector3(0, 0, 180));
         // }
-        if (distance > 0) {
+        if (distance > 0)
+        {
+            animator.SetFloat("moveSpeedMultiplier", 1f / (distance / speed));
             while (fracDist < 1)
             {
                 distCovered = (Time.time - startTime) * speed;
@@ -93,14 +105,16 @@ public class BossBuffCakeController : MonoBehaviour
         }
     }
 
-    IEnumerator moveFinal(Vector3 from, Vector3 to) {
+    IEnumerator moveFinal(Vector3 from, Vector3 to)
+    {
         float upSpeed = 10.0f;
         float startTime = Time.time;
         float fracDist = 0;
         Vector3 fromUp = new Vector3(from.x, from.y + 10, from.z);
         float distance = Vector3.Distance(from, fromUp);
 
-        while (fracDist < 1) {
+        while (fracDist < 1)
+        {
             float distCovered = (Time.time - startTime) * upSpeed;
             fracDist = distCovered / distance;
             transform.parent.position = Vector3.Lerp(from, fromUp, fracDist);
@@ -112,7 +126,8 @@ public class BossBuffCakeController : MonoBehaviour
         Vector3 toUp = new Vector3(to.x, to.y + 10, to.z);
         distance = Vector3.Distance(toUp, to);
 
-        while (fracDist < 1) {
+        while (fracDist < 1)
+        {
             float distCovered = (Time.time - startTime) * upSpeed;
             fracDist = distCovered / distance;
             transform.parent.position = Vector3.Lerp(toUp, to, fracDist);
@@ -122,19 +137,25 @@ public class BossBuffCakeController : MonoBehaviour
         onBossLastHurrah.Invoke();
     }
 
-    void OnTriggerEnter(Collider col) {
-        if (col.gameObject.CompareTag("ProjectileCollider")) {
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.CompareTag("ProjectileCollider"))
+        {
             GetComponent<Collider>().enabled = false;
             col.gameObject.SendMessage("SetInactive");
             damaged = true;
             health -= 1;
-            if (phase == 1 && health <= initialHealth / 2) {
+            animator.SetTrigger("onHit");
+            if (phase == 1 && health <= initialHealth / 2)
+            {
                 phase = 2;
                 onBossHalfHealth.Invoke();
+                animator.SetBool("halfHealth", true);
             }
-            if (health == 0) {
+            if (health == 0)
+            {
                 GetComponent<Collider>().enabled = false;
-                StartCoroutine(moveFinal(transform.position, new Vector3(11,0,9)));
+                StartCoroutine(moveFinal(transform.position, new Vector3(11, 0, 9)));
             }
         }
     }
