@@ -17,6 +17,8 @@ public class StageUIController : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject stageCompleteMenu;
     public GameObject gameOverMenu;
+    public GameObject skillReward;
+    Text skillRewardText;
     public GameObject healthBarContainer;
     public GameObject celeryBarContainer;
     public GameObject playstyleContainer;
@@ -29,6 +31,7 @@ public class StageUIController : MonoBehaviour
     bool start;
 
     void Start() {
+        skillRewardText = skillReward.GetComponent<Text>();
         levelNames = gameConstants.levelNames;
         start = true;
     }
@@ -129,14 +132,21 @@ public class StageUIController : MonoBehaviour
         if (!completedBefore) {
             PlayerPrefs.SetInt("complete"+levelNames[levelIndex], 1);
             int skillPoints = PlayerPrefs.GetInt("skillPoints");
+            int reward = 0;
+            string rewardText = "";
             if (levelIndex <= 3) {
-                skillPoints += 1;
+                reward = 1;
+                rewardText = "1 skill point gained!";
             }
             else if (levelIndex <= 5) {
-                skillPoints += 2;
+                reward = 2;
+                rewardText = "2 skill points gained!";
             }
+            skillPoints += reward;
             PlayerPrefs.SetInt("skillPoints", skillPoints);
             PlayerPrefs.Save();
+            skillRewardText.text = rewardText;
+            skillReward.SetActive(true);
         }
         levelIndex += 1;
         stageCompleteMenu.SetActive(true);
