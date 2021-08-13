@@ -73,7 +73,7 @@ public class StageUIController : MonoBehaviour
             }
             if (SceneManager.GetActiveScene().name.Contains("1-B")) {
                 bossHPContainer.SetActive(true);
-                bossName_Text.transform.GetComponent<Text>().text = "Thicc Mike";
+                bossName_Text.transform.GetComponent<Text>().text = "ThiCCC Mike";
             }
             else if (SceneManager.GetActiveScene().name.Contains("2-B")) {
                 bossName_Text.transform.GetComponent<Text>().text = "BuFF Cake";
@@ -81,7 +81,7 @@ public class StageUIController : MonoBehaviour
                 bossName_TextRectTransform.anchoredPosition = new Vector2(bossName_TextRectTransform.anchoredPosition.x, bossName_TextRectTransform.anchoredPosition.y - 10.0f);
             }
             else if (SceneManager.GetActiveScene().name.Contains("3-B")) {
-                bossName_Text.transform.GetComponent<Text>().text = "Die(T) Choke";
+                bossName_Text.transform.GetComponent<Text>().text = "DIE(t) CHOKE";
                 RectTransform bossName_TextRectTransform = bossName_Text.GetComponent<RectTransform>();
                 bossName_TextRectTransform.anchoredPosition = new Vector2(bossName_TextRectTransform.anchoredPosition.x, bossName_TextRectTransform.anchoredPosition.y - 10.0f);
             }
