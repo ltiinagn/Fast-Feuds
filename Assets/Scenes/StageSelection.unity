@@ -216,6 +216,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &142649321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7556790864805095076, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
+  m_PrefabInstance: {fileID: 889265861}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &158437748
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +438,7 @@ MonoBehaviour:
   - {fileID: 1121328301}
   - {fileID: 1580963516}
   - {fileID: 158437748}
+  skillButton: {fileID: 142649321}
   skillPointsTextGameObject: {fileID: 2038505368}
   skill1Level: {fileID: 1446276380}
   skill2Level: {fileID: 1584054860}
@@ -1796,6 +1802,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1186104862634999376, guid: a80a0c192322b50469f121494925288b, type: 3}
+    - target: {fileID: 7556790864805095073, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556790864805095073, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556790864805095073, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7556790864805095074, guid: 67960ab1ccea37640a0a5fa54baaeaaa, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4858,7 +4876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2017956056
 MonoBehaviour:
   m_ObjectHideFlags: 0
