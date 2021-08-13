@@ -10,9 +10,8 @@ public class StageSelectionController : MonoBehaviour
     public GameObject skillTree;
     public GameObject[] stageButtons;
     public GameObject[] levels;
-    public GameObject[] levelBackgrounds;
     public GameObject[] levelText;
-    public GameObject[] stageBorders;
+    public GameObject[] stageText;
     public GameObject skillPointsTextGameObject;
     public GameObject skill1Level;
     public GameObject skill2Level;
@@ -54,24 +53,18 @@ public class StageSelectionController : MonoBehaviour
             }
         }
         foreach (GameObject gameObj in stageButtons) {
+            gameObj.transform.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+            if (gameObj.name.Contains(stage)) {
+                break;
+            }
+        }
+        foreach (GameObject gameObj in stageText) {
             gameObj.SetActive(true);
             if (gameObj.name.Contains(stage)) {
                 break;
             }
         }
-        foreach (GameObject gameObj in levelBackgrounds) {
-            gameObj.SetActive(true);
-            if (gameObj.name.Contains(level)) {
-                break;
-            }
-        }
         foreach (GameObject gameObj in levelText) {
-            gameObj.SetActive(true);
-            if (gameObj.name.Contains(level)) {
-                break;
-            }
-        }
-        foreach (GameObject gameObj in stageBorders) {
             gameObj.SetActive(true);
             if (gameObj.name.Contains(level)) {
                 break;
