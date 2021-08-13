@@ -74,7 +74,7 @@ public class ChickenStationaryController : MonoBehaviour
             fracTime = counter / duration;
             sprite.position = Vector3.Lerp(originalPosition, finalPosition, fracTime);
             sprite.localScale = Vector3.Lerp(originalScale, finalScale, fracTime);
-            StartCoroutine(fadeIntoOblivion(spriteDescendants, 0, 1));
+            StartCoroutine(fadeIntoOblivion(spriteDescendants, 0, duration));
             yield return null;
         }
     }

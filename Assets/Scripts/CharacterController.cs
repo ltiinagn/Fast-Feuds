@@ -46,7 +46,12 @@ public class CharacterController : MonoBehaviour
     {
         sceneName = SceneManager.GetActiveScene().name;
         dialogueText = dialogueBox.transform.Find("Panel/Dialogue_Text").GetComponent<Text>();
-        initialBulletsPerDash = PlayerPrefs.GetInt("skill_Skill3");
+        if (sceneName == "Level2-B") {
+            initialBulletsPerDash = 0;
+        }
+        else {
+            initialBulletsPerDash = PlayerPrefs.GetInt("skill_Skill3");
+        }
         bulletsPerDash = 0;
         moving = false;
         invulnerablePowerup = false;
@@ -212,7 +217,9 @@ public class CharacterController : MonoBehaviour
                         }
                     }
                 }
-                to = closest;
+                if (closest.x != 99) {
+                    to = closest;
+                }
                 break;
             }
         }

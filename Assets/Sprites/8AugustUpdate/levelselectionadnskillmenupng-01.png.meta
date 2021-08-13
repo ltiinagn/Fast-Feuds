@@ -1,12 +1,36 @@
 fileFormatVersion: 2
 guid: b32daed6815483d409b49536869706ce
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5032312688929613341
+    second: levelselectionadnskillmenupng-01_0
+  - first:
+      213: 7872855846452792890
+    second: levelselectionadnskillmenupng-01_1
+  - first:
+      213: 8853577527474438371
+    second: levelselectionadnskillmenupng-01_2
+  - first:
+      213: 26206217967914298
+    second: levelselectionadnskillmenupng-01_3
+  - first:
+      213: -2098996656100049945
+    second: levelselectionadnskillmenupng-01_4
+  - first:
+      213: -4130117302110524645
+    second: levelselectionadnskillmenupng-01_5
+  - first:
+      213: 319685684123082083
+    second: levelselectionadnskillmenupng-01_6
+  - first:
+      213: 1387954946354618018
+    second: levelselectionadnskillmenupng-01_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -35,13 +59,13 @@ TextureImporter:
     filterMode: 1
     aniso: 2
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -50,9 +74,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -125,11 +149,179 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: levelselectionadnskillmenupng-01_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 3017
+        width: 1017
+        height: 1223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d16275e6abd56d540800000000000000
+      internalID: 5032312688929613341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelselectionadnskillmenupng-01_1
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 3013
+        width: 978
+        height: 1176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e0daf1ea0024d60800000000000000
+      internalID: 7872855846452792890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelselectionadnskillmenupng-01_2
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 3502
+        width: 1346
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0ce7c5ad93eda70800000000000000
+      internalID: 8853577527474438371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelselectionadnskillmenupng-01_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1799
+        width: 1009
+        height: 1006
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d42e89a6a1d5000800000000000000
+      internalID: 26206217967914298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelselectionadnskillmenupng-01_4
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 1743
+        width: 1204
+        height: 1206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb7c6889added2e0800000000000000
+      internalID: -2098996656100049945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelselectionadnskillmenupng-01_5
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 149
+        width: 1014
+        height: 1491
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1be10f2230eea6c0800000000000000
+      internalID: -4130117302110524645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelselectionadnskillmenupng-01_6
+      rect:
+        serializedVersion: 2
+        x: 1959
+        y: 149
+        width: 1014
+        height: 1491
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36d1fe99f60cf6400800000000000000
+      internalID: 319685684123082083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: levelselectionadnskillmenupng-01_7
+      rect:
+        serializedVersion: 2
+        x: 3049
+        y: 149
+        width: 1014
+        height: 1491
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae96b58ba1034310800000000000000
+      internalID: 1387954946354618018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 547fa39c1f4b25a4ab0b12cd4f65a0f2
     internalID: 0
     vertices: []
     indices: 
