@@ -135,8 +135,8 @@ public class BossBigMikeController : MonoBehaviour
     {
         while (health > 1) // not a typo, don't want boss to actually die, but making use of onEnemyDeath
         {
-            yield return new WaitForSeconds(0.8f);
-            health -=1;
+            yield return new WaitForSeconds(0.6f);
+            health -= 1;
             onBossMinusHealth.Invoke();
         }
         onBossDeath.Invoke();
