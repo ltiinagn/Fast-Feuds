@@ -51,23 +51,28 @@ public class BossBuffCakeController : MonoBehaviour
 
     }
 
+    IEnumerator bossAtKey(string c) {
+        yield return moveBoss(transform.position, keyMap[c]);
+        GetComponent<Collider>().enabled = true;
+        damaged = false;
+        while (!damaged) {
+            yield return null;
+        }
+    }
+
     IEnumerator moveBossMain() {
         foreach (string[] name in enemyConstants.spawnKey2_B)
         {
-            foreach (string c in name)
+            for (int i = 0; i < name.Length - 1; i++)
             {
-                yield return moveBoss(transform.position, keyMap[c]);
-                GetComponent<Collider>().enabled = true;
-                damaged = false;
-                while (!damaged)
-                {
-                    yield return null;
-                }
+                yield return bossAtKey(name[i]);
+                animator.SetFloat("hitSpeedMultiplier", 1f / 0.2f);
                 animator.SetTrigger("onHit");
-                animator.SetFloat("hitSpeedMultiplier", 1f / 0.2f); // if not last item in name
-                // animator.SetFloat("hitSpeedMultiplier", 1f / 0.7f); // if last item in name
                 yield return new WaitForSeconds(0.2f);
             }
+            yield return bossAtKey(name[name.Length-1]);
+            animator.SetFloat("hitSpeedMultiplier", 1f / 0.7f);
+            animator.SetTrigger("onHit");
             yield return new WaitForSeconds(0.5f);
         }
         yield return new WaitForSeconds(1.0f);

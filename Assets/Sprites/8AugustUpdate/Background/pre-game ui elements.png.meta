@@ -32,6 +32,12 @@ TextureImporter:
   - first:
       213: -1607509789660259106
     second: pre-game ui elements_9
+  - first:
+      213: 4878870127570717478
+    second: pre-game ui elements_10
+  - first:
+      213: -1186104862634999376
+    second: pre-game ui elements_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -362,6 +368,48 @@ TextureImporter:
       bones: []
       spriteID: edc565efc5af0b9e0800000000000000
       internalID: -1607509789660259106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pre-game ui elements_10
+      rect:
+        serializedVersion: 2
+        x: 2137
+        y: 3758
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b0e1b188a35b340800000000000000
+      internalID: 4878870127570717478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pre-game ui elements_11
+      rect:
+        serializedVersion: 2
+        x: 2491
+        y: 3751
+        width: 480
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b1074469eb1a8fe0800000000000000
+      internalID: -1186104862634999376
       vertices: []
       indices: 
       edges: []

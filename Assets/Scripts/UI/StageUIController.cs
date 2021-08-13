@@ -19,6 +19,8 @@ public class StageUIController : MonoBehaviour
     public GameObject gameOverMenu;
     public GameObject skillReward;
     Text skillRewardText;
+    public GameObject playstyleReward;
+    Text playstyleRewardText;
     public GameObject healthBarContainer;
     public GameObject celeryBarContainer;
     public GameObject playstyleContainer;
@@ -32,6 +34,7 @@ public class StageUIController : MonoBehaviour
 
     void Start() {
         skillRewardText = skillReward.GetComponent<Text>();
+        playstyleRewardText = playstyleReward.GetComponent<Text>();
         levelNames = gameConstants.levelNames;
         start = true;
     }
@@ -70,7 +73,7 @@ public class StageUIController : MonoBehaviour
             }
             if (SceneManager.GetActiveScene().name.Contains("1-B")) {
                 bossHPContainer.SetActive(true);
-                bossName_Text.transform.GetComponent<Text>().text = "Thicc Mike";
+                bossName_Text.transform.GetComponent<Text>().text = "ThiCCC Mike";
             }
             else if (SceneManager.GetActiveScene().name.Contains("2-B")) {
                 bossName_Text.transform.GetComponent<Text>().text = "BuFF Cake";
@@ -78,7 +81,7 @@ public class StageUIController : MonoBehaviour
                 bossName_TextRectTransform.anchoredPosition = new Vector2(bossName_TextRectTransform.anchoredPosition.x, bossName_TextRectTransform.anchoredPosition.y - 10.0f);
             }
             else if (SceneManager.GetActiveScene().name.Contains("3-B")) {
-                bossName_Text.transform.GetComponent<Text>().text = "Die(T) Choke";
+                bossName_Text.transform.GetComponent<Text>().text = "DIE(t) CHOKE";
                 RectTransform bossName_TextRectTransform = bossName_Text.GetComponent<RectTransform>();
                 bossName_TextRectTransform.anchoredPosition = new Vector2(bossName_TextRectTransform.anchoredPosition.x, bossName_TextRectTransform.anchoredPosition.y - 10.0f);
             }
@@ -147,6 +150,10 @@ public class StageUIController : MonoBehaviour
             PlayerPrefs.Save();
             skillRewardText.text = rewardText;
             skillReward.SetActive(true);
+            if (levelIndex == 0) {
+                playstyleRewardText.text = "Meateor playstyle learnt! Change playstyle by pressing Ctrl!";
+                playstyleReward.SetActive(true);
+            }
         }
         levelIndex += 1;
         stageCompleteMenu.SetActive(true);
