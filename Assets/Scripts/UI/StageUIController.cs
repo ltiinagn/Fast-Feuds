@@ -19,6 +19,8 @@ public class StageUIController : MonoBehaviour
     public GameObject gameOverMenu;
     public GameObject skillReward;
     Text skillRewardText;
+    public GameObject playstyleReward;
+    Text playstyleRewardText;
     public GameObject healthBarContainer;
     public GameObject celeryBarContainer;
     public GameObject playstyleContainer;
@@ -32,6 +34,7 @@ public class StageUIController : MonoBehaviour
 
     void Start() {
         skillRewardText = skillReward.GetComponent<Text>();
+        playstyleRewardText = playstyleReward.GetComponent<Text>();
         levelNames = gameConstants.levelNames;
         start = true;
     }
@@ -147,6 +150,10 @@ public class StageUIController : MonoBehaviour
             PlayerPrefs.Save();
             skillRewardText.text = rewardText;
             skillReward.SetActive(true);
+            if (levelIndex == 0) {
+                playstyleRewardText.text = "Meateor playstyle learnt! Change playstyle by pressing Ctrl!";
+                playstyleReward.SetActive(true);
+            }
         }
         levelIndex += 1;
         stageCompleteMenu.SetActive(true);
