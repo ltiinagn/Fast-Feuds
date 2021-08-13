@@ -14,6 +14,12 @@ public class StageSelectionController : MonoBehaviour
     public GameObject[] levelText;
     public GameObject[] stageBorders;
     public GameObject skillPointsTextGameObject;
+    public GameObject skill1Level;
+    public GameObject skill2Level;
+    public GameObject skill3Level;
+    Text skill1LevelText;
+    Text skill2LevelText;
+    Text skill3LevelText;
     Text skillPointsText;
     private int skillPoints;
     private int skill_IncreaseStartingHealth;
@@ -25,6 +31,9 @@ public class StageSelectionController : MonoBehaviour
 
     void Start() {
         skillPointsText = skillPointsTextGameObject.GetComponent<Text>();
+        skill1LevelText = skill1Level.GetComponent<Text>();
+        skill2LevelText = skill2Level.GetComponent<Text>();
+        skill3LevelText = skill3Level.GetComponent<Text>();
         skillPoints = PlayerPrefs.GetInt("skillPoints");
         skillPointsText.text = "Skill Points: " + skillPoints.ToString();
         int i = -1;
@@ -70,6 +79,27 @@ public class StageSelectionController : MonoBehaviour
         }
     }
 
+    void UpdateSkillLevels() {
+        if (skill_IncreaseStartingHealth == 3) {
+            skill1LevelText.text = "MAX";
+        }
+        else {
+            skill1LevelText.text = skill_IncreaseStartingHealth.ToString();
+        }
+        if (skill_Skill2 == 3) {
+            skill2LevelText.text = "MAX";
+        }
+        else {
+            skill2LevelText.text = skill_Skill2.ToString();
+        }
+        if (skill_Skill3 == 3) {
+            skill3LevelText.text = "MAX";
+        }
+        else {
+            skill3LevelText.text = skill_Skill3.ToString();
+        }
+    }
+
     public void OnClicked()
     {
         Transform selectedGameObjectTransform = EventSystem.current.currentSelectedGameObject.transform;
@@ -79,6 +109,7 @@ public class StageSelectionController : MonoBehaviour
             skill_IncreaseStartingHealth = PlayerPrefs.GetInt("skill_IncreaseStartingHealth");
             skill_Skill2 = PlayerPrefs.GetInt("skill_Skill2");
             skill_Skill3 = PlayerPrefs.GetInt("skill_Skill3");
+            UpdateSkillLevels();
         }
         else if (name == "AddSkillLevel") {
             if (skillPoints > 0) {
@@ -104,6 +135,7 @@ public class StageSelectionController : MonoBehaviour
                     PlayerPrefs.Save();
                     skillPointsText.text = "Skill Points: " + skillPoints.ToString();
                 }
+                UpdateSkillLevels();
             }
         }
         else if (name == "DecreaseSkillLevel") {
@@ -129,6 +161,7 @@ public class StageSelectionController : MonoBehaviour
                 PlayerPrefs.Save();
                 skillPointsText.text = "Skill Points: " + skillPoints.ToString();
             }
+            UpdateSkillLevels();
         }
         else if (name == "Back_Button") {
             StartCoroutine(ChangeScene("MainMenu"));

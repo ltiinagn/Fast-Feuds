@@ -1,31 +1,28 @@
 fileFormatVersion: 2
-guid: b32daed6815483d409b49536869706ce
+guid: bc3914d8c97aa7043b55de50135cdb46
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5032312688929613341
-    second: levelselectionadnskillmenupng-01_0
+      213: -8457722137080949389
+    second: correctedskillmenuanddefeated-01_0
   - first:
-      213: 7872855846452792890
-    second: levelselectionadnskillmenupng-01_1
+      213: 327918138871815810
+    second: correctedskillmenuanddefeated-01_1
   - first:
-      213: 8853577527474438371
-    second: levelselectionadnskillmenupng-01_2
+      213: -4182426148338739793
+    second: correctedskillmenuanddefeated-01_2
   - first:
-      213: 26206217967914298
-    second: levelselectionadnskillmenupng-01_3
+      213: -8345854565077374899
+    second: correctedskillmenuanddefeated-01_3
   - first:
-      213: -2098996656100049945
-    second: levelselectionadnskillmenupng-01_4
+      213: -9199225760973023141
+    second: correctedskillmenuanddefeated-01_6
   - first:
-      213: -4130117302110524645
-    second: levelselectionadnskillmenupng-01_5
+      213: -8647656023157480637
+    second: correctedskillmenuanddefeated-01_7
   - first:
-      213: 319685684123082083
-    second: levelselectionadnskillmenupng-01_6
-  - first:
-      213: 1387954946354618018
-    second: levelselectionadnskillmenupng-01_7
+      213: -573198168437569070
+    second: correctedskillmenuanddefeated-01_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -151,13 +148,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: levelselectionadnskillmenupng-01_0
+      name: correctedskillmenuanddefeated-01_0
       rect:
         serializedVersion: 2
-        x: 28
-        y: 3017
-        width: 1017
-        height: 1223
+        x: 106
+        y: 2761
+        width: 1096
+        height: 1307
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +162,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d16275e6abd56d540800000000000000
-      internalID: 5032312688929613341
+      spriteID: 375155af68220aa80800000000000000
+      internalID: -8457722137080949389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: levelselectionadnskillmenupng-01_1
+      name: correctedskillmenuanddefeated-01_1
       rect:
         serializedVersion: 2
-        x: 1246
-        y: 3013
-        width: 978
-        height: 1176
+        x: 1557
+        y: 2838
+        width: 944
+        height: 1123
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,20 +183,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3e0daf1ea0024d60800000000000000
-      internalID: 7872855846452792890
+      spriteID: 28e9cd65fcffc8400800000000000000
+      internalID: 327918138871815810
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: levelselectionadnskillmenupng-01_2
+      name: correctedskillmenuanddefeated-01_2
       rect:
         serializedVersion: 2
-        x: 2448
-        y: 3502
-        width: 1346
-        height: 474
+        x: 2613
+        y: 2968
+        width: 17
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -207,20 +204,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e0ce7c5ad93eda70800000000000000
-      internalID: 8853577527474438371
+      spriteID: fa5d6f8d39905f5c0800000000000000
+      internalID: -4182426148338739793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: levelselectionadnskillmenupng-01_3
+      name: correctedskillmenuanddefeated-01_3
       rect:
         serializedVersion: 2
-        x: 32
-        y: 1799
-        width: 1009
-        height: 1006
+        x: 2739
+        y: 2298
+        width: 1449
+        height: 1626
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,20 +225,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3d42e89a6a1d5000800000000000000
-      internalID: 26206217967914298
+      spriteID: d48ad75cd719d2c80800000000000000
+      internalID: -8345854565077374899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: levelselectionadnskillmenupng-01_4
+      name: correctedskillmenuanddefeated-01_6
       rect:
         serializedVersion: 2
-        x: 1345
-        y: 1743
-        width: 1204
-        height: 1206
+        x: 99
+        y: 154
+        width: 1268
+        height: 1863
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,20 +246,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7eb7c6889added2e0800000000000000
-      internalID: -2098996656100049945
+      spriteID: b589494f8e8c55080800000000000000
+      internalID: -9199225760973023141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: levelselectionadnskillmenupng-01_5
+      name: correctedskillmenuanddefeated-01_7
       rect:
         serializedVersion: 2
-        x: 869
-        y: 149
-        width: 1014
-        height: 1491
+        x: 1462
+        y: 154
+        width: 1268
+        height: 1863
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,20 +267,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1be10f2230eea6c0800000000000000
-      internalID: -4130117302110524645
+      spriteID: 3436ee70aaa5df780800000000000000
+      internalID: -8647656023157480637
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: levelselectionadnskillmenupng-01_6
+      name: correctedskillmenuanddefeated-01_8
       rect:
         serializedVersion: 2
-        x: 1959
-        y: 149
-        width: 1014
-        height: 1491
+        x: 2824
+        y: 154
+        width: 1268
+        height: 1863
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,29 +288,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36d1fe99f60cf6400800000000000000
-      internalID: 319685684123082083
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: levelselectionadnskillmenupng-01_7
-      rect:
-        serializedVersion: 2
-        x: 3049
-        y: 149
-        width: 1014
-        height: 1491
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ae96b58ba1034310800000000000000
-      internalID: 1387954946354618018
+      spriteID: 2d9cf508d479b08f0800000000000000
+      internalID: -573198168437569070
       vertices: []
       indices: 
       edges: []
@@ -321,7 +297,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 547fa39c1f4b25a4ab0b12cd4f65a0f2
+    spriteID: 4da562d64253b604280b1f85b61195fc
     internalID: 0
     vertices: []
     indices: 
