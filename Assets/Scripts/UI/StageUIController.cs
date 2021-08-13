@@ -17,6 +17,7 @@ public class StageUIController : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject stageCompleteMenu;
     public GameObject gameOverMenu;
+    public GameObject loadingOverlay;
     public GameObject skillReward;
     Text skillRewardText;
     public GameObject playstyleReward;
@@ -150,7 +151,7 @@ public class StageUIController : MonoBehaviour
             PlayerPrefs.Save();
             skillRewardText.text = rewardText;
             skillReward.SetActive(true);
-            if (levelIndex == 0) {
+            if (levelIndex == 3) {
                 playstyleRewardText.text = "Meateor playstyle learnt! Change playstyle by pressing Ctrl!";
                 playstyleReward.SetActive(true);
             }
@@ -181,6 +182,7 @@ public class StageUIController : MonoBehaviour
 
     IEnumerator ChangeScene(string sceneName)
     {
+        loadingOverlay.SetActive(true);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
