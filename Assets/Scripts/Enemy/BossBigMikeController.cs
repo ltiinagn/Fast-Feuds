@@ -24,6 +24,8 @@ public class BossBigMikeController : MonoBehaviour
     private int quarterHealth;
     private float initialSpeed;
     private float speed;
+    private Animator animator;
+    // private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -39,29 +41,37 @@ public class BossBigMikeController : MonoBehaviour
         quarterHealth = health / 4;
         speed = 3.0f;
         initialSpeed = speed;
+        animator = transform.parent.Find("Sprite").GetComponent<Animator>();
 
         StartCoroutine(loseHealthPeriodically());
         StartCoroutine(moveRandom());
     }
 
-    IEnumerator moveRandom() {
+    IEnumerator moveRandom()
+    {
         yield return new WaitForSeconds(1.5f);
-        while (health > 1) {
+        while (health > 1)
+        {
             keyList = new List<Vector3>(keyMap.Values);
             keyList.Remove(character.transform.position);
             int index = Random.Range(0, keyList.Count);
-            if (!phaseChanged && health <= halfHealth) {
+            if (!phaseChanged && health <= halfHealth)
+            {
                 phaseChanged = true;
                 onBossHalfHealth.Invoke();
+                animator.SetTrigger("onPhaseChange");
+                yield return new WaitForSeconds(1);
             }
-            if (health <= quarterHealth) {
+            if (health <= quarterHealth)
+            {
                 speed = initialSpeed + Random.Range(0.0f, 3.0f);
             }
             yield return move(transform.position, keyList[index]);
         }
     }
 
-    IEnumerator move(Vector3 from, Vector3 to) {
+    IEnumerator move(Vector3 from, Vector3 to)
+    {
         // bool moveRight = from.x - to.x < 0 ? true : false;
         // if (moveRight != faceRight)
         // {
@@ -73,9 +83,12 @@ public class BossBigMikeController : MonoBehaviour
         float fracDist = 0;
         float distance = Vector3.Distance(from, to);
         float distCovered;
-        if (distance > 0) {
-            while (fracDist < 1) {
-                if (eating) {
+        if (distance > 0)
+        {
+            while (fracDist < 1)
+            {
+                if (eating)
+                {
                     yield return new WaitForSeconds(0.5f);
                     startTime += 0.5f;
                     eating = false;
@@ -88,14 +101,16 @@ public class BossBigMikeController : MonoBehaviour
         }
     }
 
-    IEnumerator moveFinal(Vector3 from, Vector3 to) {
+    IEnumerator moveFinal(Vector3 from, Vector3 to)
+    {
         float upSpeed = 10.0f;
         float startTime = Time.time;
         float fracDist = 0;
         Vector3 fromUp = new Vector3(from.x, from.y + 10, from.z);
         float distance = Vector3.Distance(from, fromUp);
 
-        while (fracDist < 1) {
+        while (fracDist < 1)
+        {
             float distCovered = (Time.time - startTime) * upSpeed;
             fracDist = distCovered / distance;
             transform.parent.position = Vector3.Lerp(from, fromUp, fracDist);
@@ -107,7 +122,8 @@ public class BossBigMikeController : MonoBehaviour
         Vector3 toUp = new Vector3(to.x, to.y + 10, to.z);
         distance = Vector3.Distance(toUp, to);
 
-        while (fracDist < 1) {
+        while (fracDist < 1)
+        {
             float distCovered = (Time.time - startTime) * upSpeed;
             fracDist = distCovered / distance;
             transform.parent.position = Vector3.Lerp(toUp, to, fracDist);
@@ -115,17 +131,19 @@ public class BossBigMikeController : MonoBehaviour
         }
     }
 
-    IEnumerator loseHealthPeriodically() {
-        while (health > 1) { // not a typo, don't want boss to actually die, but making use of onEnemyDeath
+    IEnumerator loseHealthPeriodically()
+    {
+        while (health > 1) // not a typo, don't want boss to actually die, but making use of onEnemyDeath
+        {
             yield return new WaitForSeconds(0.6f);
-            health -=1;
+            health -= 1;
             onBossMinusHealth.Invoke();
         }
         onBossDeath.Invoke();
         GetComponent<Collider>().enabled = false;
         speed = 5.0f;
         yield return new WaitForSeconds(1.0f);
-        yield return moveFinal(transform.position, new Vector3(11,0,9));
+        yield return moveFinal(transform.position, new Vector3(11, 0, 9));
     }
 
     // Update is called once per frame
@@ -134,10 +152,14 @@ public class BossBigMikeController : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider col) {
-        if (col.gameObject.CompareTag("EnemyCollider") || col.gameObject.CompareTag("ChickenMoving")) {
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.CompareTag("EnemyCollider") || col.gameObject.CompareTag("ChickenMoving"))
+        {
             eating = true;
-            if (health < 99) {
+            animator.SetTrigger("onEat");
+            if (health < 99)
+            {
                 health += 2;
                 onBossAddHealth2.Invoke();
             }
