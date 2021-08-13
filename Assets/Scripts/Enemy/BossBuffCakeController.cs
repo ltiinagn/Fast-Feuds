@@ -47,17 +47,22 @@ public class BossBuffCakeController : MonoBehaviour
 
     }
 
+    IEnumerator bossAtKey(string c) {
+        yield return moveBoss(transform.position, keyMap[c]);
+        GetComponent<Collider>().enabled = true;
+        damaged = false;
+        while (!damaged) {
+            yield return null;
+        }
+    }
+
     IEnumerator moveBossMain() {
         foreach (string[] name in enemyConstants.spawnKey2_B) {
-            foreach (string c in name) {
-                yield return moveBoss(transform.position, keyMap[c]);
-                GetComponent<Collider>().enabled = true;
-                damaged = false;
-                while (!damaged) {
-                    yield return null;
-                }
+            for (int i = 0; i < name.Length - 1; i++) {
+                yield return bossAtKey(name[i]);
                 yield return new WaitForSeconds(0.2f);
             }
+            yield return bossAtKey(name[name.Length-1]);
             yield return new WaitForSeconds(0.5f);
         }
         yield return new WaitForSeconds(1.0f);

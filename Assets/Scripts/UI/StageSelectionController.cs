@@ -12,10 +12,12 @@ public class StageSelectionController : MonoBehaviour
     public GameObject[] levels;
     public GameObject[] levelText;
     public GameObject[] stageText;
+    public GameObject skillButton;
     public GameObject skillPointsTextGameObject;
     public GameObject skill1Level;
     public GameObject skill2Level;
     public GameObject skill3Level;
+    Text skillButtonText;
     Text skill1LevelText;
     Text skill2LevelText;
     Text skill3LevelText;
@@ -29,12 +31,16 @@ public class StageSelectionController : MonoBehaviour
     //public Animator anim;
 
     void Start() {
+        skillButtonText = skillButton.transform.Find("SkillTree_Text").GetComponent<Text>();
         skillPointsText = skillPointsTextGameObject.GetComponent<Text>();
         skill1LevelText = skill1Level.GetComponent<Text>();
         skill2LevelText = skill2Level.GetComponent<Text>();
         skill3LevelText = skill3Level.GetComponent<Text>();
         skillPoints = PlayerPrefs.GetInt("skillPoints");
         skillPointsText.text = "Skill Points: " + skillPoints.ToString();
+        if (skillPoints > 0) {
+            skillButtonText.text = "Skill +";
+        }
         int i = -1;
         bool end = false;
         while (i < gameConstants.levelNames.Length - 1 && !end) {
@@ -127,6 +133,9 @@ public class StageSelectionController : MonoBehaviour
                     PlayerPrefs.SetInt("skillPoints", skillPoints);
                     PlayerPrefs.Save();
                     skillPointsText.text = "Skill Points: " + skillPoints.ToString();
+                    if (skillPoints == 0) {
+                        skillButtonText.text = "Skill";
+                    }
                 }
                 UpdateSkillLevels();
             }
@@ -153,6 +162,9 @@ public class StageSelectionController : MonoBehaviour
                 PlayerPrefs.SetInt("skillPoints", skillPoints);
                 PlayerPrefs.Save();
                 skillPointsText.text = "Skill Points: " + skillPoints.ToString();
+                if (skillPoints > 0) {
+                    skillButtonText.text = "Skill +";
+                }
             }
             UpdateSkillLevels();
         }
