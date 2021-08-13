@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-// TODO
 public class EnemySpawner3_B : MonoBehaviour
 {
     public EnemyConstants enemyConstants;
