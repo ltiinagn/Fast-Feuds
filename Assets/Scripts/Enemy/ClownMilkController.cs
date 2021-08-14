@@ -46,13 +46,12 @@ public class ClownMilkController : MonoBehaviour
         }
         otherPairAnimator = otherPair.transform.Find("Sprite").GetComponent<Animator>();
         // audioSource = GetComponent<AudioSource>();
-        // int direction = Random.Range(0, 2);
-        // if (direction == 1)
-        // {
-        //     transform.parent.gameObject.transform.Rotate(new Vector3(0, 0, 180));
-        //     transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX = true;
-        //     the crying face tongue faces left, so there will be an abrupt change from right to left if we allow this (as much as I'd like to have some tongues be flipped for variety)
-        // }
+        int direction = Random.Range(0, 2);
+        if (direction == 1)
+        {
+            transform.parent.gameObject.transform.Rotate(new Vector3(0, 0, 180));
+            transform.parent.Find("Sprite/Body").GetComponent<SpriteRenderer>().flipX = true;
+        }
     }
 
     IEnumerator fadeIntoOblivion(List<SpriteRenderer> sprites, float startTime, float totalDuration)
@@ -89,7 +88,7 @@ public class ClownMilkController : MonoBehaviour
                 animator.SetTrigger("onDeath");
                 otherPairAnimator.SetTrigger("onCry");
                 StartCoroutine(fadeIntoOblivion(spriteDescendants, 0, 1));
-                StartCoroutine(fadeIntoOblivion(otherPairSpriteDescendants, 0.4f, 1));
+                StartCoroutine(fadeIntoOblivion(otherPairSpriteDescendants, 0.3f, 1));
                 // audioSource.PlayOneShot(audioSource.clip);
                 gameObject.GetComponent<BoxCollider>().enabled = false;
                 otherPair.transform.Find("BoxCollider").GetComponent<BoxCollider>().enabled = false;
