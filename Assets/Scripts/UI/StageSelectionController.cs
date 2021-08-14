@@ -12,6 +12,7 @@ public class StageSelectionController : MonoBehaviour
     public GameObject[] levels;
     public GameObject[] levelText;
     public GameObject[] stageText;
+    public GameObject loadingOverlay;
     public GameObject skillButton;
     public GameObject skillPointsTextGameObject;
     public GameObject skill1Level;
@@ -60,6 +61,7 @@ public class StageSelectionController : MonoBehaviour
         }
         foreach (GameObject gameObj in stageButtons) {
             gameObj.transform.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+            gameObj.transform.GetComponent<Button>().interactable = true;
             if (gameObj.name.Contains(stage)) {
                 break;
             }
@@ -197,6 +199,7 @@ public class StageSelectionController : MonoBehaviour
 
         //anim.SetBool("Fade", true);
         //yield return new WaitUntil(()=>black.color.a==1);
+        loadingOverlay.SetActive(true);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)

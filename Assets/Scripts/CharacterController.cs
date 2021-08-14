@@ -240,8 +240,10 @@ public class CharacterController : MonoBehaviour
     IEnumerator StartInvulnerablePowerup()
     {
         invulnerablePowerup = true;
+        characterAnimator.SetBool("isInvulnerable", true);
         yield return new WaitForSeconds(gameConstants.invulnerablePowerupDuration);
         invulnerablePowerup = false;
+        characterAnimator.SetBool("isInvulnerable", false);
     }
 
     void OnTriggerEnter(Collider col)
