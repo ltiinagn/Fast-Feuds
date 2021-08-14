@@ -106,6 +106,7 @@ public class ProjectileRedBubbleSpawner : MonoBehaviour
         float margin1 = 1.0f;
         float margin2 = 0.4f;
         float speedChange = 0.0f;
+        yield return new WaitForSeconds(2.0f);
         foreach (string[] name in enemyConstants.keySequence3_B_L) {
             float interval = 1.4f - speedChange * 0.1f;
             for (int j = 0; j < name.Length; j++) {

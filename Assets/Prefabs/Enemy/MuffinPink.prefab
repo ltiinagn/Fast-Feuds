@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 4772073377120630070}
   m_Layer: 6
   m_Name: BoxCollider
-  m_TagString: Untagged
+  m_TagString: EnemyCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,6 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyConstants: {fileID: 11400000, guid: 2c8f5b28e8bd0cb43a7087e374e7223f, type: 2}
+  character: {fileID: 0}
   onEnemyDeath:
     m_PersistentCalls:
       m_Calls:

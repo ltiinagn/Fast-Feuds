@@ -31,6 +31,7 @@ public class EnemySpawner2_2 : MonoBehaviour
         character = GameObject.Find("Character");
         keyMapper = GameObject.Find("KeyMapper");
         keyMap = keyMapper.GetComponent<KeyMapping>().keyMap;
+        keyList = new List<Vector3>(keyMap.Values);
         removedKeyList = new List<Vector3> {};
         spawnSequence = enemyConstants.spawnSequence2_2;
         prefabsArray = new GameObject[] {enemyConstants.muffinWhitePrefab, enemyConstants.muffinBluePrefab, enemyConstants.muffinPinkPrefab, enemyConstants.chocolateCakePrefab, enemyConstants.donutPrefab};
@@ -42,16 +43,16 @@ public class EnemySpawner2_2 : MonoBehaviour
         while (true) {
             for (int i = 0; i < removedKeyList.Count; i++) {
                 int count = 0;
-                Collider[] colliders = Physics.OverlapSphere(removedKeyList[i], 0.5f);
+                Collider[] colliders = Physics.OverlapSphere(removedKeyList[i], 1.0f, Physics.AllLayers, QueryTriggerInteraction.Collide);
                 foreach (Collider collider in colliders) {
                     if (collider.tag == "EnemyCollider" || collider.tag == "Character") {
                         count += 1;
                     }
                 }
                 if (count == 0) {
-                    keyList.Add(keyList[i]);
+                    keyList.Add(removedKeyList[i]);
                     removedKeyList.RemoveAt(i);
-                    // Debug.Log(string.Format("Test: {0}, {1}", keyList.Count, removedKeyList.Count));
+                    // Debug.Log(string.Format("Remove: {0}, {1}", keyList.Count, removedKeyList.Count));
                 }
             }
             yield return null;
@@ -72,6 +73,7 @@ public class EnemySpawner2_2 : MonoBehaviour
         Instantiate(prefabsArray[indexPrefab], keyList[index], Quaternion.identity);
         removedKeyList.Add(keyList[index]);
         keyList.RemoveAt(index);
+        // Debug.Log(string.Format("Add: {0}, {1}", keyList.Count, removedKeyList.Count));
     }
 
     IEnumerator spawnEnemiesWithDelay() {
@@ -116,7 +118,6 @@ public class EnemySpawner2_2 : MonoBehaviour
     IEnumerator WaitForNextSpawn() {
         yield return new WaitForSeconds(1);
         if (character != null) {
-            keyList = new List<Vector3>(keyMap.Values);
             keyList.Remove(character.transform.position);
             removedKeyList.Add(character.transform.position);
             StartCoroutine(spawnEnemiesWithDelay());

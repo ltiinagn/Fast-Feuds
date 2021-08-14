@@ -38,7 +38,7 @@ public class HealthMonitor : MonoBehaviour
         }
         else if (characterHealth.Value > 5) {
             heartMultiply.enabled = true;
-            healthText.text = "×" + characterHealth.Value.ToString();
+            healthText.text = "x" + characterHealth.Value.ToString();
             for (int j = 0; j < hearts.Length; j++)
             {
                 hearts[j].enabled = false;
