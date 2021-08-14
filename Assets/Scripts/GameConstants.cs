@@ -30,7 +30,7 @@ public class GameConstants : ScriptableObject
     };
 
     public string[][] dialogue1_1 = new string[][] {
-        new string[] {"What are those? Chic..mera?", "Chicmera? Yeah let's go witht hat"},
+        new string[] {"What are those? Chic..mera?", "Chicmera? Yeah let's go with that"},
         new string[] {"Man that sour smell straight up came from pits of a clown or WHAT."},
         new string[] {"I swear the patties are getting smaller by the year. Uhm I mean...","oh no these are the colleagues I give a damn about..."},
         new string[] {"OH NO MY STUD...","Wait... they're the class of kids whose parents are elitist highrollers...","...","SMASH THESE TIKTOK FREAKS LESGOOOO"},
@@ -65,7 +65,7 @@ public class GameConstants : ScriptableObject
     };
 
     public string[][] dialogue3_B = new string[][] {
-        new string[] {"You must be the cause of it all." , "They used to make cough syrup out of you did'nt they?", "And now you're just doing what you were supposed to do in the first place.","But it ends now.","Time to make soda POP."},
+        new string[] {"You must be the cause of it all." , "They used to make cough syrup out of you didn't they?", "And now you're just doing what you were supposed to do in the first place.","But it ends now.","Time to make soda POP."},
         new string[] {"Finally!","Though I dont think that this is the end..", "I'm really either high on shroom muffins or the Fast Feud Capitalist are finally done waiting..."},
     };
 }
