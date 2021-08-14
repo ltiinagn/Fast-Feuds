@@ -76,7 +76,7 @@ public class DonutController : MonoBehaviour
     {
         float startTime;
         float distance;
-        float count = 1.5f;
+        float count = 1.0f;
         startTime = Time.time;
         distance = Vector3.Distance(from, to);
         bool moveRight = from.x - to.x < 0 ? true : false;
@@ -90,7 +90,7 @@ public class DonutController : MonoBehaviour
         {
             if (Time.time - startTime > count)
             {
-                count += 1.5f;
+                count += 1.0f;
                 startTime += 2.0f;
                 transform.gameObject.tag = "EnemyCollider";
                 animator.SetBool("isMoving", false);

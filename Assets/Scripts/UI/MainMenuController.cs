@@ -15,7 +15,8 @@ public class MainMenuController : MonoBehaviour
     }
 
     IEnumerator waitForShowMainMenu() {
-        yield return new WaitForSeconds(1.0f);
+        startScreen.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
         startScreen.SetActive(false);
         mainMenu.SetActive(true);
         startButton.SetActive(true);
