@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class IntroSequenceController : MonoBehaviour
 {
     public GameObject[] introSequence;
+    public GameObject startScreen;
 
     void Start() {
         StartCoroutine(showIntroSequence());
@@ -14,8 +15,14 @@ public class IntroSequenceController : MonoBehaviour
     void Update() {
         if (Input.anyKeyDown) {
             StopCoroutine(showIntroSequence());
-            StartCoroutine(ChangeScene("MainMenu"));
+            StartCoroutine(showStartScreen());
         }
+    }
+
+    IEnumerator showStartScreen() {
+        startScreen.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
+        StartCoroutine(ChangeScene("MainMenu"));
     }
 
     IEnumerator showIntroSequence() {
@@ -24,7 +31,7 @@ public class IntroSequenceController : MonoBehaviour
             yield return new WaitForSeconds(1.0f);
             screen.SetActive(false);
         }
-        StartCoroutine(ChangeScene("MainMenu"));
+        StartCoroutine(showStartScreen());
     }
 
     IEnumerator ChangeScene(string sceneName)
