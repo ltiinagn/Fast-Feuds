@@ -79,12 +79,12 @@ public class StageUIController : MonoBehaviour
             else if (SceneManager.GetActiveScene().name.Contains("2-B")) {
                 bossName_Text.transform.GetComponent<Text>().text = "BuFF Cake";
                 RectTransform bossName_TextRectTransform = bossName_Text.GetComponent<RectTransform>();
-                bossName_TextRectTransform.anchoredPosition = new Vector2(bossName_TextRectTransform.anchoredPosition.x, bossName_TextRectTransform.anchoredPosition.y - 10.0f);
+                bossName_TextRectTransform.anchoredPosition = new Vector2(bossName_TextRectTransform.anchoredPosition.x, bossName_TextRectTransform.anchoredPosition.y - 20.0f);
             }
             else if (SceneManager.GetActiveScene().name.Contains("3-B")) {
                 bossName_Text.transform.GetComponent<Text>().text = "DIE(t) CHOKE";
                 RectTransform bossName_TextRectTransform = bossName_Text.GetComponent<RectTransform>();
-                bossName_TextRectTransform.anchoredPosition = new Vector2(bossName_TextRectTransform.anchoredPosition.x, bossName_TextRectTransform.anchoredPosition.y - 10.0f);
+                bossName_TextRectTransform.anchoredPosition = new Vector2(bossName_TextRectTransform.anchoredPosition.x, bossName_TextRectTransform.anchoredPosition.y - 20.0f);
             }
         }
         healthBarContainer.SetActive(true);

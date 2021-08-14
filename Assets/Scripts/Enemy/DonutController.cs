@@ -60,13 +60,13 @@ public class DonutController : MonoBehaviour
             yield return moveEnemy(start, end);
             transform.gameObject.tag = "EnemyCollider";
             animator.SetBool("isMoving", false);
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(2.0f);
             animator.SetBool("isMoving", true);
             transform.gameObject.tag = "MeleeCollider";
             yield return moveEnemy(end, start);
             transform.gameObject.tag = "EnemyCollider";
             animator.SetBool("isMoving", false);
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(2.0f);
             animator.SetBool("isMoving", true);
             transform.gameObject.tag = "MeleeCollider";
         }
@@ -76,7 +76,7 @@ public class DonutController : MonoBehaviour
     {
         float startTime;
         float distance;
-        int count = 2;
+        float count = 1.5f;
         startTime = Time.time;
         distance = Vector3.Distance(from, to);
         bool moveRight = from.x - to.x < 0 ? true : false;
@@ -90,11 +90,11 @@ public class DonutController : MonoBehaviour
         {
             if (Time.time - startTime > count)
             {
-                count += 2;
-                startTime += 1.0f;
+                count += 1.5f;
+                startTime += 2.0f;
                 transform.gameObject.tag = "EnemyCollider";
                 animator.SetBool("isMoving", false);
-                yield return new WaitForSeconds(1.0f);
+                yield return new WaitForSeconds(2.0f);
                 animator.SetBool("isMoving", true);
                 transform.gameObject.tag = "MeleeCollider";
             }

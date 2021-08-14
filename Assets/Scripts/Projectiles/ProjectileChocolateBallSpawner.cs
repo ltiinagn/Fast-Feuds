@@ -50,7 +50,7 @@ public class ProjectileChocolateBallSpawner : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         while (true)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 3; i++)
             {
                 chocolateCakeAnimator.SetTrigger("onThrow");
                 yield return new WaitForSeconds(0.2f);

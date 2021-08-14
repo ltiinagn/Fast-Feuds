@@ -13,16 +13,16 @@ public class BossBigMikeHealthMonitor : MonoBehaviour
     }
 
     public void MinusHealth() {
-        if (healthBarBack.anchoredPosition.x > 10) {
-            healthBarMiddle.sizeDelta = new Vector2(healthBarMiddle.sizeDelta.x - 1.8f, healthBarMiddle.sizeDelta.y);
-            healthBarBack.anchoredPosition = new Vector2(healthBarBack.anchoredPosition.x - 1.8f, healthBarBack.anchoredPosition.y);
+        if (healthBarBack.anchoredPosition.x > 20) {
+            healthBarMiddle.sizeDelta = new Vector2(healthBarMiddle.sizeDelta.x - 3.6f, healthBarMiddle.sizeDelta.y);
+            healthBarBack.anchoredPosition = new Vector2(healthBarBack.anchoredPosition.x - 3.6f, healthBarBack.anchoredPosition.y);
         }
     }
 
     public void AddHealth2() {
-        if (healthBarBack.anchoredPosition.x < 189) {
-            healthBarMiddle.sizeDelta = new Vector2(healthBarMiddle.sizeDelta.x + 3.6f, healthBarMiddle.sizeDelta.y);
-            healthBarBack.anchoredPosition = new Vector2(healthBarBack.anchoredPosition.x + 3.6f, healthBarBack.anchoredPosition.y);
+        if (healthBarBack.anchoredPosition.x < 375) {
+            healthBarMiddle.sizeDelta = new Vector2(healthBarMiddle.sizeDelta.x + 7.2f, healthBarMiddle.sizeDelta.y);
+            healthBarBack.anchoredPosition = new Vector2(healthBarBack.anchoredPosition.x + 7.2f, healthBarBack.anchoredPosition.y);
         }
     }
 
