@@ -239,6 +239,7 @@ MonoBehaviour:
   - {fileID: 516352653}
   - {fileID: 1110275833}
   - {fileID: 1099455956}
+  startScreen: {fileID: 1822223840}
 --- !u!4 &105423611
 Transform:
   m_ObjectHideFlags: 0
