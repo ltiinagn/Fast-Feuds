@@ -599,6 +599,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: MeleeCollider
       objectReference: {fileID: 0}
+    - target: {fileID: 7433504628771963226, guid: b99f88f19ad956542b071f0ccf97e0f3, type: 3}
+      propertyPath: Event
+      value: 
+      objectReference: {fileID: 11400000, guid: 78707c9d80adbc244ae42c7e301141d0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b99f88f19ad956542b071f0ccf97e0f3, type: 3}
 --- !u!1001 &1489016563

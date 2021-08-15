@@ -6,47 +6,32 @@ public class AreaBlockerController : MonoBehaviour
 {
     private Animator animator;
     private AudioSource audioSource;
-    private GameObject sprite;
+    public GameObject spriteBodyWarn;
+    public GameObject spriteBodyDanger;
     private BoxCollider boxCollider;
-    private SpriteRenderer spriteRenderer;
-    public GameObject dialogueBox;
-    private Color red;
-    private Color yellow;
     private float xInitialPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        sprite = transform.parent.Find("Sprite").gameObject;
         boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = false;
-        spriteRenderer = sprite.transform.Find("Body").GetComponent<SpriteRenderer>();
-        sprite.SetActive(false);
-        red = new Color(1.0f, 0.0f, 0.0f, 0.3f);
-        yellow = new Color(1.0f, 0.92f, 0.016f, 0.3f);
         xInitialPosition = 11.0f;
-
-        StartCoroutine(ActivatePeriodically(true));
     }
 
     IEnumerator ActivatePeriodically(bool wait) {
-        while ((!dialogueBox || dialogueBox.activeSelf)) {
-            yield return null;
-        }
-        if (wait) {
-            yield return new WaitForSeconds(10.0f);
-        }
+        yield return new WaitForSeconds(5.0f);
         while (true) {
             float xPosition = xInitialPosition + Random.Range(-1, 2) * 2.0f;
             transform.parent.position = new Vector3(xPosition, transform.parent.position.y, transform.parent.position.z);
-            spriteRenderer.color = yellow;
-            sprite.SetActive(true);
+            spriteBodyWarn.SetActive(true);
             yield return new WaitForSeconds(3.0f);
-            spriteRenderer.color = red;
+            spriteBodyWarn.SetActive(false);
+            spriteBodyDanger.SetActive(true);
             boxCollider.enabled = true;
             yield return new WaitForSeconds(3.0f);
             boxCollider.enabled = false;
-            sprite.SetActive(false);
+            spriteBodyDanger.SetActive(false);
             yield return new WaitForSeconds(3.0f);
         }
     }

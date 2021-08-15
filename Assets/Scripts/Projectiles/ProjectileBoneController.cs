@@ -32,7 +32,6 @@ public class ProjectileBoneController : MonoBehaviour
     }
 
     void SetInactive() {
-        Debug.Log("Set");
         transform.parent.gameObject.SetActive(false);
     }
 }

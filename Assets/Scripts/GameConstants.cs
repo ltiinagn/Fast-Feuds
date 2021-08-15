@@ -30,10 +30,10 @@ public class GameConstants : ScriptableObject
     };
 
     public string[][] dialogue1_1 = new string[][] {
-        new string[] {"What are those? Chic..mera?", "Chicmera? Yeah let's go with that"},
-        new string[] {"Man that sour smell straight up came from pits of a clown or WHAT."},
-        new string[] {"I swear the patties are getting smaller by the year. Uhm I mean...","oh no these are the colleagues I give a damn about..."},
-        new string[] {"OH NO MY STUD...","Wait... they're the class of kids whose parents are elitist highrollers...","...","SMASH THESE TIKTOK FREAKS LESGOOOO"},
+        new string[] {"What are those? Chic..mera?", "Chicmera? Yeah let's go with that\n(Beware of bones!)"},
+        new string[] {"Man that sour smell straight up came from pits of a clown or WHAT.\n(Beware of juggling balls!)\n(Beetroot restore health and celery provides temporary invulnerability!)"},
+        new string[] {"I swear the patties are getting smaller by the year. Uhm I mean...","oh no these are the colleagues I give a damn about...\n(Beware of sauce!)"},
+        new string[] {"OH NO MY STUD...","Wait... they're the class of kids whose parents are elitist highrollers...","...","SMASH THESE TIKTOK FREAKS LESGOOOO\n(But these guys are different, maybe I should get close and run away to see what their behaviour is like)"},
         new string[] {"EASY GREASY LEMON ON MAH NINNIES!"}
     };
 
@@ -43,16 +43,16 @@ public class GameConstants : ScriptableObject
         new string[] {"I think that's it for now..."}
     };
     public string[][] dialogue1_B = new string[][] {
-        new string[] {"Vice President Mike?","More like..","Mike vice is gluttony, am I right?"},
+        new string[] {"Vice President Mike?","More like..","Mike vice is gluttony, am I right?\n(I'll need to starve him!)"},
         new string[] {"I AM INVINCIBLE!!!" , "AND I THOUGHT YOU WERE PALEOOOOO!!!"},
     };
 
     public string[][] dialogue2_1 = new string[][] {
-        new string[] {"To be honest, I'm more of a savoury person. But I love my sweets too"},
-        new string[] {"Dude it's so weird how they open up this Dessert Exhibition and people just straight up turn into mutated freaks!","It's only 2019! Cant get any worse than this!"},
+        new string[] {"To be honest, I'm more of a savoury person. But I love my sweets too", "Dude it's so weird how they open up this Dessert Exhibition and people just straight up turn into mutated freaks!","It's only 2019! Cant get any worse than this!\n(Beware of chocolate bars!)"},
         new string[] {"These guys smell like black forest and a very wet bloodhound..."},
-        new string[] {"Quick question,","Krispy Kreme or Dunkin Donuts?"},
-        new string[] {"Hey it's you!","...sorry I forgot your name.. but it seems like you made fwens!","Nice to BEAT YOU!"}
+        new string[] {"Quick question,","Krispy Kreme or Dunkin Donuts?\n(Dangerous while rolling!)"},
+        new string[] {"Hey it's you!","...sorry I forgot your name.. but it seems like you made fwens!", "Nice to BEAT YOU!"},
+        new string[] {"On to the Rumble Crumble!"}
     };
     public string[][] dialogue2_2 = new string[][] {
         new string[] {"Hi Tea Buffet 22 bucks per SMACKS!"},
@@ -60,12 +60,12 @@ public class GameConstants : ScriptableObject
         new string[] {"I think that's it for now... hmm?"}
     };
     public string[][] dialogue2_B = new string[][] {
-        new string[] {"Lunch lady? Wait, that bubbletea for lunch and breakfast reserve teach? No." , " Mom?", " What the..."},
+        new string[] {"Lunch lady? Wait, that bubbletea for lunch and breakfast reserve teach? No." , " Mom?", " What the...\n(Cutting cake just like during birthdays!)"},
         new string[] {"Dude, I really miss my mom...","She used to make me this huge birthday cake that I could never finish...","God I miss her so much. And then I just find myself binging away the pain..."},
     };
 
     public string[][] dialogue3_B = new string[][] {
-        new string[] {"You must be the cause of it all." , "They used to make cough syrup out of you didn't they?", "And now you're just doing what you were supposed to do in the first place.","But it ends now.","Time to make soda POP."},
+        new string[] {"You must be the cause of it all." , "They used to make cough syrup out of you didn't they?", "And now you're just doing what you were supposed to do in the first place.","But it ends now.","Time to make soda POP.\n(Avoid being popped!)"},
         new string[] {"Finally!","Though I dont think that this is the end..", "I'm really either high on shroom muffins or the Fast Feud Capitalist are finally done waiting..."},
     };
 }
