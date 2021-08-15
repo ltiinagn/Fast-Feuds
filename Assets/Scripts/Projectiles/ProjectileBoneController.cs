@@ -12,6 +12,15 @@ public class ProjectileBoneController : MonoBehaviour
 
     }
 
+    IEnumerator WaitForDestroy() {
+        yield return new WaitForSeconds(2.0f);
+        SetInactive();
+    }
+
+    void OnEnable() {
+        StartCoroutine(WaitForDestroy());
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -23,6 +32,7 @@ public class ProjectileBoneController : MonoBehaviour
     }
 
     void SetInactive() {
+        Debug.Log("Set");
         transform.parent.gameObject.SetActive(false);
     }
 }
