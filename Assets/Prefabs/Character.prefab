@@ -417,6 +417,7 @@ GameObject:
   - component: {fileID: 142991519944697057}
   - component: {fileID: 6894282985534964304}
   - component: {fileID: 3490447485661016141}
+  - component: {fileID: 3915862947573237138}
   m_Layer: 0
   m_Name: SphereCollider
   m_TagString: Character
@@ -469,6 +470,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!95 &3915862947573237138
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715722452645192551}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d0d40a4e321b474fac430c377b96d93, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1022901903735267318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,9 +1386,9 @@ SpriteRenderer:
   m_SortingLayerID: 1905662745
   m_SortingLayer: 1
   m_SortingOrder: 21
-  m_Sprite: {fileID: 4566879508900695649, guid: 465b0e6cd397de54583b55b4cf891070, type: 3}
+  m_Sprite: {fileID: 5215061778521649836, guid: 5ce79bf6d67a44645a1417c301f27190, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
