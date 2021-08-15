@@ -15,9 +15,11 @@ public class ProjectileStrawberryChipSpawner : MonoBehaviour
         {
             // set position, and other necessary states
             item.transform.position = this.transform.position;
-            float randomX = Random.Range(-2.0f, 2.0f);
-            float randomZ = Random.Range(-2.0f, 2.0f);
-            Vector3 direction = (new Vector3(character.transform.position.x + randomX, 0.0f, character.transform.position.z + randomZ) - item.transform.position).normalized;
+            float randomX = Random.Range(-0.2f, 0.2f);
+            float randomZ = Random.Range(-0.2f, 0.2f);
+            Vector3 direction = (new Vector3(character.transform.position.x, 0.0f, character.transform.position.z) - item.transform.position).normalized;
+            direction.x += randomX;
+            direction.z += randomZ;
             item.transform.Find("BoxCollider").GetComponent<ProjectileStrawberryChipController>().direction = direction;
             direction = Quaternion.AngleAxis(-45, Vector3.up) * direction;
             item.transform.rotation = Quaternion.LookRotation(direction);
