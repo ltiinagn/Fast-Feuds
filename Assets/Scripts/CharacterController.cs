@@ -317,6 +317,6 @@ public class CharacterController : MonoBehaviour
     {
         characterAnimator.SetTrigger("onDeath");
         characterAudio.PlayOneShot(screamAudioClip);
-        Destroy(transform.parent.gameObject, 1);
+        // Destroy(transform.parent.gameObject, 1);
     }
 }

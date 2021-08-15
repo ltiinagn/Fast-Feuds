@@ -108,6 +108,11 @@ public class StageUIController : MonoBehaviour
     }
 
     public void showGameOver() {
+        StartCoroutine(showGameOverCoroutine());
+    }
+
+    IEnumerator showGameOverCoroutine() {
+        yield return new WaitForSeconds(2.0f);
         Time.timeScale = 0.0f;
         gameOverMenu.SetActive(true);
     }

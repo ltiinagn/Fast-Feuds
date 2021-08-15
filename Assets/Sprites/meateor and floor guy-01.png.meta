@@ -235,27 +235,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: meateor and floor guy-01_10
-      rect:
-        serializedVersion: 2
-        x: 3533
-        y: 2887
-        width: 68
-        height: 118
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef06f0a6e48e68970800000000000000
-      internalID: 8756941948952994046
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: meateor and floor guy-01_12
       rect:
         serializedVersion: 2

@@ -10,9 +10,11 @@ public class HealthMonitor : MonoBehaviour
     public Text healthText;
     public Image heartMultiply;
     public Image[] hearts;
+    private bool dead;
 
     public void Start()
     {
+        dead = false;
         int healthIncrease = PlayerPrefs.GetInt("skill_IncreaseStartingHealth");
         characterHealth.SetValue(characterConstants.characterHealth * (1 + healthIncrease));
         UpdateHealth();
@@ -44,7 +46,8 @@ public class HealthMonitor : MonoBehaviour
                 hearts[j].enabled = false;
             }
         }
-        if (characterHealth.Value == 0) {
+        if (!dead && characterHealth.Value == 0) {
+            dead = true;
             onPlayerDeath.Invoke();
         }
     }
