@@ -22,6 +22,7 @@ public class CharacterController : MonoBehaviour
     string sceneName;
     private Transform sprite;
     Vector3 prevPos;
+    bool dead = false;
     bool weapon = false;
     string playStyle = "straightCutFry";
     bool faceRight = false;
@@ -80,7 +81,7 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((!dialogueBox.activeSelf || dialogueBox.activeSelf && dialogueText.text.Contains("move to a tile")) && Input.anyKeyDown)
+        if ((!dialogueBox.activeSelf || dialogueBox.activeSelf && dialogueText.text.Contains("move to a tile")) && !dead && Input.anyKeyDown)
         {
             if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl)) {
                 if (!sceneName.Contains("Level0") && !sceneName.Contains("Level1") && !sceneName.Contains("-B")) {
@@ -315,7 +316,8 @@ public class CharacterController : MonoBehaviour
 
     public void playerDeath()
     {
-        characterAnimator.SetTrigger("onDeath");
+        dead = true;
+        // characterAnimator.SetTrigger("onDeath");
         characterAudio.PlayOneShot(screamAudioClip);
         // Destroy(transform.parent.gameObject, 1);
     }
