@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class AreaBlockerController : MonoBehaviour
 {
-    private Animator animator;
-    private AudioSource audioSource;
-    public GameObject spriteBodyWarn;
-    public GameObject spriteBodyDanger;
     private BoxCollider boxCollider;
     private float xInitialPosition;
+    private Animator animator;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -17,30 +15,32 @@ public class AreaBlockerController : MonoBehaviour
         boxCollider = GetComponent<BoxCollider>();
         boxCollider.enabled = false;
         xInitialPosition = 11.0f;
+        animator = transform.parent.Find("Sprite").GetComponent<Animator>();
     }
 
-    IEnumerator ActivatePeriodically(bool wait) {
+    IEnumerator ActivatePeriodically(bool wait)
+    {
         yield return new WaitForSeconds(5.0f);
-        while (true) {
+        while (true)
+        {
             float xPosition = xInitialPosition + Random.Range(-1, 2) * 2.0f;
             transform.parent.position = new Vector3(xPosition, transform.parent.position.y, transform.parent.position.z);
-            spriteBodyWarn.SetActive(true);
+            animator.SetTrigger("onActive");
             yield return new WaitForSeconds(3.0f);
-            spriteBodyWarn.SetActive(false);
-            spriteBodyDanger.SetActive(true);
             boxCollider.enabled = true;
             yield return new WaitForSeconds(3.0f);
             boxCollider.enabled = false;
-            spriteBodyDanger.SetActive(false);
             yield return new WaitForSeconds(3.0f);
         }
     }
 
-    public void SetSpawnerInactive() {
+    public void SetSpawnerInactive()
+    {
         gameObject.SetActive(false);
     }
 
-    public void SetSpawnerActive() {
+    public void SetSpawnerActive()
+    {
         gameObject.SetActive(true);
         StartCoroutine(ActivatePeriodically(false));
     }

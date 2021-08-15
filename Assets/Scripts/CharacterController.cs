@@ -116,7 +116,7 @@ public class CharacterController : MonoBehaviour
             faceRight = !faceRight;
             sprite.Rotate(new Vector3(0, 180, 0));
         }
-        characterAnimator.SetBool("isMoving", true);
+        characterAnimator.SetBool("isFlying", true);
         moving = true;
         characterAudio.PlayOneShot(movementAudioClips[Random.Range(0, movementAudioClips.Length)]);
         bulletsPerDash = initialBulletsPerDash;
@@ -145,7 +145,7 @@ public class CharacterController : MonoBehaviour
             transform.parent.position = Vector3.Lerp(toUp, to, fracDist);
             yield return null;
         }
-        characterAnimator.SetBool("isMoving", false);
+        characterAnimator.SetBool("isFlying", false);
         prevPos = this.transform.position;
         sphereCollider.SetActive(true);
         yield return new WaitForSeconds(0.2f);
