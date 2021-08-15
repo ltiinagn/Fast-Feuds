@@ -18,7 +18,7 @@ public class StageSelectionController : MonoBehaviour
     public GameObject skill1Level;
     public GameObject skill2Level;
     public GameObject skill3Level;
-    Text skillButtonText;
+    Image skillButtonImage;
     Text skill1LevelText;
     Text skill2LevelText;
     Text skill3LevelText;
@@ -32,7 +32,7 @@ public class StageSelectionController : MonoBehaviour
     //public Animator anim;
 
     void Start() {
-        skillButtonText = skillButton.transform.Find("SkillTree_Text").GetComponent<Text>();
+        skillButtonImage = skillButton.transform.GetComponent<Image>();
         skillPointsText = skillPointsTextGameObject.GetComponent<Text>();
         skill1LevelText = skill1Level.GetComponent<Text>();
         skill2LevelText = skill2Level.GetComponent<Text>();
@@ -40,7 +40,7 @@ public class StageSelectionController : MonoBehaviour
         skillPoints = PlayerPrefs.GetInt("skillPoints");
         skillPointsText.text = "Skill Points: " + skillPoints.ToString();
         if (skillPoints > 0) {
-            skillButtonText.text = "Skill +";
+            skillButtonImage.color = new Color(0.5f, 1.0f, 0.5f, 1.0f);
         }
         int i = -1;
         bool end = false;
@@ -136,7 +136,7 @@ public class StageSelectionController : MonoBehaviour
                     PlayerPrefs.Save();
                     skillPointsText.text = "Skill Points: " + skillPoints.ToString();
                     if (skillPoints == 0) {
-                        skillButtonText.text = "Skill";
+                        skillButtonImage.color = new Color(1.0f, 1.0f, 0.54f, 1.0f);
                     }
                 }
                 UpdateSkillLevels();
@@ -165,13 +165,18 @@ public class StageSelectionController : MonoBehaviour
                 PlayerPrefs.Save();
                 skillPointsText.text = "Skill Points: " + skillPoints.ToString();
                 if (skillPoints > 0) {
-                    skillButtonText.text = "Skill +";
+                    skillButtonImage.color = new Color(0.5f, 1.0f, 0.5f, 1.0f);
                 }
             }
             UpdateSkillLevels();
         }
         else if (name == "Back_Button") {
-            StartCoroutine(ChangeScene("MainMenu"));
+            if (skillTree.activeSelf) {
+                skillTree.SetActive(!skillTree.activeSelf);
+            }
+            else {
+                StartCoroutine(ChangeScene("MainMenu"));
+            }
         }
         else if (name == "ClearSave_Button") {
             PlayerPrefs.DeleteAll();
