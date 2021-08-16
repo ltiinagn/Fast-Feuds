@@ -21,7 +21,7 @@ public class ChickenMovingController : MonoBehaviour
     private Transform sprite;
     List<SpriteRenderer> spriteDescendants = new List<SpriteRenderer> {};
     private Animator animator;
-    private AudioSource audioSource;
+    // private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +50,7 @@ public class ChickenMovingController : MonoBehaviour
             }
         };
         animator = transform.parent.Find("Sprite").GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        // audioSource = GetComponent<AudioSource>();
         StartCoroutine(moveEnemyLoop());
     }
 
@@ -156,7 +156,7 @@ public class ChickenMovingController : MonoBehaviour
                 {
                     StartCoroutine(eatenByBoss(col.transform.parent.gameObject.transform.position, 0.6f));
                 }
-                audioSource.PlayOneShot(audioSource.clip);
+                // audioSource.PlayOneShot(audioSource.clip);
                 gameObject.GetComponent<BoxCollider>().enabled = false;
                 Destroy(transform.parent.gameObject, 1); // audioSource.clip.length);
             }
