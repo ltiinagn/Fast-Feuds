@@ -82,23 +82,28 @@ public class CharacterController : MonoBehaviour
     {
         if ((!dialogueBox.activeSelf || dialogueBox.activeSelf && dialogueText.text.Contains("move to a tile")) && Input.anyKeyDown)
         {
-            if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl)) {
-                if (!sceneName.Contains("Level0") && !sceneName.Contains("Level1") && !sceneName.Contains("-B")) {
+            if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
+            {
+                if (!sceneName.Contains("Level0") && !sceneName.Contains("Level1") && !sceneName.Contains("-B")) 
+                {
                     playStyle = playStyle == "straightCutFry" ? "meateor" : "straightCutFry";
                     onPlaystyleChange.Invoke();
                 }
             }
-            else {
+            else
+            {
                 foreach (KeyValuePair<string, Vector3> control in keyMap)
                 {
                     if (Input.GetKeyDown(control.Key))
                     {
                         if (!moving)
                         {
-                            if (playStyle == "straightCutFry" && control.Value != prevPos) {
+                            if (playStyle == "straightCutFry" && control.Value != prevPos)
+                            {
                                 StartCoroutine(moveStraightCutFry(prevPos, control.Value));
                             }
-                            else if (playStyle == "meateor") {
+                            else if (playStyle == "meateor")
+                            {
                                 StartCoroutine(moveMeateor(prevPos, control.Value));
                             }
                         }
@@ -108,7 +113,8 @@ public class CharacterController : MonoBehaviour
         }
     }
 
-    IEnumerator moveMeateor(Vector3 from, Vector3 to) {
+    IEnumerator moveMeateor(Vector3 from, Vector3 to)
+    {
         bool moveRight = from.x - to.x < 0 ? true : false;
         if (moveRight != faceRight)
         {
@@ -147,6 +153,8 @@ public class CharacterController : MonoBehaviour
         characterAnimator.SetBool("isFlying", false);
         prevPos = this.transform.position;
         sphereCollider.SetActive(true);
+        characterAudio.PlayOneShot(gruntingAudioClips[Random.Range(0, gruntingAudioClips.Length)]);
+        characterAudio.PlayOneShot(punchingAudioClips[Random.Range(0, punchingAudioClips.Length)]);
         yield return new WaitForSeconds(0.2f);
         sphereCollider.SetActive(false);
         moving = false;
@@ -270,7 +278,7 @@ public class CharacterController : MonoBehaviour
             }
             // onCharacterHit.Invoke();
         }
-        else if (col.gameObject.CompareTag("EnemyCollider") || col.gameObject.CompareTag("ChickenMoving"))
+        else if ((col.gameObject.CompareTag("EnemyCollider") || col.gameObject.CompareTag("ChickenMoving")) && playStyle == "straightCutFry")
         {
             characterAudio.PlayOneShot(punchingAudioClips[Random.Range(0, punchingAudioClips.Length)]);
         }
