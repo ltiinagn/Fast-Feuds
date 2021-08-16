@@ -10,7 +10,7 @@ public class ChickenThrowingController : MonoBehaviour
     private int health;
     List<SpriteRenderer> spriteDescendants = new List<SpriteRenderer> {};
     private Animator animator;
-    private AudioSource audioSource;
+    // private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class ChickenThrowingController : MonoBehaviour
             }
         };
         animator = transform.parent.Find("Sprite").GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        // audioSource = GetComponent<AudioSource>();
         int direction = Random.Range(0, 2);
         if (direction == 1)
         {
@@ -71,7 +71,7 @@ public class ChickenThrowingController : MonoBehaviour
                 onEnemyDeath.Invoke();
                 animator.SetTrigger("onDeath");
                 StartCoroutine(fadeIntoOblivion(spriteDescendants, 0, 1));
-                audioSource.PlayOneShot(audioSource.clip);
+                // audioSource.PlayOneShot(audioSource.clip);
                 transform.parent.Find("ProjectileBoneSpawner").gameObject.SetActive(false);
                 gameObject.GetComponent<BoxCollider>().enabled = false;
                 Destroy(transform.parent.gameObject, 1); // audioSource.clip.length);
